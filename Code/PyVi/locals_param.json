@@ -1,0 +1,1 @@
+[["Temperatur", "t2m", "t2m-273:47", "[C]"], ["Luftdruck", "ps", "ps/100:11", "[hPa]"], ["Luftdruck~an~NN", "slp", "slp/100:4", "[hPa]"], ["Wassersaeule", "tql", "tql*100:32", "[V%]"], ["Temp.~Regen", "t2m_tql", "t2m-273:46 tql*100:32", "[C]~[V%]"]]

@@ -1,0 +1,53 @@
+body{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background-color: #AAA;
+	font-family: Arial;
+}
+div{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+td{
+	border-spacing: 0;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	font-size: .8em;
+}
+table{
+	border-spacing: 0;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	width: 100%;
+	height: 100%;
+}
+#imgholder{
+	height: 100%;
+	/* Überschreiben in JS */
+	width: 100px;
+	vertical-align: top; 
+}
+img{
+	width: 50%;
+}
+#plot{
+	width: 100%;
+}
+th{
+	background-color: #EEE;
+	font-size: .9em;
+}
+#infotable{
+	border-spacing: auto;
+	margin: 1em 5% 1em 5%;
+	width: 90%;
+	height: auto;
+	text-align: center;
+	background-color: #DDD;
+}
+#infoholder{
+	vertical-align: top; 
+}
+.info{
+	margin: .5em 5% auto 5%;
+}
