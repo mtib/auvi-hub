@@ -4,3 +4,4 @@ tmp/
 output/
 web/
 **/*.pyc
+*.pyc
