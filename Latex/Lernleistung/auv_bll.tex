@@ -128,13 +128,36 @@ Grafik: Tabelle im Programm, Text als Datei.
 \section{Arbeitsmethode}
 Wer ist in der Projekt, Wer war in dem Projekt?
 \subsection{Arbeitsteilung}
+% Programmierung: Markus
+% Setzung: Markus, Swenja
+% Server: Markus, RE
+% Öffentlichkeitsarbeit: Swenja, Markus
 Wer hat was gemacht?
 \subsection{Bearbeitung der Themengebiete}
-Wie hat wer was gemacht?
+In der vierjährigen Bearbeitungsphase hat sich unsere technische Ausstattung oft geändert. Ziel war es immer eine möglichst einheitliche und preiswerte Arbeitsumgebung bei allen Projektteilnehmern einzurichten. Die Bewegung ging generell in Richtung einers Linux-basierten Betriebssystems.\\
+Die Anfänge haben wir auf unseren privaten Laptops gemacht. Im laufe der Projektarbeit konnten wir unser Repertoire allerding um mehere Mikrokomputer erweitern. Wir greifen in der Projektarbeit an mehreren Stellen auf den Raspberry Pi 2 zurück. Dieser solide gebaute Rechner hat genug Leistung um einen Apache2 Webserver zu betreiben.\\
+Die möglichkeit unseren eigenen Server aufzusetzen nutzten wir schon in der Entwicklungsphase ausgiebig um eine bessere Arbeitsteilung durch mehr Automatisierung zu ermöglichen.\\
+% Bearbeitung   -> Interface    -> Login mit Benutzername/Password
+% Anzeige       -> URL          -> Weiterleitung mit Ziel/Crypt-Key
 \section{Aktuelle Anwendungen}
+% viwetter.de
 So kann man unser Programm jetzt nutzen, so kann man es erreichen!
+Die aktuellen Grafiken, die von unserem Programm erzeugt wurden kann man auf http://viwetter.de einsehen.
 \subsection{Hotels, Hafenhaus, Marina, Schule, ...}
 Wirkliche Anwendungen nach Muster 7.1.
+\section{Weather Monitoring System}
+% wms.viwetter.de
+% Was ist WMS BEGIN
+Das Weather Monitoring System (kurz WMS) beschreibt eine Reihe von Bildschirmen die verteilt in Kühlungsborn Grafiken eines zentralen Servers anzeigen sollen. Diese Grafiken enthalten generelle Informationen über Kühlungsborn, sowie Wetterdaten und Wetterprognosen. Im Schulzentrum Kühlungsborn findet man eine weitere Anwendung des WMS. Das Forier
+% Was ist WMS ENDE
+\subsection{Aufgabe}
+% Was war unsere Aufgabe
+Schüler sollen in der Lage sein die von ihnen in der Projektarbeit erzeugten Grafiken über ein möglichst einfaches Interface auf einen Server zu laden. Sie sollen anschließend die Bilder ersetzen bzw. löschen können. Damit die Serveradministrator, in diesem Fall Swenja Wagner, Markus Becker und Dr. Eixmann, bestimmen können wer für welchen Ordner Grafiken hochladen und einbetten kann ist der Zugriff auf die Dateimanagementfunktion nur über ein Benutzerkonto möglich. Es können von jedem Administrator nach Bedarf neue Konten erstellt werden.
+\subsection{Interface}
+Nachdem ein Nutzer die Einlogroutine durchgeführt hat wird ihm die Struktur der Daten nach Anzeigeindex geordnet angezeigt.
+\subsection{Erreichbarkeit}
+\subsection{Sicherheit}
+Da dieses System an öffentlichen Orten Anwendung finden soll, muss gewährleistet sein, dass auf den Anzeigegeräten nur Daten eingezeigt werden, die von autorisierten Personen ausgewählt worden. Außerdem soll der Service nicht ohne unsere Erlaubnis und Wissen aufrufbar sein, deshalb haben wir ein Accountsystem inplementiert. Da die Clientpc's automatisiert starten sollen und gleich die richtigen Daten anzeigen sollen, mussten wir ein Protokoll entwickeln, welches sicher ist, aber einem Rechner ermöglicht sich selbst einzuloggen.
 \section{Quellen}
 Auf die Datenquellen wird gesondert eingegangen um sie noch ein mal zu differenzieren.
 \subsection{Datenquellen}
