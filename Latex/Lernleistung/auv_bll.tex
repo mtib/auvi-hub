@@ -25,7 +25,7 @@
 \pagestyle{plain}
 \newpage
 
-Grafische und nichtgrafische Visualiserung von Wetterprognosedaten. Vom Nutzer können Parameter, Form, Ort, Quelle und weitere meteorologische sowie informatorische Werte bestimmt werden.  
+Grafische und nichtgrafische Visualiserung von Wetterprognosedaten. Vom Nutzer können Parameter, Form, Ort, Quelle und weitere meteorologische sowie informatorische Werte bestimmt werden.
 % Test von Markus
 \section{Prognosetheorie}
 Was ist eine Prognose in der Meteorologie?
@@ -46,7 +46,7 @@ Da wir nun dargestellt haben, dass es für uns nicht möglich ist unsere eigenen
 Wir werden über eine GUI (graphic user interface) dem Nutzer anbieten zwischen verschiedenen Datenquellen zu wählen. Diese werden wir auch statistisch vergleichen.
 Grafik: Übersicht über Quellen (Alle die direkt über das Programm angeboten werden)
 Programm kann um weitere erweitert werden.
-Auswahl NOAA, GFS. 
+Auswahl NOAA, GFS.
 \subsubsection{Deutscher Wetter Dienst}
 Wir geben an was der DWD bietet und wie viel er kostet.
 Grafik: Diagramm der Genauigkeit
@@ -76,10 +76,15 @@ Was wurde getan um dafür zu sorgen, dass das Programm funktioniert?
 % Server ist der von uns öffentliche Server zum verteilen des Systems
 Auf welcher Hardware soll das Programm in welcher Version laufen. Es wird eine Server Version geben, die die Daten für einen Webserver bereitstellt, und eine die nur für lokale Anzeigen gedacht ist. An diese Rechner gibt es andere Anforderungen.
 \subsection{Server-Voraussetzungen}
+% Aktueller Plan:
+% Da wir keinen Server haben, der alle Kriterien
+% erfüllt, werde ich meinen PC so einrichten, dass
+% er die aktuellen Daten einmal am Tag überträgt.
 Internet, Speicher,
 \subsection{Nutzer-Voraussetzungen}
 Internet, Bildschirm, Interpreter
 \subsection{Generations-Voraussetzungen}
+% OPeNDAP protocol (GradsDAP)
 AuVi, Internet, Speicher
 \section{Software}
 Welche Software wird/wurde zur Entwicklung genutzt?
@@ -106,7 +111,10 @@ App um auf Webserver zuzugreifen.
 \subsection{Szenarien}
 Wir werden nun Beispiele angeben, wie unser Programm genutzt werden kann. Es gibt darüber hinaus unendlich viele Möglichkeiten aus dem Programm individuellen Nutzen zu ziehen.
 \subsubsection{Frühwarnung}
-Nach dem Ampel System eigene Parameter die Gefährdung darstellen markieren. Z.B. Segler mit Windgeschwindigkeit auf Seelevel, Segelflieger mit Windgeschwindigkeit und Richtung auf x-Meter Höhe. Allgemeiner Arbeiter mit Temperatur.
+% Nach dem Ampel System eigene Parameter die Gefährdung darstellen markieren. Z.B. Segler mit Windgeschwindigkeit auf Seelevel, Segelflieger mit Windgeschwindigkeit und Richtung auf x-Meter Höhe. Allgemeiner Arbeiter mit Temperatur.
+Das von uns entwickelte System kann verwendet werden um wetterbedingte Gefahrensituationen frühzeitig zu erkennen. Anhand der globalen Datenquellen und dem Hintergrund unseres Systems ist es einem Nutzer möglich für seinen Ort selbst die Parameter zu wählen die für Ihn eine Gefährdung darstellen.\\
+Es ist uns wichtig, dass unsere Visualisierung keine Laien abschreckt, deshalb haben wir uns entschieden die Frühwarnung in Form eines Ampelsystems an den Nutzer zu bringen. Dieser kann bei Interesse an der Frühwarnfunktionalität eine Spanne angeben, in der der entsprechende Parameter sicher ist (grün), gefährlich wird (gelb) oder gefährlich ist (rot). Diese sehr visuelle Form soll dabei auf einem Blick ermöglichen die Wetterlage abzuschätzen.\\
+Für detailierte Auswertungen bieten wir andere Anzeigeformate an.
 \subsubsection{Exotische Orte}
 Ob mitten im Ozean oder in der Wüste, unser Programm liefert Prognosen für jeden Ort. Genauigkeit von der Zeitspanne und der Entfernung zur physikalischen Messstation abhängig.
 \subsubsection{Wissenschaft}
@@ -138,8 +146,8 @@ Alle anderen Quellen, sowie Software.
 \Large{Selbstständigkeitserklärung}\\
 \\
 \small Hiermit erklären wir, dass wir die vorliegende Arbeit selbständig angefertigt, nicht anderweitig zu Prüfungszwecken vorgelegt und keine anderen, als die angegebenen Hilfsmittel verwendet haben. Zudem waren alle verwiesenen Webseiten zum Zeitpunkt der Linksetzung gültig und erreichbar. Wörtlich und sinngemäße Übernahmen aus anderen Werken sind als solche gekennzeichnet.
-\\ 
+\\
 
 
 
-\end{document} 
+\end{document}
