@@ -13,6 +13,7 @@
 \renewcommand{\abstractname}{}    % clear the title
 %\renewcommand{\absnamepos}{empty} % originally center
 \newcommand{\jf}{Jugend forscht}
+\newcommand{\vs}{ViSys}
 \newcommand{\jftree}{
 \begin{center}
 \scalebox{0.56}{
@@ -24,7 +25,7 @@ level 3/.style = {sibling distance = .5cm},
 level distance = 1.25cm
 ]
 \node {\LARGE \textbf{AuVi}}
-	child { node {\large Visys} 
+	child { node {\large \vs} 
 		child { node {Programmierung}}
 		child { node {Servertechnik}
 			child { node {Schnittstelle}}		
@@ -51,8 +52,8 @@ level distance = 1.25cm
 \begin{document}
 \linespread{.9}
 \pagestyle{empty}
-\title{Personalisierbare\\Datenverarbeitung und Visualisierung\\von Wetterprognosedaten}
-\author{\\\\\\\\\\\\\\\\\\\\\\Markus Becker\\Swenja Wagner}
+\title{\includegraphics[scale=.3]{imgs/auvi_white.png}\\Personalisierte Datenverarbeitung\\und Visualisierung von Wetterprognosedaten}
+\author{Schüler:\\Markus Becker\\Swenja Wagner \and Projektbetreuer:\\Dr. Ronald Eixmann\\Thoralf Wieck}
 
 \maketitle
 \pagestyle{empty}
@@ -65,17 +66,17 @@ level distance = 1.25cm
 \jftree
 Mit \textbf{AuVi} bezeichnen wir eine Gruppe von verschiedenen Projekten unter der Leitung von Ronald Eixmann. Die Projektarbeit findet von Markus Becker und Swenja Wagner statt. Unser zentrales Projekt gibt unserer Arbeit ihren Namen. AuVi steht für Automatisierte Visualisierung von meteorologischen Daten, dem Projekt mit dem wir an verschiedensten \jf Wettbewerben teilnahmen. Dieses ermöglicht einem Nutzer über eine Website oder App eine Wetterprognose für jeden beliebigen Punkt auf der Erde mit über 50 verschiedenen Parametern abzufragen. Diese Prognose kann bis zu zehn Tage in die Zukunft abgegeben werden.\\
 Später wurde unsere Projektarbeit um eine Partnerschaft mit Makanya erweitert. So entstand Makanya.com, eine Website um einen Austausch zwischen deutschen und tansianischen Schülern zu ermöglichen.\\
-Der letzte teil unseres Projektes ist das Weather Monitoring System rund um Kühlungsborn. Dieses umfasst eine Reihe von Bildschirmen die Wetterdaten sowie aktuelle Informationen anzeigen. Gleichzeitig wird das System allerdings auch von der Schule genutzt um Informationen im Foyer anzuzeigen.
+Der letzte teil unseres Projektes ist das Weather Monitoring System rund um Kühlungsborn. Dieses umfasst eine Reihe von Bildschirmen die Wetterdaten sowie aktuelle Informationen anzeigen. Gleichzeitig wird das System allerdings auch von der Schule genutzt um Informationen im Foyer anzuzeigen.\\
+All diese Teilprojekte sind natürlich auch mit Öffentlichkeitsarbeit verbunden.
 \end{abstract}
 
 
 \section{Auvi}
 \subsection{Programm}
-eine allgemeine Erklärung, was das Programm kann, damit der Leser sich zurecht findet
-
+Um Verwechslungen zu verhindern benennen wir das Programm, welches wir unter AuVi entwickelt haben ,,\vs ''. \vs steht für Visualisierung System und ist in verschiedenen Versionen lauffähig. Die Aufgabe von \vs ist es auf eine Datenquelle zuzugreifen und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln. Dabei wird von uns sehr viel Wert darauf gelegt, dass das Erstellen der Grafiken möglichst abstrakt behandelt wird, damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann. 
 \subsection{Meteorologie}
 \subsubsection{Prognosetheorie}
-Was ist eine Prognose in der Meteorologie?
+% TODO: Was ist eine Prognose in der Meteorologie?
 Die Meteorologie gehört zu den Naturwissenschaften. Sie liefert die Voraussetzungen um eine Wettervorhersage erstellen zu können. Unter einer Wetterprognose versteht man die Vorhersage eines Zustands der Atmosphäre zu einem bestimmten Zeitpunkt an einem bestimmten Ort oder in einem bestimmten Gebiet. Es wird nicht nur das Wetter in Bodennähe betrachtet, sondern auch Wettererscheinungen in höheren Schichten der  Erdatmosphäre.
 \\
 Das Wetter lässt sich durch entsprechende Naturgesetze beschreiben. Das ist für die Prognose essentiell wichtig. Der Grundgedanke einer solchen Prognose besteht darin, aus einem bereits vergangenen und dem aktuellen Zustand der Atmosphäre einen Zustand in der Zukunft abzuleiten. Dazu werden die bekannten physikalischen Regeln angewendet. In mathematischer Hinsicht werden diese physikalischen Regeln von nichtlinearen Gleichungen beschrieben. Das bedeutet, dass bereits die kleinste Änderung im Ausgangszustand das Ergebnis der Rechnung relativ groß verändern kann.%[1]
@@ -168,6 +169,17 @@ Der Hintergrund des Makanya.com Projektes ist eine Partnerschaft zwischer der Ki
 suchte den Kontakt zum \jf Team über 
 \subsection{Methodik}
 \subsection{Ergebnis}
+
+\newpage
+\Large{Quellenverzeichnis}\\
+\\
+\small
+\begin{tabular}{clc}
+\textbf{Nr.} & \textbf{Beschreibung} & \textbf{Zeitstempel} \\
+1 & Quelle 1 & 01.01.1970 \\
+2 & Quelle 2 & 23.09.2015 \\
+\end{tabular} 
+\\
 
 \newpage
 \Large{Selbstständigkeitserklärung}\\
