@@ -5,10 +5,6 @@ import sys
 VERSION = "1.0"
 auvidir = ""
 
-#grads -b -a 1.333 -x -c "run /home/tibyte/Desktop/PyVi/grads/line.gs /home/tibyte/Desktop/PyVi/output/ Berlin 52 12 1 tql Wassersaeule 48 [DU] tql/100:32 0"
-#grads -b -a 1.333 -x -c "run /home/tibyte/Desktop/PyVi/grads/line.gs /home/tibyte/Desktop/PyVi/output/ Berlin 52 12 1 t2m_tql Regen_Temperatur last [DU]_[C] tql/100:32 t2m-273:47 0"
-
-
 def main(args):
 	greet()
 	run()
@@ -23,9 +19,6 @@ def run():
 	loc = filemanager.getLoc()
 	locpara = filemanager.getLocPara()
 	arepara = filemanager.getArePara()
-	#filemanager.loc
-	#filemanager.locpara
-	#filemanager.arepara
 	for location in loc:
 		name = location[0]
 		lat = location[1]
