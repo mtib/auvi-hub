@@ -10,6 +10,7 @@
 \usepackage{tikz}		% Zeichnen von Grafiken
 \usepackage{url}			% Format Links \link{}
 \usepackage{listings}	% Code listings
+\usepackage{courier}
 % Ende Packages
 
 % Farbdefinition
@@ -35,9 +36,10 @@ keywordstyle=\color{blue},
 numbers=left,
 numberstyle=\tiny\color{mygray},
 tabsize=3,
-basicstyle=\footnotesize\ttfamily,
+basicstyle=\small\ttfamily,
 stringstyle=\color{orange},
 }
+\usetikzlibrary{shapes,arrows}
 % Ende Einstellungen
 
 % Shortcuts
@@ -130,16 +132,16 @@ Die Arbeit an diesem Projekt verlangte große Kooperation von den Projektteilneh
 \subsubsection{Programmierung}
 \input{pyvitree.tex}
 \subsubsection*{Hauptprogramm}
-\lstinputlisting[language=Python,firstline=12, lastline=40,caption={,,Mainfunktion'' von \vsr\ (auvi.py)}]{\pyvidir auvi.py}
-\lstinputlisting[language=Python,caption={Wrapper für Abhandeln der Ortsdefinitionen}]{\pyvidir local.py}
+\lstinputlisting[language=Python,firstline=12, lastline=40,firstnumber=12,caption={,,Mainfunktion'' von \vsr\ (auvi.py)}]{\pyvidir auvi.py}
+\lstinputlisting[language=Python,caption={Wrapper für Abhandeln der Ortsdefinitionen (local.py)}]{\pyvidir local.py}
 \subsubsection*{JSON Definitionen}
 Im folgenden Listing wird die Definition von Ortspunkten
 \footnote{Ortspunkte stehen im Kontrast zur Gebietsdefinition. Gebiete werden durch minimale Breiten- und Höhengrade definiert und besitzen eine Breite und Höhe. Anwendungsbeispiel: Europa, Welt, Asien, ...} gezeigt. Diese werden im JSON Format gespeichert. Die Liste kann um beliebig viele andere Orte erweitert werden.
-\lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte}]{\pyvidir locals.json}
+\lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte (locals.json)}]{\pyvidir locals.json}
 In der Liste steht der erste String für den Ortsnamen. Der zweite Wert ist ein Double für den Breitengrad gefolgt vom Längengrad. Da von den Orten auch ein Konturplot erzeugt werden soll wird mit dem 4. Wert abgespeichert wie groß die Übersichtskarte sein soll (In Grad um den Ort). Der letzte Wert zur Definition eines Ortspunktes ist die Zeitdifferenz zur GMT Zeit.
 \subsubsection*{GrADS Scripte}
-\lstinputlisting[language=C]{\pyvidir grads/line.gs}
-\lstinputlisting[language=C]{\pyvidir grads/plot.gs}
+\lstinputlisting[language=C,caption={GrADS Routine zum erstellen allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
+\lstinputlisting[language=C,caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)}]{\pyvidir grads/plot.gs}
 \subsubsection{genutzte Mittel} % AuVi Entwicklung
 Website, Server, ...
 \subsubsection{Servertechnik} % AuVi Entwicklung
