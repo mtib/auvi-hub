@@ -1,0 +1,23 @@
+\begin{center}
+\scalebox{0.56}{
+\begin{tikzpicture}[
+every node/.style = {},
+level 1/.style = {sibling distance = 6cm},
+level distance = 2cm
+]
+\node {\LARGE PyVi$=$\vsr}
+    child { node {\large Python} 
+    		child { node{Flow, Management und IO}}
+    }
+    child { node {\large Bash}
+    		child { node {Files, convert(ImageMagick)}}
+    }
+    child { node {\large PHP, HTML, JavaScript}
+    		child { node {Website, Scripting}}
+    }
+    child { node {\large GrADS} 
+    		child { node{Interpretieren der Rohdaten}}
+    };
+\end{tikzpicture}
+}
+\end{center}
