@@ -10,46 +10,49 @@
 \usepackage{tikz}		% Zeichnen von Grafiken
 \usepackage{url}			% Format Links \link{}
 \usepackage{listings}	% Code listings
-\usepackage{courier}
-\usepackage{xcolor}
+\usepackage{courier}		% Code Font
+\usepackage{xcolor}		% Advanced Color
+\usepackage[ngerman]{babel}
+\usepackage[backend=bibtex]{biblatex}
+\usepackage[babel]{csquotes}
+\usepackage{float}
 % Ende Packages
 
 % Farbdefinition
-\definecolor{mygreen}{rgb}{0,0.6,0}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
-\definecolor{link}{HTML}{3333FF}
-\colorlet{punct}{red!60!black}
-\definecolor{background}{HTML}{EEEEEE}
-\definecolor{delim}{RGB}{20,105,176}
-\colorlet{numb}{magenta!60!black}
+\definecolor{link}{HTML}{3333FF}			% Link
+\definecolor{mygreen}{rgb}{0,0.6,0} 		% Listings
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}	% Listings
+\definecolor{mymauve}{rgb}{0.58,0,0.82}	% Listings
+\colorlet{punct}{red!60!black}			% Listings
+\definecolor{background}{HTML}{EEEEEE}	% Listings
+\definecolor{delim}{RGB}{20,105,176}		% Listings
+\colorlet{numb}{magenta!60!black}		% Listings
 % Ende Farbdefinition
 
 % Einstellungen
-\renewcommand*{\familydefault}{\sfdefault}
-\renewcommand{\contentsname}{Inhaltsverzeichnis}
-\renewcommand{\abstractname}{}
-\linespread{1.1}
-\input{jsondef.tex}
-\lstset{
-breaklines=true,
-commentstyle=\color{mygreen},
-showstringspaces=false,
-extendedchars=true,
-keywordstyle=\color{blue},
-tabsize=3,
-stringstyle=\color{orange},
-basicstyle=\normalfont\ttfamily,
-numbers=left,
-numberstyle=\scriptsize,
-stepnumber=1,
-numbersep=8pt,
-showstringspaces=false,
-breaklines=true,
-frame=lines,
-backgroundcolor=\color{background},
+\renewcommand*{\familydefault}{\sfdefault}	% Default Font
+\renewcommand{\contentsname}{Inhaltsverzeichnis}	% ToC Title
+\renewcommand{\abstractname}{}				% Überschrift Abs.
+\linespread{1.1}					% Zeilenabstand
+\input{jsondef.tex}				% Define JSON Language
+\lstset{							% Listing Settings
+breaklines=true,					% Wrap
+commentstyle=\color{mygreen},	% Comment Color
+showstringspaces=false,			% Show _ Space
+extendedchars=true,				% Umlaute
+keywordstyle=\color{blue},		% Keywords
+tabsize=3,						% Tabs in Spaces
+stringstyle=\color{orange},		% String color
+basicstyle=\normalfont\ttfamily,	% Font
+numbers=left,					% Numberside
+numberstyle=\scriptsize,			% Numbersize
+stepnumber=1,					% Linenumbering
+numbersep=8pt,					% Margin Right
+frame=lines,						% Line top/bottom
+backgroundcolor=\color{background},	% Background Color
 }
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shapes,arrows}	% For Flow Diagram
+\bibliography{quellen}
 % Ende Einstellungen
 
 % Shortcuts
@@ -61,15 +64,16 @@ backgroundcolor=\color{background},
 \newcommand{\re}{Dr. Ronald Eixmann}
 \newcommand{\tw}{Thoralf Wieck}
 \newcommand{\thema}{Personalisierte Datenverarbeitung\\und Visualisierung von Wetterprognosedaten}
-\newcommand{\pyvidir}{../../Code/PyVi/}
+\newcommand{\pyvidir}{../../Code/PyVi/}	% Relativ zu auvi/Latex/Lernleistung
 % Ende Shortcuts
 
 % Variablen
+% ...
 % Ende Variablen
 
 % Eigene Befehle
-\newcommand{\link}[1]{\textcolor{link}{\url{#1}}}
-\newcommand{\jftree}{\input{jftree.tex}}
+\newcommand{\link}[1]{\textcolor{link}{\url{#1}}}	% Format Links
+\newcommand{\jftree}{\input{jftree.tex}}	% Draw JF Tree
 % Ende Eigene Befehle
 
 \begin{document}
@@ -121,7 +125,7 @@ Da wir nun dargestellt haben, dass es für uns nicht möglich ist unsere eigenen
 Wir werden über eine GUI (Graphic User Interface) dem Nutzer anbieten zwischen verschiedenen Datenquellen zu wählen. Diese werden wir auch statistisch vergleichen.
 Grafik: Übersicht über Quellen (Alle die direkt über das Programm angeboten werden)
 Programm kann um weitere erweitert werden.
-Auswahl NOAA, GFS.
+Auswahl NOAA, GFS.\cite{noaa}
 \subsubsection*{Wetterdienst} % AuVi Datenquellen
 Wir geben an was der DWD bietet und wie viel er kostet.
 Grafik: Diagramm der Genauigkeit
@@ -129,18 +133,25 @@ Grafik: Diagramm der Genauigkeit
 % TODO: Wir geben an was das GFS bietet und warum wir es als Hauptdatenquelle verwenden.
 % TODO: Grafik: Diagramm der Genauigkeit
 
-Das Global Forecast System (GFS) ist ein Modell, das mathematisch Parameter errechnet.Es ist also ein numerisches Vorhersagemodell. Die dazu benötigten Daten bezieht es aus einem Netz von Wetterstationen, die sowohl an Land als auch im Wasser und in der Luft Messungen durchführen. Mit diesen gemessenen Daten werden mithilfe von geophysikalischen Gesetzen weitere Daten errechnet. So wird in einem Abstand von 13,5km je ein Wert ermittelt. Diese Daten werden als große Datensätze kostenfrei auf der Webseite ()  zur Verfügung gestellt.
+Das Global Forecast System (GFS)  ist ein Modell, das mathematisch Parameter errechnet.Es ist also ein numerisches Vorhersagemodell. Die dazu benötigten Daten bezieht es aus einem Netz von Wetterstationen, die sowohl an Land als auch im Wasser und in der Luft Messungen durchführen. Mit diesen gemessenen Daten werden mithilfe von geophysikalischen Gesetzen weitere Daten errechnet. So wird in einem Abstand von 13,5km je ein Wert ermittelt. Diese Daten werden als große Datensätze kostenfrei auf der Webseite \link{http://mag.ncep.noaa.gov/} \cite{ncep}  zur Verfügung gestellt.
 \subsubsection{Datenverfügbarkeit} % AuVi Datenquellen
 Wie weit in die Zukunft können die Quellen schauen. Wodurch sind sie begrenzt, Wie oft muss man die Daten generieren und abrufen?
 Grafik: Diagramm der Zukunftsdaten
 \subsection{Entwicklung} % AuVi
-\subsubsection{Wahl der Umgebung} % AuVi Entwicklung
+\subsubsection{Wahl der Umgebung}\label{sec:ent} % AuVi Entwicklung
 sofware und hardware
 \subsubsection{Methodik} % AuVi Entwicklung
 %wer wann wie wo
 Die Arbeit an diesem Projekt verlangte große Kooperation von den Projektteilnehmern. Treffen wurden geplant und üblicherweise auf den Dienstag Nachmittag gelegt. Doch reichten zwei bis drei Stunden in der Woche nicht aus um das Projekt zu bearbeiten. Viele Arbeitsstunden mussten von zu hause erledigt werden.
 \subsubsection{Programmierung}
+Die umfangreichste Aufgabe die wir in unserer Projektarbeit bewältigten war die Programmierung. Da wir uns in Punkt \ref{sec:ent}  schon entschieden haben in einer Linux Umgebung zu arbeiten, mussten wir auch die Programmiersprachen und sowie IDE's so wählen, dass sie auch auf Ubuntu oder ähnlichen Distributionen ohne Komplikationen funktionierten.\\
+Unser Hauptprogramm, genannt ,,\vsr '' haben wir hauptsächlich in Python (Version 2.7) \cite{python27} geschrieben. Diese Programmiersprache ist in den von uns genutzten Distributionen sogar vorinstalliert und ein allgemeiner Industriestandard.\\
+Nur mit Python kamen wir allerdings auf lange Zeit nicht aus. Wir nutzten noch andere Sprachen um die Entwicklung zu beschleunigen, auch wenn Python für die restlichen Aufgaben auch hätten nutzen können kombinierten wir folgende Programmiersprachen:
+\begin{figure}[H]
 \input{pyvitree.tex}
+\label{fig:pyvi}
+\caption{Benutzte Programmiersprachen}
+\end{figure}
 \subsubsection*{Hauptprogramm}
 \lstinputlisting[language=Python,firstline=12, lastline=40,firstnumber=12,caption={,,Mainfunktion'' von \vsr\ (auvi.py)}]{\pyvidir auvi.py}
 \lstinputlisting[language=Python,caption={Wrapper für Abhandeln der Ortsdefinitionen (local.py)}]{\pyvidir local.py}
@@ -163,7 +174,7 @@ Die von uns gemacht Website um Ergebnisse anzuzeigen. Sollte ich noch eine Domai
 Da wir unsere erzeugten Grafiken auf einer Website und App darstellen wollen müssen wir sehr darauf achten, dass die Dateiformate zum einen komprimiert genug sind um heruntergeladen werden zu können und zum anderen noch einen gewissen Qualitätsstandard behalten.\\
 Außerdem sind Mobiltelephone nicht in der Lage alle Dateiformate anzuzeigen, die ein Webbrowser auf einem Pc ohne Probleme handhabt. Als die sichersten Dateiformate haben wir Png und Jpg für Bilder und Gif für Animationen auserkoren. Wir haben lange versucht die Animationen als Video zu kodieren. Allerdings bemerkten wir nur geringe Einsparungen in der Dateigröße und stellten gleichzeitig Anzeigeprobleme fest.
 \subsubsection{Schulhompage} % AuVi Schnittstelle
-Da wir ein Projekt des Schulzentrum Kühlungsborns sind (\link{http://www.schulzentrum-kborn.de}) sind wir auf dessen Seite unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen. Dort sind wir unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden. Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte, richteten wir eine eigene Seite auf unserem Server ein. Diese ist unter \textit{http://sys.tibyte.net/public/} 
+Da wir ein Projekt des Schulzentrum Kühlungsborns sind (\link{http://www.schulzentrum-kborn.de}) sind wir auf dessen Seite unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen \cite{szkb}. Dort sind wir unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden. Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte, richteten wir eine eigene Seite auf unserem Server ein. Diese ist unter \textit{http://sys.tibyte.net/public/} 
 % TODO: wenn neue Domain hier eintragen! %
 für alle zu erreichen. Diese Seite soll nicht die Ergebnisse unseres AuVi Programms widerspiegeln sondern dient als Webpräsenz des Projektes.
 \subsection{Szenario} % AuVi
@@ -211,15 +222,9 @@ suchte den Kontakt zum \jf Team über
 \subsection{Ergebnis} % Makanya
 
 \newpage
-\Large{Quellenverzeichnis}\\
-\\
+\printbibliography
 \small
-\begin{tabular}{clc}
-\textbf{Nr.} & \textbf{Beschreibung} & \textbf{Zeitstempel} \\
-1 & Quelle 1 & 01.01.1970 \\
-2 & Quelle 2 & 23.09.2015 \\
-\end{tabular} 
-\\
+
 
 \newpage
 \Large{Selbstständigkeitserklärung}\\
