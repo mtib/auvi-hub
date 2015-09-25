@@ -55,6 +55,23 @@ backgroundcolor=\color{background},	% Background Color
 \bibliography{quellen}
 % Ende Einstellungen
 
+% Sprachdefinition
+\lstdefinelanguage{grads}{
+ keywords=[0]{
+   while, endwhile, if, endif, function, return,
+ },
+ keywords=[1]{
+   substr, subwrd
+ },
+ morestring=[b][\color{orange}]{"},
+ morestring=[b][\color{red}]{'},
+ morecomment=[l]*,
+ sensitive=true,
+ breaklines=true,
+ extendedchars=true
+}
+% Ende Sprachdefinition
+
 % Shortcuts
 \newcommand{\jf}{Jugend forscht }
 \newcommand{\vs}{\vsr\ }
@@ -65,6 +82,7 @@ backgroundcolor=\color{background},	% Background Color
 \newcommand{\tw}{Thoralf Wieck}
 \newcommand{\thema}{Personalisierte Datenverarbeitung\\und Visualisierung von Wetterprognosedaten}
 \newcommand{\pyvidir}{../../Code/PyVi/}	% Relativ zu auvi/Latex/Lernleistung
+\newcommand{\demodisdir}{../../Code/Anzeige/ort/}
 % Ende Shortcuts
 
 % Variablen
@@ -103,46 +121,58 @@ All diese Teilprojekte sind natürlich auch mit Öffentlichkeitsarbeit verbunden
 
 
 \section{Auvi}
+
 \subsection{Programm} % AuVi
-Um Verwechslungen zu verhindern benennen wir das Programm, welches wir unter AuVi entwickelt haben ,,\vsr ''. \vs steht für Visualisierung System und ist in verschiedenen Versionen lauffähig. Die Aufgabe von \vs ist es auf eine Datenquelle zuzugreifen und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln. Dabei wird von uns sehr viel Wert darauf gelegt, dass das Erstellen der Grafiken möglichst abstrakt behandelt wird, damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann. 
+Um Verwechslungen zu verhindern benennen wir das Programm, welches wir unter AuVi entwickelt haben ,,\vsr ''. \vs steht für Visualisierung System und ist in verschiedenen Versionen lauffähig. Die Aufgabe von \vs ist es auf eine Datenquelle zuzugreifen und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln. Dabei wird von uns sehr viel Wert darauf gelegt, dass das Erstellen der Grafiken möglichst abstrakt behandelt wird, damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann.
+
 \subsection{Meteorologie} % AuVi
+
 \subsubsection{Prognosetheorie} % AuVi Meteorologie
 % TODO: Was ist eine Prognose in der Meteorologie?
 Die Meteorologie gehört zu den Naturwissenschaften. Sie liefert die Voraussetzungen um eine Wettervorhersage erstellen zu können. Unter einer Wetterprognose versteht man die Vorhersage eines Zustands der Atmosphäre zu einem bestimmten Zeitpunkt an einem bestimmten Ort oder in einem bestimmten Gebiet. Es wird nicht nur das Wetter in Bodennähe betrachtet, sondern auch Wettererscheinungen in höheren Schichten der  Erdatmosphäre.
 \\
 Das Wetter lässt sich durch entsprechende Naturgesetze beschreiben. Das ist für die Prognose essentiell wichtig. Der Grundgedanke einer solchen Prognose besteht darin, aus einem bereits vergangenen und dem aktuellen Zustand der Atmosphäre einen Zustand in der Zukunft abzuleiten. Dazu werden die bekannten physikalischen Regeln angewendet. In mathematischer Hinsicht werden diese physikalischen Regeln von nichtlinearen Gleichungen beschrieben. Das bedeutet, dass bereits die kleinste Änderung im Ausgangszustand das Ergebnis der Rechnung relativ groß verändern kann.%[1]
+
 \subsubsection{Prognosen per Hand} % AuVi Meteorologie
 Was muss man über die aktuelle Situation wissen um per Hand eine Prognose zu erzeugen?
 Es gibt einen Unterschied zwischen der manuellen oder auch synoptischen Wettervorhersage und einer numerischen Wettervorhersage. In der synoptischen Meteorologie ist ein System aus Beobachtungsstationen nötig, die gleichzeitig Wetterbeobachtungen nach einem einheitlichen Verfahren durchführen. Die Stationen messen unter anderem Parameter wie: Luftdruck, Luftdruckänderung während der letzten drei Stunden, Lufttemperatur, Windrichtung, Windgeschwindigkeit, Taupunkt, Wolkenart, Höhe der Wolkenuntergrenze, Bedeckungsgrad, Sichtweite, Niederschlagsmenge und Niederschlagsart. Es wird zwischen Bodenbeobachtungsstationen, die Daten in der Nähe der Bodenoberfläche sammeln und aerologischen Beobachtungsstationen, die Daten aus bis zu 30km Höhe liefern unterschieden. Es werden auch Daten von mobilen Messstationen, wie Bojen und Flugzeugen verwendet. Wettersatelliten und Fernerkundungssystem (wie Wetterradar, Blitzortungssysteme, LIDAR, SODAR) könne auch als Datenquelle dienen. Die gesammelten Daten, die den Wetterzustand zu einem bestimmten Zeitpunkt beschreiben, werden in Wetterkarten eingetragen. (zum Beispiel Bodenwetterkarten) Mit Hilfe der eingetragenen Daten werden die Wetterverhältnisse analysiert und Wettervorhersagen erstellt. Zusätzlich dazu werden die gesammelten Daten von numerischen Vorhersagemodellen als Ausgangszustand verwendet. %[2]
 \\
 Numerische Wettervorhersagen sind rechnergestützt. Der Zustand der Atmosphäre zu einem späteren Zeitpunkt wird aus dem Zustand der Atmosphäre zu einem gegebenen Anfangszeitpunkt berechnet. Dabei werden relevante Gleichungen numerisch gelöst (Navier-Stokes-Gleichung, thermische Zustandsgleichung idealer Gase, erster Hauptsatz der Thermodynamik, Kontinuitätsgleichung). Bei solchen numerischen Vorhersagemodellen wird das betrachtete Gebiet in Gitterzellen unterteilt. Für jeden Bereich werden dann die Parameter errechnet. Relevante physikalische Größen sind vor allem Temperatur, Luftdruck, Dichte, Windrichtung und Windgeschwindigkeit. Es wird zwischen Global- und Lokal- oder Ausschnittsmodellen unterschieden. Aufgrund des großen Aufwands die Daten zu errechnen, werden Supercomputer verwendet.
+
 \subsubsection{Voraussetzung für Datenprognosen} % AuVi Meteorologie
 
 \subsection{Datenquellen} % AuVi
+
 \subsubsection{Quellenvergleich} % AuVi Datenquellen
 Da wir nun dargestellt haben, dass es für uns nicht möglich ist unsere eigenen Daten zu generieren, zeigen wir nun welche Quellen die benötigten Daten zur Verfügung stellen. Der Nutzer kann selbst zwischen den verschiedenen Datenquellen wählen, die angeboten werden. Die angebotenen Datenquellen können über die GUI gewählt werden.
 
-Wir werden über eine GUI (Graphic User Interface) dem Nutzer anbieten zwischen verschiedenen Datenquellen zu wählen. Diese werden wir auch statistisch vergleichen.
+Wir werden über eine GUI\footnote{\textit{Graphical User Interface} engl. IT. für grafische Benutzeroberfläche} dem Nutzer anbieten zwischen verschiedenen Datenquellen zu wählen. Diese werden wir auch statistisch vergleichen.
 Grafik: Übersicht über Quellen (Alle die direkt über das Programm angeboten werden)
 Programm kann um weitere erweitert werden.
 Auswahl NOAA, GFS.\cite{noaa}
+
 \subsubsection*{Wetterdienst} % AuVi Datenquellen
 Wir geben an was der DWD bietet und wie viel er kostet.
 Grafik: Diagramm der Genauigkeit
+
 \subsubsection*{NOAA Global Forecast System} % AuVi Datenquellen
 % TODO: Wir geben an was das GFS bietet und warum wir es als Hauptdatenquelle verwenden.
 % TODO: Grafik: Diagramm der Genauigkeit
-
 Das Global Forecast System (GFS)  ist ein Modell, das mathematisch Parameter errechnet.Es ist also ein numerisches Vorhersagemodell. Die dazu benötigten Daten bezieht es aus einem Netz von Wetterstationen, die sowohl an Land als auch im Wasser und in der Luft Messungen durchführen. Mit diesen gemessenen Daten werden mithilfe von geophysikalischen Gesetzen weitere Daten errechnet. So wird in einem Abstand von 13,5km je ein Wert ermittelt. Diese Daten werden als große Datensätze kostenfrei auf der Webseite \link{http://mag.ncep.noaa.gov/} \cite{ncep}  zur Verfügung gestellt.
+
 \subsubsection{Datenverfügbarkeit} % AuVi Datenquellen
 Wie weit in die Zukunft können die Quellen schauen. Wodurch sind sie begrenzt, Wie oft muss man die Daten generieren und abrufen?
 Grafik: Diagramm der Zukunftsdaten
+
 \subsection{Entwicklung} % AuVi
+
 \subsubsection{Wahl der Umgebung}\label{sec:ent} % AuVi Entwicklung
 sofware und hardware
+
 \subsubsection{Methodik} % AuVi Entwicklung
 %wer wann wie wo
 Die Arbeit an diesem Projekt verlangte große Kooperation von den Projektteilnehmern. Treffen wurden geplant und üblicherweise auf den Dienstag Nachmittag gelegt. Doch reichten zwei bis drei Stunden in der Woche nicht aus um das Projekt zu bearbeiten. Viele Arbeitsstunden mussten von zu hause erledigt werden.
+
 \subsubsection{Programmierung}
 Die umfangreichste Aufgabe die wir in unserer Projektarbeit bewältigten war die Programmierung. Da wir uns in Punkt \ref{sec:ent}  schon entschieden haben in einer Linux Umgebung zu arbeiten, mussten wir auch die Programmiersprachen und sowie IDE's so wählen, dass sie auch auf Ubuntu oder ähnlichen Distributionen ohne Komplikationen funktionierten.\\
 Unser Hauptprogramm, genannt ,,\vsr '' haben wir hauptsächlich in Python (Version 2.7) \cite{python27} geschrieben. Diese Programmiersprache ist in den von uns genutzten Distributionen sogar vorinstalliert und ein allgemeiner Industriestandard.\\
@@ -152,74 +182,107 @@ Nur mit Python kamen wir allerdings auf lange Zeit nicht aus. Wir nutzten noch a
 \label{fig:pyvi}
 \caption{Benutzte Programmiersprachen}
 \end{figure}
+
 \subsubsection*{Hauptprogramm}
 \lstinputlisting[language=Python,firstline=12, lastline=40,firstnumber=12,caption={,,Mainfunktion'' von \vsr\ (auvi.py)}]{\pyvidir auvi.py}
-\lstinputlisting[language=Python,caption={Wrapper für Abhandeln der Ortsdefinitionen (local.py)}]{\pyvidir local.py}
+\lstinputlisting[language=Python,caption={Konstanten (local.py)},firstline=3,lastline=7,firstnumber=3]{\pyvidir local.py}
+\lstinputlisting[language=Python,caption={Hinzufügen von neuen Orten, Gebieten und Parametern (local.py)},firstline=11,lastline=28,firstnumber=11]{\pyvidir local.py}
+\lstinputlisting[language=Python,caption={Routine zum schreiben von JSON Dateien (local.py)},firstline=30,lastline=41,firstnumber=30]{\pyvidir local.py}
+\lstinputlisting[language=Python,caption={Datei In- und Output (filemanager.py)},firstline=39,lastline=66,firstnumber=39]{\pyvidir filemanager.py}
+\lstinputlisting[language=Python,caption={Umwandeln von Konturplots in Gif Dateien (filemanager.py)},firstline=68,lastline=72,firstnumber=68]{\pyvidir filemanager.py}
+
 \subsubsection*{JSON Definitionen}
 Im folgenden Listing wird die Definition von Ortspunkten
 \footnote{Ortspunkte stehen im Kontrast zur Gebietsdefinition. Gebiete werden durch minimale Breiten- und Höhengrade definiert und besitzen eine Breite und Höhe. Anwendungsbeispiel: Europa, Welt, Asien, ...} gezeigt. Diese werden im JSON Format gespeichert. Die Liste kann um beliebig viele andere Orte erweitert werden.
 \lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte (locals.json)}]{\pyvidir locals.json}
 In der Liste steht der erste String für den Ortsnamen. Der zweite Wert ist ein Double für den Breitengrad gefolgt vom Längengrad. Da von den Orten auch ein Konturplot erzeugt werden soll wird mit dem 4. Wert abgespeichert wie groß die Übersichtskarte sein soll (In Grad um den Ort). Der letzte Wert zur Definition eines Ortspunktes ist die Zeitdifferenz zur GMT Zeit.
+
 \subsubsection*{GrADS Scripte}
-\lstinputlisting[language=C,caption={GrADS Routine zum erstellen allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
-\lstinputlisting[language=C,caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)}]{\pyvidir grads/plot.gs}
+\lstinputlisting[language=grads,caption={GrADS Routine zum erstellen allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
+\lstinputlisting[language=grads,caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)},label= code:plotgengs , firstline=104, lastline=115, firstnumber=104]{\pyvidir grads/plot.gs}
+Im Listing \ref{code:plotgengs} greifen wir auf verschiedene eigene Funktionen zurück um die Konturplotgrafiken zu füllen. Um der Ablauf des Skriptes zu verstehen werden wir die wichtigsten hier nun mit erläutern.
+\lstinputlisting[language=grads,caption={Zeichnen der Achseneinteilung und Legende unter GrADS für Plots (plot.gs)}, firstline=117, lastline=136, firstnumber=117]{\pyvidir grads/plot.gs}
+Die Variable ,,color'' spielt in diesem Teil des Skriptes eine große Rolle.
+
+\subsubsection*{Webseite}
+
 \subsubsection{genutzte Mittel} % AuVi Entwicklung
 Website, Server, ...
+
 \subsubsection{Servertechnik} % AuVi Entwicklung
 Beschreibung Architektur, Ordnerstruktur
+
 \subsection{Schnittstelle mit dem Nutzer} % AuVi
+
 \subsubsection{Webseite} % AuVi Schnittstelle
 Die von uns gemacht Website um Ergebnisse anzuzeigen. Sollte ich noch eine Domain kaufen?
+
 \subsubsection{Datenformate} % AuVi Schnittstelle
 Da wir unsere erzeugten Grafiken auf einer Website und App darstellen wollen müssen wir sehr darauf achten, dass die Dateiformate zum einen komprimiert genug sind um heruntergeladen werden zu können und zum anderen noch einen gewissen Qualitätsstandard behalten.\\
 Außerdem sind Mobiltelephone nicht in der Lage alle Dateiformate anzuzeigen, die ein Webbrowser auf einem Pc ohne Probleme handhabt. Als die sichersten Dateiformate haben wir Png und Jpg für Bilder und Gif für Animationen auserkoren. Wir haben lange versucht die Animationen als Video zu kodieren. Allerdings bemerkten wir nur geringe Einsparungen in der Dateigröße und stellten gleichzeitig Anzeigeprobleme fest.
+
 \subsubsection{Schulhompage} % AuVi Schnittstelle
-Da wir ein Projekt des Schulzentrum Kühlungsborns sind (\link{http://www.schulzentrum-kborn.de}) sind wir auf dessen Seite unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen \cite{szkb}. Dort sind wir unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden. Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte, richteten wir eine eigene Seite auf unserem Server ein. Diese ist unter \textit{http://sys.tibyte.net/public/} 
+Da wir ein Projekt des Schulzentrum Kühlungsborns sind (\link{http://www.schulzentrum-kborn.de}) sind wir auf dessen Seite unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen \cite{szkb}. Dort sind wir unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden. Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte, richteten wir eine eigene Seite auf unserem Server ein. Diese ist unter \textit{http://sys.tibyte.net/public/}
 % TODO: wenn neue Domain hier eintragen! %
 für alle zu erreichen. Diese Seite soll nicht die Ergebnisse unseres AuVi Programms widerspiegeln sondern dient als Webpräsenz des Projektes.
+
 \subsection{Szenario} % AuVi
 Wir werden nun Beispiele angeben, wie unser Programm genutzt werden kann. Es gibt darüber hinaus unendlich viele Möglichkeiten aus dem Programm individuellen Nutzen zu ziehen.
+
 \subsubsection{Frühwarnung} % AuVi Szenario
 % Nach dem Ampel System eigene Parameter die Gefährdung darstellen markieren. Z.B. Segler mit Windgeschwindigkeit auf Seelevel, Segelflieger mit Windgeschwindigkeit und Richtung auf x-Meter Höhe. Allgemeiner Arbeiter mit Temperatur.
 Das von uns entwickelte System kann verwendet werden um wetterbedingte Gefahrensituationen frühzeitig zu erkennen. Anhand der globalen Datenquellen und dem Hintergrund unseres Systems ist es einem Nutzer möglich für seinen Ort selbst die Parameter zu wählen die für Ihn eine Gefährdung darstellen.\\
 Es ist uns wichtig, dass unsere Visualisierung keine Laien abschreckt, deshalb haben wir uns entschieden die Frühwarnung in Form eines Ampelsystems an den Nutzer zu bringen. Dieser kann bei Interesse an der Frühwarnfunktionalität eine Spanne angeben, in der der entsprechende Parameter sicher ist (grün), gefährlich wird (gelb) oder gefährlich ist (rot). Diese sehr visuelle Form soll dabei auf einem Blick ermöglichen die Wetterlage abzuschätzen.\\
 Für detaillierte Auswertungen bieten wir andere Anzeigeformate an.
+
 \subsubsection{Exotische Orte} % AuVi Szenario
 Ob mitten im Ozean oder in der Wüste, unser Programm liefert Prognosen für jeden Ort. Wir benötigen nur die dazugehörigen Koordinaten. Die Genauigkeit ist von der Zeitspanne und der Entfernung zur physikalischen Messstation abhängig. Je weiter das Wetterereignis in der Zukunft liegt, desto geringer ist die Genauigkeit. Die Genauigkeit steigt, wenn sich eine Messstation im näheren Umfeld befindet.
+
 \subsubsection{Wissenschaft} % AuVi Szenario
 Wissenschaftler können von uns bereitgestellte Parameter kombinieren und sich so neben allgemein komplexeren meteorologischen Daten auch besonders interessante meteorologische Ereignisse grafisch darstellen lassen. Wenn jemand zum Beispiel Zusammenhänge zwischen der Ozonschicht und der Temperatur erforscht, kann er sich eine Grafik ausgeben lasse, die ihm diese beiden Parameter darstellt.
 % Dr. Eixmann fragen, was man sich wissenschaftlich visualisieren könnte
 % TODO: Grafik: Ozon/Temperatur o.ä.
+
 \subsubsection{Anpassung} % AuVi Szenario
 Wie zuvor genannt kann der Nutzer eigene Muster einstellen und so das Programm erweitern.
 % TODO: Grafik: Tabelle im Programm, Text als Datei.
 % Inhalte für die besondere Lerleistung
+
 \subsection{Öffentlichkeitsarbeit} % AuVi
 %Messen, Vorträge, Dokumentation, Poster
 Um unsere Arbeit zu präsentieren, entstanden im Laufe des Projekts mehrere Poster. Anfangs designten wir diese in PowerPoint, sind dann allerdings auf Gimp umgestiegen, da sich das für unsere Arbeit vorteilhafter gestaltete. Auf den Postern war meist zuerst eine kleine Einführung in das Projekt. Danach schloss sich eine nähere Erläuterungen desselben an. Um das Poster für den Betrachter attraktiver und anschaulicher zu machen, stellten wir einige Themen in grafischer Form dar und veranschaulichten unsere Ergebnisse mit Beispielgrafiken. \\
 Häufig wurde auch eine schriftliche Erläuterung des Projekts gefordert, in der alles ausführlich erklärt wird. Diese Dokumentation des Projekts schrieben wir in \LaTeX . Auch in diesen Dokumentationen wurden Übersichten und Grafiken als Anschauungsmaterial beigefügt und nötigenfalls näher erläutert.\\
 Solche Dokumentationen und Poster kamen zum Beispiel bei den Landeswettbewerben \jf in Rostock (Mecklenburg Vorpommern) zur Anwendung. Bei diesem Wettbewerb werden aus dem gesamten Bundesland Projekte aus verschiedenen Fachgebieten präsentiert. Es wird unterteilt in Arbeitswelt, Biologie, Chemie, Mathematik/Informatik, Geo- und Raumwissenschaften und Technik. Die jeweils Erstplatzierten in jedem Bereich qualifizieren sich für den darauffolgenden Bundeswettbewerb. Am Landeswettbewerb nahmen wir erstmalig 2013 teil. Allerdings hatten wir uns erst kurz vorher zusammengefunden, sodass wir das Projekt unserer Vorgänger vorstellten. Wir nahmen am Wettbewerb teil um erste Erfahrungen zu sammeln und uns darüber klar zu werden, wo wir einmal hin wollen. Im darauf folgenden Jahr erreichten wir mit unserem Projekt ,,Auvi - Automatisierte Visualisierung von Wetterstations- und Wetterprognosedaten'' den zweiten Platz in der Kategorie Geo- und Raumwissenschaften. Wir arbeiteten weiter an unserem Projekt und im Jahr 2015 gewannen wir den Landeswettbewerb sogar mit dem Projekt ,,AuVi - Automatisierte Visualisierung von meteorologischen Daten'' und qualifizierten uns so für den Bundeswettbewerb.\\
 Wir nahmen auch an weiteren Veranstaltungen teil, bei denen wir unser Projekt vorstellten. Dazu gehört zum Beispiel der IHK-Schulpreis. Im Jahr 2014 bewarb sich unsere Schule mit dem Projekt CampusPro. Wir durften zusammen mit Vertretern aus anderen Projekten unsere Schule bei dieser Veranstaltung vertreten. Im Jahr darauf nahmen wir wieder daran teil. Diesmal allerdings mit unserem Projekt an sich.\\ An unserer Schule wird die Möglichkeit geboten durch umfassende Projektarbeit ein IHK-Zertifikat zu erlangen. Um dieses zu erlangen werden Vorträge gehalten, in denen das jeweilige Projekt präsentiert wird. Im Jahr 2014 eröffneten wir solch eine Vortragsveranstaltung, indem wir kurz unser neues Projekt vorstellten. Im Jahr 2016 werden wir uns dann selbst um ein IHK-Zertifikat bemühen.
+
 \section{Weather Monitoring System}
 % wms.viwetter.de
 % Was ist WMS BEGIN
 Das Weather Monitoring System (kurz WMS) beschreibt eine Reihe von Bildschirmen die verteilt in Kühlungsborn Grafiken eines zentralen Servers anzeigen sollen. Diese Grafiken enthalten generelle Informationen über Kühlungsborn, sowie Wetterdaten und Wetterprognosen. Im Schulzentrum Kühlungsborn findet man eine weitere Anwendung des WMS. Das Foyer.
 % Was ist WMS ENDE
+
 \subsection{Konzept} % WMS
 % Was war unsere Aufgabe
 Schüler sollen in der Lage sein die von ihnen in der Projektarbeit erzeugten Grafiken über ein möglichst einfaches Interface auf einen Server zu laden. Sie sollen anschließend die Bilder ersetzen bzw. löschen können. Damit die Serveradministrator, in diesem Fall Swenja Wagner, Markus Becker und Dr. Eixmann, bestimmen können wer für welchen Ordner Grafiken hochladen und einbetten kann ist der Zugriff auf die Dateimanagementfunktion nur über ein Benutzerkonto möglich. Es können von jedem Administrator nach Bedarf neue Konten erstellt werden.
+
 \subsection{Interface} % WMS
 Nachdem ein Nutzer die Einlogroutine durchgeführt hat wird ihm die Struktur der Daten nach Anzeigeindex geordnet angezeigt.
+
 \subsection{Erreichbarkeit} % WMS
+
 \subsection{Sicherheit} % WMS
 Da dieses System an öffentlichen Orten Anwendung finden soll, muss gewährleistet sein, dass auf den Anzeigegeräten nur Daten angezeigt werden, die von autorisierten Personen ausgewählt worden. Außerdem soll der Service nicht ohne unsere Erlaubnis und Wissen aufrufbar sein, deshalb haben wir ein Accountsystem implementiert. Da die Client PC's automatisiert starten und gleich die richtigen Daten anzeigen sollen, mussten wir ein Protokoll entwickeln, welches sicher ist, aber einem Rechner ermöglicht sich selbst einzuloggen.
 
 \section{Makanya}
+
 \subsection{Hintergrund} % Makanya
 Der Hintergrund des Makanya.com Projektes ist eine Partnerschaft zwischen der Kirchengemeinde Kühlungsborn und Tansania, sowie der Partnerschaft zwischen der Kirchengemeinde und dem Schulzentrum Kühlungsborns. Der Pastor Kühlungsborns %TODO: Name Einfügen%
-suchte den Kontakt zum \jf Team über 
+suchte den Kontakt zum \jf Team über
+
 \subsection{Methodik} % Makanya
+
 \subsection{Ergebnis} % Makanya
+
 
 \newpage
 \printbibliography
