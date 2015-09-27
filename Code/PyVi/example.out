@@ -1,0 +1,216 @@
+This is Python-AuVi Version: 1.0
+load: locals.json
+load: locals_param.json
+load: areas_param.json
+load: locals.json
+load: locals_param.json
+load: areas_param.json
+Berlin t2m grads
+Berlin ps grads
+Berlin slp grads
+Berlin tql grads
+Berlin t2m_tql grads
+Brasilia t2m grads
+Brasilia ps grads
+Brasilia slp grads
+Brasilia tql grads
+Brasilia t2m_tql grads
+Kopenhagen t2m grads
+Kopenhagen ps grads
+Kopenhagen slp grads
+Kopenhagen tql grads
+Kopenhagen t2m_tql grads
+Kuehlungsborn t2m grads
+Kuehlungsborn ps grads
+Kuehlungsborn slp grads
+Kuehlungsborn tql grads
+Kuehlungsborn t2m_tql grads
+London t2m grads
+London ps grads
+London slp grads
+London tql grads
+London t2m_tql grads
+Mexiko-Stadt t2m grads
+Mexiko-Stadt ps grads
+Mexiko-Stadt slp grads
+Mexiko-Stadt tql grads
+Mexiko-Stadt t2m_tql grads
+NewYork t2m grads
+NewYork ps grads
+NewYork slp grads
+NewYork tql grads
+NewYork t2m_tql grads
+Oslo t2m grads
+Oslo ps grads
+Oslo slp grads
+Oslo tql grads
+Oslo t2m_tql grads
+Paris t2m grads
+Paris ps grads
+Paris slp grads
+Paris tql grads
+Paris t2m_tql grads
+Peking t2m grads
+Peking ps grads
+Peking slp grads
+Peking tql grads
+Peking t2m_tql grads
+Rostock t2m grads
+Rostock ps grads
+Rostock slp grads
+Rostock tql grads
+Rostock t2m_tql grads
+Europa t2m grads
+Europa ps grads
+Europa slp grads
+Europa tql grads
+Europa t2m_tql grads
+Welt t2m grads
+Welt ps grads
+Welt slp grads
+Welt tql grads
+Welt t2m_tql grads
+Berlin t2m
+Brasilia t2m
+Kopenhagen t2m
+Kuehlungsborn t2m
+London t2m
+Mexiko-Stadt t2m
+NewYork t2m
+Oslo t2m
+Paris t2m
+Peking t2m
+Rostock t2m
+Europa t2m
+Welt t2m
+Berlin ps
+Brasilia ps
+Kopenhagen ps
+Kuehlungsborn ps
+London ps
+Mexiko-Stadt ps
+NewYork ps
+Oslo ps
+Paris ps
+Peking ps
+Rostock ps
+Europa ps
+Welt ps
+Berlin slp
+Brasilia slp
+Kopenhagen slp
+Kuehlungsborn slp
+London slp
+Mexiko-Stadt slp
+NewYork slp
+Oslo slp
+Paris slp
+Peking slp
+Rostock slp
+Europa slp
+Welt slp
+Berlin tql
+Brasilia tql
+Kopenhagen tql
+Kuehlungsborn tql
+London tql
+Mexiko-Stadt tql
+NewYork tql
+Oslo tql
+Paris tql
+Peking tql
+Rostock tql
+Europa tql
+Welt tql
+Berlin to3
+Brasilia to3
+Kopenhagen to3
+Kuehlungsborn to3
+London to3
+Mexiko-Stadt to3
+NewYork to3
+Oslo to3
+Paris to3
+Peking to3
+Rostock to3
+Europa to3
+Welt to3
+load: locals.json
+load: areas_param.json
+convert Berlin t2m
+convert Berlin ps
+convert Berlin slp
+convert Berlin tql
+convert Berlin to3
+load: areas_param.json
+convert Brasilia t2m
+convert Brasilia ps
+convert Brasilia slp
+convert Brasilia tql
+convert Brasilia to3
+load: areas_param.json
+convert Kopenhagen t2m
+convert Kopenhagen ps
+convert Kopenhagen slp
+convert Kopenhagen tql
+convert Kopenhagen to3
+load: areas_param.json
+convert Kuehlungsborn t2m
+convert Kuehlungsborn ps
+convert Kuehlungsborn slp
+convert Kuehlungsborn tql
+convert Kuehlungsborn to3
+load: areas_param.json
+convert London t2m
+convert London ps
+convert London slp
+convert London tql
+convert London to3
+load: areas_param.json
+convert Mexiko-Stadt t2m
+convert Mexiko-Stadt ps
+convert Mexiko-Stadt slp
+convert Mexiko-Stadt tql
+convert Mexiko-Stadt to3
+load: areas_param.json
+convert NewYork t2m
+convert NewYork ps
+convert NewYork slp
+convert NewYork tql
+convert NewYork to3
+load: areas_param.json
+convert Oslo t2m
+convert Oslo ps
+convert Oslo slp
+convert Oslo tql
+convert Oslo to3
+load: areas_param.json
+convert Paris t2m
+convert Paris ps
+convert Paris slp
+convert Paris tql
+convert Paris to3
+load: areas_param.json
+convert Peking t2m
+convert Peking ps
+convert Peking slp
+convert Peking tql
+convert Peking to3
+load: areas_param.json
+convert Rostock t2m
+convert Rostock ps
+convert Rostock slp
+convert Rostock tql
+convert Rostock to3
+load: areas_param.json
+convert Europa t2m
+convert Europa ps
+convert Europa slp
+convert Europa tql
+convert Europa to3
+load: areas_param.json
+convert Welt t2m
+convert Welt ps
+convert Welt slp
+convert Welt tql
+convert Welt to3
