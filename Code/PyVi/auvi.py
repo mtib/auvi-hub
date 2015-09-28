@@ -37,7 +37,7 @@ def run():
 			print location[0] + " " + para[1]
 			grads.area(gradsplot, outdir, location[0], location[1], location[2], location[3], location[4], para[0], para[1], para[2], auvidir+"grads/"+para[4])
 	filemanager.convertToGifs()
-    filemanager.convertGifToMp4(3,1,1)
+    filemanager.convertGifToMp4(6,1,1)
 	filemanager.moveOutputToWeb()
 
 def greet():

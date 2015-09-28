@@ -75,7 +75,7 @@ def convertGifToMp4(framerate, x, y, delete=False):
 	for l in getLoc():
 		for p in getArePara():
 			print "ffmpeg (gif to mp4) " + l[0] + " " + p[1]
-			os.system("ffmpeg -y -r "+ str(framerate) + " -i "+ getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] + "/" + p[1] + ".gif "+ getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] +"/"+ p[1] +".mp4")
+			os.system("ffmpeg -y -v 8 -r "+ str(framerate) + " -i "+ getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] + "/" + p[1] + ".gif "+ getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] +"/"+ p[1] +".mp4")
 			if delete:
 				os.system("rm "+ getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] + "/" + p[1] + ".gif")
 
