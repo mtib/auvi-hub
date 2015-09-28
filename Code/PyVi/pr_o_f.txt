@@ -1,0 +1,5 @@
+file 'output/Berlin/t2m_tql/t2m_tql_last.jpg'
+file 'output/Rostock/t2m_tql/t2m_tql_last.jpg'
+file 'output/London/t2m/t2m_32.jpg'
+file 'output/London/tql/tql_32.jpg'
+file 'output/Peking/ps/ps_72.jpg'

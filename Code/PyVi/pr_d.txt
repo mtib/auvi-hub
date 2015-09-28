@@ -1,0 +1,6 @@
+file 'web/Welt/plot/t2m/t2m.mp4'
+file 'web/Welt/plot/tql/tql.mp4'
+file 'web/Europa/plot/ps/ps.mp4'
+file 'web/Rostock/plot/ps/ps.mp4'
+file 'web/Mexiko-Stadt/plot/tql/tql.mp4'
+file 'web/Welt/plot/to3/to3.mp4'
