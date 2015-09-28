@@ -68,9 +68,16 @@ def moveOutputToWeb(delete=True):
 def convertToGifs():
 	for l in getLoc():
 		for p in getArePara():
-			print "convert " + l[0] + " " + p[1]
+			print "convert (png to gif) " + l[0] + " " + p[1]
 			os.system("convert -delay 20 "+ getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] + "/*.jpg "+ getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] +"/"+ p[1] +".gif"  + " >/dev/null 2>/dev/null")
 
+def convertGifToMp4(framerate, x, y, delete=False):
+	for l in getLoc():
+		for p in getArePara():
+			print "ffmpeg (gif to mp4) " + l[0] + " " + p[1]
+			os.system("ffmpeg -y -r "+ str(framerate) + " -i "+ getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] + "/" + p[1] + ".gif "+ getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] +"/"+ p[1] +".mp4")
+			if delete:
+				os.system("rm "+ getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] + "/" + p[1] + ".gif")
 
 def printOutputDirs():
 	for folder in getOutputDirs():
