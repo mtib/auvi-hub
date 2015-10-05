@@ -181,7 +181,7 @@ Im Folgenden wollen wir Ihnen beschreiben wie die Projektarbeit und Entwicklung 
 Insofern keine anderen Informationen geben sind, gilt diese Arbeitsweise auch in allen anderen Projektteilen. \\
 Die Arbeit an diesem Projekt verlangte große Kooperation von den Projektteilnehmern. Treffen wurden geplant und üblicherweise auf den Dienstag Nachmittag gelegt. Doch reichten zwei bis drei Stunden in der Woche nicht aus um das Projekt zu bearbeiten. Viele Arbeitsstunden mussten von zu hause erledigt werden.\\
 Im Winter des Jahres 2014 absolvierten wir ein Schülerpraktikum am Leibnitz Institut für Atmoshpärenphysik. % todo: quelle
-Dort nutzten wir die Möglichkeit um mit anderen dort arbeitenden Wissenschaftlern über unser Projekt zu reden. Hier entstand die erste lauffähige Version unseres Programmes. Außerdem entwarfen wir mehrere Poster.
+Dort nutzten wir die Möglichkeit um mit anderen dort arbeitenden Wissenschaftlern über unser Projekt zu reden. Hier entstand die erste lauffähige Version unseres Programmes. Außerdem entwarfen wir mehrere Poster für den \jf Wettbewerb. 
 
 \subsubsection{Programmierung}
 Die umfangreichste Aufgabe die wir in unserer Projektarbeit bewältigten war die Programmierung. Da wir uns in Punkt \ref{sec:ent}  schon entschieden haben in einer Linux Umgebung zu arbeiten, mussten wir auch die Programmiersprachen und sowie IDE's so wählen, dass sie auch auf Ubuntu oder ähnlichen Distributionen ohne Komplikationen funktionierten.\\
@@ -212,7 +212,16 @@ In der Liste steht der erste String für den Ortsnamen. Der zweite Wert ist ein 
 \lstinputlisting[language=grads,caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)},label= code:plotgengs , firstline=104, lastline=115, firstnumber=104]{\pyvidir grads/plot.gs}
 Im Listing \ref{code:plotgengs} greifen wir auf verschiedene eigene Funktionen zurück um die Konturplotgrafiken zu füllen. Um der Ablauf des Skriptes zu verstehen werden wir die wichtigsten hier nun mit erläutern.
 \lstinputlisting[language=grads,caption={Zeichnen der Achseneinteilung und Legende unter GrADS für Plots (plot.gs)}, firstline=117, lastline=136, firstnumber=117]{\pyvidir grads/plot.gs}
-Die Variable ,,color'' spielt in diesem Teil des Skriptes eine große Rolle.
+Die Variable $color$ spielt in diesem Teil des Skriptes eine große Rolle. Diese Variable ist in diesem Kontext ein Pointer auf ein anderes GrADS Skript, welches die Farbdefinitionen enthält. Dieses Farbscript lässt sich leicht vom Computer nach den Eingaben eines Nutzers erzeugen. 
+\lstinputlisting[language=grads,firstline=8, lastline=28,caption={Beispiel Farbdefinition für Temperaturkonturplots (t2m.gs)},label=code:t2mcols]{\pyvidir grads/t2m.gs}
+Im Listing \ref{code:t2mcols} wird die Funktion gezeigt die bestimmten Zahlen eine Farbe zuweist. Diese Farben sind im RGB Format codiert. Die Definition ist so zu lesen:
+
+\begin{lstlisting}[language=grads]
+	'set rgb <num> <rot> <gruen> <blau>'
+\end{lstlisting}
+
+Die Farbwerte sind in einem Intervall von $0$ gar nicht vorhanden bis $255$ voller Kanal. Um diese Farbwerte dann zu nutzen müssen diese noch den Wetterdaten zugewiesen werden. Dieses geschieht unabhängig von den Einheiten im selben Script. Auch hier kann der Text leicht von einem Computer generiert werden.\footnote{Wenn wir davon sprechen, dass Daten vom Computer generiert werden ist gemeint, dass ein Nutzer der Website oder App seine Vorlieben mithilfe einer HTML-Form auswählt und von diesen Werten im Hintergrund eine Datei erzeugt.}
+
 
 \subsubsection*{Webseite}
 
