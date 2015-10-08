@@ -53,6 +53,7 @@ def error(message, prints=True):
     l = log("ERROR", message)
     if prints:
         print(l)
+    return l
 
 if __name__ == '__main__':
     main()
