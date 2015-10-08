@@ -127,7 +127,6 @@ Um Verwechslungen zu verhindern benennen wir das Programm, welches wir unter AuV
 \subsection{Meteorologie} % AuVi
 
 \subsubsection{Prognosetheorie} % AuVi Meteorologie
-% TODO: Was ist eine Prognose in der Meteorologie?
 Die Meteorologie gehört zu den Naturwissenschaften. Sie liefert die Voraussetzungen um eine Wettervorhersage erstellen zu können. Unter einer Wetterprognose versteht man die Vorhersage eines Zustands der Atmosphäre zu einem bestimmten Zeitpunkt an einem bestimmten Ort oder in einem bestimmten Gebiet. Es wird nicht nur das Wetter in Bodennähe betrachtet, sondern auch Wettererscheinungen in höheren Schichten der  Erdatmosphäre.
 \\
 Das Wetter lässt sich durch entsprechende Naturgesetze beschreiben. Das ist für die Prognose essentiell wichtig. Der Grundgedanke einer solchen Prognose besteht darin, aus einem bereits vergangenen und dem aktuellen Zustand der Atmosphäre einen Zustand in der Zukunft abzuleiten. Dazu werden die bekannten physikalischen Regeln angewendet. In mathematischer Hinsicht werden diese physikalischen Regeln von nichtlinearen Gleichungen beschrieben. Das bedeutet, dass bereits die kleinste Änderung im Ausgangszustand das Ergebnis der Rechnung relativ groß verändern kann.%[1]
@@ -162,9 +161,11 @@ Diese Daten sind für uns allerdings nicht relevant, weil sie in der Vergangenhe
 Da diese Quelle sich auf lange Zeit für uns als zu kostspielig herausgestellt hätte, und auch die Datenmenge nicht für jeden Punkt der Erde definiert ist, war für uns frühzeitig klar, dass wir uns eine alternative Quelle suchen mussten.
 
 \subsubsection*{NOAA Global Forecast System} % AuVi Datenquellen
-% TODO: Wir geben an was das GFS bietet und warum wir es als Hauptdatenquelle verwenden.
-% TODO: Grafik: Diagramm der Genauigkeit
-Das Global Forecast System (GFS)  ist ein Modell, das mathematisch Parameter errechnet.Es ist also ein numerisches Vorhersagemodell. Die dazu benötigten Daten bezieht es aus einem Netz von Wetterstationen, die sowohl an Land als auch im Wasser und in der Luft Messungen durchführen. Mit diesen gemessenen Daten werden mithilfe von geophysikalischen Gesetzen weitere Daten errechnet. So wird in einem Abstand von 13,5km je ein Wert ermittelt. Diese Daten werden als große Datensätze kostenfrei auf der Webseite \link{http://mag.ncep.noaa.gov/} \cite{ncep}  zur Verfügung gestellt.
+Das Global Forecast System (GFS)  ist ein Modell, das mathematisch Parameter errechnet.Es ist also ein numerisches Vorhersagemodell. Die dazu benötigten Daten bezieht es aus einem Netz von Wetterstationen, die sowohl an Land als auch im Wasser und in der Luft Messungen durchführen. Mit diesen gemessenen Daten werden mithilfe von geophysikalischen Gesetzen weitere Daten errechnet. So wird in einem Abstand von 13,5km je ein Wert ermittelt. Diese Daten werden als große Datensätze kostenfrei auf der Webseite \link{http://mag.ncep.noaa.gov/} \cite{ncep}  zur Verfügung gestellt.\\
+Im Verlauf unserer Arbeit verglichen wir verschiedene Quellen. Auch wenn wir die Möglichkeit haben unter Angabe des Links mit einer Einstellung eine andere Quelle zu benutzen haben wir uns für das GFS als Haupt- und Standartquelle entschieden. Das GFS ist zuverlässig und gut dokumentiert, was uns die Einarbeitung erleichterte. Zudem bietet NOAA verschiedenste Varianten des GFS-Models an, somit können wir stark mitbestimmen welches Datenformat wir benutzen. Die Daten liegen in verschiedenen zeitlichen und räumlichen Auflösungen vor.
+% TODO Auflösungen heraussuchen http://www.nco.ncep.noaa.gov/pmb/products/gfs/
+% TODO Dokumentation Formate, wir nutzen GRIB2 (http)
+% TODO Diagramm der Genauigkeit
 
 \subsubsection{Datenverfügbarkeit} % AuVi Datenquellen
 Wie weit in die Zukunft können die Quellen schauen. Wodurch sind sie begrenzt, Wie oft muss man die Daten generieren und abrufen?
@@ -227,7 +228,7 @@ Die Farbwerte sind in einem Intervall von $0$ gar nicht vorhanden bis $255$ voll
 Das Front-End unserer Arbeit ist eine Website\footnote{Diese Website kann auch in eine App gepackt werden, zur veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple}. Die Website ist programmiert in HTML (Hyper Text Markup Language), PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript. Als Webserver benutzen wir Apache2 \cite{php} \cite{apache} \\
 
 \subsubsection{genutzte Mittel} % AuVi Entwicklung
-Website, Server, ...
+% Website, Server, ...
 
 \subsubsection{Servertechnik} % AuVi Entwicklung
 Beschreibung Architektur, Ordnerstruktur
@@ -242,8 +243,7 @@ Da wir unsere erzeugten Grafiken auf einer Website und App darstellen wollen mü
 Außerdem sind Mobiltelephone nicht in der Lage alle Dateiformate anzuzeigen, die ein Webbrowser auf einem Pc ohne Probleme handhabt. Als die sichersten Dateiformate haben wir Png und Jpg für Bilder und Gif für Animationen auserkoren. Wir haben lange versucht die Animationen als Video zu kodieren. Allerdings bemerkten wir nur geringe Einsparungen in der Dateigröße und stellten gleichzeitig Anzeigeprobleme fest.
 
 \subsubsection{Schulhompage} % AuVi Schnittstelle
-Da wir ein Projekt des Schulzentrum Kühlungsborns sind (\link{http://www.schulzentrum-kborn.de}) sind wir auf dessen Seite unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen \cite{szkb}. Dort sind wir unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden. Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte, richteten wir eine eigene Seite auf unserem Server ein. Diese ist unter \textit{http://sys.tibyte.net/public/}
-% TODO: wenn neue Domain hier eintragen! %
+Da wir ein Projekt des Schulzentrum Kühlungsborns sind (\link{http://www.schulzentrum-kborn.de}) sind wir auf dessen Seite unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen \cite{szkb}. Dort sind wir unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden. Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte, richteten wir eine eigene Seite auf unserem Server ein. Diese ist unter \link{http://team.viwetter.de}
 für alle zu erreichen. Diese Seite soll nicht die Ergebnisse unseres AuVi Programms widerspiegeln sondern dient als Webpräsenz des Projektes.
 
 \subsection{Szenario} % AuVi
@@ -261,11 +261,11 @@ Ob mitten im Ozean oder in der Wüste, unser Programm liefert Prognosen für jed
 \subsubsection{Wissenschaft} % AuVi Szenario
 Wissenschaftler können von uns bereitgestellte Parameter kombinieren und sich so neben allgemein komplexeren meteorologischen Daten auch besonders interessante meteorologische Ereignisse grafisch darstellen lassen. Wenn jemand zum Beispiel Zusammenhänge zwischen der Ozonschicht und der Temperatur erforscht, kann er sich eine Grafik ausgeben lasse, die ihm diese beiden Parameter darstellt.
 % Dr. Eixmann fragen, was man sich wissenschaftlich visualisieren könnte
-% TODO: Grafik: Ozon/Temperatur o.ä.
+% TODO Plot einbinden
 
 \subsubsection{Anpassung} % AuVi Szenario
 Wie zuvor genannt kann der Nutzer eigene Muster einstellen und so das Programm erweitern.
-% TODO: Grafik: Tabelle im Programm, Text als Datei.
+% TODO Verschiede Visualisierungen der selben Daten
 % Inhalte für die besondere Lerleistung
 
 \subsection{Öffentlichkeitsarbeit} % AuVi
@@ -305,11 +305,17 @@ Da dieses System an öffentlichen Orten Anwendung finden soll, muss gewährleist
 \section{Makanya}
 
 \subsection{Hintergrund} % Makanya
-Der Hintergrund des Makanya.com Projektes ist eine Partnerschaft zwischen der Kirchengemeinde Kühlungsborn und Tansania, sowie der Partnerschaft zwischen der Kirchengemeinde und dem Schulzentrum Kühlungsborns. Der Pastor Kühlungsborns %TODO: Name Einfügen%
-suchte den Kontakt zum \jf Team über
+Der Hintergrund des Makanya.com Projektes ist eine Partnerschaft zwischen der Kirchengemeinde Kühlungsborn und Tansania, sowie der Partnerschaft zwischen der Kirchengemeinde und dem Schulzentrum Kühlungsborns. Der Pastor Kühlungsborns, 
+% FIXME Name des Pastors:
+,suchte den Kontakt zum \jf Team über das Schulzentrum.
+% Server: strato.de
+% Sprache: Deutsch, Englisch, Zusammenarbeit (Dolmetschering: Frau Wieck)
+% Programmierung: PHP, HTML, MySQL
 
 \subsection{Methodik} % Makanya
-
+% Umgebung: Sublime Text, PHPmyAdmin,
+% Hilfe: php.net (erstes PHP Projekt)
+% Sicherheit: sha25 Schlüssel, TODO Vortrag herauskramen!
 \subsection{Ergebnis} % Makanya
 
 
