@@ -3,7 +3,7 @@
 # logger:
 from fileio import log, error, changeSetting, getSetting
 # TODO connect sqlinterface
-import sqlinterface
+import sqlinterface as sql
 # TODO grads interface or octave?
 # TODO read about source format
 

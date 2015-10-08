@@ -1,7 +1,7 @@
 # use as logger
 # use for settings
 
-import json, os, sys, time
+import json, os, sys, time, os.path
 
 logfile = "auvi.log"
 settingfile = "auvi.json"
@@ -10,12 +10,14 @@ directory = os.path.dirname(sys.argv[0])+"/" if len(os.path.dirname(sys.argv[0])
 def getSettingObj():
     try:
         f = open(directory + settingfile, "r")
-        s = json.loads(f.read)
+        s = json.loads(f.read())
+        log("FILES", "reading existing settings file")
         f.close()
     except:
         f = open(directory + settingfile, "w")
         s = {}
         f.write(json.dumps(s))
+        log("FILES", "creating new settings file")
         f.close()
     return s
 
@@ -34,12 +36,6 @@ def getSetting(key):
     s = getSettingObj()
     return s[key] # raises KeyError
 
-def main():
-    print("generating settings file")
-    s = getSettingObj()
-    s = changeSetting("dir", directory)
-    s = changeSetting("log", logfile)
-
 def log(dest, message):
     g = time.gmtime()
     t = str(g[0])+"/"+str(g[1])+"/"+str(g[2])+" "+str(g[3])+":"+str(g[4])
@@ -55,5 +51,21 @@ def error(message, prints=True):
         print(l)
     return l
 
+def default():
+    sqldir = "SQL/"
+    cities = "cities.sql"
+    changeSetting("sqldir", sqldir)
+    changeSetting("citiessql", cities)
+    changeSetting("log", logfile)
+
+changeSetting("dir", directory)
+
 if __name__ == '__main__':
-    main()
+    default()
+else:
+    try:
+        # Has a filled JSON file
+        s = getSetting("log")
+    except:
+        # Create new JSON file
+        default()

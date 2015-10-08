@@ -3,3 +3,6 @@
 *.log
 octave-workspace
 auvi.json
+SQL
+SQL/
+database.db
