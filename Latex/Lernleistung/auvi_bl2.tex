@@ -73,8 +73,7 @@ backgroundcolor=\color{background},	% Background Color
 
 % Shortcuts
 \newcommand{\jf}{Jugend forscht }
-\newcommand{\vs}{\vsr\ }
-\newcommand{\vsr}{ViSys}
+\newcommand{\vs}{ViSys}
 \newcommand{\mb}{Markus Becker}
 \newcommand{\sw}{Swenja Wagner}
 \newcommand{\re}{Dr. Ronald Eixmann}
@@ -122,7 +121,7 @@ All diese Teilprojekte sind natürlich auch mit Öffentlichkeitsarbeit verbunden
 \section{Auvi}
 
 \subsection{Programm} % AuVi
-Um Verwechslungen zu verhindern benennen wir das Programm, welches wir unter AuVi entwickelt haben ,,\vsr ''. \vs steht für Visualisierung System und ist in verschiedenen Versionen lauffähig. Die Aufgabe von \vs ist es auf eine Datenquelle zuzugreifen und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln. Dabei wird von uns sehr viel Wert darauf gelegt, dass das Erstellen der Grafiken möglichst abstrakt behandelt wird, damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann.
+Um Verwechslungen zu verhindern benennen wir das Programm, welches wir unter AuVi entwickelt haben ,,\vs ''. \vs\ steht für Visualisierung System und ist in verschiedenen Versionen lauffähig. Die Aufgabe von \vs\ ist es auf eine Datenquelle zuzugreifen und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln. Dabei wird von uns sehr viel Wert darauf gelegt, dass das Erstellen der Grafiken möglichst abstrakt behandelt wird, damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann.
 
 \subsection{Meteorologie} % AuVi
 
@@ -186,7 +185,7 @@ Dort nutzten wir die Möglichkeit um mit anderen dort arbeitenden Wissenschaftle
 
 \subsubsection{Programmierung}
 Die umfangreichste Aufgabe die wir in unserer Projektarbeit bewältigten war die Programmierung. Da wir uns in Punkt \ref{sec:ent}  schon entschieden haben in einer Linux Umgebung zu arbeiten, mussten wir auch die Programmiersprachen und sowie IDE's so wählen, dass sie auch auf Ubuntu oder ähnlichen Distributionen ohne Komplikationen funktionierten.\\
-Unser Hauptprogramm, genannt ,,\vsr '' haben wir hauptsächlich in Python (Version 2.7) \cite{python27} geschrieben. Diese Programmiersprache ist in den von uns genutzten Distributionen sogar vorinstalliert und ein allgemeiner Industriestandard.\\
+Unser Hauptprogramm, genannt ,,\vs '' haben wir hauptsächlich in Python (Version 2.7) \cite{python27} geschrieben. Diese Programmiersprache ist in den von uns genutzten Distributionen sogar vorinstalliert und ein allgemeiner Industriestandard.\\
 Nur mit Python kamen wir allerdings auf lange Zeit nicht aus. Wir nutzten noch andere Sprachen um die Entwicklung zu beschleunigen, auch wenn Python für die restlichen Aufgaben auch hätten nutzen können kombinierten wir folgende Programmiersprachen:
 \begin{figure}[H]
 \input{pyvitree.tex}
@@ -195,7 +194,7 @@ Nur mit Python kamen wir allerdings auf lange Zeit nicht aus. Wir nutzten noch a
 \end{figure}
 
 \subsubsection*{Hauptprogramm}
-\lstinputlisting[language=Python,firstline=12, lastline=41,firstnumber=12,caption={,,Mainfunktion'' von \vsr\ (auvi.py)}]{\pyvidir auvi.py}
+\lstinputlisting[language=Python,firstline=12, lastline=41,firstnumber=12,caption={,,Mainfunktion'' von \vs\ (auvi.py)}]{\pyvidir auvi.py}
 \lstinputlisting[language=Python,caption={Konstanten (local.py)},firstline=3,lastline=7,firstnumber=3]{\pyvidir local.py}
 \lstinputlisting[language=Python,caption={Hinzufügen von neuen Orten, Gebieten und Parametern (local.py)},firstline=11,lastline=28,firstnumber=11]{\pyvidir local.py}
 \lstinputlisting[language=Python,caption={Routine zum schreiben von JSON Dateien (local.py)},firstline=30,lastline=41,firstnumber=30]{\pyvidir local.py}
