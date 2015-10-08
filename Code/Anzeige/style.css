@@ -25,7 +25,7 @@ table{
 	height: 100%;
 	/* Überschreiben in JS */
 	width: 100px;
-	vertical-align: top; 
+	vertical-align: top;
 }
 img{
 	width: 50%;
@@ -46,7 +46,7 @@ th{
 	background-color: #DDD;
 }
 #infoholder{
-	vertical-align: top; 
+	vertical-align: top;
 }
 .info{
 	margin: .5em 5% auto 5%;

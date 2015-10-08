@@ -1,15 +1,18 @@
 #!/usr/bin/python
 # This is the main Programm
-# TODO connect logger
+# logger:
+from fileio import log, error, changeSetting, getSetting
 # TODO connect sqlinterface
+import sqlinterface
 # TODO grads interface or octave?
 # TODO read about source format
 
 def main():
-    print("This is PyViDB. Switching from JSON to sqlite3")
+    info()
+    log("log","PyViDb was executed!")
 
 def info():
-    pass
+    print("This is PyViDB. Switching from JSON to sqlite3")
 
 if __name__ == '__main__':
     main()
