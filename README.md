@@ -20,7 +20,10 @@ The start point for our program is [auvi.py](/Code/PyVi/auvi.py).
 You can start the standard routine with:
 
 ```python
-python auvi.py
+# in /Code/PyVi/
+python3 auvi.py
+# or in /Code/PyViDb/
+python auvi.py 
 ```
 
 ## Contact
