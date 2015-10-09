@@ -112,9 +112,11 @@ backgroundcolor=\color{background},	% Background Color
 
 \begin{abstract}
 \jftree
-Mit \textbf{AuVi} bezeichnen wir eine Gruppe von verschiedenen Projekten unter der Leitung von Ronald Eixmann. Die Projektarbeit findet von Markus Becker und Swenja Wagner statt.
+Mit \textbf{AuVi} bezeichnen wir eine Gruppe von verschiedenen Projekten unter der Leitung von Ronald Eixmann.
+Die Projektarbeit findet von Markus Becker und Swenja Wagner statt.
 Unser zentrales Projekt gibt unserer Arbeit ihren Namen. AuVi steht für Automatisierte Visualisierung von meteorologischen Daten, dem Projekt mit dem wir an verschiedensten \jf Wettbewerben teilnahmen.
-Dieses ermöglicht einem Nutzer über eine Website oder App eine Wetterprognose für jeden beliebigen Punkt auf der Erde mit über 50 verschiedenen Parametern abzufragen. Diese Prognose kann bis zu zehn Tage in die Zukunft abgegeben werden.\\
+Dieses ermöglicht einem Nutzer über eine Website oder App eine Wetterprognose für jeden beliebigen Punkt auf der Erde mit über 50 verschiedenen Parametern abzufragen.
+Diese Prognose kann bis zu zehn Tage in die Zukunft abgegeben werden.\\
 Später wurde unsere Projektarbeit um eine Partnerschaft mit Makanya erweitert.
 So entstand Makanya.com, eine Website um einen Austausch zwischen Schülern aus Deutschland und Tansania zu ermöglichen.\\
 Der letzte teil unseres Projektes ist das Weather Monitoring System rund um Kühlungsborn.
@@ -149,9 +151,11 @@ Das bedeutet, dass bereits die kleinste Änderung im Ausgangszustand das Ergebni
 Was muss man über die aktuelle Situation wissen um per Hand eine Prognose zu erzeugen?
 Es gibt einen Unterschied zwischen der manuellen oder auch synoptischen Wettervorhersage und einer numerischen Wettervorhersage.
 In der synoptischen Meteorologie ist ein System aus Beobachtungsstationen nötig, die gleichzeitig Wetterbeobachtungen nach einem einheitlichen Verfahren durchführen.
-Die Stationen messen unter anderem Parameter wie: Luftdruck, Luftdruckänderung während der letzten drei Stunden, Lufttemperatur, Windrichtung, Windgeschwindigkeit, Taupunkt, Wolkenart, Höhe der Wolkenuntergrenze, Bedeckungsgrad, Sichtweite, Niederschlagsmenge und Niederschlagsart.
+Die Stationen messen unter anderem Parameter wie:
+Luftdruck, Luftdruckänderung während der letzten drei Stunden, Lufttemperatur, Windrichtung, Windgeschwindigkeit, Taupunkt, Wolkenart, Höhe der Wolkenuntergrenze, Bedeckungsgrad, Sichtweite, Niederschlagsmenge und Niederschlagsart.
 Es wird zwischen Bodenbeobachtungsstationen, die Daten in der Nähe der Bodenoberfläche sammeln und aerologischen Beobachtungsstationen, die Daten aus bis zu 30km Höhe liefern unterschieden.
-Es werden auch Daten von mobilen Messstationen, wie Bojen und Flugzeugen verwendet. Wettersatelliten und Fernerkundungssystem (wie Wetterradar, Blitzortungssysteme, LIDAR, SODAR) könne auch als Datenquelle dienen.
+Es werden auch Daten von mobilen Messstationen, wie Bojen und Flugzeugen verwendet.
+Wettersatelliten und Fernerkundungssystem (wie Wetterradar, Blitzortungssysteme, LIDAR, SODAR) können auch als Datenquelle dienen.
 Die gesammelten Daten, die den Wetterzustand zu einem bestimmten Zeitpunkt beschreiben, werden in Wetterkarten eingetragen.
 Mit Hilfe der eingetragenen Daten werden die Wetterverhältnisse analysiert und Wettervorhersagen erstellt.
 Zusätzlich dazu werden die gesammelten Daten von numerischen Vorhersagemodellen als Ausgangszustand verwendet. %[2]
@@ -171,7 +175,8 @@ Aufgrund des großen Aufwands die Daten zu errechnen, werden Supercomputer verwe
 
 \subsubsection{Quellenvergleich} % AuVi Datenquellen
 Da wir nun dargestellt haben, dass es für uns nicht möglich ist unsere eigenen Daten zu generieren, zeigen wir nun welche Quellen die benötigten Daten zur Verfügung stellen.
-Der Nutzer kann selbst zwischen den verschiedenen Datenquellen wählen, die angeboten werden. Die angebotenen Datenquellen können über die GUI gewählt werden.
+Der Nutzer kann selbst zwischen den verschiedenen Datenquellen wählen, die angeboten werden.
+Die angebotenen Datenquellen können über die GUI und die Konsole gewählt werden.
 
 Wir werden über eine GUI\footnote{\textit{Graphical User Interface} engl. IT. für grafische Benutzeroberfläche} dem Nutzer anbieten zwischen verschiedenen Datenquellen zu wählen.
 Diese werden wir auch statistisch vergleichen.
@@ -184,21 +189,32 @@ Auswahl NOAA, GFS.\cite{noaa}
 \subsubsection*{Wetterdienst} % AuVi Datenquellen
 % TODO Grafik: Diagramm der Genauigkeit (Dafür Tabelle, Swenja)
 Der Deutsche Wetter Dienst steht unter dem Bundesministerium für Verkehr und digitale Infrastruktur. \cite{bmvi}
-Der DWD bietet ebenfalls Wetterdaten an, die allerdings kostenpflichtig sind. Das Angebot ist unterteilt in ,,Aktuelles Wetter, Vorhersagen'' und ,,Vergangenes Wetter, Klimainfos''.
-Im ersten Bereich gibt es zum Beispiel den Unterpunkt Seewetter. Es wird ein Kurzfrist-Seewetterbericht, Küstenwetter in Zeitreihenform und ein Mittelfrist-Seewetterbericht für 48h für je 2,50 Euro angeboten.
-Wenn man aus dieser Quelle alle zwei Tage eine Wetterprognose bezieht - welche im Parameter stark eingeschränkt ist - belaufen sich die Kosten auf ungefähr $\approx 230$ Euro Diese Wetterdaten können dann zum Beispiel für die Seefahrt genutzt werden. Ein anderer Unterpunkt ist Flugwetter.
-Dort gibt es Einjahresangebote für circa 80 Euro und Lehrfilmreihen für circa 150 Euro. Diese dienen als Dokumentation. Die Nutzer dieser Leistungen sind vermutlich größere Flughäfen.
+Der DWD bietet ebenfalls Wetterdaten an, die allerdings kostenpflichtig sind.
+Das Angebot ist unterteilt in ,,Aktuelles Wetter, Vorhersagen'' und ,,Vergangenes Wetter, Klimainfos''.
+Im ersten Bereich gibt es zum Beispiel den Unterpunkt Seewetter.
+Es wird ein Kurzfrist-Seewetterbericht, Küstenwetter in Zeitreihenform und ein Mittelfrist-Seewetterbericht für 48h für je 2,50 Euro angeboten.
+Wenn man aus dieser Quelle alle zwei Tage eine Wetterprognose bezieht - welche im Parameter stark eingeschränkt ist - belaufen sich die Kosten auf ungefähr $\approx 230$ Euro Diese Wetterdaten können dann zum Beispiel für die Seefahrt genutzt werden.
+Ein anderer Unterpunkt ist Flugwetter.
+Dort gibt es Einjahresangebote für circa 80 Euro und Lehrfilmreihen für circa 150 Euro.
+Diese dienen als Dokumentation.
+Die Nutzer dieser Leistungen sind vermutlich größere Flughäfen.
 Ein weiterer Bereich in dem Jahresabos und Monatsabos angeboten werden, ist Agrarwetter.
-Die Kosten dafür belaufen sich auf 20 bis 120 Euro. Der wohl interessanteste Unterpunkt ist Straßenwetter.
-Da werden einmalige Informationen für allgemeine Wettervorhersagen für Straßen (4,40 Euro), für detaillierte Gebietswettervorhersagen für Straßen (4,40 Euro) und für Straßenwettervorhersagen für eine Stadt (5 Euro) dargeboten. \\
+Die Kosten dafür belaufen sich auf 20 bis 120 Euro.
+Der wohl interessanteste Unterpunkt ist Straßenwetter.
+Da werden einmalige Informationen für allgemeine Wettervorhersagen für Straßen (4,40 Euro),
+für detaillierte Gebietswettervorhersagen für Straßen (4,40 Euro) und für Straßenwettervorhersagen für eine Stadt (5 Euro) dargeboten.\\
 Im zweiten Bereich gibt es die genaueren Eingrenzungen ,,Deutschland - Allgemein'', ,,Deutschland - Speziell'' , ,,Global'' und ,,Geburtstagswetterkarte''.
 \cite{dwd-shop}
-Diese Daten sind für uns allerdings nicht relevant, weil sie in der Vergangenheit liegen. \\
-Da diese Quelle sich auf lange Zeit für uns als zu kostspielig herausgestellt hätte, und auch die Datenmenge nicht für jeden Punkt der Erde definiert ist, war für uns frühzeitig klar, dass wir uns eine alternative Quelle suchen mussten.
+Diese Daten sind für uns allerdings nicht relevant, weil sie in der Vergangenheit liegen.\\
+Da diese Quelle sich auf lange Zeit für uns als zu kostspielig herausgestellt hätte,
+und auch die Datenmenge nicht für jeden Punkt der Erde definiert ist,
+war für uns frühzeitig klar, dass wir uns eine alternative Quelle suchen mussten.
 
 \subsubsection*{NOAA Global Forecast System} % AuVi Datenquellen
-Das Global Forecast System (GFS)  ist ein Modell, das mathematisch Parameter errechnet.Es ist also ein numerisches Vorhersagemodell.
-Die dazu benötigten Daten bezieht es aus einem Netz von Wetterstationen, die sowohl an Land als auch im Wasser und in der Luft Messungen durchführen.
+Das Global Forecast System (GFS)  ist ein Modell, das mathematisch Parameter errechnet.
+Es ist also ein numerisches Vorhersagemodell.
+Die dazu benötigten Daten bezieht es aus einem Netz von Wetterstationen,
+die sowohl an Land als auch im Wasser und in der Luft Messungen durchführen.
 Mit diesen gemessenen Daten werden mithilfe von geophysikalischen Gesetzen weitere Daten errechnet.
 So wird in einem Abstand von 13,5km je ein Wert ermittelt.
 Diese Daten werden als große Datensätze kostenfrei auf der Webseite \link{http://mag.ncep.noaa.gov/} \cite{ncep}  zur Verfügung gestellt.\\
@@ -229,12 +245,14 @@ sofware und hardware
 
 \subsubsection{Methodik} % AuVi Entwicklung
 %wer wann wie wo
-Im Folgenden wollen wir Ihnen beschreiben wie die Projektarbeit und Entwicklung am  und mit dem Projekt stattgefunden hat.
+Im Folgenden wollen wir Ihnen beschreiben wie die Projektarbeit und Entwicklung am und mit dem Projekt stattgefunden hat.
 Insofern keine anderen Informationen gegeben sind, gilt diese Arbeitsweise auch in allen anderen Projektteilen. \\
 Die Arbeit an diesem Projekt verlangte große Kooperation von den Projektteilnehmern.
 Treffen wurden geplant und üblicherweise auf den Dienstag Nachmittag gelegt.
-Bei diesen Treffen wurde dann über neue Fortschritte geredet, damit alle auf dem gleichen Wissensstand sind. Wir haben uns auch über Ideen ausgetauscht und die nächsten Arbeitsschritte geplant.
-Nach dem Austauschen haben wir dann am Projekt weitergearbeitet. Doch reichten zwei bis drei Stunden in der Woche nicht aus um das Projekt zu bearbeiten.
+Bei diesen Treffen wurde dann über neue Fortschritte geredet, damit alle auf dem gleichen Wissensstand sind.
+Wir haben uns auch über Ideen ausgetauscht und die nächsten Arbeitsschritte geplant.
+Nach dem Austauschen haben wir dann am Projekt weitergearbeitet.
+Doch reichten zwei bis drei Stunden in der Woche nicht aus um das Projekt zu bearbeiten.
 Viele Arbeitsstunden mussten von zu hause erledigt werden.\\
 Im Winter des Jahres 2014 absolvierten wir ein Schülerpraktikum am Leibnitz Institut für Atmoshpärenphysik. % todo: quelle
 Dort nutzten wir die Möglichkeit um mit anderen dort arbeitenden Wissenschaftlern über unser Projekt zu reden.
@@ -243,10 +261,14 @@ Außerdem entwarfen wir mehrere Poster für den \jf Wettbewerb.
 
 \subsubsection{Programmierung}
 Die umfangreichste Aufgabe die wir in unserer Projektarbeit bewältigten war die Programmierung.
-Da wir uns in Punkt \ref{sec:ent}  schon entschieden haben in einer Linux Umgebung zu arbeiten, mussten wir auch die Programmiersprachen und sowie IDE's so wählen, dass sie auch auf Ubuntu oder ähnlichen Distributionen ohne Komplikationen funktionierten.\\
-Unser Hauptprogramm, genannt ,,\vs '' haben wir hauptsächlich in Python (Version 2.7) \cite{python27} geschrieben. Diese Programmiersprache ist in den von uns genutzten Distributionen sogar vorinstalliert und ein allgemeiner Industriestandard.\\
+Da wir uns in Punkt \ref{sec:ent}  schon entschieden haben in einer Linux Umgebung zu arbeiten,
+mussten wir auch die Programmiersprachen und sowie IDE's so wählen,
+dass sie auch auf Ubuntu oder ähnlichen Distributionen ohne Komplikationen funktionierten.\\
+Unser Hauptprogramm, genannt ,,\vs '' haben wir hauptsächlich in Python (Version 2.7) \cite{python27} geschrieben.
+Diese Programmiersprache ist in den von uns genutzten Distributionen sogar vorinstalliert und ein allgemeiner Industriestandard.\\
 Nur mit Python kamen wir allerdings auf lange Zeit nicht aus.
-Wir nutzten noch andere Sprachen um die Entwicklung zu beschleunigen, auch wenn Python für die restlichen Aufgaben auch hätten nutzen können kombinierten wir folgende Programmiersprachen:
+Wir nutzten noch andere Sprachen um die Entwicklung zu beschleunigen,
+auch wenn Python für die restlichen Aufgaben auch hätten nutzen können kombinierten wir folgende Programmiersprachen:
 \begin{figure}[H]
 \input{pyvitree.tex}
 \label{fig:pyvi}
@@ -264,30 +286,45 @@ Wir nutzten noch andere Sprachen um die Entwicklung zu beschleunigen, auch wenn 
 \subsubsection*{JSON Definitionen}
 Im folgenden Listing wird die Definition von Ortspunkten
 \footnote{Ortspunkte stehen im Kontrast zur Gebietsdefinition. Gebiete werden durch minimale Breiten- und Höhengrade definiert und besitzen eine Breite und Höhe. Anwendungsbeispiel: Europa, Welt, Asien, ...} gezeigt.
-Diese werden im JSON Format gespeichert. Die Liste kann um beliebig viele andere Orte erweitert werden.
+Diese werden im JSON Format gespeichert.
+Die Liste kann um beliebig viele andere Orte erweitert werden.
 \lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte (locals.json)}]{\pyvidir locals.json}
-In der Liste steht der erste String für den Ortsnamen. Der zweite Wert ist ein Double für den Breitengrad gefolgt vom Längengrad. Da von den Orten auch ein Konturplot erzeugt werden soll wird mit dem 4. Wert abgespeichert wie groß die Übersichtskarte sein soll (In Grad um den Ort). Der letzte Wert zur Definition eines Ortspunktes ist die Zeitdifferenz zur GMT Zeit.
+In der Liste steht der erste String für den Ortsnamen. Der zweite Wert ist ein Double für den Breitengrad gefolgt vom Längengrad.
+Da von den Orten auch ein Konturplot erzeugt werden soll wird mit dem 4. Wert abgespeichert wie groß die Übersichtskarte sein soll (In Grad um den Ort).
+Der letzte Wert zur Definition eines Ortspunktes ist die Zeitdifferenz zur GMT Zeit.
 
 \subsubsection*{GrADS Scripte}
 \lstinputlisting[language=grads,caption={GrADS Routine zum erstellen allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
 \lstinputlisting[language=grads,caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)},label= code:plotgengs , firstline=104, lastline=115, firstnumber=104]{\pyvidir grads/plot.gs}
 In Listing \ref{code:plotgengs} greifen wir auf verschiedene eigene Funktionen zurück um die Konturplotgrafiken zu füllen. Um der Ablauf des Skriptes zu verstehen werden wir die wichtigsten hier nun mit erläutern.
 \lstinputlisting[language=grads,caption={Zeichnen der Achseneinteilung und Legende unter GrADS für Plots (plot.gs)}, firstline=117, lastline=136, firstnumber=117]{\pyvidir grads/plot.gs}
-Die Variable $color$ spielt in diesem Teil des Skriptes eine große Rolle. Diese Variable ist in diesem Kontext ein Pointer auf ein anderes GrADS Skript, welches die Farbdefinitionen enthält. Dieses Farbscript lässt sich leicht vom Computer nach den Eingaben eines Nutzers erzeugen.
+Die Variable $color$ spielt in diesem Teil des Skriptes eine große Rolle.
+Diese Variable ist in diesem Kontext ein Pointer auf ein anderes GrADS Skript,
+welches die Farbdefinitionen enthält.
+Dieses Farbscript lässt sich leicht vom Computer nach den Eingaben eines Nutzers erzeugen.
+% TODO Farbscript ersetzt durch Datenbank
 \lstinputlisting[language=grads,firstline=8, lastline=28,caption={Beispiel Farbdefinition für Temperaturkonturplots (t2m.gs)},label=code:t2mcols]{\pyvidir grads/t2m.gs}
-In Listing \ref{code:t2mcols} wird die Funktion gezeigt die bestimmten Zahlen eine Farbe zuweist. Diese Farben sind im RGB Format codiert. Die Definition ist so zu lesen:
+In Listing \ref{code:t2mcols} wird die Funktion gezeigt die bestimmten Zahlen eine Farbe zuweist.
+Diese Farben sind im RGB Format codiert.
+Die Definition ist so zu lesen:
 
-\begin{lstlisting}[language=grads]
+\begin {lstlisting}[language=grads]
 	'set rgb <num> <rot> <gruen> <blau>'
-\end{lstlisting}
+\end {lstlisting}
 
-Die Farbwerte sind in einem Intervall von $0$ gar nicht vorhanden bis $255$ voller Kanal. Um diese Farbwerte dann zu nutzen müssen diese noch den Wetterdaten zugewiesen werden.
-Dieses geschieht unabhängig von den Einheiten im selben Script. Auch hier kann der Text leicht von einem Computer generiert werden.\footnote{Wenn wir davon sprechen, dass Daten vom Computer generiert werden ist gemeint, dass ein Nutzer der Website oder App seine Vorlieben mithilfe einer HTML-Form auswählt und von diesen Werten im Hintergrund eine Datei erzeugt.}
+Die Farbwerte sind in einem Intervall von $0$ gar nicht vorhanden bis $255$ voller Kanal.
+Um diese Farbwerte dann zu nutzen müssen diese noch den Wetterdaten zugewiesen werden.
+Dieses geschieht unabhängig von den Einheiten im selben Script.
+Auch hier kann der Text leicht von einem Computer generiert werden.
+\footnote{Wenn wir davon sprechen, dass Daten vom Computer generiert werden ist gemeint, dass ein Nutzer der Website oder App seine Vorlieben mithilfe einer HTML-Form auswählt und von diesen Werten im Hintergrund eine Datei erzeugt.}
 
 
 \subsubsection*{Webseite}
-Das Front-End unserer Arbeit ist eine Website\footnote{Diese Website kann auch in eine App gepackt werden, zur Veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple}.
-Die Website ist programmiert in HTML (Hyper Text Markup Language), PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript. Als Webserver benutzen wir Apache2 \cite{php} \cite{apache} \\
+Das Front-End unserer Arbeit ist eine Website
+\footnote{Diese Website kann auch in eine App gepackt werden, zur Veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple}.
+
+Die Website ist programmiert in HTML (Hyper Text Markup Language), PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript.
+Als Webserver benutzen wir Apache2 \cite{php} \cite{apache} \\
 
 \subsubsection{genutzte Mittel} % AuVi Entwicklung
 % Website, Server, ...
@@ -305,43 +342,56 @@ Beschreibung Architektur, Ordnerstruktur
 Die von uns gemacht Website um Ergebnisse anzuzeigen.
 
 \subsubsection{Datenformate} % AuVi Schnittstelle
-Da wir unsere erzeugten Grafiken auf einer Website und App darstellen wollen müssen wir sehr darauf achten, dass die Dateiformate zum einen komprimiert genug sind um heruntergeladen werden zu können und zum anderen noch einen gewissen Qualitätsstandard behalten.\\
-Außerdem sind Mobiltelefone nicht in der Lage alle Dateiformate anzuzeigen, die ein Webbrowser auf einem Computer ohne Probleme handhabt.
+Da wir unsere erzeugten Grafiken auf einer Website und App darstellen wollen müssen wir sehr darauf achten,
+dass die Dateiformate zum einen komprimiert genug sind um heruntergeladen werden zu können und zum anderen noch einen gewissen Qualitätsstandard behalten.\\
+Außerdem sind Mobiltelefone nicht in der Lage alle Dateiformate anzuzeigen,
+die ein Webbrowser auf einem Computer ohne Probleme handhabt.
 Als die sichersten Dateiformate haben wir PNG und JPG für Bilder und GIF für Animationen auserkoren.
-Wir haben lange versucht die Animationen als Video zu kodieren. Allerdings bemerkten wir nur geringe Einsparungen in der Dateigröße und stellten gleichzeitig Anzeigeprobleme fest.
+Wir haben lange versucht die Animationen als Video zu kodieren.
+Allerdings bemerkten wir nur geringe Einsparungen in der Dateigröße und stellten gleichzeitig Anzeigeprobleme fest.
 
 \subsubsection{Schulhompage} % AuVi Schnittstelle
-Da wir ein Projekt des Schulzentrum Kühlungsborns sind (\link{http://www.schulzentrum-kborn.de}) sind wir auf dessen Seite unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen \cite{szkb}. Dort sind wir unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden.
-Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte, richteten wir eine eigene Seite auf unserem Server ein.
+Da wir ein Projekt des Schulzentrum Kühlungsborns sind (\link{http://www.schulzentrum-kborn.de}) sind wir auf dessen Seite unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen \cite{szkb}.
+Dort sind wir unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden.
+Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte,
+richteten wir eine eigene Seite auf unserem Server ein.
 Diese ist unter \link{http://team.viwetter.de}
-für alle zu erreichen. Diese Seite soll nicht die Ergebnisse unseres AuVi Programms widerspiegeln sondern dient als Webpräsenz des Projektes.
+für alle zu erreichen.
+Diese Seite soll nicht die Ergebnisse unseres AuVi Programms widerspiegeln sondern dient als Webpräsenz des Projektes.
 
 \subsection{Szenario} % AuVi
-Wir werden nun Beispiele angeben, wie unser Programm genutzt werden kann. Es gibt darüber hinaus unendlich viele Möglichkeiten aus dem Programm individuellen Nutzen zu ziehen.
+Wir werden nun Beispiele angeben, wie unser Programm genutzt werden kann.
+Es gibt darüber hinaus sehr viele Möglichkeiten aus dem Programm individuellen Nutzen zu ziehen.
 
 \subsubsection{Frühwarnung} % AuVi Szenario
 % Nach dem Ampel System eigene Parameter die Gefährdung darstellen markieren. Z.B. Segler mit Windgeschwindigkeit auf Seelevel, Segelflieger mit Windgeschwindigkeit und Richtung auf x-Meter Höhe. Allgemeiner Arbeiter mit Temperatur.
 Das von uns entwickelte System kann verwendet werden um wetterbedingte Gefahrensituationen frühzeitig zu erkennen.
 Anhand der globalen Datenquellen und dem Hintergrund unseres Systems ist es einem Nutzer möglich für seinen Ort selbst die Parameter zu wählen die für Ihn eine Gefährdung darstellen.\\
-Es ist uns wichtig, dass unsere Visualisierung keine Laien abschreckt, deshalb haben wir uns entschieden die Frühwarnung in Form eines Ampelsystems an den Nutzer zu bringen.
-Dieser kann bei Interesse an der Frühwarnfunktionalität eine Spanne angeben, in der der entsprechende Parameter sicher ist (grün), gefährlich wird (gelb) oder gefährlich ist (rot).
+Es ist uns wichtig, dass unsere Visualisierung keine Laien abschreckt,
+deshalb haben wir uns entschieden die Frühwarnung in Form eines Ampelsystems an den Nutzer zu bringen.
+Dieser kann bei Interesse an der Frühwarnfunktionalität eine Spanne angeben,
+in der der entsprechende Parameter sicher ist (grün), gefährlich wird (gelb) oder gefährlich ist (rot).
 Diese sehr visuelle Form soll dabei auf einem Blick ermöglichen die Wetterlage abzuschätzen.\\
 Für detaillierte Auswertungen bieten wir andere Anzeigeformate an.
 
 \subsubsection{Exotische Orte} % AuVi Szenario
-Ob mitten im Ozean oder in der Wüste, unser Programm liefert Prognosen für jeden Ort. Wir benötigen nur die dazugehörigen Koordinaten.
+Ob mitten im Ozean oder in der Wüste, unser Programm liefert Prognosen für jeden Ort.
+Wir benötigen nur die dazugehörigen Koordinaten.
+% TODO Wie wir an die Daten gelangen
 Die Genauigkeit ist von der Zeitspanne und der Entfernung zur physikalischen Messstation abhängig.
 Je weiter das Wetterereignis in der Zukunft liegt, desto geringer ist die Genauigkeit.
 Die Genauigkeit steigt, wenn sich eine Messstation im näheren Umfeld befindet.
 
 \subsubsection{Wissenschaft} % AuVi Szenario
 Wissenschaftler können von uns bereitgestellte Parameter kombinieren und sich so neben allgemein komplexeren meteorologischen Daten auch besonders interessante meteorologische Ereignisse grafisch darstellen lassen.
-Wenn jemand zum Beispiel Zusammenhänge zwischen der Ozonschicht und der Temperatur erforscht, kann er sich eine Grafik ausgeben lasse, die ihm diese beiden Parameter darstellt.
+Wenn jemand zum Beispiel Zusammenhänge zwischen der Ozonschicht und der Temperatur erforscht,
+kann er sich eine Grafik ausgeben lassen, die ihm diese beiden Parameter darstellt.
 % Dr. Eixmann fragen, was man sich wissenschaftlich visualisieren könnte
 % TODO Plot einbinden
 
 \subsubsection{Anpassung} % AuVi Szenario
-Wie zuvor genannt kann der Nutzer eigene Muster einstellen und so das Programm erweitern. Diese Möglichkeit erlaubt dem Nutzer diesem Service, den wir anbieten, um eigene Funktionen zu erweitern.
+Wie zuvor genannt kann der Nutzer eigene Muster einstellen und so das Programm erweitern.
+Diese Möglichkeit erlaubt dem Nutzer diesem Service, den wir anbieten, um eigene Funktionen zu erweitern.
 Ein Beispiel ist der Segler, der in einem Bestimmten Intervall von Windstärke und Windrichtung am besten seinen Sport ausüben kann.\\
 Der Segler würde sich diese Parameter dann für das Gebiet seiner Interesse plotten lassen und kann dann noch Farben wählen.
 Ähnlich wie das Frühwarnsystem kann er sich nun aber seine eigene Skala der ,,Eignung zum Segeln'' erstellen.
@@ -351,74 +401,116 @@ Der Segler würde sich diese Parameter dann für das Gebiet seiner Interesse plo
 \subsection{Öffentlichkeitsarbeit} % AuVi
 % Messen, Vorträge, Dokumentation, Poster
 Um unsere Arbeit zu präsentieren, entstanden im Laufe des Projekts mehrere Poster.
-Anfangs entwickelten wir diese in PowerPoint, sind dann allerdings auf Gimp umgestiegen, da sich das für unsere Arbeit vorteilhafter gestaltete. Auf den Postern war meist zuerst eine kleine Einführung in das Projekt.
+Anfangs entwickelten wir diese in PowerPoint, sind dann allerdings auf Gimp umgestiegen,
+da sich das für unsere Arbeit vorteilhafter gestaltete.
+Auf den Postern war meist zuerst eine kleine Einführung in das Projekt.
 Danach schloss sich eine nähere Erläuterungen desselben an.
-Um das Poster für den Betrachter attraktiver und anschaulicher zu machen, stellten wir einige Themen in grafischer Form dar und veranschaulichten unsere Ergebnisse mit Beispielgrafiken. \\
-Häufig wurde auch eine schriftliche Erläuterung des Projekts gefordert, in der alles ausführlich erklärt wird. Diese Dokumentation des Projekts schrieben wir in \LaTeX .
+Um das Poster für den Betrachter attraktiver und anschaulicher zu machen,
+stellten wir einige Themen in grafischer Form dar und veranschaulichten unsere Ergebnisse mit Beispielgrafiken. \\
+Häufig wurde auch eine schriftliche Erläuterung des Projekts gefordert,
+in der alles ausführlich erklärt wird.
+Diese Dokumentation des Projekts schrieben wir in \LaTeX .
 Auch in diesen Dokumentationen wurden Übersichten und Grafiken als Anschauungsmaterial beigefügt und nötigenfalls näher erläutert.\\
 Solche Dokumentationen und Poster kamen zum Beispiel bei den Landeswettbewerben \jf in Rostock (Mecklenburg Vorpommern) zur Anwendung.
 Bei diesem Wettbewerb werden aus dem gesamten Bundesland Projekte aus verschiedenen Fachgebieten präsentiert.
 Es wird unterteilt in Arbeitswelt, Biologie, Chemie, Mathematik/Informatik, Geo- und Raumwissenschaften und Technik.
 Die jeweils Erstplatzierten in jedem Bereich qualifizieren sich für den darauffolgenden Bundeswettbewerb.
-Am Landeswettbewerb nahmen wir erstmalig 2013 teil. Allerdings hatten wir uns erst kurz vorher zusammengefunden, sodass wir das Projekt unserer Vorgänger vorstellten.
-Wir nahmen am Wettbewerb teil um erste Erfahrungen zu sammeln und uns darüber klar zu werden, wo wir einmal hin wollen.
+Am Landeswettbewerb nahmen wir erstmalig 2013 teil.
+Allerdings hatten wir uns erst kurz vorher zusammengefunden,
+sodass wir das Projekt unserer Vorgänger vorstellten.
+Wir nahmen am Wettbewerb teil um erste Erfahrungen zu sammeln und uns darüber klar zu werden,
+wo wir einmal hin wollen.
 Im darauf folgenden Jahr erreichten wir mit unserem Projekt ,,Auvi - Automatisierte Visualisierung von Wetterstations- und Wetterprognosedaten'' den zweiten Platz in der Kategorie Geo- und Raumwissenschaften.
 Wir arbeiteten weiter an unserem Projekt und im Jahr 2015 gewannen wir den Landeswettbewerb sogar mit dem Projekt ,,AuVi - Automatisierte Visualisierung von meteorologischen Daten'' und qualifizierten uns so für den Bundeswettbewerb.\\
-Wir nahmen auch an weiteren Veranstaltungen teil, bei denen wir unser Projekt vorstellten. Dazu gehört zum Beispiel der IHK-Schulpreis. Im Jahr 2014 bewarb sich unsere Schule mit dem Projekt CampusPro.
-Wir durften zusammen mit Vertretern aus anderen Projekten unsere Schule bei dieser Veranstaltung vertreten. Im Jahr darauf nahmen wir wieder daran teil. Diesmal allerdings mit unserem Projekt an sich.\\
-An unserer Schule wird die Möglichkeit geboten durch umfassende Projektarbeit ein IHK-Zertifikat zu erlangen. Um dieses zu erlangen werden Vorträge gehalten, in denen das jeweilige Projekt präsentiert wird.
-Im Jahr 2014 eröffneten wir solch eine Vortragsveranstaltung, indem wir kurz unser neues Projekt vorstellten. Im Jahr 2016 werden wir uns dann selbst um ein IHK-Zertifikat bemühen.
+Wir nahmen auch an weiteren Veranstaltungen teil,
+bei denen wir unser Projekt vorstellten.
+Dazu gehört zum Beispiel der IHK-Schulpreis.
+Im Jahr 2014 bewarb sich unsere Schule mit dem Projekt CampusPro.
+Wir durften zusammen mit Vertretern aus anderen Projekten unsere Schule bei dieser Veranstaltung vertreten.
+Im Jahr darauf nahmen wir wieder daran teil. Diesmal allerdings mit unserem Projekt an sich.\\
+An unserer Schule wird die Möglichkeit geboten durch umfassende Projektarbeit ein IHK-Zertifikat zu erlangen.
+Um dieses zu erlangen werden Vorträge gehalten, in denen das jeweilige Projekt präsentiert wird.
+Im Jahr 2014 eröffneten wir solch eine Vortragsveranstaltung,
+indem wir kurz unser neues Projekt vorstellten.
+Im Jahr 2016 werden wir uns dann selbst um ein IHK-Zertifikat bemühen.
 % TODO Mehr über Messenfeedback
 
 \section{Weather Monitoring System}
 % wms.viwetter.de
 % Was ist WMS BEGIN
 Das \textit{Weather Monitoring System} (kurz WMS) beschreibt eine Reihe von Bildschirmen die verteilt in Kühlungsborn Grafiken eines zentralen Servers anzeigen sollen.
-Diese Grafiken enthalten generelle Informationen über Kühlungsborn, sowie Wetterdaten und Wetterprognosen. Im Schulzentrum Kühlungsborn findet man eine weitere Anwendung des WMS. \\
-Im Foyer sollen Bildschirme Grafiken von Schülern für Schüler zeigen. Diese Grafiken beinhalten Geburtstagswünsche, Termine, oder allgemeine Fakten zu aktuellen Geschehnissen. \\
-Die Domain über die die Rechner den WMS-Server erreichen ist \link{http://wms.viwetter.de}. Auch wenn dieser von überall aus erreichbar ist, muss man sich authentifizieren um Daten zu bearbeiten oder anzuzeigen.
+Diese Grafiken enthalten generelle Informationen über Kühlungsborn,
+sowie Wetterdaten und Wetterprognosen.
+Im Schulzentrum Kühlungsborn findet man eine weitere Anwendung des WMS. \\
+Im Foyer sollen Bildschirme Grafiken von Schülern für Schüler zeigen.
+Diese Grafiken beinhalten Geburtstagswünsche, Termine, oder allgemeine Fakten zu aktuellen Geschehnissen. \\
+Die Domain über die die Rechner den WMS-Server erreichen ist \link{http://wms.viwetter.de}. Auch wenn dieser von überall aus erreichbar ist,
+muss man sich authentifizieren um Daten zu bearbeiten oder anzuzeigen.
 % Was ist WMS ENDE
 
 \subsection{Konzept} % WMS
 % Was war unsere Aufgabe
-Schüler sollen in der Lage sein die von ihnen in der Projektarbeit erzeugten Grafiken über ein möglichst einfaches Interface auf einen Server zu laden. Sie sollen anschließend die Bilder ersetzen bzw. löschen können.
-Damit die Serveradministrator, in diesem Fall \sw , \mb und \re , bestimmen können wer für welchen Ordner Grafiken hochladen und einbetten kann ist der Zugriff auf die Dateimanagementfunktion nur über ein Benutzerkonto möglich.
+Schüler sollen in der Lage sein die von ihnen in der Projektarbeit erzeugten Grafiken über ein möglichst einfaches Interface auf einen Server zu laden.
+Sie sollen anschließend die Bilder ersetzen bzw. löschen können.
+Damit die Serveradministrator, in diesem Fall \sw , \mb und \re ,
+bestimmen können wer für welchen Ordner Grafiken hochladen und einbetten kann ist der Zugriff auf die Dateimanagementfunktion nur über ein Benutzerkonto möglich.
 Es können von jedem Administrator nach Bedarf neue Konten erstellt werden. \\
-Auch zum anschauen der Grafiken muss man ein Konto besitzen, allerdings soll der Anzeigecomputer auch von alleine in der Lage sein sich einzuloggen und die Grafiken eines voreingestellten Ordners anzeigen.
-Zum Anzeigen muss eine Authentifizierung stattfinden, da Schüler zum einen manchmal unwissend Grafiken mit Copyright hochladen, und wir uns als Serveradmin schützen und auch den Schülern etwas entgegenkommen wollen. \\
-Auch bei diesem Interface greift natürlich die Regel, dass auch ein Affe die Datenbank bedienen können soll und auch die obligatorische Katze auf der Datenbank soll das System nicht zum Absturz bringen.
+Auch zum anschauen der Grafiken muss man ein Konto besitzen,
+allerdings soll der Anzeigecomputer auch von alleine in der Lage sein sich einzuloggen und die Grafiken eines voreingestellten Ordners anzeigen.
+Zum Anzeigen muss eine Authentifizierung stattfinden, da Schüler zum einen manchmal unwissend Grafiken mit Copyright hochladen,
+und wir uns als Serveradmin schützen und auch den Schülern etwas entgegenkommen wollen. \\
+Auch bei diesem Interface greift natürlich die Regel,
+dass auch ein Affe die Datenbank bedienen können soll und auch die obligatorische Katze auf der Datenbank soll das System nicht zum Absturz bringen.
 
 \subsection{Interface} % WMS
 Nachdem ein Nutzer die Anmelderoutine durchgeführt hat wird ihm die Struktur der Daten nach Anzeigeindex geordnet angezeigt.
-Der Nutzer, in diesem Fall der Schüler oder der Endnutzer am Bildschirm, selbst hat nur einen geringen Einblick in die Datenbank, und kann nicht direkt auf den Ordner auf dem Server zugreifen.\\
-Das von uns gestellte Interface ermöglicht ihm aber neue Ordner zu erstellen und Grafiken hochzuladen und zu löschen. Dabei wird im Hintergrund von jedem Bild der Autor gespeichert. \\
-Das Interface selbst ist hauptsächlich in PHP und CSS geschrieben. Natürlich ist ein gewisser Grad von JavaScript und HTML unumgänglich. \\
-Da auch die Bearbeitung der Daten von einem Raspberry Pi möglich sein soll ist der HTML Code nicht an der vordersten Front der HTML Syntax (zum Zeitpunkt der Setzung HTML5), sondern beruht auf grundlegenden Elementen und enthält auch kaum Animationen. \\
+Der Nutzer, in diesem Fall der Schüler oder der Endnutzer am Bildschirm,
+selbst hat nur einen geringen Einblick in die Datenbank, und kann nicht direkt auf den Ordner auf dem Server zugreifen.\\
+Das von uns gestellte Interface ermöglicht ihm aber neue Ordner zu erstellen und Grafiken hochzuladen und zu löschen.
+Dabei wird im Hintergrund von jedem Bild der Autor gespeichert. \\
+Das Interface selbst ist hauptsächlich in PHP und CSS geschrieben.
+Natürlich ist ein gewisser Grad von JavaScript und HTML unumgänglich. \\
+Da auch die Bearbeitung der Daten von einem Raspberry Pi möglich sein soll ist der HTML Code nicht an der vordersten Front der HTML Syntax (zum Zeitpunkt der Setzung HTML5),
+sondern beruht auf grundlegenden Elementen und enthält auch kaum Animationen. \\
 % TODO mehr über Sicherheit
 JavaScript wird nur benutzt um Eingabeformulare auf offensichtliche Fehler zu überprüfen.
-Außerdem schränken wir den Nutzer bewusst ein, sodass die Wahrscheinlichkeit, dass er etwas veranlasst, wovon er nicht wusste was es bewirkt, verringert wird.
-Dies beinhaltet das Freigeben des Links um die Anzeige einzuschalten, dies kann nur durch einen Admin geschehen.
-Auch der Schüler soll vor sich selbst geschützt werden. Es ist ihm nicht möglich einen Link als Grafik hochzuladen, oder eine Offlinedatei zu Verlinken.
-Wenn der Nutzer auswählt eine Grafik hochzuladen, hat er nicht die Möglichkeit eine Verlinkung einzufügen, und vice versa.
+Außerdem schränken wir den Nutzer bewusst ein, sodass die Wahrscheinlichkeit,
+dass er etwas veranlasst, wovon er nicht wusste was es bewirkt, verringert wird.
+Dies beinhaltet das Freigeben des Links um die Anzeige einzuschalten,
+dies kann nur durch einen Admin geschehen.
+Auch der Schüler soll vor sich selbst geschützt werden.
+Es ist ihm nicht möglich einen Link als Grafik hochzuladen,
+oder eine Offlinedatei zu Verlinken.
+Wenn der Nutzer auswählt eine Grafik hochzuladen,
+hat er nicht die Möglichkeit eine Verlinkung einzufügen, und vice versa.
 \begin{center}
 \includegraphics[width=\linewidth]{imgs/wms/wms_interface.png}
 \end{center}
 
 \subsection{Erreichbarkeit} % WMS
 Auch wenn der Server nicht globales Interesse erweckt soll er natürlich nicht nur im Hafen erreichbar sein.
-Da Standorte sich auch verändern können, und nicht dringend immer in Kühlungsborn liegen müssen, ist der Server über den Domainnamen \link{http://wms.viwetter.de} erreichbar. \\
-Alle Funktionen die hier beschrieben wurden sind demnach auch von jedem internetfähigen PC erreichbar. Keiner der Computer hat Sonderrechte, und es werden auch keine Cookies gespeichert.
+Da Standorte sich auch verändern können,
+und nicht dringend immer in Kühlungsborn liegen müssen, ist der Server über den Domainnamen \link{http://wms.viwetter.de} erreichbar. \\
+Alle Funktionen die hier beschrieben wurden sind demnach auch von jedem internetfähigen PC erreichbar. Keiner der Computer hat Sonderrechte,
+und es werden auch keine Cookies gespeichert.
 
 \subsection{Sicherheit} % WMS
-Da dieses System an öffentlichen Orten Anwendung finden soll, muss gewährleistet sein, dass auf den Anzeigegeräten nur Daten angezeigt werden, die von autorisierten Personen ausgewählt worden.
-Außerdem soll der Service nicht ohne unsere Erlaubnis und Wissen aufrufbar sein, deshalb haben wir ein Kontensystem implementiert.
-Da die Client Computer automatisiert starten und gleich die richtigen Daten anzeigen sollen, mussten wir ein Protokoll entwickeln, welches sicher ist, aber einem Rechner ermöglicht sich selbst einzuloggen.
+Da dieses System an öffentlichen Orten Anwendung finden soll,
+muss gewährleistet sein, dass auf den Anzeigegeräten nur Daten angezeigt werden,
+die von autorisierten Personen ausgewählt worden.
+Außerdem soll der Service nicht ohne unsere Erlaubnis und Wissen aufrufbar sein,
+deshalb haben wir ein Kontensystem implementiert.
+Da die Client Computer automatisiert starten und gleich die richtigen Daten anzeigen sollen,
+mussten wir ein Protokoll entwickeln, welches sicher ist,
+aber einem Rechner ermöglicht sich selbst einzuloggen.
 
 \section{Makanya}
 
 \subsection{Hintergrund} % Makanya
-Der Hintergrund des Makanya.com Projektes ist eine Partnerschaft zwischen der Kirchengemeinde Kühlungsborn und Tansania, sowie der Partnerschaft zwischen der Kirchengemeinde und dem Schulzentrum Kühlungsborns.
-Der Pastor Kühlungsborns, Matthias Borchert, suchte den Kontakt zum \jf Team über das Schulzentrum.
+Der Hintergrund des Makanya.com Projektes ist eine Partnerschaft zwischen der Kirchengemeinde Kühlungsborn und Tansania,
+sowie der Partnerschaft zwischen der Kirchengemeinde und dem Schulzentrum Kühlungsborns.
+Der Pastor Kühlungsborns, Matthias Borchert,
+suchte den Kontakt zum \jf Team über das Schulzentrum.
 % Server: strato.de
 % Sprache: Deutsch, Englisch, Zusammenarbeit (Dolmetschering: Frau Wieck)
 % Programmierung: PHP, HTML, MySQL
@@ -442,8 +534,12 @@ Der Pastor Kühlungsborns, Matthias Borchert, suchte den Kontakt zum \jf Team ü
 \newpage
 \Large{Selbstständigkeitserklärung}\\
 \\
-\small Hiermit erklären wir, dass wir die vorliegende Arbeit selbständig angefertigt, nicht anderweitig zu Prüfungszwecken vorgelegt und keine anderen, als die angegebenen Hilfsmittel verwendet haben.
-Zudem waren alle verwiesenen Webseiten zum Zeitpunkt der Linksetzung gültig und erreichbar. Wörtlich und sinngemäße Übernahmen aus anderen Werken sind als solche gekennzeichnet.
+\small Hiermit erklären wir,
+dass wir die vorliegende Arbeit selbständig angefertigt,
+nicht anderweitig zu Prüfungszwecken vorgelegt und keine anderen,
+als die angegebenen Hilfsmittel verwendet haben.
+Zudem waren alle verwiesenen Webseiten zum Zeitpunkt der Linksetzung gültig und erreichbar.
+Wörtlich und sinngemäße Übernahmen aus anderen Werken sind als solche gekennzeichnet.
 \\
 
 
