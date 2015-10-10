@@ -34,7 +34,7 @@
 \renewcommand{\contentsname}{Inhaltsverzeichnis}	% ToC Title
 \renewcommand{\abstractname}{}				% Überschrift Abs.
 \linespread{1.1}					% Zeilenabstand
-\input{jsondef.tex}				% Define JSON Language
+\input{defs/jsondef.tex}				% Define JSON Language
 \lstset{							% Listing Settings
 breaklines=true,					% Wrap
 commentstyle=\color{mygreen},	% Comment Color
@@ -90,11 +90,11 @@ backgroundcolor=\color{background},	% Background Color
 
 % Eigene Befehle
 \newcommand{\link}[1]{\textcolor{link}{\url{#1}}}	% Format Links
-\newcommand{\jftree}{\input{jftree.tex}}	% Draw JF Tree
+\newcommand{\jftree}{\input{graphs/jftree.tex}}	% Draw JF Tree
 % Ende Eigene Befehle
 
 \begin{document}
-    
+
 \input{title.tex}
 \input{toc.tex}
 \input{abstract.tex}
