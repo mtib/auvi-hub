@@ -3,6 +3,7 @@
 
 % Packages
 \usepackage[utf8]{inputenc}	% Zeichenkodierung
+\usepackage[ngerman]{babel}
 \usepackage{a4wide}		% Papierformat
 \usepackage{lmodern}		% Schriftarten
 \usepackage{graphicx}	% Formatierung
@@ -15,6 +16,7 @@
 \usepackage{xcolor}		% Advanced Color
 \usepackage[backend=bibtex]{biblatex}
 \usepackage[babel]{csquotes}
+\usepackage[top=1.5in, bottom=1in, left=1.25in, right=1.25in]{geometry}
 \usepackage{float}
 % Ende Packages
 
@@ -31,7 +33,7 @@
 
 % Einstellungen
 \renewcommand*{\familydefault}{\sfdefault}	% Default Font
-\renewcommand{\contentsname}{Inhaltsverzeichnis}	% ToC Title
+%\renewcommand{\contentsname}{Inhaltsverzeichnis}	% ToC Title
 \renewcommand{\abstractname}{}				% Überschrift Abs.
 \linespread{1.1}					% Zeilenabstand
 \input{defs/jsondef.tex}				% Define JSON Language
@@ -95,14 +97,22 @@ backgroundcolor=\color{background},	% Background Color
 
 \begin{document}
 
-\input{title.tex}
-\input{selbst.tex}
-\input{toc.tex}
-\input{abstract.tex}
-\input{auvi.tex}
-\input{wms.tex}
-\input{makanya.tex}
+\include{title}
+\include{selbst}
+\include{toc}
 
-\input{literatur.tex}
-\input{anhang.tex}
+\pagestyle{headings}
+\markright{\thesection\hfill\thepage}
+\renewcommand{\sectionmark}[1]{ \markright{#1}{} }	% Header !in UPPERCASE
+\newcommand{\headrulewidth}{0.5pt}
+\newcommand{\footrulewidth}{0pt}
+
+\include{abstract}
+
+\include{auvi}
+\include{wms}
+\include{makanya}
+
+\include{literatur}
+\include{anhang}
 \end{document}
