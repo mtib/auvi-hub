@@ -23,7 +23,7 @@ You can start the standard routine with:
 # in /Code/PyVi/
 python3 auvi.py
 # or in /Code/PyViDb/
-python auvi.py 
+python auvi.py
 ```
 
 ## Contact

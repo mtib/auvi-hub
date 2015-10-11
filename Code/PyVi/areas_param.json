@@ -1,1 +1,7 @@
-[["Temperatur", "t2m", "t2m-273", "[C]", "t2m.gs"], ["Luftdruck", "ps", "ps/100", "[hPa]", "ps.gs"], ["Luftdruck~an~NN", "slp", "slp/100", "[hPa]", "ps.gs"], ["Wassersaeule", "tql", "tql*100", "[V%]", "tql.gs"], ["Ozonschicht", "to3", "to3", "[DU]", "to3.gs"]]
+[
+    ["Temperatur", "t2m", "t2m-273", "[C]", "t2m.gs"],
+    ["Luftdruck", "ps", "ps/100", "[hPa]", "ps.gs"],
+    ["Luftdruck~an~NN", "slp", "slp/100", "[hPa]", "ps.gs"],
+    ["Wassersaeule", "tql", "tql*100", "[V%]", "tql.gs"],
+    ["Ozonschicht", "to3", "to3", "[DU]", "to3.gs"]
+]

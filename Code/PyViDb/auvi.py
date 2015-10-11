@@ -7,9 +7,11 @@ import sqlinterface as sql
 # TODO grads interface or octave?
 # TODO read about source format
 
+
 def main():
     info()
-    log("log","PyViDb was executed!")
+    log("log", "PyViDb was executed!")
+
 
 def info():
     print("This is PyViDB. Switching from JSON to sqlite3")
