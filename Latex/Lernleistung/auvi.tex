@@ -1,7 +1,7 @@
 \section{Auvi}
 
 \subsection{Programm} % AuVi
-Um Verwechslungen zu verhindern benennen wir das Programm, welches wir unter AuVi entwickelt haben ,,\vs ''. \vs\ steht für Visualisierung System und ist in verschiedenen Versionen lauffähig.
+Um Verwechslungen zu verhindern benennen wir das Programm, welches wir unter AuVi entwickelt haben ,,\vs ''. Das steht für Visualisierung System und ist in verschiedenen Versionen lauffähig.
 Die Aufgabe von \vs\ ist es auf eine Datenquelle zuzugreifen und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln.
 Dabei wird von uns sehr viel Wert darauf gelegt, dass das Erstellen der Grafiken möglichst abstrakt behandelt wird, damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann.
 
@@ -35,13 +35,18 @@ Zusätzlich dazu werden die gesammelten Daten von numerischen Vorhersagemodellen
 Numerische Wettervorhersagen sind rechnergestützt.
 Der Zustand der Atmosphäre zu einem späteren Zeitpunkt wird aus dem Zustand der Atmosphäre zu einem gegebenen Anfangszeitpunkt berechnet.
 Dabei werden relevante Gleichungen numerisch gelöst (Navier-Stokes-Gleichung, thermische Zustandsgleichung idealer Gase, erster Hauptsatz der Thermodynamik, Kontinuitätsgleichung).
+Mit diesen Gleichungen werden Vorgänge, wie zum Beispiel Wolkenbildung, Niederschläge, Bildung von Hoch-  und Tiefdruckgebieten und Wind beschrieben. Diese Vorgänge können je nach Luftdruck, Temperatur, Windgeschwindigkeit und Luftfeuchtigkeit auftreten.
+Da diese Gleichungen jedoch nicht eindeutig lösbar sind, kann es nur zu Näherungswerten kommen. Diese mathematischen Näherungen benötigen sehr viel Rechenleistung, weswegen auf die Leistungsfähigkeit von Supercomputern zurückgegriffen wird.
 Bei solchen numerischen Vorhersagemodellen wird das betrachtete Gebiet in Gitterzellen unterteilt.
-Für jeden Bereich werden dann die Parameter errechnet.
+Für jeden Punkt werden dann die Parameter errechnet.
 Relevante physikalische Größen sind vor allem Temperatur, Luftdruck, Dichte, Windrichtung und Windgeschwindigkeit.
 Es wird zwischen Global- und Lokal- oder Ausschnittsmodellen unterschieden.
-Aufgrund des großen Aufwands die Daten zu errechnen, werden Supercomputer verwendet.
 
-\subsubsection{Voraussetzung für Datenprognosen} % AuVi Meteorologie
+\subsubsection{Voraussetzung für Wetterprognosen} % AuVi Meteorologie
+Um Wetterprgnosen erstellen zu können, braucht man gewisse Ausgangswerte. Die Ausgangsdaten bestehen aus Werten, die an dem Punkt zu einem früheren Zeitpunkt gemessen wurden. Die Entwicklung der verschiedenen Wettergrößen wird durch Formeln errechnet. Diese Berechnung benötigt, wie oben schon erwähnt, eine enormer Rechenleistung. Deswegen ist man für die Vorhersage von Wetterverhältnissen auf die Hilfe eines leistungsfähigen Computers angewiesen.
+Die entstandenen Modellergebnisse bilden die Basis, und können nun von Prognostikern interpretiert und beurteilt werden. Die Prognostiker können die Modelle anhand von aktuell gemessenen Werten oder Bildern einer Webcam überprüfen und eine Vorhersage formulieren. Dabei spielen das Wissen und die Erfahrungen der Prognostiker eine große Rolle. 
+
+Aus den Wettergeschehnissen der Vergangenheit, kann man die Wettereignisse der Zukunft ableiten. 
 
 \subsection{Datenquellen} % AuVi
 
