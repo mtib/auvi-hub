@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import filemanager
 
@@ -26,7 +27,7 @@ def oscall(gradspara):
 
 
 def main():
-    print "run AuVi.py for standart routine"
+    print("run AuVi.py for standart routine")
 
 if __name__ == "__main__":
     main()

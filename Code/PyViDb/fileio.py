@@ -1,3 +1,4 @@
+#/usr/bin/python3
 # use as logger
 # use for settings
 
@@ -17,7 +18,6 @@ def getSettingObj():
     try:
         f = open(directory + settingfile, "r")
         s = json.loads(f.read())
-        log("FILES", "reading existing settings file")
         f.close()
     except:
         f = open(directory + settingfile, "w")

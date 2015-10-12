@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # This is the main Programm
 # logger:
 from fileio import log, error, changeSetting, getSetting

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import filemanager
 import grads
 import sys
@@ -32,20 +33,20 @@ def run():
 			tend = "grads"
 			unit = attr[3]
 			params = attr[2]
-			print name + " " + dirname + " " + tend
+			print((name + " " + dirname + " " + tend))
 			grads.call(gradsline, outdir, name, lat, lon, gmt,
 			           dirname, title, tend, unit, params)
 	for para in arepara:
 		for location in loc:
-			print location[0] + " " + para[1]
+			print((location[0] + " " + para[1]))
 			grads.area(gradsplot, outdir, location[0], location[1], location[2], location[
 			           3], location[4], para[0], para[1], para[2], auvidir + "grads/" + para[4])
 	filemanager.convertToGifs()
-    filemanager.convertGifToMp4(6,1,1)
+	filemanager.convertGifToMp4(6,1,1)
 	filemanager.moveOutputToWeb()
 
 def greet():
-	print "This is Python-AuVi Version: " + str(VERSION)
+	print(("This is Python-AuVi Version: " + str(VERSION)))
 
 
 if __name__ == "__main__":

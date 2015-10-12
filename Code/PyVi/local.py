@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import json
 
 # Constants
@@ -13,24 +14,24 @@ DEFAULT_BACK = "Back"  # GrADS
 
 def writeNewLocale(ort, lat, lon, area, gmtdif):
     appendToJsonFile(LOCALS_FILE, [ort, lat, lon, area, gmtdif])
-    print LOCALS_FILE + " <= " + str([ort, lat, lon, area, gmtdif])
+    print(LOCALS_FILE + " <= " + str([ort, lat, lon, area, gmtdif]))
 
 # Add line parameter, front and back are strings. front for folders, back
 # for GrADS
 def writeNewLParam(name, front, back, unit):
     appendToJsonFile(LOCALS_PARAM_FILE, [name, front, back, unit])
-    print LOCALS_PARAM_FILE + " <= " + str([name, front, back, unit])
+    print(LOCALS_PARAM_FILE + " <= " + str([name, front, back, unit]))
 
 # Add plot parameter, front and back are strings. front for folders, back
 # for GrADS
 def writeNewAParam(name, front, back, unit, colorsheme):
     appendToJsonFile(AREA_PARAM_FILE, [name, front, back, unit, colorsheme])
-    print AREA_PARAM_FILE + " <= " + str([name, front, back, unit, colorsheme])
+    print(AREA_PARAM_FILE + " <= " + str([name, front, back, unit, colorsheme]))
 
 
 def writeNewArea(ort, lat, lon, area, gmtdif=1):
     appendToJsonFile(AREA_FILE, [ort, lat, lon, area, gmtdif])
-    print AREA_FILE + " <= " + str([ort, lat, lon, area, gmtdif])
+    print(AREA_FILE + " <= " + str([ort, lat, lon, area, gmtdif]))
 
 # Appends the appendix to the file_name provided
 def appendToJsonFile(file_name, appendix):
@@ -62,7 +63,7 @@ def listPoints(file_name):
         a = json.load(f)
         f.close()
     else:
-        print EMPTY_ERROR
+        print(EMPTY_ERROR)
         f.close()
         return
     a.insert(0, ["Ort", "Lat", "Lon", "Area", "GMT"])
@@ -78,7 +79,7 @@ def listPoints(file_name):
     s = "{0:" + str(m[0]) + "} {1:" + str(m[1]) + "} {2:" + \
         str(m[2]) + "} {3:" + str(m[3]) + "} {4:" + str(m[4]) + "}"
     for l in a:
-        print s.format(l[0], l[1], l[2], l[3], l[4])
+        print(s.format(l[0], l[1], l[2], l[3], l[4]))
 
 
 def listLocalParameters(front=DEFAULT_FRONT, back=DEFAULT_BACK, title="Titel", unit="Unit"):
@@ -93,7 +94,7 @@ def listAreaParameters(front=DEFAULT_FRONT, back=DEFAULT_BACK, title="Titel", un
         param = json.load(f)
         f.close()
     else:
-        print EMPTY_ERROR
+        print(EMPTY_ERROR)
         f.close()
         return
     param.insert(0, [title, front, back, unit, color])
@@ -105,7 +106,7 @@ def listAreaParameters(front=DEFAULT_FRONT, back=DEFAULT_BACK, title="Titel", un
     form = "{0:" + str(maxlen) + "} {1:" + str(maxlen) + "} {2:" + \
         str(maxlen) + "} {3:" + str(maxlen) + "} {4:" + str(maxlen) + "}"
     for front in param:
-        print form.format(front[0], front[3], front[1], front[2], front[4])
+        print(form.format(front[0], front[3], front[1], front[2], front[4]))
 
 
 def listParameter(file_name, front=DEFAULT_FRONT, back=DEFAULT_BACK, title="Titel", unit="Unit"):
@@ -116,7 +117,7 @@ def listParameter(file_name, front=DEFAULT_FRONT, back=DEFAULT_BACK, title="Tite
         param = json.load(f)
         f.close()
     else:
-        print EMPTY_ERROR
+        print(EMPTY_ERROR)
         f.close()
         return
     param.insert(0, [title, front, back, unit])
@@ -128,7 +129,7 @@ def listParameter(file_name, front=DEFAULT_FRONT, back=DEFAULT_BACK, title="Tite
     form = "{0:" + str(maxlen) + "} {1:" + str(maxlen) + \
         "} {2:" + str(maxlen) + "} {3:" + str(maxlen) + "}"
     for front in param:
-        print form.format(front[0], front[3], front[1], front[2])
+        print(form.format(front[0], front[3], front[1], front[2]))
 
 if __name__ == "__main__":
     listLocales()

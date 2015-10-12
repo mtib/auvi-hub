@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import json
 import os
 from local import *
@@ -15,9 +16,9 @@ def getJsonContent(file_name):
     jsc = None
     try:
         jsc = json.load(file)
-        print "load: " + str(file_name)
-    except Exception, e:
-        print "failed to load: " + str(file_name)
+        print("load: " + str(file_name))
+    except Exception as e:
+        print("failed to load: " + str(file_name))
     file.close()
     return jsc
 
@@ -79,7 +80,7 @@ def moveOutputToWeb(delete=True):
 def convertToGifs():
     for l in getLoc():
         for p in getArePara():
-            print "convert (png to gif) " + l[0] + " " + p[1]
+            print("convert (png to gif) " + l[0] + " " + p[1])
             os.system("convert -delay 20 " + getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] + "/*.jpg " + getAuViDir(
             ) + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] + "/" + p[1] + ".gif" + " >/dev/null 2>/dev/null")
 
@@ -87,7 +88,7 @@ def convertToGifs():
 def convertGifToMp4(framerate, x, y, delete=False):
     for l in getLoc():
         for p in getArePara():
-            print "ffmpeg (gif to mp4) " + l[0] + " " + p[1]
+            print("ffmpeg (gif to mp4) " + l[0] + " " + p[1])
             os.system("ffmpeg -y -v 8 -r " + str(framerate) + " -i " + getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[
                       1] + "/" + p[1] + ".gif " + getAuViDir() + OUTPUT_DIR + "/" + l[0] + "/plot/" + p[1] + "/" + p[1] + ".mp4")
             if delete:
@@ -97,7 +98,7 @@ def convertGifToMp4(framerate, x, y, delete=False):
 
 def printOutputDirs():
     for folder in getOutputDirs():
-        print folder
+        print(folder)
 
 
 if __name__ == '__main__':
