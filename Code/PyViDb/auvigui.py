@@ -94,7 +94,7 @@ def plotmap(w=1920, h=-1, s=0, connect=False, connectfact=150):
     try:
         print("Lines:  {:>6}".format(lines))
         print("Cities: {:>6}".format(length))
-        print("L/C:    {:>6.0}".format(lines/length))
+        print("L/C:    {:>6}".format(int(lines/length))
         print("ConF:   {:>6}".format(connectfact))
         log("GEN", "Plotmat: l={:} c={:} l/c={:} cf={:}".format(lines,length,int(lines/length),connectfact))
     except Exception:
