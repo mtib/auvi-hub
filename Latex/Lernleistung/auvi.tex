@@ -34,18 +34,35 @@ Zusätzlich dazu werden die gesammelten Daten von numerischen Vorhersagemodellen
 \\
 Numerische Wettervorhersagen sind rechnergestützt.
 Der Zustand der Atmosphäre zu einem späteren Zeitpunkt wird aus dem Zustand der Atmosphäre zu einem gegebenen Anfangszeitpunkt berechnet.
-Dabei werden relevante Gleichungen numerisch gelöst (Navier-Stokes-Gleichung, thermische Zustandsgleichung idealer Gase, erster Hauptsatz der Thermodynamik, Kontinuitätsgleichung).
-Mit diesen Gleichungen werden Vorgänge, wie zum Beispiel Wolkenbildung, Niederschläge, Bildung von Hoch-  und Tiefdruckgebieten und Wind beschrieben. Diese Vorgänge können je nach Luftdruck, Temperatur, Windgeschwindigkeit und Luftfeuchtigkeit auftreten.
-Da diese Gleichungen jedoch nicht eindeutig lösbar sind, kann es nur zu Näherungswerten kommen. Diese mathematischen Näherungen benötigen sehr viel Rechenleistung, weswegen auf die Leistungsfähigkeit von Supercomputern zurückgegriffen wird.
+Dabei werden relevante Gleichungen numerisch gelöst
+(Navier-Stokes-Gleichung, thermische Zustandsgleichung idealer Gase, erster Hauptsatz der Thermodynamik, Kontinuitätsgleichung).
+Mit diesen Gleichungen werden Vorgänge, wie zum Beispiel Wolkenbildung, Niederschläge, Bildung von Hoch-  und Tiefdruckgebieten und Wind beschrieben.
+Diese Vorgänge können je nach Luftdruck, Temperatur, Windgeschwindigkeit und Luftfeuchtigkeit auftreten.
+Da diese Gleichungen jedoch nicht eindeutig lösbar sind, kann es nur zu Näherungswerten kommen.
+Diese mathematischen Näherungen benötigen sehr viel Rechenleistung,
+weswegen auf die Leistungsfähigkeit von Supercomputern zurückgegriffen wird.
 Bei solchen numerischen Vorhersagemodellen wird das betrachtete Gebiet in Gitterzellen unterteilt.
 Für jeden Punkt werden dann die Parameter errechnet.
 Relevante physikalische Größen sind vor allem Temperatur, Luftdruck, Dichte, Windrichtung und Windgeschwindigkeit.
 Es wird zwischen Global- und Lokal- oder Ausschnittsmodellen unterschieden.
 
 \subsubsection{Voraussetzung für Wetterprognosen} % AuVi Meteorologie
-Um Wetterprgnosen erstellen zu können, braucht man gewisse Ausgangswerte. Die Ausgangsdaten bestehen aus Werten, die an dem Punkt zu einem früheren Zeitpunkt gemessen wurden. Die Entwicklung der verschiedenen Wettergrößen wird durch Formeln errechnet. Diese Berechnung benötigt, wie oben schon erwähnt, eine enormer Rechenleistung. Deswegen ist man für die Vorhersage von Wetterverhältnissen auf die Hilfe eines leistungsfähigen Computers angewiesen.
-Die entstandenen Modellergebnisse bilden die Basis, und können nun von Prognostikern interpretiert und beurteilt werden. Die Prognostiker können die Modelle anhand von aktuell gemessenen Werten oder Bildern einer Webcam überprüfen und eine Vorhersage formulieren. Dabei spielen das Wissen und die Erfahrungen der Prognostiker eine große Rolle. 
-Die Genauigkeit einer Wettervorhersage ist von der Stabilität der Wetterlage abhängig. Bei wechselhaftem Wetter ist die Vorhersage deutlich schwieriger und komplizierte als bei stabilen Wetterlagen. Die Länge der Prognose spielt auch eine Rolle. Es macht einen Unterschied, ob ich nur die Prognose für den nächsten Tag, oder ob ich die Prognose für die nächste Woche haben möchte. Letzters ist deutlich schwieriger und somit auch weniger zuverlässig.
+Um Wetterprgnosen erstellen zu können, braucht man gewisse Ausgangswerte.
+Die Ausgangsdaten bestehen aus Werten,
+die an dem Punkt zu einem früheren Zeitpunkt gemessen wurden.
+Die Entwicklung der verschiedenen Wettergrößen wird durch Formeln errechnet.
+Diese Berechnung benötigt, wie oben schon erwähnt, eine enormer Rechenleistung.
+Deswegen ist man für die Vorhersage von Wetterverhältnissen auf die Hilfe eines leistungsfähigen Computers angewiesen.
+Die entstandenen Modellergebnisse bilden die Basis, und können nun von Prognostikern interpretiert und beurteilt werden.
+Die Prognostiker können die Modelle anhand von aktuell gemessenen Werten oder Bildern einer Webcam überprüfen und eine Vorhersage formulieren.
+Dabei spielen das Wissen und die Erfahrungen der Prognostiker eine große Rolle.
+Die Genauigkeit einer Wettervorhersage ist von der Stabilität der Wetterlage abhängig.
+Bei wechselhaftem Wetter ist die Vorhersage deutlich schwieriger und komplizierte als bei stabilen Wetterlagen.
+Die Länge der Prognose spielt auch eine Rolle.
+Es macht einen Unterschied,
+ob man nur die Prognose für den nächsten Tag,
+oder ob man die Prognose für die nächste Woche haben möchte.
+Letzters ist deutlich schwieriger und somit auch weniger zuverlässig.
 
 \subsection{Datenquellen} % AuVi
 
@@ -60,6 +77,7 @@ Grafik: Übersicht über Quellen (Alle die direkt über das Programm angeboten w
 Programm kann um weitere erweitert werden.
 Auswahl NOAA, GFS.\cite{noaa}
 % NOTE Viel mehr Parameter, Daten bei NOAA oc DWD
+% Siehe andere Quellen
 
 
 \subsubsection*{Wetterdienst} % AuVi Datenquellen
@@ -140,7 +158,8 @@ Die umfangreichste Aufgabe die wir in unserer Projektarbeit bewältigten war die
 Da wir uns in Punkt \ref{sec:ent}  schon entschieden haben in einer Linux Umgebung zu arbeiten,
 mussten wir auch die Programmiersprachen und sowie IDE's so wählen,
 dass sie auch auf Ubuntu oder ähnlichen Distributionen ohne Komplikationen funktionierten.\\
-Unser Hauptprogramm, genannt ,,\vs '' haben wir hauptsächlich in Python (Version 2.7) \cite{python27} geschrieben.
+Unser Hauptprogramm, genannt ,,\vs '' haben wir erst in Python (Version 2.7) \cite{python27} geschrieben.
+Entschieden uns aber später unsere Fortschritte von Python Version 2.7 auf die Version 3 gehoben.
 Diese Programmiersprache ist in den von uns genutzten Distributionen sogar vorinstalliert und ein allgemeiner Industriestandard.\\
 Nur mit Python kamen wir allerdings auf lange Zeit nicht aus.
 Wir nutzten noch andere Sprachen um die Entwicklung zu beschleunigen,
@@ -202,13 +221,47 @@ Das Front-End unserer Arbeit ist eine Website
 Die Website ist programmiert in HTML (Hyper Text Markup Language), PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript.
 Als Webserver benutzen wir Apache2 \cite{php} \cite{apache} \\
 
+\subsubsection{Versionen}
+Im Laufe der Arbeit entstanden mehrere lauffähige Versionen.
+Diese beginnen mit puren GrADS-Scripten um überhaupt Grafiken zu erzeugen zu Beginn der Projektarbeit in 2013.
+Um dieses Erzeugen zu automatisieren packten wir alle nötigen Befehle in eine BASH Datei.
+Diese Bash Datei musste die Ordnerstruktur herstellen und kontrollieren.
+Sie war außerdem in der Lage neue Versionen unserer Software zu erkennen und auf Befehlt vom Server zu laden.
+Auf diese Version bauten wir auf,
+nachdem wir sie bei dem Jugend Forscht Wettbewerb 2014 präsentierten und den zweiten Platz erreichten.\\
+Um allerdings schnellere Ergebnisse zu erzielen übersetzte Markus das komplette Programm von Bash in Python.
+Durch die modulare Struktur von Python können unsere Funktionen in andere Projekte als Bibliotek eingebunden werden.\\
+Über Python können wir effektiver die Daten analysieren, können leichter komplexe Bedingungen kontrollieren und auch die Interaktion mit dem Nutzer ist erleichtert.
+Durch Python und JSON konnten wir das Projekt dann vollständig automatisieren.
+
+\subsubsection*{Git}
+Ab Anfang 2015 benutzten wir eine neue Umgebung um an unserem Programmen und der Setzung zu arbeiten.
+% TODO unabhängig von genutzten Mitteln GIT
+Die Umgebung Git % FIXME Git Quelle!
+ermöglicht im eigentlichen Sinne Programmierern gleichzeitig an einem Projekt kooperativ zu arbeiten.
+Wir konnten diese Software zuerst auf dem eigenen Server und später zusätzlich auf der Website \link{GitHub.com} % FIXME GitHub Quelle
+nutzen.
+Der Git ,,Workflow'' ist auch ohne Internetverbindung komplett funktionstüchtig.
+Wir machen Änderungen, verpacken sie und senden sie zum Server.
+Dieses Änderungspacket erhält eine einzigartige Identifikation.
+Durch diese Identifikation können wir auf jede einzelne Version unserer Software und Setzung zugreifen.
+Zusätzlicher erreichen wir so eine hohe Datensicherheit und schnelle parallele Entwicklung mit gegenseitiger Kontrolle\footnote{Ziel ist es den Inhalt zu kontrollieren, nicht den Projektpartner}.
+
 \subsubsection{genutzte Mittel} % AuVi Entwicklung
 % Website, Server, ...
+% Raspberry Pi x2
+% Software: 	Linux -> Ubuntu, Debian, Raspbian
+% 				Apache2, Git, Python2:3, PHP, SSH
+% 				Editor SublimeText, Eclipse, Atom
 
 \subsubsection{Servertechnik} % AuVi Entwicklung
-Beschreibung Architektur, Ordnerstruktur
+% TODO Beschreibung Architektur, Ordnerstruktur
+% NOTE z.B. /etc/apache2/sites-enabled/*
+% NOTE Links, Domains, Websapce, ...
+% Betreuung, Einarbeitung, ...
 
 \subsection{Schnittstelle mit dem Nutzer} % AuVi
+% TODO Defintion GUI, Zweck einer IO
 
 \subsubsection{Webseite} % AuVi Schnittstelle
 % Domain: viwetter.de
