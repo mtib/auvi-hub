@@ -39,7 +39,7 @@ def plotmapButton():
     plotmap()
 
 
-def plotmap(w=1920, h=-1, s=0, connect=False, connectfact=150):
+def plotmap(w=2560, h=-1, s=0, connect=True, connectfact=75):
     if h == -1:
         h = int(w / 16.0 * 9.0)
     img = Image.new("RGB", (w, h), (s, s, s))
@@ -53,6 +53,7 @@ def plotmap(w=1920, h=-1, s=0, connect=False, connectfact=150):
         reltoVal = {"max0": -1, "min0": 1, "max1": -1, "min1": 1}
 
     lines = 0
+    dld=[]
     for x in range(length):
         try:
             coord = cityCoords(cities[x])
@@ -83,29 +84,29 @@ def plotmap(w=1920, h=-1, s=0, connect=False, connectfact=150):
                 for y in range(x, length):
                     ndcoord = cityCoords(cities[y])
                     ndrelto = [intmap(-1 * ndcoord[1], -180.0, 180.0, float(w), float(0)), intmap(ndcoord[0], -90.0, 90.0, float(h), float(0))]
-                    if dist(relto, ndrelto) < mindist:
-                        print("Point {:>5x}x{:<5x} == {:7.2%}".format(x,y,math.sqrt(x+(y/length))/math.sqrt(length+1)))
-                        draw.line( (relto[0], relto[1], ndrelto[0], ndrelto[1]) ,fill="rgb(0, 255, 23)")
+                    diffdist = dist(relto, ndrelto)
+                    if diffdist < mindist:
+                        print("Point {:>5x}x{:<5x} == {:7.2%}".format(x,y,x/length))
+                        gc = int(255.0-255.0*math.pow(diffdist/mindist,4))
+                        dld.append([ (relto[0], relto[1], ndrelto[0], ndrelto[1]) , "rgb(0, {:}, 0)".format(gc if gc > 0 else 0), gc])
                         lines += 1
             for point in neighbor(relto):
-                img.putpixel((point[0], point[1]), (255, 100, 100))
+                img.putpixel((point[0], point[1]), "rgb(43, 213, 0)")
         except Exception:
             pass
-    try:
-        print("Lines:  {:>6}".format(lines))
-        print("Cities: {:>6}".format(length))
-        print("L/C:    {:>6}".format(int(lines/length))
-        print("ConF:   {:>6}".format(connectfact))
-        log("GEN", "Plotmat: l={:} c={:} l/c={:} cf={:}".format(lines,length,int(lines/length),connectfact))
-    except Exception:
-        pass
     try:
         os.mkdir(scriptDir + "gui")
     except FileExistsError:
         pass
+    dld.sort(key=colorvalue)
+    for line in dld:
+        draw.line(line[0], fill=line[1])
     log("GUI", "Created PlotMap (gui/plotmap.png)")
     del draw
     img.save(scriptDir + "gui/plotmap.png")
+
+def colorvalue(line):
+    return line[2]
 
 def dist(p1, p2):
     return math.sqrt(math.pow(p1[0]-p2[0],2)+math.pow(p1[1]-p2[1],2))
