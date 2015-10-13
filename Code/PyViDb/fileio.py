@@ -48,8 +48,7 @@ def getSetting(key):
 
 def log(dest, message):
     g = time.gmtime()
-    t = str(g[0]) + "/" + str(g[1]) + "/" + \
-        str(g[2]) + " " + str(g[3]) + ":" + str(g[4])
+    t = "{:04}/{:02}/{:02} {:02}:{:02}".format(g[0],g[1],g[2],g[3],g[4])
     l = "[{type:^5}] {time} >> {message}".format(
         **{"type": dest, "time": t, "message": message})
     f = open(directory + logfile, "a")

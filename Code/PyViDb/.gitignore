@@ -1,4 +1,9 @@
-*.pyc
+# Build
+dist/
+build/
+*.spec
+
+*.py[czxv]
 *.tmp
 *.log
 octave-workspace
