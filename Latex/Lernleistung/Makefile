@@ -1,0 +1,12 @@
+bll: bll.tex
+	rm bll.pdf
+	xelatex bll.tex
+	bibtex bll
+	xelatex bll.tex
+	rm *.aux
+	rm *.toc
+	rm *.log
+	rm *.blg
+	rm *.xml
+	rm *.bbl
+	rm bll-blx.bib

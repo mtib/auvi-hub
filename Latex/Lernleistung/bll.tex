@@ -1,7 +1,4 @@
 \documentclass[a4paper,oneside,12pt,titlepage]{article}
-% Das ist ein Test
-% ...
-% -Markus
 
 % Packages
 \usepackage[utf8]{inputenc}	% Zeichenkodierung
@@ -20,7 +17,7 @@
 \usepackage[babel]{csquotes}
 \usepackage[top=1.5in, bottom=1in, left=1.25in, right=1.25in]{geometry}
 \usepackage{float}
-% Ende Packages
+\usepackage{fontspec}
 
 % Farbdefinition
 \definecolor{link}{HTML}{3333FF}			% Link
@@ -35,7 +32,7 @@
 
 % Einstellungen
 \renewcommand*{\familydefault}{\sfdefault}	% Default Font
-%\renewcommand{\contentsname}{Inhaltsverzeichnis}	% ToC Title
+\setmonofont[Scale = 0.8, Path = fonts/]{firecode.otf}
 \renewcommand{\abstractname}{}				% Überschrift Abs.
 \linespread{1.1}					% Zeilenabstand
 \input{defs/jsondef.tex}				% Define JSON Language
@@ -80,7 +77,7 @@ backgroundcolor=\color{background},	% Background Color
 \newcommand{\jf}{Jugend forscht }
 \newcommand{\vs}{ViSys}
 \newcommand{\mb}{Markus Becker}
-\newcommand{\sw}{Swenja Wagner}
+\newcommand{\sw}{TOBEREMOVED}
 \newcommand{\re}{Dr. Ronald Eixmann}
 \newcommand{\tw}{Thoralf Wieck}
 \newcommand{\thema}{Personalisierte Datenverarbeitung\\und Visualisierung von Wetterprognosedaten}
@@ -105,7 +102,7 @@ backgroundcolor=\color{background},	% Background Color
 
 \pagestyle{headings}
 \markright{\thesection\hfill\thepage}
-\renewcommand{\sectionmark}[1]{ \markright{#1}{} }	% Header !in UPPERCASE
+\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
 \newcommand{\headrulewidth}{0.5pt}
 \newcommand{\footrulewidth}{0pt}
 
