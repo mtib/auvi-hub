@@ -1,23 +1,24 @@
 \section{Auvi}
 
 \subsection{Programm} % AuVi
-Um Verwechslungen zu verhindern benennen wir das Programm, welches wir unter AuVi entwickelt haben ,,\vs ''. Das steht für Visualisierung System und ist in verschiedenen Versionen lauffähig.
+Um Verwechslungen zu verhindern benenne ich das Programm, welches ich unter AuVi entwickelt habe ,,\vs ''. Der Kürzel steht für Visualisierung System und ist in verschiedenen Versionen lauffähig.
 Die Aufgabe von \vs\ ist es auf eine Datenquelle zuzugreifen und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln.
-Dabei wird von uns sehr viel Wert darauf gelegt, dass das Erstellen der Grafiken möglichst abstrakt behandelt wird, damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann.
+Dabei wird von mir sehr viel Wert darauf gelegt, dass das Erstellen der Grafiken möglichst abstrakt behandelt wird, damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann.
 
 \subsection{Meteorologie} % AuVi
 
 \subsubsection{Prognosetheorie} % AuVi Meteorologie
-Die Meteorologie gehört zu den Naturwissenschaften.
-Sie liefert die Voraussetzungen um eine Wettervorhersage erstellen zu können.
+Die Meteorologie gehört zu den Naturwissenschaften und beschäftigt sich mit der Atmosphäre, der Wetterprognose und der Klimatologie \cite{meteorologie}.
+Sie liefert somit die Voraussetzungen um eine Wettervorhersage erstellen zu können.
 Unter einer Wetterprognose versteht man die Vorhersage eines Zustands der Atmosphäre zu einem bestimmten Zeitpunkt an einem bestimmten Ort oder in einem bestimmten Gebiet.
-Es wird nicht nur das Wetter in Bodennähe betrachtet, sondern auch Wettererscheinungen in höheren Schichten der  Erdatmosphäre.
+Es wird nicht nur das Wetter in Bodennähe betrachtet, sondern auch Wettererscheinungen in höheren Schichten der Erdatmosphäre.
 \\
 Das Wetter lässt sich durch entsprechende Naturgesetze beschreiben. Das ist für die Prognose essentiell wichtig.
 Der Grundgedanke einer solchen Prognose besteht darin, aus einem bereits vergangenen und dem aktuellen Zustand der Atmosphäre einen Zustand in der Zukunft abzuleiten.
 Dazu werden die bekannten physikalischen Regeln angewendet.
 In mathematischer Hinsicht werden diese physikalischen Regeln von nichtlinearen Gleichungen beschrieben.
-Das bedeutet, dass bereits die kleinste Änderung im Ausgangszustand das Ergebnis der Rechnung relativ groß verändern kann.%[1]
+Das bedeutet, dass bereits die kleinste Änderung im Ausgangszustand das Ergebnis der Rechnung relativ groß verändern kann. % TODO: Citation needed
+
 
 \subsubsection{Prognosen per Hand} % AuVi Meteorologie
 Was muss man über die aktuelle Situation wissen um per Hand eine Prognose zu erzeugen?
@@ -32,14 +33,15 @@ Die gesammelten Daten, die den Wetterzustand zu einem bestimmten Zeitpunkt besch
 Mit Hilfe der eingetragenen Daten werden die Wetterverhältnisse analysiert und Wettervorhersagen erstellt.
 Zusätzlich dazu werden die gesammelten Daten von numerischen Vorhersagemodellen als Ausgangszustand verwendet. %[2]
 \\
-Numerische Wettervorhersagen sind rechnergestützt.
+Numerische Wettervorhersagen sind rechnergestützt, müssen aber trotzdem nicht 100\% zutreffend sein.
 Der Zustand der Atmosphäre zu einem späteren Zeitpunkt wird aus dem Zustand der Atmosphäre zu einem gegebenen Anfangszeitpunkt berechnet.
 Dabei werden relevante Gleichungen numerisch gelöst
 (Navier-Stokes-Gleichung, thermische Zustandsgleichung idealer Gase, erster Hauptsatz der Thermodynamik, Kontinuitätsgleichung).
-Mit diesen Gleichungen werden Vorgänge, wie zum Beispiel Wolkenbildung, Niederschläge, Bildung von Hoch-  und Tiefdruckgebieten und Wind beschrieben.
+Mit diesen Gleichungen werden Vorgänge, wie zum Beispiel Wolkenbildung, Niederschläge, Bildung von Hoch- und Tiefdruckgebieten und Wind beschrieben.
 Diese Vorgänge können je nach Luftdruck, Temperatur, Windgeschwindigkeit und Luftfeuchtigkeit auftreten.
-Da diese Gleichungen jedoch nicht eindeutig lösbar sind, kann es nur zu Näherungswerten kommen.
-Diese mathematischen Näherungen benötigen sehr viel Rechenleistung,
+Da diese Gleichungen jedoch nicht eindeutig lösbar sind oder es durch Approximationsvorgänge zu Abweichungen kommt, kann es nur zu Näherungswerten kommen.
+Trotzdem, oder gerade deshalb sind diese numerischen Prognosen in unseren Rechenzentren berechenbar.
+Diese mathematischen Näherungen benötigen jedoch sehr viel Rechenleistung,
 weswegen auf die Leistungsfähigkeit von Supercomputern zurückgegriffen wird.
 Bei solchen numerischen Vorhersagemodellen wird das betrachtete Gebiet in Gitterzellen unterteilt.
 Für jeden Punkt werden dann die Parameter errechnet.
@@ -67,22 +69,25 @@ Letzters ist deutlich schwieriger und somit auch weniger zuverlässig.
 \subsection{Datenquellen} % AuVi
 
 \subsubsection{Quellenvergleich} % AuVi Datenquellen
-Da wir nun dargestellt haben, dass es für uns nicht möglich ist unsere eigenen Daten zu generieren, zeigen wir nun welche Quellen die benötigten Daten zur Verfügung stellen.
-Der Nutzer kann selbst zwischen den verschiedenen Datenquellen wählen, die angeboten werden.
-Die angebotenen Datenquellen können über die GUI und die Konsole gewählt werden.
-
-Wir werden über eine GUI\footnote{\textit{Graphical User Interface} engl. IT. für grafische Benutzeroberfläche} dem Nutzer anbieten zwischen verschiedenen Datenquellen zu wählen.
-Diese werden wir auch statistisch vergleichen.
-Grafik: Übersicht über Quellen (Alle die direkt über das Programm angeboten werden)
-Programm kann um weitere erweitert werden.
-Auswahl NOAA, GFS.\cite{noaa}
+Da ich nun dargestellt habe, dass es für mich nicht möglich ist eigene Daten aufzunehmen und Prognosen zu berechnen, zeige ich nun welche Quellen die benötigten Daten zur Verfügung stellen.
+Im Internet gibt es eine vielzahl von Anbietern von Wetterdaten.
+Die seriöseste Methode an diese Daten zu gelangen ist über einen OpenDap Server.
+Dieser garantiert dem Programmierer und somit dem Nutzer die Erreichbarkeit und Aktualität der Daten.
+Für mein Programm sammelte ich nun verschiedene Quellen und verglich sie untereinander.
+Bei diesem, bei weitem nicht vollständigen Vergleich,
+gewann die NOAA GFS Quelle \cite{noaa} , auf die ich durch Dr. Ronald Eixmann stieß.
+Das GFS \cite{gfs} Modell welches von NOAA angeboten wird zeichnet sich durch eine Vielfalt von Parametern (50+) und einen großen Prognosezeitraum (10 Tage) aus.
+In \vs\ kann der Nutzer selbst zwischen den verschiedenen Datenquellen wählen und eigene hinzufügen.
+Da die Software unter der MIT-Lizenz von mir im Internet veröffentlicht wurde, und diese Lizenz die ,,As is - Klausel''\footnote{Die Software wird von mir frei angeboten, darf verändert werden, aber ich stehe nicht gerade für Fehler oder Abstürze} enthält verschreibe ich mich keiner Garantieleistung \cite{mitl}. Ich kann somit Quellen auflisten die in Zukunft evtl. nicht mehr erreichbar sind.
+Ich strebe an über eine GUI\footnote{\textit{Graphical User Interface} engl. IT. für grafische Benutzeroberfläche} dem Nutzer eine Auswahl zwischen verschiedenen Datenquellen anzubieten.
+% TODO: Grafik: Übersicht über Quellen (Alle die direkt über das Programm angeboten werden)
 % NOTE Viel mehr Parameter, Daten bei NOAA oc DWD
 % Siehe andere Quellen
 
 
 \subsubsection*{Wetterdienst} % AuVi Datenquellen
 % TODO Grafik: Diagramm der Genauigkeit (Dafür Tabelle, Swenja)
-Der Deutsche Wetter Dienst steht unter dem Bundesministerium für Verkehr und digitale Infrastruktur. \cite{bmvi}
+Der Deutsche Wetter Dienst, kurz: DWD, arbeitet im Auftrag des Bundesministeriums für Verkehr und digitale Infrastruktur. \cite{bmvi}
 Der DWD bietet ebenfalls Wetterdaten an, die allerdings kostenpflichtig sind.
 Das Angebot ist unterteilt in ,,Aktuelles Wetter, Vorhersagen'' und ,,Vergangenes Wetter, Klimainfos''.
 Im ersten Bereich gibt es zum Beispiel den Unterpunkt Seewetter.
