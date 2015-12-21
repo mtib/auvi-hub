@@ -1,4 +1,13 @@
+### These are some XeLaTex-temp files
 *.aux
 *.log
 *.toc
 *.synctex.gz
+*.bbl
+*.blg
+*.out
+*.run.xml
+*-blx.bib
+
+### This is generated each time
+bll.pdf
