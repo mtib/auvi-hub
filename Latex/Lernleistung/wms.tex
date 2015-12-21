@@ -23,10 +23,24 @@ allerdings soll der Anzeigecomputer auch von alleine in der Lage sein sich einzu
 Zum Anzeigen muss eine Authentifizierung stattfinden, da Schüler zum einen manchmal unwissend Grafiken mit Copyright hochladen,
 und wir uns als Serveradmin schützen und auch den Schülern etwas entgegenkommen wollen. \\
 Auch bei diesem Interface greift natürlich die Regel,
-dass auch ein Affe die Datenbank bedienen können soll und auch die obligatorische Katze auf der Datenbank soll das System nicht zum Absturz bringen.
+dass auch ein Affe die Datenbank bedienen können soll und auch die obligatorische Katze auf der Datenbank soll das System nicht zum Absturz bringen.\footnote{diese Regel gibt dem System dessen Namen ,,apewms'' auf Github.com}
 
 \subsubsection{Hardware}
-\subsubsection{Automatisch erzeugte Grafiken}
+Zum Weather Monitoring System gehören zwei Bereiche die mit Hardware etwas zutun haben.
+Einerseits muss es einen Server geben, welcher die Daten bereitstellt,
+und gleichzeit auch möglichst interaktiv das Bearbeiten und Hochladen von neuen Daten ermöglicht.
+Diesem Server sollte genügen Speicherplatz bereitstehen,
+um alle Grafiken zu speichern.
+Aus der Spezifikation, dem Konzept, kann man schon ablesen, dass auch eine Datenbank auf dem
+Server angelegt werden muss.\\
+Der Client des Weather Monitoring Systems, muss funktionell nur Grafiken auf einem Bildschirm anzeigen.
+Diese Aufgabe ist nicht alzu aufwendig, daher ist bei der Auswahl der Clienthardware robustheit ein wichtigerer Faktor. Außerdem sollte die Hardware, noch eher als beim Server, möglichst kostgünstig sein,
+da wir früh planten, bei einem funktionierenden System mehrere Anzeigen einzusetzen.
+Die Lösung für Server und Client fand sich mit dem Raspberry Pi.
+Dieser kleine Rechner wurde für diese Arbeit schon mehrmals als Lösung herangezogen,
+und durch die Verfügbarkeit, Erfahrung mit der Hardware sowie der Möglichkeit direkt Prototypen zu testen bot es sich an einen Raspberry Pi als Server und Client zu benutzen.\\
+Für beide Anwendungsfälle komponierte ich eine abgewandelte Version des Raspbian Betriebssystems um die verlangte Aufgabe bestmöglichst zu erfüllen.
+
 
 \subsection{Interface} % WMS
 Nachdem ein Nutzer die Anmelderoutine durchgeführt hat wird ihm die Struktur der Daten nach Anzeigeindex geordnet angezeigt.
@@ -52,6 +66,33 @@ hat er nicht die Möglichkeit eine Verlinkung einzufügen, und vice versa.
 \begin{center}
 \includegraphics[width=\linewidth]{imgs/wms/wms_interface.png}
 \end{center}
+
+\subsection{Generierte Grafiken}
+\label{sub:Generierte Grafiken}
+In diesem Abschnitt der Projektarbeit bestand wieder ein Bedarf nach automatisiert erzeugten Grafiken.
+Einerseits ist das Wetter, ,,Weather'' ja schon namensgebend, somit ist der \vs -Teil meiner Arbeit schon relevant.
+Zudem fand sich aber auch ein anderer Anlass Grafiken automatisiert zu generieren.
+Das WMS System befindet sich im Foyer des Schulzentrum Kühlungsborns in dreifacher Ausführung.
+Einer der Rechner soll als Geburtstagsanzeige genutzt werden.
+Er zeigt also eine Reihe von Grafiken an, auf denen grafisch aufbereitete Tabellen aus Namen und Geburtsdaten der aktuellen Woche zu sehen sind.
+Die Erzeugung dieser Grafiken erfolgte historisch im Hafen im Rahmen des Wahlpflichtfaches unter der Leitung von Dr. Ronald Eixmann.
+Die Arbeit ist zeitaufwändig, und ein Schüler muss angelernt werden wie CoralDraw bedient wird.
+Auch wenn die Fähigkeit dieses Programm benutzen zu können nicht unwichtig ist, ist die Arbeit die
+Daten aus einer Tabelle zu lesen und in eine Maske einzutragen nicht notwendigerweise von einem Menschen abhängig.\\
+% TODO: explain autowkid
+
+\subsection{Application Programming Interface}
+\label{sub:wmsapi}
+Ein Application Programming Interface, kurz API, ist eine Schnittstelle zu einem größeren Programm
+über eine Programmiersprache, welche nicht der des ursprünglichen Programmes entsprechen muss.
+Über diese Schnittstelle soll dann die Ausführung von Aufgaben veranlasst werden.
+Eine API ermöglicht also dann Entwicklern auf ihr Programm von außen zuzugreifen und es zu erweitern.
+In meinem Fall von WMS war eine API notwendig um von Programmen aus, also nicht von \link{wms.viwetter.de}, Grafiken hochzuladen und zu verwalten.
+Im Detail wird die API genutzt um die erzeugtet Geburtstagsgrafiken von einem Python Programm auf den Server zu laden und die Geburtstagsgrafikenschleife zu verwalten.
+Die API auf Seiten des Servers ist in PHP geschrieben.
+Auf diese API kann nun von außen jede Programmiersprache über GET und POST Requests des Hyper Text Transfer Protokolls zugreifen.
+Eine dieser Programmiersprachenschnittstellen wurde von mir für Python geschrieben.
+% TODO: Link/Explain/Show wmsapi.py --> wmsa.py ?
 
 \subsection{Erreichbarkeit} % WMS
 Auch wenn der Server nicht globales Interesse erweckt soll er natürlich nicht nur im Hafen erreichbar sein.
