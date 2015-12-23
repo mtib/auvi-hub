@@ -1,5 +1,5 @@
 bll: bll.tex
-	rm bll.pdf || echo "-- no file to rm --"
+	rm bll.pdf
 	xelatex bll.tex
 	bibtex bll
 	xelatex bll.tex
