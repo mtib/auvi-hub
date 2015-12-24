@@ -7,12 +7,15 @@ sowie Wetterdaten und Wetterprognosen.
 Im Schulzentrum Kühlungsborn findet man eine weitere Anwendung des WMS. \\
 Im Foyer sollen Bildschirme Grafiken von Schülern für Schüler zeigen.
 Diese Grafiken beinhalten Geburtstagswünsche, Termine, oder allgemeine Fakten zu aktuellen Geschehnissen. \\
-Die Domain über die die Rechner den WMS-Server erreichen ist \link{http://wms.viwetter.de}. Auch wenn dieser von überall aus erreichbar ist,
-muss man sich authentifizieren um Daten zu bearbeiten oder anzuzeigen.
+Die Domain über die die Rechner den WMS-Server erreichen ist \link{http://wms.viwetter.de}.
+Auch wenn dieser von überall aus erreichbar ist,
+muss man sich authentifizieren um Daten zu bearbeiten oder anzuzeigen.\\
+Im letzten Jahr der Projektarbeit stellte sich das Weather Monitoring System als
+interessante Baustelle heraus. Ich nahm mich dieser Aufgabe voll an, entwickelte
+es von Grund auf und kümmerte mich um dessen Einbindung in verschieden Situationen.
 % Was ist WMS ENDE
 
 \subsection{Konzept} % WMS
-% Was war unsere Aufgabe
 Schüler sollen in der Lage sein die von ihnen in der Projektarbeit erzeugten Grafiken über ein möglichst einfaches Interface auf einen Server zu laden.
 Sie sollen anschließend die Bilder ersetzen bzw. löschen können.
 Damit die Serveradministrator, in diesem Fall \sw , \mb und \re ,
@@ -21,9 +24,13 @@ Es können von jedem Administrator nach Bedarf neue Konten erstellt werden. \\
 Auch zum anschauen der Grafiken muss man ein Konto besitzen,
 allerdings soll der Anzeigecomputer auch von alleine in der Lage sein sich einzuloggen und die Grafiken eines voreingestellten Ordners anzeigen.
 Zum Anzeigen muss eine Authentifizierung stattfinden, da Schüler zum einen manchmal unwissend Grafiken mit Copyright hochladen,
-und wir uns als Serveradmin schützen und auch den Schülern etwas entgegenkommen wollen. \\
+und ich mich als Serveradmin und Webadmin schützen und auch den
+Schülern etwas entgegenkommen will. \\
 Auch bei diesem Interface greift natürlich die Regel,
-dass auch ein Affe die Datenbank bedienen können soll und auch die obligatorische Katze auf der Datenbank soll das System nicht zum Absturz bringen.\footnote{diese Regel gibt dem System dessen Namen ,,apewms'' auf Github.com}
+dass auch ein Affe die Datenbank bedienen können soll
+und auch die obligatorische Katze auf der Tastatur soll das
+System nicht zum Absturz bringen. \footnote{diese Regel gibt dem System
+dessen Namen ,,apewms'' auf Github.com}
 
 \subsection{Hardware}
 Zum Weather Monitoring System gehören zwei Bereiche die mit Hardware etwas zutun haben.
@@ -34,19 +41,25 @@ um alle Grafiken zu speichern.
 Aus der Spezifikation, dem Konzept, kann man schon ablesen, dass auch eine Datenbank auf dem
 Server angelegt werden muss.\\
 Der Client des Weather Monitoring Systems, muss funktionell nur Grafiken auf einem Bildschirm anzeigen.
-Diese Aufgabe ist nicht alzu aufwendig, daher ist bei der Auswahl der Clienthardware robustheit ein wichtigerer Faktor. Außerdem sollte die Hardware, noch eher als beim Server, möglichst kostgünstig sein,
-da wir früh planten, bei einem funktionierenden System mehrere Anzeigen einzusetzen.
+Diese Aufgabe ist nicht alzu aufwendig,
+daher ist bei der Auswahl der Clienthardware robustheit ein wichtigerer Faktor.
+Außerdem sollte die Hardware, noch eher als beim Server, möglichst kostgünstig sein,
+da ich früh plante, bei einem funktionierenden System mehrere Anzeigen einzusetzen.
 Die Lösung für Server und Client fand sich mit dem Raspberry Pi.
 Dieser kleine Rechner wurde für diese Arbeit schon mehrmals als Lösung herangezogen,
-und durch die Verfügbarkeit, Erfahrung mit der Hardware sowie der Möglichkeit direkt Prototypen zu testen bot es sich an einen Raspberry Pi als Server und Client zu benutzen.\\
-Für beide Anwendungsfälle komponierte ich eine abgewandelte Version des Raspbian Betriebssystems um die verlangte Aufgabe bestmöglichst zu erfüllen.
+und durch die Verfügbarkeit,
+Erfahrung mit der Hardware sowie der Möglichkeit direkt Prototypen
+zu testen bot es sich an einen Raspberry Pi als Server und Client zu benutzen.\\
+Für beide Anwendungsfälle komponierte ich eine abgewandelte
+Version des Raspbian Betriebssystems um die verlangte Aufgabe bestmöglichst zu erfüllen.
 
 
 \subsection{Interface} % WMS
 Nachdem ein Nutzer die Anmelderoutine durchgeführt hat wird ihm die Struktur der Daten nach Anzeigeindex geordnet angezeigt.
 Der Nutzer, in diesem Fall der Schüler oder der Endnutzer am Bildschirm,
 selbst hat nur einen geringen Einblick in die Datenbank, und kann nicht direkt auf den Ordner auf dem Server zugreifen.\\
-Das von uns gestellte Interface ermöglicht ihm aber neue Ordner zu erstellen und Grafiken hochzuladen und zu löschen.
+Das bereitgestellte Interface ermöglicht dem Nutzer aber neue Ordner
+zu erstellen und Grafiken hochzuladen und zu löschen.
 Dabei wird im Hintergrund von jedem Bild der Autor gespeichert. \\
 Das Interface selbst ist hauptsächlich in PHP und CSS geschrieben.
 Natürlich ist ein gewisser Grad von JavaScript und HTML unumgänglich. \\
@@ -54,8 +67,9 @@ Da auch die Bearbeitung der Daten von einem Raspberry Pi möglich sein soll ist 
 sondern beruht auf grundlegenden Elementen und enthält auch kaum Animationen. \\
 % TODO mehr über Sicherheit
 JavaScript wird nur benutzt um Eingabeformulare auf offensichtliche Fehler zu überprüfen.
-Außerdem schränken wir den Nutzer bewusst ein, sodass die Wahrscheinlichkeit,
+Außerdem schränkte ich den Nutzer bewusst ein, sodass die Wahrscheinlichkeit,
 dass er etwas veranlasst, wovon er nicht wusste was es bewirkt, verringert wird.
+Außerdem kann er selbst mutwillig nicht das gesamte System zum Absturz bringen.
 Dies beinhaltet das Freigeben des Links um die Anzeige einzuschalten,
 dies kann nur durch einen Admin geschehen.
 Auch der Schüler soll vor sich selbst geschützt werden.
@@ -105,8 +119,28 @@ und es werden auch keine Cookies gespeichert.
 Da dieses System an öffentlichen Orten Anwendung finden soll,
 muss gewährleistet sein, dass auf den Anzeigegeräten nur Daten angezeigt werden,
 die von autorisierten Personen ausgewählt worden.
-Außerdem soll der Service nicht ohne unsere Erlaubnis und Wissen aufrufbar sein,
-deshalb haben wir ein Kontensystem implementiert.
+Außerdem soll der Service nicht ohne die Erlaubnis eines Administrators aufrufbar sein,
+deshalb wurde ein Kontensystem implementiert.
 Da die Client Computer automatisiert starten und gleich die richtigen Daten anzeigen sollen,
-mussten wir ein Protokoll entwickeln, welches sicher ist,
+musste ich ein Protokoll entwickeln, welches sicher ist,
 aber einem Rechner ermöglicht sich selbst einzuloggen.
+Um dafür zu sorgen, dass nur vollständig geladene Grafiken angezeigt werden muss
+der Client beim Anzeigen selbst überprüfen ob die Grafik vorhanden ist.
+Um sicherzustellen, dass die Anzeige auch im Rahmen der Projektarbeit aufgestellt
+wurde muss sich der Rechner selbst authentifizieren.
+Dafür muss auf ihm lokal ein Benutzername und ein
+Authentifizierungshash gespeichert sein. Sein Passwort im Klartext ist dem Server nicht bekannt.
+Selbst wenn der gesamte Datenbankinhalt veröffentlicht wird, kann weder ein Passwort
+entschlüsselt werden\footnote{zumindest in einer Zeitspanne die
+geringer als die Lebensdauer des Universums ist}, noch können Nutzer die das selbe Passwort haben
+gruppiert werden.\\
+Dieses Verhalten erreiche ich indem ich das Passwort zusammen mit einem ,,Salt''-Wert hashe. Dieser ,,Salt'' wird bei jedem Benutzer individuell erzeugt und ist eine lange zufällige Zeichenkette.
+
+\subsection{Anzeige}
+Die Anzeige erfolgt über den Browser, da ein Internetbrowser meist vorinstalliert ist
+und die meisten Medien nativ anzeigen kann, ohne das ein zusätzliches Software packet
+benötigt. \\
+Nur einen Browser zu starten reicht allerdings nicht um das von mir verlangte Verhalten
+zu erreichen. Der Browserstart soll direkt nach dem Bootvorgang erfolgen, der Rechner soll
+dann auch so robust eingerichtet sein, dass sein Dateisystem bei dem wildesten Stromnetz
+noch funktionsfähig bleibt.

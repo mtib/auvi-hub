@@ -70,7 +70,7 @@ Diese Vorgänge können je nach Luftdruck, Temperatur, Windgeschwindigkeit
 und Luftfeuchtigkeit auftreten.
 Da diese Gleichungen jedoch nicht eindeutig lösbar sind oder es
 durch Approximationsvorgänge zu Abweichungen kommt, kann es nur zu Näherungswerten kommen.
-Trotzdem, oder gerade deshalb sind diese numerischen Prognosen in unseren Rechenzentren berechenbar.
+Trotzdem, oder gerade deshalb sind diese numerischen Prognosen in diesen Rechenzentren berechenbar.
 Diese mathematischen Näherungen benötigen jedoch sehr viel Rechenleistung,
 weswegen auf die Leistungsfähigkeit von Supercomputern zurückgegriffen wird.
 Bei solchen numerischen Vorhersagemodellen wird das betrachtete Gebiet in Gitterzellen unterteilt.
@@ -160,10 +160,11 @@ Im zweiten Bereich gibt es die genaueren Eingrenzungen
 ,,Deutschland - Allgemein'', ,,Deutschland - Speziell'' ,
 ,,Global'' und ,,Geburtstagswetterkarte''.
 \cite{dwd-shop}
-Diese Daten sind für uns allerdings nicht relevant, weil sie in der Vergangenheit liegen.\\
-Da diese Quelle sich auf lange Zeit für uns als zu kostspielig herausgestellt hätte,
+Diese Daten sind allerdings nicht für dieses Projekt relevant,
+weil sie in der Vergangenheit liegen.\\
+Da diese Quelle sich auf lange Zeit als zu kostspielig herausgestellt hätte,
 und auch die Datenmenge nicht für jeden Punkt der Erde definiert ist,
-war für mich frühzeitig klar, dass ich eine alternative Quelle suchen musste.
+war frühzeitig klar, dass eine alternative Quelle gesucht werden musste.
 
 \subsubsection*{NOAA Global Forecast System} % AuVi Datenquellen
 Das Global Forecast System (GFS)  ist ein Modell, das mathematisch Parameter errechnet.
@@ -178,9 +179,11 @@ Im Verlauf meiner Arbeit vergliche ich verschiedene Quellen.
 Auch wenn ich die Möglichkeit habe unter Angabe des Links mit einer
 Einstellung eine andere Quelle zu benutzen habe ich mich
 für das GFS Modell von NOAA als Haupt- und Standartquelle entschieden.
-Das GFS ist zuverlässig und gut dokumentiert, was uns die Einarbeitung erleichterte.
+Das GFS ist zuverlässig und gut dokumentiert,
+was die Einarbeitung in dessen Spezifikation erleichterte.
 Zudem bietet NOAA verschiedenste Varianten des GFS-Models an,
-somit kann ich stark mitbestimmen welches Datenformat von der Software verwendet wird.
+somit kann stark vom Programm beeinflusst werden welches
+Datenformat verwendet wird.
 Die Daten liegen in verschiedenen zeitlichen und räumlichen Auflösungen vor.
 % TODO Tabelle mit Daten: http://www.ftp.ncep.noaa.gov/data/nccf/com/gfs/prod/
 % TODO Auflösungen heraussuchen http://www.nco.ncep.noaa.gov/pmb/products/gfs/
@@ -199,14 +202,17 @@ für die nächsten 10 Tage. Hierin unterscheiden sich allerdings die verschieden
 Modelle des NOAA. Die statistischen oder historischen Daten sind immer Verfügbar.
 Da sie die Vergangenheit beschreiben oder eine Reihe von Standaufnahmen darstellen
 ist hier die Frage nach Datenverfügbarkeit weniger wichtig.\\
-Unsere Arbeit behandelt haben hauptsächlich die Wetterprognose, bzw. die Auswertung
-von Wetterprognosedaten. Für unsere Zwecke und Ziele ist Datenverfügbarkeit von
-hoher Wichtigkeit. Ich muss erwarten können, dass die von mir verlangten Daten auch
-dort verfügbar sind, wo sie sein sollen, und die Daten enthalten die nach der
+Diese Arbeit behandelt hauptsächlich die Wetterprognose, bzw. die Auswertung
+von Wetterprognosedaten. Für diese Zwecke und Ziele ist Datenverfügbarkeit von
+hoher Wichtigkeit. Das Programm muss erwarten können,
+dass die erforderlichen Daten auch
+dort verfügbar sind, wo sie sein sollen,
+und die Daten enthalten die nach der
 Spezifikation enthalten sein sollen.\\
 Diese Spezifikation der NOAA Daten steckt sich bei verschiedenen Modellen
-verschiedene Ziele ab. Das von uns am meisten genutzte Modell, das GFS Modell ist
-24-7 erreichbar, kostenlos und enthält Daten entweder für die nächsten 33 Stunden,
+verschiedene Ziele ab. Das von meinem Programm am meisten genutzte Modell,
+das GFS Modell ist 24-7 erreichbar,
+kostenlos und enthält Daten entweder für die nächsten 33 Stunden,
 133 Stunden oder 240 Stunden.
 
 \subsection{Entwicklung} % AuVi
@@ -246,8 +252,8 @@ Viele Arbeitsstunden mussten von zu hause erledigt werden.\\
 Im Winter des Jahres 2013 absolvierten ich zusammen mit Swenja Wanger ein Schülerpraktikum am
 Leibnitz Institut für Atmoshpärenphysik.
 Dort nutzten ich die Möglichkeit um mit anderen dort arbeitenden
-Wissenschaftlern über unser Projekt zu reden.
-Hier entstand die erste lauffähige Version unseres Programmes.
+Wissenschaftlern über dieses Projekt zu reden.
+Hier entstand die erste lauffähige Version des Programmes.
 Außerdem entwarf ich mehrere Poster für den \jf Wettbewerb 2014.
 
 \subsubsection{Programmierung}
@@ -256,18 +262,17 @@ war die Programmierung der Software ,,\vs ''.
 Da ich mich in Punkt \ref{sec:ent} schon entschieden habe in einer Linux Umgebung zu arbeiten,
 mussten ich auch die Programmiersprachen und sowie IDE's so wählen,
 dass sie auch auf Ubuntu oder ähnlichen Distributionen ohne Komplikationen funktionierten.\\
-Unser Hauptprogramm, genannt ,,\vs '' haben ich erst in
-Python (Version 2.7) \cite{python27} geschrieben.
-Vorher gab es eine Ansammlung von Befehlen in einer BASH Datei welche die selbe Aufgabe
-erfüllte. Diese Datei war sehr undynamisch und konnte auch schlecht auf verschiedene
+Das Hauptprogramm, genannt ,,\vs '', zuerst in
+Python (Version 2.7) \cite{python27} geschrieben, hatte einen Vorgänger in Form von einer
+Ansammlung von Befehlen in einer BASH Datei welche die selbe Aufgabe erfüllte.
+Diese Datei war sehr undynamisch und konnte auch schlecht auf verschiedene
 Umgebungen reagieren.
-Entschieden uns aber später unsere Fortschritte von Python Version 2.7 auf die Version 3 gehoben.
-Diese Programmiersprache ist in den von uns genutzten Distributionen
+Diese Programmiersprache ist in den für die Projektarbeit genutzten Distributionen
 sogar vorinstalliert und ein allgemeiner Industriestandard.\\
 Nur mit Python kam ich allerdings auf lange Zeit nicht aus.
-Ich nutzte noch andere Sprachen um die Entwicklung zu beschleunigen,
-auch wenn Python für die restlichen Aufgaben auch hätten erfüllen können
-kombinierte ich folgende Programmiersprachen:
+Andere Sprachen finden trotzdem eine Anwendung um die Entwicklung zu beschleunigen,
+auch wenn Python die restlichen Aufgaben auch hätten erfüllen können
+erleichterte die Kombination folgender Programmiersprachen die Arbeit:
 \begin{figure}[H]
 \input{graphs/pyvitree.tex}
 \label{fig:pyvi}
@@ -321,41 +326,60 @@ Die Farbwerte sind in einem Intervall von $0$ gar nicht vorhanden bis $255$ voll
 Um diese Farbwerte dann zu nutzen müssen diese noch den Wetterdaten zugewiesen werden.
 Dieses geschieht unabhängig von den Einheiten im selben Script.
 Auch hier kann der Text leicht von einem Computer generiert werden.
-\footnote{Wenn wir davon sprechen, dass Daten vom Computer generiert werden ist gemeint, dass ein Nutzer der Website oder App seine Vorlieben mithilfe einer HTML-Form auswählt und von diesen Werten im Hintergrund eine Datei erzeugt.}
+\footnote{Wenn ich davon spreche, dass Daten vom Computer generiert werden ist gemeint,
+dass ein Nutzer der Website oder App seine Vorlieben mithilfe einer HTML-Form auswählt
+und aus diesen Werten im Hintergrund eine Datei erzeugt.}
 
 
 \subsubsection*{Webseite}
-Das Front-End unserer Arbeit ist eine Website
-\footnote{Diese Website kann auch in eine App gepackt werden, zur Veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple}.
-
-Die Website ist programmiert in HTML (Hyper Text Markup Language), PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript.
-Als Webserver benutzen wir Apache2 \cite{php} \cite{apache} \\
+Das Front-End der Software ist eine Website
+\footnote{Diese Website kann auch in eine App gepackt werden,
+zur Veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple}.
+Die Website ist programmiert in HTML (Hyper Text Markup Language),
+PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript.
+Als Webserver benutze ich Apache2 \cite{php} \cite{apache} \\
 
 \subsubsection{Versionen}
 Im Laufe der Arbeit entstanden mehrere lauffähige Versionen.
-Diese beginnen mit puren GrADS-Scripten um überhaupt Grafiken zu erzeugen zu Beginn der Projektarbeit in 2013.
-Um dieses Erzeugen zu automatisieren packten wir alle nötigen Befehle in eine BASH Datei.
+Diese beginnen mit puren GrADS-Scripten um überhaupt Grafiken
+zu erzeugen zu Beginn der Projektarbeit in 2013.
+Um dieses Erzeugen zu automatisieren wurden alle nötigen Befehle in eine BASH Datei verpackt.
 Diese Bash Datei musste die Ordnerstruktur herstellen und kontrollieren.
-Sie war außerdem in der Lage neue Versionen unserer Software zu erkennen und auf Befehlt vom Server zu laden.
-Auf diese Version bauten wir auf,
-nachdem wir sie bei dem Jugend Forscht Wettbewerb 2014 präsentierten und den zweiten Platz erreichten.\\
-Um allerdings schnellere Ergebnisse zu erzielen übersetzte Markus das komplette Programm von Bash in Python.
-Durch die modulare Struktur von Python können unsere Funktionen in andere Projekte als Bibliotek eingebunden werden.\\
-Über Python können wir effektiver die Daten analysieren, können leichter komplexe Bedingungen kontrollieren und auch die Interaktion mit dem Nutzer ist erleichtert.
-Durch Python und JSON konnten wir das Projekt dann vollständig automatisieren.
+Sie war außerdem in der Lage neue Versionen der Software auf einem Server zu erkennen
+und auf Befehl vom Server zu laden und sich selbst zu ersetzen.
+Auf diese Version baute das Projekt weiterhin auf,
+nachdem sie bei dem Jugend Forscht Wettbewerb 2014
+präsentiert wurde und den zweiten Platz erzielte.\\
+Um allerdings schnellere Ergebnisse zu erzielen wurde
+das komplette Programm von Bash in Python übersetzt.
+Durch die modulare Struktur von Python können meine
+Funktionen in andere Projekte als Bibliotek eingebunden werden.\\
+Über Python kann ich effektiver die Daten analysieren,
+kann leichter komplexe Bedingungen kontrollieren und
+auch die Interaktion mit dem Nutzer ist erleichtert
+(z.B. durch das Nutzen von JSON Dateien).
+Durch Python und JSON konnte ich das Projekt dann vollständig automatisieren.
+Zum Zeitpunkt der Arbeit wird GrADS noch immer Aufgerufen. Allerdings
+wird durch die ständige Weiterentwicklung an einem neuen Projekt gearbeitet.
+Dieses Projekt, ,,PilDap'' getauft soll von der GitHub Gemeinde mitentwickelt
+werden und nativ in Python die selbe Aufgabe erfüllen wie GrADS \cite{pildap}.
 
 \subsubsection*{Git}
-Ab Anfang 2015 benutzten wir eine neue Umgebung um an unserem Programmen und der Setzung zu arbeiten.
-% TODO unabhängig von genutzten Mitteln GIT
-Die Umgebung Git % FIXME Git Quelle!
-ermöglicht im eigentlichen Sinne Programmierern gleichzeitig an einem Projekt kooperativ zu arbeiten.
-Wir konnten diese Software zuerst auf dem eigenen Server und später zusätzlich auf der Website \link{GitHub.com} % FIXME GitHub Quelle
-nutzen.
+Ab Anfang 2015 benutzte ich eine neue Umgebung um an meinen
+Programmen und der Setzung zu arbeiten.
+Die Umgebung Git \cite{gitrepo}
+ermöglicht im eigentlichen Sinne Programmierern gleichzeitig an
+einem Projekt kooperativ zu arbeiten.
+Ich konnte diese Software zuerst auf dem eigenen Server und später zusätzlich
+auf der Website \link{GitHub.com} \cite{github} nutzen.
 Der Git ,,Workflow'' ist auch ohne Internetverbindung komplett funktionstüchtig.
-Wir machen Änderungen, verpacken sie und senden sie zum Server.
-Dieses Änderungspacket erhält eine einzigartige Identifikation.
-Durch diese Identifikation können wir auf jede einzelne Version unserer Software und Setzung zugreifen.
-Zusätzlicher erreichen wir so eine hohe Datensicherheit und schnelle parallele Entwicklung mit gegenseitiger Kontrolle\footnote{Ziel ist es den Inhalt zu kontrollieren, nicht den Projektpartner}.
+Ich mache Änderungen, verpacke sie und sende sie zum Server.
+Dieses Änderungspacket erhält eine einzigartige Identifikation, eine SHA1 Hash \cite{gitsha1}.
+Durch diese Identifikation kann ich im Nachhinein auf jede einzelne Version
+meiner Software und Setzung zugreifen. Wenn ich einen Fehler bemerke kann ich z.B. so
+durch den Befehl $\text{git bisect}$ den Commit, d.h. die Änderung finden, die den Fehler
+mit sich brachte.
+Zusätzlicher erreiche ich so eine hohe Datensicherheit \cite{linussaves} und schnelle parallele Entwicklung mit gegenseitiger Kontrolle\footnote{Ziel ist es den Inhalt zu kontrollieren, nicht den Kollegen}.
 
 \subsubsection{genutzte Mittel} % AuVi Entwicklung
 % Website, Server, ...
@@ -378,51 +402,84 @@ Zusätzlicher erreichen wir so eine hohe Datensicherheit und schnelle parallele 
 % Kosten: 7 EUR im Jahr, Server ist AuVi-Server
 % TODO Übertrage Gerüst auf viwetter.de (Markus)
 % Auf Server: /home/pi/viwetter.de/.
-Die von uns gemacht Website um Ergebnisse anzuzeigen.
 
 \subsubsection{Datenformate} % AuVi Schnittstelle
-Da wir unsere erzeugten Grafiken auf einer Website und App darstellen wollen müssen wir sehr darauf achten,
-dass die Dateiformate zum einen komprimiert genug sind um heruntergeladen werden zu können und zum anderen noch einen gewissen Qualitätsstandard behalten.\\
-Außerdem sind Mobiltelefone nicht in der Lage alle Dateiformate anzuzeigen,
+Da ich meine erzeugten Grafiken auf einer Website und App darstellen will
+musste ich sehr darauf achten,
+dass die Dateiformate zum einen komprimiert genug sind
+um heruntergeladen werden zu können und zum anderen
+noch einen gewissen Qualitätsstandard erfüllen.\\
+Außerdem sind Mobiltelefone nicht in der Lage alle
+Dateiformate anzuzeigen,
 die ein Webbrowser auf einem Computer ohne Probleme handhabt.
-Als die sichersten Dateiformate haben wir PNG und JPG für Bilder und GIF für Animationen auserkoren.
-Wir haben lange versucht die Animationen als Video zu kodieren.
-Allerdings bemerkten wir nur geringe Einsparungen in der Dateigröße und stellten gleichzeitig Anzeigeprobleme fest.
+Als die sichersten und besten für diesen Zweck Dateiformate habe
+ich PNG und JPG für Bilder
+und GIF für Animationen auserkoren.
+ich habe lange versucht die Animationen als Video zu kodieren.
+Allerdings bemerkte ich nur geringe Einsparungen in der
+Dateigröße und stellte gleichzeitig Anzeigeprobleme auf
+älteren Geräten fest.
+Resultat dieser Entscheidung bedeutet nun, dass ich etwas mehr
+Daten übertragen muss, weil die Datei als z.B. GIF codiert ist,
+dafür aber definitiv angezeigt werden kann.\\
+In einer Zeit in der die Internetverbindung als Grundbedürfnis
+angesehen wird, fiel mir diese Entscheidung leichter als gedacht.
 
 \subsubsection{Schulhompage} % AuVi Schnittstelle
-Da wir ein Projekt des Schulzentrum Kühlungsborns sind (\link{http://www.schulzentrum-kborn.de}) sind wir auf dessen Seite unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen \cite{szkb}.
-Dort sind wir unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden.
+Da Jugend Forscht unter der Leitung von Herr Doktor Eixmann
+ein Projekt des Schulzentrum Kühlungsborns ist
+(\link{http://www.schulzentrum-kborn.de}) bin ich auf der Schulhompage
+unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen \cite{szkb}.
+Dort ist mein Projekt unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden.
 Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte,
-richteten wir eine eigene Seite auf unserem Server ein.
+richtete ich eine eigene Seite auf meinem Server ein.
 Diese ist unter \link{http://team.viwetter.de}
-für alle zu erreichen.
-Diese Seite soll nicht die Ergebnisse unseres AuVi Programms widerspiegeln sondern dient als Webpräsenz des Projektes.
+für die Öffentlichkeit zu erreichen.
+Diese Seite soll nicht die Ergebnisse des AuVi Programms
+widerspiegeln sondern dient als Webpräsenz des Projektes.
 
 \subsection{Szenario} % AuVi
-Wir werden nun Beispiele angeben, wie unser Programm genutzt werden kann.
+Ich werde nun Beispiele angeben, wie mein Programm genutzt werden kann.
 Es gibt darüber hinaus sehr viele Möglichkeiten aus dem Programm individuellen Nutzen zu ziehen.
+Python Entwickler können so meine Software als Bibliothek einbinden oder direkt den Quelltext
+weiterentwickeln.
 
 \subsubsection{Frühwarnung} % AuVi Szenario
-% Nach dem Ampel System eigene Parameter die Gefährdung darstellen markieren. Z.B. Segler mit Windgeschwindigkeit auf Seelevel, Segelflieger mit Windgeschwindigkeit und Richtung auf x-Meter Höhe. Allgemeiner Arbeiter mit Temperatur.
-Das von uns entwickelte System kann verwendet werden um wetterbedingte Gefahrensituationen frühzeitig zu erkennen.
-Anhand der globalen Datenquellen und dem Hintergrund unseres Systems ist es einem Nutzer möglich für seinen Ort selbst die Parameter zu wählen die für Ihn eine Gefährdung darstellen.\\
-Es ist uns wichtig, dass unsere Visualisierung keine Laien abschreckt,
-deshalb haben wir uns entschieden die Frühwarnung in Form eines Ampelsystems an den Nutzer zu bringen.
+Das entstandene System kann verwendet werden um
+wetterbedingte Gefahrensituationen frühzeitig zu erkennen.
+Anhand der globalen Datenquellen und dem Hintergrund des
+Systems ist es einem Nutzer möglich für seinen Ort selbst die
+Parameter zu wählen die für Ihn zum Beispiel eine Gefährdung darstellen.\\
+Es ist mir wichtig, dass meine Visualisierungen keine Laien abschreckten,
+deshalb habe ich mich entschieden die Frühwarnung in Form eines
+Ampelsystems an den Nutzer zu bringen.
 Dieser kann bei Interesse an der Frühwarnfunktionalität eine Spanne angeben,
-in der der entsprechende Parameter sicher ist (grün), gefährlich wird (gelb) oder gefährlich ist (rot).
+in der der entsprechende Parameter sicher ist (grün),
+gefährlich wird (gelb) oder gefährlich ist (rot).
 Diese sehr visuelle Form soll dabei auf einem Blick ermöglichen die Wetterlage abzuschätzen.\\
-Für detaillierte Auswertungen bieten wir andere Anzeigeformate an.
+Für detaillierte Auswertungen kann ich andere Anzeigeformate anbieten.
 
 \subsubsection{Exotische Orte} % AuVi Szenario
-Ob mitten im Ozean oder in der Wüste, unser Programm liefert Prognosen für jeden Ort.
-Wir benötigen nur die dazugehörigen Koordinaten.
-% TODO Wie wir an die Daten gelangen
-Die Genauigkeit ist von der Zeitspanne und der Entfernung zur physikalischen Messstation abhängig.
-Je weiter das Wetterereignis in der Zukunft liegt, desto geringer ist die Genauigkeit.
-Die Genauigkeit steigt, wenn sich eine Messstation im näheren Umfeld befindet.
+Ob mitten im Ozean oder in der Wüste, mein Programm liefert Prognosen für jeden Ort.
+Die einzige Information die ich zum Ort brauche ist die Koordinatendarstellung des
+Ortes auf dem Gradnetz der Erde.
+Diese Darstellung besteht aus Längen- und Breitengrad (engl. Longitude, Latitude).
+Das heißt jeder Ort kann durch das Intervall der Längengrade $[-180:180]$ und
+der Breitengrade $[-90:90]$ dargestellt werden.
+Es gibt aber, da das Gradnetz die Erde als mathematisches Objekt abstrahiert,
+durch die reine Komplexität der Erdoberfläche und Form bei der Bestimmung der
+Koordinaten Abweichungen \cite(tomgeo).
+Die Genauigkeit ist zudem von der Zeitspanne und
+der Entfernung zur physikalischen Messstation abhängig.
+Je weiter das Wetterereignis oder die Wetterprognose in der Zukunft liegt,
+desto geringer ist dessen Genauigkeit.
+Die Genauigkeit steigt, wenn sich eine Messstation im näheren Umfeld befindet und
+nur eine kürzere Prognose verlangt wird.
 
 \subsubsection{Wissenschaft} % AuVi Szenario
-Wissenschaftler können von uns bereitgestellte Parameter kombinieren und sich so neben allgemein komplexeren meteorologischen Daten auch besonders interessante meteorologische Ereignisse grafisch darstellen lassen.
+Wissenschaftler können von der Datenquelle bereitgestellte Parameter kombinieren
+und sich so neben allgemein komplexeren meteorologischen Daten
+auch für sie besonders interessante meteorologische Ereignisse grafisch darstellen lassen.
 Wenn jemand zum Beispiel Zusammenhänge zwischen der Ozonschicht und der Temperatur erforscht,
 kann er sich eine Grafik ausgeben lassen, die ihm diese beiden Parameter darstellt.
 % Dr. Eixmann fragen, was man sich wissenschaftlich visualisieren könnte
@@ -430,46 +487,53 @@ kann er sich eine Grafik ausgeben lassen, die ihm diese beiden Parameter darstel
 
 \subsubsection{Anpassung} % AuVi Szenario
 Wie zuvor genannt kann der Nutzer eigene Muster einstellen und so das Programm erweitern.
-Diese Möglichkeit erlaubt dem Nutzer diesem Service, den wir anbieten, um eigene Funktionen zu erweitern.
-Ein Beispiel ist der Segler, der in einem Bestimmten Intervall von Windstärke und Windrichtung am besten seinen Sport ausüben kann.\\
-Der Segler würde sich diese Parameter dann für das Gebiet seiner Interesse plotten lassen und kann dann noch Farben wählen.
-Ähnlich wie das Frühwarnsystem kann er sich nun aber seine eigene Skala der ,,Eignung zum Segeln'' erstellen.
+Diese Möglichkeit erlaubt dem Nutzer diesen Service,
+den ich anbiete, um eigene Funktionen zu erweitern.
+Ein Beispiel ist der Segler, der in einem Bestimmten
+Intervall von Windstärke und Windrichtung am besten seinen Sport ausüben kann.\\
+Der Segler würde sich diese Parameter dann für das Gebiet seiner
+Interesse plotten lassen und kann dann noch Farben wählen.
+Ähnlich wie das Frühwarnsystem kann er sich nun aber
+seine eigene Skala der ,,Eignung zum Segeln'' erstellen.
 % TODO Verschiede Visualisierungen (der selben Daten)
-% Inhalte für die besondere Lerleistung
 
 \subsection{Öffentlichkeitsarbeit} % AuVi
 % Messen, Vorträge, Dokumentation, Poster
-Um unsere Arbeit zu präsentieren, entstanden im Laufe des Projekts mehrere Poster.
-Anfangs entwickelten wir diese in PowerPoint, sind dann allerdings auf Gimp umgestiegen,
-da sich das für unsere Arbeit vorteilhafter gestaltete.
+Um diese Arbeit zu präsentieren, entstanden im Laufe des Projekts mehrere Poster.
+Anfangs wurden diese in PowerPoint entwickelt, später wurde ein Umstieg
+auf Gimp umgestiegen notwendig,
+da sich Gimp für die Arbeit vorteilhafter gestaltete.
 Auf den Postern war meist zuerst eine kleine Einführung in das Projekt.
 Danach schloss sich eine nähere Erläuterungen desselben an.
 Um das Poster für den Betrachter attraktiver und anschaulicher zu machen,
-stellten wir einige Themen in grafischer Form dar und veranschaulichten unsere Ergebnisse mit Beispielgrafiken. \\
+stellte ich einige Themen in grafischer Form dar und
+veranschaulichte meine Ergebnisse mit Beispielgrafiken. \\
 Häufig wurde auch eine schriftliche Erläuterung des Projekts gefordert,
 in der alles ausführlich erklärt wird.
-Diese Dokumentation des Projekts schrieben wir in \LaTeX .
-Auch in diesen Dokumentationen wurden Übersichten und Grafiken als Anschauungsmaterial beigefügt und nötigenfalls näher erläutert.\\
-Solche Dokumentationen und Poster kamen zum Beispiel bei den Landeswettbewerben \jf in Rostock (Mecklenburg Vorpommern) zur Anwendung.
-Bei diesem Wettbewerb werden aus dem gesamten Bundesland Projekte aus verschiedenen Fachgebieten präsentiert.
-Es wird unterteilt in Arbeitswelt, Biologie, Chemie, Mathematik/Informatik, Geo- und Raumwissenschaften und Technik.
-Die jeweils Erstplatzierten in jedem Bereich qualifizieren sich für den darauffolgenden Bundeswettbewerb.
-Am Landeswettbewerb nahmen wir erstmalig 2013 teil.
-Allerdings hatten wir uns erst kurz vorher zusammengefunden,
-sodass wir das Projekt unserer Vorgänger vorstellten.
-Wir nahmen am Wettbewerb teil um erste Erfahrungen zu sammeln und uns darüber klar zu werden,
-wo wir einmal hin wollen.
-Im darauf folgenden Jahr erreichten wir mit unserem Projekt ,,Auvi - Automatisierte Visualisierung von Wetterstations- und Wetterprognosedaten'' den zweiten Platz in der Kategorie Geo- und Raumwissenschaften.
-Wir arbeiteten weiter an unserem Projekt und im Jahr 2015 gewannen wir den Landeswettbewerb sogar mit dem Projekt ,,AuVi - Automatisierte Visualisierung von meteorologischen Daten'' und qualifizierten uns so für den Bundeswettbewerb.\\
-Wir nahmen auch an weiteren Veranstaltungen teil,
-bei denen wir unser Projekt vorstellten.
-Dazu gehört zum Beispiel der IHK-Schulpreis.
-Im Jahr 2014 bewarb sich unsere Schule mit dem Projekt CampusPro.
-Wir durften zusammen mit Vertretern aus anderen Projekten unsere Schule bei dieser Veranstaltung vertreten.
-Im Jahr darauf nahmen wir wieder daran teil. Diesmal allerdings mit unserem Projekt an sich.\\
-An unserer Schule wird die Möglichkeit geboten durch umfassende Projektarbeit ein IHK-Zertifikat zu erlangen.
+Diese Dokumentation des Projekts schrieb ich in \LaTeX .
+Auch in diesen Dokumentationen wurden Übersichten und Grafiken als Anschauungsmaterial
+beigefügt und nötigenfalls näher erläutert.\\
+Solche Dokumentationen und Poster kamen zum Beispiel bei
+den Landeswettbewerben \jf in Rostock (Mecklenburg Vorpommern) zur Anwendung.
+Bei diesem Wettbewerb werden aus dem gesamten
+Bundesland Projekte aus verschiedenen Fachgebieten präsentiert.
+Es wird unterteilt in Arbeitswelt, Biologie, Chemie,
+Mathematik/Informatik, Geo- und Raumwissenschaften und Technik.
+Die jeweils Erstplatzierten in jedem Bereich
+qualifizieren sich für den darauffolgenden Bundeswettbewerb.
+Die Teilnahme am Jugend Forscht Wettbewerb begann erstmalig 2013.
+,,Auvi - Automatisierte Visualisierung von Wetterstations- und Wetterprognosedaten''
+erreichte den zweiten Platz in der Kategorie Geo- und Raumwissenschaften des Wettbewerbes
+Jugend Forscht 2014.
+Im Jahr 2015 erreichte das weiterentwickelte
+,,AuVi - Automatisierte Visualisierung von meteorologischen Daten''
+die Qualifizierung für den Bundeswettbewerb.\\
+Veranstaltungen bei denen das Projekt vorgestellt wurde war zum Beispiel der IHK-Schulpreis.
+Im Jahr 2014 bewarb sich das Schulzentrum Kühlungsborn mit dem Projekt CampusPro.
+Mit Vertretern aus anderen Projekten der Schule wurde das Schulzentrum hier vertreten.
+Im Jahr darauf trat das Projekt ,,Auvi'' alleine an.\\
+Am Schulzentrum Kühlungsborn wird die Möglichkeit geboten durch
+umfassende Projektarbeit ein IHK-Zertifikat zu erlangen.
 Um dieses zu erlangen werden Vorträge gehalten, in denen das jeweilige Projekt präsentiert wird.
-Im Jahr 2014 eröffneten wir solch eine Vortragsveranstaltung,
-indem wir kurz unser neues Projekt vorstellten.
-Im Jahr 2016 werden wir uns dann selbst um ein IHK-Zertifikat bemühen.
-% TODO Mehr über Messenfeedback
+Im Jahr 2014 wurde solch eine Vortragsveranstaltung durch einen Vortrag zum Thema ,,Auvi'' eröffnet.
+Dies war eine kurze Vorstellung des Projektes.
