@@ -1,12 +1,6 @@
 bll: bll.tex
-	rm bll.pdf || echo "-- no file to rm --"
-	xelatex bll.tex
-	bibtex bll
-	xelatex bll.tex
-	rm *.aux
-	rm *.toc
-	rm *.log
-	rm *.blg
-	rm *.xml
-	rm *.bbl
-	rm bll-blx.bib
+	rm bll.pdf                     || echo ""
+	xelatex bll.tex >/dev/null     || echo ""
+	bibtex bll      >/dev/null     || echo ""
+	xelatex bll.tex >/dev/null     || echo ""
+	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib
