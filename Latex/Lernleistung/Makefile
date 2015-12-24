@@ -4,3 +4,9 @@ bll: bll.tex
 	bibtex bll      >/dev/null     || echo ""
 	xelatex bll.tex >/dev/null     || echo ""
 	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib
+out: bll.tex
+	rm bll.pdf || echo "Nothing to delete!" 
+	xelatex bll.tex
+	bibtex bll
+	xelatex bll.tex
+	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib

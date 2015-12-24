@@ -1,51 +1,82 @@
 \section{Auvi}
 
 \subsection{Programm} % AuVi
-Um Verwechslungen zu verhindern benenne ich das Programm, welches ich unter AuVi entwickelt habe ,,\vs ''. Der Kürzel steht für Visualisierung System und ist in verschiedenen Versionen lauffähig.
-Die Aufgabe von \vs\ ist es auf eine Datenquelle zuzugreifen und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln.
-Dabei wird von mir sehr viel Wert darauf gelegt, dass das Erstellen der Grafiken möglichst abstrakt behandelt wird, damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann.
+Um Verwechslungen zu verhindern benenne ich das Programm,
+welches ich unter AuVi entwickelt habe ,,\vs ''.
+Der Kürzel steht für Visualisierung System und ist in verschiedenen Versionen lauffähig.
+Die Aufgabe von \vs\ ist es auf eine Datenquelle zuzugreifen
+und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln.
+Dabei wird von mir sehr viel Wert darauf gelegt,
+dass das Erstellen der Grafiken möglichst abstrakt behandelt wird,
+damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann.
 
 \subsection{Meteorologie} % AuVi
 
 \subsubsection{Prognosetheorie} % AuVi Meteorologie
-Die Meteorologie gehört zu den Naturwissenschaften und beschäftigt sich mit der Atmosphäre, der Wetterprognose und der Klimatologie \cite{meteorologie}.
+Die Meteorologie gehört zu den Naturwissenschaften und
+beschäftigt sich mit der Atmosphäre, der Wetterprognose und der Klimatologie \cite{meteorologie}.
 Sie liefert somit die Voraussetzungen um eine Wettervorhersage erstellen zu können.
-Unter einer Wetterprognose versteht man die Vorhersage eines Zustands der Atmosphäre zu einem bestimmten Zeitpunkt an einem bestimmten Ort oder in einem bestimmten Gebiet.
-Es wird nicht nur das Wetter in Bodennähe betrachtet, sondern auch Wettererscheinungen in höheren Schichten der Erdatmosphäre.
+Unter einer Wetterprognose versteht man die Vorhersage eines Zustands
+der Atmosphäre zu einem bestimmten Zeitpunkt an einem bestimmten Ort
+oder in einem bestimmten Gebiet.
+Es wird nicht nur das Wetter in Bodennähe betrachtet,
+sondern auch Wettererscheinungen in höheren Schichten der Erdatmosphäre.
 \\
-Das Wetter lässt sich durch entsprechende Naturgesetze beschreiben. Das ist für die Prognose essentiell wichtig.
-Der Grundgedanke einer solchen Prognose besteht darin, aus einem bereits vergangenen und dem aktuellen Zustand der Atmosphäre einen Zustand in der Zukunft abzuleiten.
+Das Wetter lässt sich durch entsprechende Naturgesetze beschreiben.
+Das ist für die Prognose essentiell wichtig.
+Der Grundgedanke einer solchen Prognose besteht darin,
+aus einem bereits vergangenen und dem aktuellen Zustand
+der Atmosphäre einen Zustand in der Zukunft abzuleiten.
 Dazu werden die bekannten physikalischen Regeln angewendet.
-In mathematischer Hinsicht werden diese physikalischen Regeln von nichtlinearen Gleichungen beschrieben.
-Das bedeutet, dass bereits die kleinste Änderung im Ausgangszustand das Ergebnis der Rechnung relativ groß verändern kann. % TODO: Citation needed
+In mathematischer Hinsicht werden diese physikalischen Regeln von
+nichtlinearen Gleichungen beschrieben.
+Das bedeutet, dass bereits die kleinste Änderung im Ausgangszustand
+das Ergebnis der Rechnung relativ groß verändern kann. % TODO: Citation needed
 
 
 \subsubsection{Prognosen per Hand} % AuVi Meteorologie
 Was muss man über die aktuelle Situation wissen um per Hand eine Prognose zu erzeugen?
-Es gibt einen Unterschied zwischen der manuellen oder auch synoptischen Wettervorhersage und einer numerischen Wettervorhersage.
-In der synoptischen Meteorologie ist ein System aus Beobachtungsstationen nötig, die gleichzeitig Wetterbeobachtungen nach einem einheitlichen Verfahren durchführen.
+Es gibt einen Unterschied zwischen der manuellen oder auch
+synoptischen Wettervorhersage und einer numerischen Wettervorhersage.
+In der synoptischen Meteorologie ist ein System aus Beobachtungsstationen
+nötig, die gleichzeitig Wetterbeobachtungen nach einem einheitlichen Verfahren durchführen.
 Die Stationen messen unter anderem Parameter wie:
-Luftdruck, Luftdruckänderung während der letzten drei Stunden, Lufttemperatur, Windrichtung, Windgeschwindigkeit, Taupunkt, Wolkenart, Höhe der Wolkenuntergrenze, Bedeckungsgrad, Sichtweite, Niederschlagsmenge und Niederschlagsart.
-Es wird zwischen Bodenbeobachtungsstationen, die Daten in der Nähe der Bodenoberfläche sammeln und aerologischen Beobachtungsstationen, die Daten aus bis zu 30km Höhe liefern unterschieden.
+Luftdruck, Luftdruckänderung während der letzten drei Stunden,
+Lufttemperatur, Windrichtung, Windgeschwindigkeit, Taupunkt,
+Wolkenart, Höhe der Wolkenuntergrenze, Bedeckungsgrad,
+Sichtweite, Niederschlagsmenge und Niederschlagsart.
+Es wird zwischen Bodenbeobachtungsstationen, die Daten in der Nähe
+der Bodenoberfläche sammeln und aerologischen Beobachtungsstationen,
+die Daten aus bis zu 30km Höhe liefern unterschieden.
 Es werden auch Daten von mobilen Messstationen, wie Bojen und Flugzeugen verwendet.
-Wettersatelliten und Fernerkundungssystem (wie Wetterradar, Blitzortungssysteme, LIDAR, SODAR) können auch als Datenquelle dienen.
-Die gesammelten Daten, die den Wetterzustand zu einem bestimmten Zeitpunkt beschreiben, werden in Wetterkarten eingetragen.
-Mit Hilfe der eingetragenen Daten werden die Wetterverhältnisse analysiert und Wettervorhersagen erstellt.
-Zusätzlich dazu werden die gesammelten Daten von numerischen Vorhersagemodellen als Ausgangszustand verwendet. %[2]
+Wettersatelliten und Fernerkundungssystem
+(wie Wetterradar, Blitzortungssysteme, LIDAR, SODAR) können auch als Datenquelle dienen.
+Die gesammelten Daten, die den Wetterzustand zu einem bestimmten
+Zeitpunkt beschreiben, werden in Wetterkarten eingetragen.
+Mit Hilfe der eingetragenen Daten werden die Wetterverhältnisse
+analysiert und Wettervorhersagen erstellt.
+Zusätzlich dazu werden die gesammelten Daten von numerischen
+Vorhersagemodellen als Ausgangszustand verwendet. %[2]
 \\
 Numerische Wettervorhersagen sind rechnergestützt, müssen aber trotzdem nicht 100\% zutreffend sein.
-Der Zustand der Atmosphäre zu einem späteren Zeitpunkt wird aus dem Zustand der Atmosphäre zu einem gegebenen Anfangszeitpunkt berechnet.
+Der Zustand der Atmosphäre zu einem späteren Zeitpunkt wird aus dem Zustand
+der Atmosphäre zu einem gegebenen Anfangszeitpunkt berechnet.
 Dabei werden relevante Gleichungen numerisch gelöst
-(Navier-Stokes-Gleichung, thermische Zustandsgleichung idealer Gase, erster Hauptsatz der Thermodynamik, Kontinuitätsgleichung).
-Mit diesen Gleichungen werden Vorgänge, wie zum Beispiel Wolkenbildung, Niederschläge, Bildung von Hoch- und Tiefdruckgebieten und Wind beschrieben.
-Diese Vorgänge können je nach Luftdruck, Temperatur, Windgeschwindigkeit und Luftfeuchtigkeit auftreten.
-Da diese Gleichungen jedoch nicht eindeutig lösbar sind oder es durch Approximationsvorgänge zu Abweichungen kommt, kann es nur zu Näherungswerten kommen.
+(Navier-Stokes-Gleichung, thermische Zustandsgleichung idealer Gase,
+erster Hauptsatz der Thermodynamik, Kontinuitätsgleichung).
+Mit diesen Gleichungen werden Vorgänge, wie zum Beispiel Wolkenbildung,
+Niederschläge, Bildung von Hoch- und Tiefdruckgebieten und Wind beschrieben.
+Diese Vorgänge können je nach Luftdruck, Temperatur, Windgeschwindigkeit
+und Luftfeuchtigkeit auftreten.
+Da diese Gleichungen jedoch nicht eindeutig lösbar sind oder es
+durch Approximationsvorgänge zu Abweichungen kommt, kann es nur zu Näherungswerten kommen.
 Trotzdem, oder gerade deshalb sind diese numerischen Prognosen in unseren Rechenzentren berechenbar.
 Diese mathematischen Näherungen benötigen jedoch sehr viel Rechenleistung,
 weswegen auf die Leistungsfähigkeit von Supercomputern zurückgegriffen wird.
 Bei solchen numerischen Vorhersagemodellen wird das betrachtete Gebiet in Gitterzellen unterteilt.
 Für jeden Punkt werden dann die Parameter errechnet.
-Relevante physikalische Größen sind vor allem Temperatur, Luftdruck, Dichte, Windrichtung und Windgeschwindigkeit.
+Relevante physikalische Größen sind vor allem Temperatur,
+Luftdruck, Dichte, Windrichtung und Windgeschwindigkeit.
 Es wird zwischen Global- und Lokal- oder Ausschnittsmodellen unterschieden.
 
 \subsubsection{Voraussetzung für Wetterprognosen} % AuVi Meteorologie
@@ -54,12 +85,16 @@ Die Ausgangsdaten bestehen aus Werten,
 die an dem Punkt zu einem früheren Zeitpunkt gemessen wurden.
 Die Entwicklung der verschiedenen Wettergrößen wird durch Formeln errechnet.
 Diese Berechnung benötigt, wie oben schon erwähnt, eine enormer Rechenleistung.
-Deswegen ist man für die Vorhersage von Wetterverhältnissen auf die Hilfe eines leistungsfähigen Computers angewiesen.
-Die entstandenen Modellergebnisse bilden die Basis, und können nun von Prognostikern interpretiert und beurteilt werden.
-Die Prognostiker können die Modelle anhand von aktuell gemessenen Werten oder Bildern einer Webcam überprüfen und eine Vorhersage formulieren.
+Deswegen ist man für die Vorhersage von Wetterverhältnissen auf
+die Hilfe eines leistungsfähigen Computers angewiesen.
+Die entstandenen Modellergebnisse bilden die Basis, und können nun
+von Prognostikern interpretiert und beurteilt werden.
+Die Prognostiker können die Modelle anhand von aktuell gemessenen Werten
+oder Bildern einer Webcam überprüfen und eine Vorhersage formulieren.
 Dabei spielen das Wissen und die Erfahrungen der Prognostiker eine große Rolle.
 Die Genauigkeit einer Wettervorhersage ist von der Stabilität der Wetterlage abhängig.
-Bei wechselhaftem Wetter ist die Vorhersage deutlich schwieriger und komplizierte als bei stabilen Wetterlagen.
+Bei wechselhaftem Wetter ist die Vorhersage deutlich schwieriger
+und komplizierte als bei stabilen Wetterlagen.
 Die Länge der Prognose spielt auch eine Rolle.
 Es macht einen Unterschied,
 ob man nur die Prognose für den nächsten Tag,
@@ -69,17 +104,28 @@ Letzters ist deutlich schwieriger und somit auch weniger zuverlässig.
 \subsection{Datenquellen} % AuVi
 
 \subsubsection{Quellenvergleich} % AuVi Datenquellen
-Da ich nun dargestellt habe, dass es für mich nicht möglich ist eigene Daten aufzunehmen und Prognosen zu berechnen, zeige ich nun welche Quellen die benötigten Daten zur Verfügung stellen.
+Da ich nun dargestellt habe, dass es für mich nicht möglich ist
+eigene Daten aufzunehmen und Prognosen zu berechnen,
+zeige ich nun welche Quellen die benötigten Daten zur Verfügung stellen.
 Im Internet gibt es eine vielzahl von Anbietern von Wetterdaten.
 Die seriöseste Methode an diese Daten zu gelangen ist über einen OpenDap Server.
-Dieser garantiert dem Programmierer und somit dem Nutzer die Erreichbarkeit und Aktualität der Daten.
+Dieser garantiert dem Programmierer und somit dem Nutzer
+die Erreichbarkeit und Aktualität der Daten.
 Für mein Programm sammelte ich nun verschiedene Quellen und verglich sie untereinander.
 Bei diesem, bei weitem nicht vollständigen Vergleich,
 gewann die NOAA GFS Quelle \cite{noaa} , auf die ich durch Dr. Ronald Eixmann stieß.
-Das GFS \cite{gfs} Modell welches von NOAA angeboten wird zeichnet sich durch eine Vielfalt von Parametern (50+) und einen großen Prognosezeitraum (10 Tage) aus.
+Das GFS \cite{gfs} Modell welches von NOAA angeboten wird zeichnet
+sich durch eine Vielfalt von Parametern (50+) und einen großen Prognosezeitraum (10 Tage) aus.
 In \vs\ kann der Nutzer selbst zwischen den verschiedenen Datenquellen wählen und eigene hinzufügen.
-Da die Software unter der MIT-Lizenz von mir im Internet veröffentlicht wurde, und diese Lizenz die ,,As is - Klausel''\footnote{Die Software wird von mir frei angeboten, darf verändert werden, aber ich stehe nicht gerade für Fehler oder Abstürze} enthält verschreibe ich mich keiner Garantieleistung \cite{mitl}. Ich kann somit Quellen auflisten die in Zukunft evtl. nicht mehr erreichbar sind.
-Ich strebe an über eine GUI\footnote{\textit{Graphical User Interface} engl. IT. für grafische Benutzeroberfläche} dem Nutzer eine Auswahl zwischen verschiedenen Datenquellen anzubieten.
+Da die Software unter der MIT-Lizenz von mir im Internet veröffentlicht wurde,
+und diese Lizenz die ,,As is - Klausel''
+\footnote{Die Software wird von mir frei angeboten, darf verändert werden,
+aber ich stehe nicht gerade für Fehler oder Abstürze} enthält verschreibe
+ich mich keiner Garantieleistung \cite{mitl}. Ich kann somit Quellen
+auflisten die in Zukunft evtl. nicht mehr erreichbar sind.
+Ich strebe an über eine GUI\footnote{\textit{Graphical User Interface} engl. IT.
+für grafische Benutzeroberfläche} dem Nutzer eine Auswahl
+zwischen verschiedenen Datenquellen anzubieten.
 % TODO: Grafik: Übersicht über Quellen (Alle die direkt über das Programm angeboten werden)
 % NOTE Viel mehr Parameter, Daten bei NOAA oc DWD
 % Siehe andere Quellen
@@ -87,12 +133,19 @@ Ich strebe an über eine GUI\footnote{\textit{Graphical User Interface} engl. IT
 
 \subsubsection*{Wetterdienst} % AuVi Datenquellen
 % TODO Grafik: Diagramm der Genauigkeit (Dafür Tabelle, Swenja)
-Der Deutsche Wetter Dienst, kurz: DWD, arbeitet im Auftrag des Bundesministeriums für Verkehr und digitale Infrastruktur. \cite{bmvi}
+Der Deutsche Wetter Dienst, kurz: DWD, arbeitet im Auftrag des
+Bundesministeriums für Verkehr und digitale Infrastruktur. \cite{bmvi}
 Der DWD bietet ebenfalls Wetterdaten an, die allerdings kostenpflichtig sind.
-Das Angebot ist unterteilt in ,,Aktuelles Wetter, Vorhersagen'' und ,,Vergangenes Wetter, Klimainfos''.
+Das Angebot ist unterteilt in ,,Aktuelles Wetter, Vorhersagen''
+und ,,Vergangenes Wetter, Klimainfos''.
 Im ersten Bereich gibt es zum Beispiel den Unterpunkt Seewetter.
-Es wird ein Kurzfrist-Seewetterbericht, Küstenwetter in Zeitreihenform und ein Mittelfrist-Seewetterbericht für 48h für je 2,50 Euro angeboten.
-Wenn man aus dieser Quelle alle zwei Tage eine Wetterprognose bezieht - welche im Parameter stark eingeschränkt ist - belaufen sich die Kosten auf ungefähr $\approx 230$ Euro Diese Wetterdaten können dann zum Beispiel für die Seefahrt genutzt werden.
+Es wird ein Kurzfrist-Seewetterbericht,
+Küstenwetter in Zeitreihenform und ein Mittelfrist-Seewetterbericht
+für 48h für je 2,50 Euro angeboten.
+Wenn man aus dieser Quelle alle zwei Tage eine Wetterprognose
+bezieht - welche im Parameter stark eingeschränkt ist - belaufen
+sich die Kosten auf ungefähr $\approx 230$ Euro.
+Diese Wetterdaten können dann zum Beispiel für die Seefahrt genutzt werden.
 Ein anderer Unterpunkt ist Flugwetter.
 Dort gibt es Einjahresangebote für circa 80 Euro und Lehrfilmreihen für circa 150 Euro.
 Diese dienen als Dokumentation.
@@ -101,13 +154,16 @@ Ein weiterer Bereich in dem Jahresabos und Monatsabos angeboten werden, ist Agra
 Die Kosten dafür belaufen sich auf 20 bis 120 Euro.
 Der wohl interessanteste Unterpunkt ist Straßenwetter.
 Da werden einmalige Informationen für allgemeine Wettervorhersagen für Straßen (4,40 Euro),
-für detaillierte Gebietswettervorhersagen für Straßen (4,40 Euro) und für Straßenwettervorhersagen für eine Stadt (5 Euro) dargeboten.\\
-Im zweiten Bereich gibt es die genaueren Eingrenzungen ,,Deutschland - Allgemein'', ,,Deutschland - Speziell'' , ,,Global'' und ,,Geburtstagswetterkarte''.
+für detaillierte Gebietswettervorhersagen für Straßen
+(4,40 Euro) und für Straßenwettervorhersagen für eine Stadt (5 Euro) dargeboten.\\
+Im zweiten Bereich gibt es die genaueren Eingrenzungen
+,,Deutschland - Allgemein'', ,,Deutschland - Speziell'' ,
+,,Global'' und ,,Geburtstagswetterkarte''.
 \cite{dwd-shop}
 Diese Daten sind für uns allerdings nicht relevant, weil sie in der Vergangenheit liegen.\\
 Da diese Quelle sich auf lange Zeit für uns als zu kostspielig herausgestellt hätte,
 und auch die Datenmenge nicht für jeden Punkt der Erde definiert ist,
-war für uns frühzeitig klar, dass wir uns eine alternative Quelle suchen mussten.
+war für mich frühzeitig klar, dass ich eine alternative Quelle suchen musste.
 
 \subsubsection*{NOAA Global Forecast System} % AuVi Datenquellen
 Das Global Forecast System (GFS)  ist ein Modell, das mathematisch Parameter errechnet.
@@ -116,59 +172,102 @@ Die dazu benötigten Daten bezieht es aus einem Netz von Wetterstationen,
 die sowohl an Land als auch im Wasser und in der Luft Messungen durchführen.
 Mit diesen gemessenen Daten werden mithilfe von geophysikalischen Gesetzen weitere Daten errechnet.
 So wird in einem Abstand von 13,5km je ein Wert ermittelt.
-Diese Daten werden als große Datensätze kostenfrei auf der Webseite \link{http://mag.ncep.noaa.gov/} \cite{ncep}  zur Verfügung gestellt.\\
-Im Verlauf unserer Arbeit verglichen wir verschiedene Quellen.
-Auch wenn wir die Möglichkeit haben unter Angabe des Links mit einer Einstellung eine andere Quelle zu benutzen haben wir uns für das GFS als Haupt- und Standartquelle entschieden.
+Diese Daten werden als große Datensätze kostenfrei auf
+der Webseite \link{http://mag.ncep.noaa.gov/} \cite{ncep} zur Verfügung gestellt.\\
+Im Verlauf meiner Arbeit vergliche ich verschiedene Quellen.
+Auch wenn ich die Möglichkeit habe unter Angabe des Links mit einer
+Einstellung eine andere Quelle zu benutzen habe ich mich
+für das GFS Modell von NOAA als Haupt- und Standartquelle entschieden.
 Das GFS ist zuverlässig und gut dokumentiert, was uns die Einarbeitung erleichterte.
-Zudem bietet NOAA verschiedenste Varianten des GFS-Models an, somit können wir stark mitbestimmen welches Datenformat wir benutzen.
+Zudem bietet NOAA verschiedenste Varianten des GFS-Models an,
+somit kann ich stark mitbestimmen welches Datenformat von der Software verwendet wird.
 Die Daten liegen in verschiedenen zeitlichen und räumlichen Auflösungen vor.
 % TODO Tabelle mit Daten: http://www.ftp.ncep.noaa.gov/data/nccf/com/gfs/prod/
 % TODO Auflösungen heraussuchen http://www.nco.ncep.noaa.gov/pmb/products/gfs/
-% Richtige Quelle http://opendap.nccs.nasa.gov:80/dods/GEOS-5/fp/0.25_deg/fcast/tavg1_2d_slv_Nx.latest
+% Richtige Quelle
+% http://opendap.nccs.nasa.gov:80/dods/GEOS-5/fp/0.25_deg/fcast/tavg1_2d_slv_Nx.latest
 % TODO Quellenvergleich http://opendap.nccs.nasa.gov/dods/
-% TODO Dokumentation Formate, wir nutzen GRIB2 (http)
+% TODO Dokumentation Formate, GRIB2 (http)
 % TODO Diagramm der Genauigkeit
 
 \subsubsection{Datenverfügbarkeit} % AuVi Datenquellen
 % TODO Wann sind welche Daten Verfügbar?
-Wie weit in die Zukunft können die Quellen schauen.
-Wodurch sind sie begrenzt,
-Wie oft muss man die Daten generieren und abrufen?
-Grafik: Diagramm der Zukunftsdaten
+Während der Deutsche Wetter Dienst für normale, zahlende, Nutzer nur Daten
+für die nächsten 48 Stunden zur Verfügung stellt, ist NOAA für alle Nutzer,
+egal wo sie sich auf der Welt befinden, rund um die Uhr offen und bietet Daten
+für die nächsten 10 Tage. Hierin unterscheiden sich allerdings die verschiedenen
+Modelle des NOAA. Die statistischen oder historischen Daten sind immer Verfügbar.
+Da sie die Vergangenheit beschreiben oder eine Reihe von Standaufnahmen darstellen
+ist hier die Frage nach Datenverfügbarkeit weniger wichtig.\\
+Unsere Arbeit behandelt haben hauptsächlich die Wetterprognose, bzw. die Auswertung
+von Wetterprognosedaten. Für unsere Zwecke und Ziele ist Datenverfügbarkeit von
+hoher Wichtigkeit. Ich muss erwarten können, dass die von mir verlangten Daten auch
+dort verfügbar sind, wo sie sein sollen, und die Daten enthalten die nach der
+Spezifikation enthalten sein sollen.\\
+Diese Spezifikation der NOAA Daten steckt sich bei verschiedenen Modellen
+verschiedene Ziele ab. Das von uns am meisten genutzte Modell, das GFS Modell ist
+24-7 erreichbar, kostenlos und enthält Daten entweder für die nächsten 33 Stunden,
+133 Stunden oder 240 Stunden.
 
 \subsection{Entwicklung} % AuVi
 
 \subsubsection{Wahl der Umgebung}\label{sec:ent} % AuVi Entwicklung
-sofware und hardware
+Bei der Entwicklung von AuVi wechselte mehrmals die Entwicklungsumgebung und die
+genutzten Werkzeuge um Neugelerntes anzuwenden, oder die Arbeitsweise zu optimieren.
+Außerdem wurden verschiedene Teile meiner Software in verschiedenen Programmiersprachen
+geschrieben. Diese verlangten dann von mir ein Anpassen der Umgebung.\\
+In heutiger Zeit unausweichlich ist der Wechsel der Hardware in einem Project,
+welches über 3 Jahr läuft und sich zum Teil auf privaten Mitteln stützt. Dies
+bedeutet in meinem Fall der Wechsel von Laptops, Computern und Betriebssystemen.\\
+Der entscheidenste Wandel war die Migration aller Dateien in ein Git-Repository \cite{gitrepo}.
+Dieser Wandel ermöglichte die potentielle Zusammenarbeit mit Projektteilnehmern, oder
+dem Projektleiter ohne das von mir vorrausgesetzt wird, dass dieser die selben Möglichkeiten
+auf seinem Rechner hat. Durch die Integration in GitHub kann der Quelltext auch auf
+\link{github.com/tibyte/auvi-hub} aufgerufen werden. Mit einem Account auf dieser
+Seite können dann u.a. Zeilen kommentiert werden. \\
+Die Textbearbeitung fand zuerst im Editor Sublime Text \cite{sublime} statt, da dieser
+aber kostenlos nur mit störenden Nachrichten zu nutzen war, wechselte ich später
+zum Open Souce Atom Editor \cite{atomio}. Dieser wird von der GitHub Gemeinde entwickelt.
 % TODO Beschreibung der Umgebung & Warum
 
 \subsubsection{Methodik} % AuVi Entwicklung
-%wer wann wie wo
-Im Folgenden wollen wir Ihnen beschreiben wie die Projektarbeit und Entwicklung am und mit dem Projekt stattgefunden hat.
-Insofern keine anderen Informationen gegeben sind, gilt diese Arbeitsweise auch in allen anderen Projektteilen. \\
-Die Arbeit an diesem Projekt verlangte große Kooperation von den Projektteilnehmern.
+Insofern keine anderen Informationen gegeben sind,
+gilt diese Arbeitsweise in allen anderen Projektteilen. \\
+Die Arbeit an diesem Projekt verlangte große Kooperation
+von den verübergehenden Projektteilnehmern.
 Treffen wurden geplant und üblicherweise auf den Dienstag Nachmittag gelegt.
-Bei diesen Treffen wurde dann über neue Fortschritte geredet, damit alle auf dem gleichen Wissensstand sind.
-Wir haben uns auch über Ideen ausgetauscht und die nächsten Arbeitsschritte geplant.
-Nach dem Austauschen haben wir dann am Projekt weitergearbeitet.
+Bei diesen Treffen wurde dann über neue Fortschritte geredet,
+damit alle auf dem gleichen Wissensstand sind.
+Ich habe mich dann mit den Anderen über Ideen ausgetauscht
+und die nächsten Arbeitsschritte geplant.
+Nach dem Austauschen haben ich dann am Projekt weitergearbeitet und Zuarbeit erhalten.
 Doch reichten zwei bis drei Stunden in der Woche nicht aus um das Projekt zu bearbeiten.
 Viele Arbeitsstunden mussten von zu hause erledigt werden.\\
-Im Winter des Jahres 2014 absolvierten wir ein Schülerpraktikum am Leibnitz Institut für Atmoshpärenphysik. % todo: quelle
-Dort nutzten wir die Möglichkeit um mit anderen dort arbeitenden Wissenschaftlern über unser Projekt zu reden.
+Im Winter des Jahres 2013 absolvierten ich zusammen mit Swenja Wanger ein Schülerpraktikum am
+Leibnitz Institut für Atmoshpärenphysik.
+Dort nutzten ich die Möglichkeit um mit anderen dort arbeitenden
+Wissenschaftlern über unser Projekt zu reden.
 Hier entstand die erste lauffähige Version unseres Programmes.
-Außerdem entwarfen wir mehrere Poster für den \jf Wettbewerb.
+Außerdem entwarf ich mehrere Poster für den \jf Wettbewerb 2014.
 
 \subsubsection{Programmierung}
-Die umfangreichste Aufgabe die wir in unserer Projektarbeit bewältigten war die Programmierung.
-Da wir uns in Punkt \ref{sec:ent}  schon entschieden haben in einer Linux Umgebung zu arbeiten,
-mussten wir auch die Programmiersprachen und sowie IDE's so wählen,
+Die umfangreichste Aufgabe die ich in der Projektarbeit bewältigte
+war die Programmierung der Software ,,\vs ''.
+Da ich mich in Punkt \ref{sec:ent} schon entschieden habe in einer Linux Umgebung zu arbeiten,
+mussten ich auch die Programmiersprachen und sowie IDE's so wählen,
 dass sie auch auf Ubuntu oder ähnlichen Distributionen ohne Komplikationen funktionierten.\\
-Unser Hauptprogramm, genannt ,,\vs '' haben wir erst in Python (Version 2.7) \cite{python27} geschrieben.
+Unser Hauptprogramm, genannt ,,\vs '' haben ich erst in
+Python (Version 2.7) \cite{python27} geschrieben.
+Vorher gab es eine Ansammlung von Befehlen in einer BASH Datei welche die selbe Aufgabe
+erfüllte. Diese Datei war sehr undynamisch und konnte auch schlecht auf verschiedene
+Umgebungen reagieren.
 Entschieden uns aber später unsere Fortschritte von Python Version 2.7 auf die Version 3 gehoben.
-Diese Programmiersprache ist in den von uns genutzten Distributionen sogar vorinstalliert und ein allgemeiner Industriestandard.\\
-Nur mit Python kamen wir allerdings auf lange Zeit nicht aus.
-Wir nutzten noch andere Sprachen um die Entwicklung zu beschleunigen,
-auch wenn Python für die restlichen Aufgaben auch hätten nutzen können kombinierten wir folgende Programmiersprachen:
+Diese Programmiersprache ist in den von uns genutzten Distributionen
+sogar vorinstalliert und ein allgemeiner Industriestandard.\\
+Nur mit Python kam ich allerdings auf lange Zeit nicht aus.
+Ich nutzte noch andere Sprachen um die Entwicklung zu beschleunigen,
+auch wenn Python für die restlichen Aufgaben auch hätten erfüllen können
+kombinierte ich folgende Programmiersprachen:
 \begin{figure}[H]
 \input{graphs/pyvitree.tex}
 \label{fig:pyvi}
@@ -194,9 +293,15 @@ Da von den Orten auch ein Konturplot erzeugt werden soll wird mit dem 4. Wert ab
 Der letzte Wert zur Definition eines Ortspunktes ist die Zeitdifferenz zur GMT Zeit.
 
 \subsubsection*{GrADS Scripte}
-\lstinputlisting[language=grads,caption={GrADS Routine zum erstellen allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
-\lstinputlisting[language=grads,caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)},label= code:plotgengs , firstline=104, lastline=115, firstnumber=104]{\pyvidir grads/plot.gs}
-In Listing \ref{code:plotgengs} greifen wir auf verschiedene eigene Funktionen zurück um die Konturplotgrafiken zu füllen. Um der Ablauf des Skriptes zu verstehen werden wir die wichtigsten hier nun mit erläutern.
+\lstinputlisting[language=grads,
+caption={GrADS Routine zum erstellen allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
+\lstinputlisting[language=grads,
+caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)},
+label= code:plotgengs,
+firstline=104, lastline=115, firstnumber=104]{\pyvidir grads/plot.gs}
+In Listing \ref{code:plotgengs} greife ich auf verschiedene eigene
+Funktionen zurück um die Konturplotgrafiken zu füllen.
+Um den Ablauf des Skriptes zu verstehen werde ich die wichtigsten Stellen hier nun mit erläutern.
 \lstinputlisting[language=grads,caption={Zeichnen der Achseneinteilung und Legende unter GrADS für Plots (plot.gs)}, firstline=117, lastline=136, firstnumber=117]{\pyvidir grads/plot.gs}
 Die Variable $color$ spielt in diesem Teil des Skriptes eine große Rolle.
 Diese Variable ist in diesem Kontext ein Pointer auf ein anderes GrADS Skript,
