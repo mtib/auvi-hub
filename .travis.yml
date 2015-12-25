@@ -13,4 +13,6 @@ git:
 
 script:
     - cd Latex/Lernleistung/
-    - make new
+    - xelatex --interaction=nonstopmode bll.tex || echo "needs Bibtex"
+    - bibtex bll
+    - xelatex --interaction=nonstopmode bll.tex
