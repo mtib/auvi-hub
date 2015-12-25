@@ -1,4 +1,5 @@
 # AuVi - Hub
+[![Build Status](https://travis-ci.org/tibyte/auvi-hub.svg?branch=master)](https://travis-ci.org/tibyte/auvi-hub)
 This is the EAA (Extra Academic Activity) by
 - Markus Becker
 

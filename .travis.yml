@@ -4,5 +4,9 @@ install:
     - sudo apt-get install texlive-lang-german
     - sudo apt-get install biber
 
+git:
+    depth: 3
+
 script:
+    - cd Latex/Lernleistung/
     - make new
