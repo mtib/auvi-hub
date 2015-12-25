@@ -1,8 +1,12 @@
+before_install:
+    - sudo apt-get update -qq
+
 install:
-    - sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
-    - sudo apt-get install texlive-xetex
-    - sudo apt-get install texlive-lang-german
-    - sudo apt-get install biber
+    - sudo apt-get install -y texlive
+    - sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+    - sudo apt-get install -y texlive-xetex
+    - sudo apt-get install -y texlive-lang-german
+    - sudo apt-get install -y biber
 
 git:
     depth: 3
