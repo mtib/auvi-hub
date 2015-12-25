@@ -1,7 +1,7 @@
 # AuVi - Hub
 [![Build Status](https://travis-ci.org/tibyte/auvi-hub.svg?branch=master)](https://travis-ci.org/tibyte/auvi-hub)
-This is the EAA (Extra Academic Activity) by
-- Markus Becker
+
+This is the EAA (Extra Academic Activity) by Markus Becker
 
 My Project Manager is Dr. Ronald Eixmann
 I need to mention my ex-co-worker Swenja Wagner as a big influence on this project.
@@ -14,7 +14,14 @@ If you want to truly understand what is happening and you speak german, you shou
 
 The start point for our program is [auvi.py](/Code/PyVi/auvi.py).
 
-You can start the standard routine with:
+## Compiling documentation
+```bash
+cd Latex/Lernleistung
+xelatex bll.tex
+bibtex bll
+xelatex bll.tex
+```
+This needs texlive or mktex to be installed as well as xetex or xelatex and bib(la)tex. You might be able to run another version of Latex, but I am only testing it to be compatible with xelatex.
 
 ## Contact
 If you want to contact me directly about this project, do so via GitHub. Otherwise please email me: [Markus Becker](mailto:markus@tibyte.net?subject=AuVi)
