@@ -3,10 +3,9 @@ before_install:
 
 install:
     - sudo apt-get install -y texlive
-    - sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
     - sudo apt-get install -y texlive-xetex
     - sudo apt-get install -y texlive-lang-german
-    - sudo apt-get install -y biber
+    - sudo apt-get install -y bibtex
 
 git:
     depth: 3
