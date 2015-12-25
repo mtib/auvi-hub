@@ -1,0 +1,8 @@
+install:
+    - sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+    - sudo apt-get install texlive-xetex
+    - sudo apt-get install texlive-lang-german
+    - sudo apt-get install biber
+
+script:
+    - make new
