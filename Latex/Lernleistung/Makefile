@@ -11,7 +11,10 @@ out: bll.tex
 	xelatex bll.tex
 	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib
 new:
-	xelatex bll.tex >/dev/null     || echo ""
-	bibtex bll      >/dev/null     || echo ""
-	xelatex bll.tex >/dev/null     || echo ""
+	xelatex --interaction=nonstopmode bll.tex
+	bibtex bll
+	xelatex --interaction=nonstopmode bll.tex
 	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib
+clean:
+	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib || echo "deleted"
+	rm bll.pdf || echo "deleted"
