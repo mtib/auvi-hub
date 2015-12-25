@@ -11,7 +11,7 @@ out: bll.tex
 	xelatex bll.tex
 	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib
 new:
-	xelatex --interaction=nonstopmode bll.tex
+	xelatex --interaction=nonstopmode bll.tex || echo "first run"
 	bibtex bll
 	xelatex --interaction=nonstopmode bll.tex
 	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib

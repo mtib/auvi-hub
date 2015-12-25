@@ -9,7 +9,6 @@
 \usepackage{amsmath}		% Mathe Fonts
 \usepackage{amsfonts}	% Fonts
 \usepackage{tikz}		% Zeichnen von Grafiken
-\usepackage{url}			% Format Links \link{}
 \usepackage{listings}	% Code listings
 \usepackage{courier}		% Code Font
 \usepackage{xcolor}		% Advanced Color
@@ -90,7 +89,7 @@ backgroundcolor=\color{background},	% Background Color
 % Ende Variablen
 
 % Eigene Befehle
-\newcommand{\link}[1]{\textcolor{link}{\url{#1}}}	% Format Links
+\newcommand{\link}[1]{\textcolor{link}{#1}}	% Format Links
 \newcommand{\jftree}{\input{graphs/jftree.tex}}	% Draw JF Tree
 % Ende Eigene Befehle
 
