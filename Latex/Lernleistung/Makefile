@@ -1,14 +1,14 @@
 bll: bll.tex
 	rm bll.pdf                     || echo ""
-	xelatex bll.tex >/dev/null     || echo ""
-	bibtex bll      >/dev/null     || echo ""
-	xelatex bll.tex >/dev/null     || echo ""
+	xelatex bll.tex --interaction=nonstopmode     || echo ""
+	bibtex bll      			   || echo ""
+	xelatex bll.tex --interaction=nonstopmode     || echo ""
 	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib
 out: bll.tex
 	rm bll.pdf || echo "Nothing to delete!"
-	xelatex bll.tex
+	xelatex --interaction=nonstopmode bll.tex
 	bibtex bll
-	xelatex bll.tex
+	xelatex --interaction=nonstopmode bll.tex
 	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib
 clean:
 	rm *.aux *.toc *.log *.blg *.xml *.bbl bll-blx.bib || echo "deleted"
