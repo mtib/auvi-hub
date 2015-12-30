@@ -14,7 +14,8 @@
 \usepackage{xcolor}		% Advanced Color
 \usepackage[backend=bibtex]{biblatex}
 \usepackage[babel]{csquotes}
-\usepackage[top=1.5in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage[top=3cm, bottom=3cm, left=3.5cm, right=3cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
 \usepackage{float}
 \usepackage{fontspec}
 
@@ -30,10 +31,9 @@
 % Ende Farbdefinition
 
 % Einstellungen
-\renewcommand*{\familydefault}{\sfdefault}	% Default Font
+%\renewcommand*{\familydefault}{\sfdefault}	% Default Font
 %\setmonofont[Ligatures=Common, Scale = 0.8, Path = fonts/]{firecode.otf}
 \renewcommand{\abstractname}{}				% Überschrift Abs.
-\linespread{1.1}					% Zeilenabstand
 \input{defs/jsondef.tex}				% Define JSON Language
 \lstset{							% Listing Settings
 breaklines=true,					% Wrap
@@ -43,7 +43,7 @@ extendedchars=true,				% Umlaute
 keywordstyle=\color{blue},		% Keywords
 tabsize=3,						% Tabs in Spaces
 stringstyle=\color{orange},		% String color
-basicstyle=\normalfont\ttfamily,	% Font
+basicstyle=\linespread{0.94}\normalfont\ttfamily,	% Font
 numbers=left,					% Numberside
 numberstyle=\scriptsize,			% Numbersize
 stepnumber=1,					% Linenumbering

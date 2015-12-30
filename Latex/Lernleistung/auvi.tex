@@ -1,12 +1,12 @@
 \section{Auvi}
 
 \subsection{Programm} % AuVi
-Um Verwechslungen zu verhindern benenne ich das Programm,
-welches ich unter AuVi entwickelt habe ,,\vs ''.
+Um Verwechslungen zu verhindern ist das Programm,
+welches unter AuVi entwickelt wurde ,,\vs ''.
 Der Kürzel steht für Visualisierung System und ist in verschiedenen Versionen lauffähig.
 Die Aufgabe von \vs\ ist es auf eine Datenquelle zuzugreifen
 und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln.
-Dabei wird von mir sehr viel Wert darauf gelegt,
+Dabei wird sehr viel Wert darauf gelegt,
 dass das Erstellen der Grafiken möglichst abstrakt behandelt wird,
 damit der Nutzer sehr großen Einfluss auf das Design und den Inhalt der Grafiken nehmen kann.
 
@@ -35,7 +35,6 @@ das Ergebnis der Rechnung relativ groß verändern kann. % TODO: Citation needed
 
 
 \subsubsection{Prognosen per Hand} % AuVi Meteorologie
-Was muss man über die aktuelle Situation wissen um per Hand eine Prognose zu erzeugen?
 Es gibt einen Unterschied zwischen der manuellen oder auch
 synoptischen Wettervorhersage und einer numerischen Wettervorhersage.
 In der synoptischen Meteorologie ist ein System aus Beobachtungsstationen
@@ -56,9 +55,10 @@ Zeitpunkt beschreiben, werden in Wetterkarten eingetragen.
 Mit Hilfe der eingetragenen Daten werden die Wetterverhältnisse
 analysiert und Wettervorhersagen erstellt.
 Zusätzlich dazu werden die gesammelten Daten von numerischen
-Vorhersagemodellen als Ausgangszustand verwendet. %[2]
+Vorhersagemodellen als Ausgangszustand verwendet. \cite{noaa}
 \\
-Numerische Wettervorhersagen sind rechnergestützt, müssen aber trotzdem nicht 100\% zutreffend sein.
+Numerische Wettervorhersagen sind rechnergestützt, können aber trotzdem nicht
+immer 100\% zutreffend sein.
 Der Zustand der Atmosphäre zu einem späteren Zeitpunkt wird aus dem Zustand
 der Atmosphäre zu einem gegebenen Anfangszeitpunkt berechnet.
 Dabei werden relevante Gleichungen numerisch gelöst
@@ -104,28 +104,33 @@ Letzters ist deutlich schwieriger und somit auch weniger zuverlässig.
 \subsection{Datenquellen} % AuVi
 
 \subsubsection{Quellenvergleich} % AuVi Datenquellen
-Da ich nun dargestellt habe, dass es für mich nicht möglich ist
-eigene Daten aufzunehmen und Prognosen zu berechnen,
-zeige ich nun welche Quellen die benötigten Daten zur Verfügung stellen.
+Da es im Rahmen des Projektes nicht möglich war
+eigene den Globus umspannende Daten aufzunehmen und Prognosen zu berechnen,
+muss eine Auswahl zwuschen den Quellen mit den benötigten Daten getroffen werden.
 Im Internet gibt es eine vielzahl von Anbietern von Wetterdaten.
-Die seriöseste Methode an diese Daten zu gelangen ist über einen OpenDap Server.
+Die technisch beste Methode an diese Daten zu gelangen ist über einen OpenDap Server.
 Dieser garantiert dem Programmierer und somit dem Nutzer
 die Erreichbarkeit und Aktualität der Daten.
-Für mein Programm sammelte ich nun verschiedene Quellen und verglich sie untereinander.
-Bei diesem, bei weitem nicht vollständigen Vergleich,
-gewann die NOAA GFS Quelle \cite{noaa} , auf die ich durch Dr. Ronald Eixmann stieß.
+Für \vs\ wurden verschiedene Quellen gesammelt und miteinander verglichen.
+Bei diesem Vergleich
+gewann die NOAA GFS Quelle \cite{noaa} , auf Hinweis von Projektleiter Dr. Ronald Eixmann.
 Das GFS \cite{gfs} Modell welches von NOAA angeboten wird zeichnet
 sich durch eine Vielfalt von Parametern (50+) und einen großen Prognosezeitraum (10 Tage) aus.
+Diese Parameter beinhalten in der hauptsätlich genutzten Quelle \cite{bspgfs} z.B.
+die Windstärke als Vektor aufgesplittet in Nord- und Ostanteil für 2m, 10m und 50m,
+den Luftdruck am Boden, in Bodennähe sowie in der Tropopause und auf Wolkenhöhe,
+die Luftfeuchtigkeit, die Lufttemperatur in verschiedenen Höhen, die Ozonmenge, die Wassersäule
+und viele weitere meteorologisch bedeutende Parameter.
 In \vs\ kann der Nutzer selbst zwischen den verschiedenen Datenquellen wählen und eigene hinzufügen.
-Da die Software unter der MIT-Lizenz von mir im Internet veröffentlicht wurde,
+Da die Software unter der MIT-Lizenz \cite{mitl} im Internet veröffentlicht wurde,
 und diese Lizenz die ,,As is - Klausel''
 \footnote{Die Software wird von mir frei angeboten, darf verändert werden,
-aber ich stehe nicht gerade für Fehler oder Abstürze} enthält verschreibe
-ich mich keiner Garantieleistung \cite{mitl}. Ich kann somit Quellen
-auflisten die in Zukunft evtl. nicht mehr erreichbar sind.
-Ich strebe an über eine GUI\footnote{\textit{Graphical User Interface} engl. IT.
+aber ich bin rechlich nicht für Fehler oder Abstürze verantwortlich} enthält verschreibt
+der Programmierer sich keiner Garantieleistung \cite{mitl}. Quellen können somit
+aufgelistet werden, die in Zukunft evtl. nicht mehr erreichbar sind.
+In Zukunft soll man über eine GUI\footnote{\textit{Graphical User Interface} engl. IT.
 für grafische Benutzeroberfläche} dem Nutzer eine Auswahl
-zwischen verschiedenen Datenquellen anzubieten.
+zwischen verschiedenen Datenquellen anbieten können.
 % TODO: Grafik: Übersicht über Quellen (Alle die direkt über das Programm angeboten werden)
 % NOTE Viel mehr Parameter, Daten bei NOAA oc DWD
 % Siehe andere Quellen
@@ -167,7 +172,7 @@ und auch die Datenmenge nicht für jeden Punkt der Erde definiert ist,
 war frühzeitig klar, dass eine alternative Quelle gesucht werden musste.
 
 \subsubsection*{NOAA Global Forecast System} % AuVi Datenquellen
-Das Global Forecast System (GFS)  ist ein Modell, das mathematisch Parameter errechnet.
+Das Global Forecast System (GFS) ist ein Modell, das mathematisch Parameter errechnet.
 Es ist also ein numerisches Vorhersagemodell.
 Die dazu benötigten Daten bezieht es aus einem Netz von Wetterstationen,
 die sowohl an Land als auch im Wasser und in der Luft Messungen durchführen.
@@ -175,15 +180,6 @@ Mit diesen gemessenen Daten werden mithilfe von geophysikalischen Gesetzen weite
 So wird in einem Abstand von 13,5km je ein Wert ermittelt.
 Diese Daten werden als große Datensätze kostenfrei auf
 der Webseite \link{http://mag.ncep.noaa.gov/} \cite{ncep} zur Verfügung gestellt.\\
-Im Verlauf meiner Arbeit vergliche ich verschiedene Quellen.
-Auch wenn ich die Möglichkeit habe unter Angabe des Links mit einer
-Einstellung eine andere Quelle zu benutzen habe ich mich
-für das GFS Modell von NOAA als Haupt- und Standartquelle entschieden.
-Das GFS ist zuverlässig und gut dokumentiert,
-was die Einarbeitung in dessen Spezifikation erleichterte.
-Zudem bietet NOAA verschiedenste Varianten des GFS-Models an,
-somit kann stark vom Programm beeinflusst werden welches
-Datenformat verwendet wird.
 Die Daten liegen in verschiedenen zeitlichen und räumlichen Auflösungen vor.
 % TODO Tabelle mit Daten: http://www.ftp.ncep.noaa.gov/data/nccf/com/gfs/prod/
 % TODO Auflösungen heraussuchen http://www.nco.ncep.noaa.gov/pmb/products/gfs/
@@ -220,25 +216,24 @@ kostenlos und enthält Daten entweder für die nächsten 33 Stunden,
 \subsubsection{Wahl der Umgebung}\label{sec:ent} % AuVi Entwicklung
 Bei der Entwicklung von AuVi wechselte mehrmals die Entwicklungsumgebung und die
 genutzten Werkzeuge um Neugelerntes anzuwenden, oder die Arbeitsweise zu optimieren.
-Außerdem wurden verschiedene Teile meiner Software in verschiedenen Programmiersprachen
-geschrieben. Diese verlangten dann von mir ein Anpassen der Umgebung.\\
+Außerdem wurden verschiedene Teile der Software in verschiedenen Programmiersprachen
+geschrieben. Diese verlangten dann ein Anpassen der Umgebung.\\
 In heutiger Zeit unausweichlich ist der Wechsel der Hardware in einem Project,
 welches über 3 Jahr läuft und sich zum Teil auf privaten Mitteln stützt. Dies
-bedeutet in meinem Fall der Wechsel von Laptops, Computern und Betriebssystemen.\\
+bedeutet im Fall dieses Projektes der Wechsel von Laptops,
+Computern und Betriebssystemen.\\
 Der entscheidenste Wandel war die Migration aller Dateien in ein Git-Repository \cite{gitrepo}.
 Dieser Wandel ermöglichte die potentielle Zusammenarbeit mit Projektteilnehmern, oder
-dem Projektleiter ohne das von mir vorrausgesetzt wird, dass dieser die selben Möglichkeiten
-auf seinem Rechner hat. Durch die Integration in GitHub kann der Quelltext auch auf
+dem Projektleiter ohne das vorrausgesetzt wird, dass dieser oder diese die selben Möglichkeiten
+auf seinem oder ihrem Rechner hat. Durch die Integration in GitHub kann der Quelltext auch auf
 \link{github.com/tibyte/auvi-hub} aufgerufen werden. Mit einem Account auf dieser
-Seite können dann u.a. Zeilen kommentiert werden. \\
+Seite können dann u.a. Zeilen kommentiert und Änderungen vorgeschlagen werden. \\
 Die Textbearbeitung fand zuerst im Editor Sublime Text \cite{sublime} statt, da dieser
-aber kostenlos nur mit störenden Nachrichten zu nutzen war, wechselte ich später
+aber kostenlos nur mit störenden Nachrichten zu nutzen war, wechselte man später
 zum Open Souce Atom Editor \cite{atomio}. Dieser wird von der GitHub Gemeinde entwickelt.
 % TODO Beschreibung der Umgebung & Warum
 
 \subsubsection{Methodik} % AuVi Entwicklung
-Insofern keine anderen Informationen gegeben sind,
-gilt diese Arbeitsweise in allen anderen Projektteilen. \\
 Die Arbeit an diesem Projekt verlangte große Kooperation
 von den verübergehenden Projektteilnehmern.
 Treffen wurden geplant und üblicherweise auf den Dienstag Nachmittag gelegt.
@@ -280,12 +275,55 @@ erleichterte die Kombination folgender Programmiersprachen die Arbeit:
 \end{figure}
 
 \subsubsection*{Hauptprogramm}
+Das Hauptprogramm, gleichbedeutend mit der Main-Methode anderer Programmiersprachen
+ist in Python das Modul, welches vom Interpreter aufgerufen wird. Dieses kann über
+Importaufrufe weitere Module einbinden. So kann der Programmablauf übersichtlich doch
+komplex sein.\\
+Dieses Mainmodul ist die Datei auvi.py,
 \lstinputlisting[language=Python,firstline=12, lastline=41,firstnumber=12,caption={,,Mainfunktion'' von \vs\ (auvi.py)}]{\pyvidir auvi.py}
-\lstinputlisting[language=Python,caption={Konstanten (local.py)},firstline=3,lastline=7,firstnumber=3]{\pyvidir local.py}
+diese Zeilen stellen die Definition der ,,Mainmethode'' dar. In ihnen wird auf größere
+Methoden außerhalb der Datei zugegriffen. Durch diesen Aufbau ist es möglich die
+Funktionalität der für diesen Zweck geschrieben Software zu erweiten oder für andere
+Projekte zu benutzen.\\
+Das Programm handelt grundsätzlich so, dass es erst die Dateistruktur um sich herum
+aufbaut. Dafür greift es auf Funktionen aus dem Modul filemanager, in der Datei
+filemanager.py zu. Dieses Verhalten bestand seit der ersten Version des Programmes wurde
+aber durch die Übersetzung in Python von Bash wesentlich robuster und allgemeiner.\\
+Nachdem einige Konstanten festgelegt werden, werden aus Dateien über andere Module
+die vom Nutzer abgefragten Parameter, Orte und Gebiete ausgelesen. Diese Definitionen liegen
+in JSON Form vor und können leicht von anderen Programmen geschrieben und gelesen werden.\\
+Die richtige Arbeit des Programmes wird dann in verschachtelten for-Schleifen erledigt, in
+denen über die verschienden Parameter und Orte iteriert wird.\\
 \lstinputlisting[language=Python,caption={Hinzufügen von neuen Orten, Gebieten und Parametern (local.py)},firstline=11,lastline=28,firstnumber=11]{\pyvidir local.py}
+Diese Methoden bieten ein Interface um von Außen neue Orte sowie Parameter
+der Routine hinzuzufügen.
+Sie geben zusätzlich dem Nutzer immer Feedback was gerade geschehen ist.
 \lstinputlisting[language=Python,caption={Routine zum schreiben von JSON Dateien (local.py)},firstline=30,lastline=41,firstnumber=30]{\pyvidir local.py}
+Diese Funtionen werden aufgerufen um die Pythonstrukturen in JSON Objekte umzuwandeln
+und schließlich in eine Datei zu schreiben. Großgeschrieben Variablen aus
+dem Quelltext stehen für vordefinierte,
+konstante, Strings für Ordner- oder Dateibezeichnungen.\\
+Über die folgenden Methoden können die geschrieben JSON Dateien dann ausgelesen werden.
 \lstinputlisting[language=Python,caption={Datei In- und Output (filemanager.py)},firstline=39,lastline=66,firstnumber=39]{\pyvidir filemanager.py}
-\lstinputlisting[language=Python,caption={Umwandeln von Konturplots in Gif Dateien (filemanager.py)},firstline=68,lastline=80,firstnumber=68]{\pyvidir filemanager.py}
+Die Methode createOutputDirs ist die Definition die aus der Mainmethode aufgerufen wird
+um die Ordnerstruktur vorzubereiten. Die Grafiken werden in diese Ordnerstruktur geschrieben.
+Eine wichtige Entscheidung musste getroffen werden wie die Daten gespeichert werden sollen,
+damit gleichzeitig immer möglichst neue Daten angezeigt werden können, niemals Dateien nicht
+vorhanden sind und trotzdem die Datenkapazität minimal gehalten werden soll.
+Dieses Problem wurde so gelöst, dass die Grafiken in einen temporären Ordner geschrieben
+werden und von dort aus sobalt sie alle fertig generiert wurden die alten Grafiken in
+ihrem festen Speicherort überschreiben. Dies bedeutet für den Datenträger, dass maximal
+zwei Sätze der Grafiken gespeichert werden müssen und es keine ,,Downtime'' auf dem
+Server gibt, welche bedeuten würde das zeitweise Grafiken bestimmter Art nicht aufgerufen
+werden können.
+\lstinputlisting[language=Python,caption={Bewegen der Dateien (filemanager.py)},firstline=68,lastline=100,firstnumber=68]{\pyvidir filemanager.py}
+Die einzelnen Schnappschüsse der Konturplots werden über die Methode convertToGifs zu
+Gifdateien umgewandelt. Gifs sind animierte Grafiken, die wie Videos gut die zeitliche
+Entwicklung der Konturplots darstellen.\\
+Für Präsentationen oder Geräte welche Gifs nicht gut darstellen können kann über die
+Funktion convertGifToMp4 die Gifdatei zu einer MP4 Datei umgewandelt werden.
+Dafür wird aber die Bibliothek ffmpeg auf dem Rechner, welcher die MP4 Datei erstellen
+will vorausgesetzt.
 
 \subsubsection*{JSON Definitionen}
 Im folgenden Listing wird die Definition von Ortspunkten
