@@ -3,6 +3,8 @@
 
 This is the EAA (Extra Academic Activity) by Markus Becker
 
+You can have a look at the built documentation [here]("http://viwetter.de/ci/Latex/Lernleistung/bll.pdf").
+
 My Project Manager is Dr. Ronald Eixmann
 I need to mention my ex-co-worker Swenja Wagner as a big influence on this project.
 
