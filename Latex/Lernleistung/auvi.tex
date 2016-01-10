@@ -124,8 +124,8 @@ und viele weitere meteorologisch bedeutende Parameter.
 In \vs\ kann der Nutzer selbst zwischen den verschiedenen Datenquellen wählen und eigene hinzufügen.
 Da die Software unter der MIT-Lizenz \cite{mitl} im Internet veröffentlicht wurde,
 und diese Lizenz die ,,As is - Klausel''
-\footnote{Die Software wird von mir frei angeboten, darf verändert werden,
-aber ich bin rechlich nicht für Fehler oder Abstürze verantwortlich} enthält verschreibt
+\footnote{Die Software wird vom Entwickler frei angeboten, darf verändert werden,
+aber der Entwickler ist rechlich nicht für Fehler oder Abstürze verantwortlich} enthält verschreibt
 der Programmierer sich keiner Garantieleistung \cite{mitl}. Quellen können somit
 aufgelistet werden, die in Zukunft evtl. nicht mehr erreichbar sind.
 In Zukunft soll man über eine GUI\footnote{\textit{Graphical User Interface} engl. IT.
@@ -239,33 +239,33 @@ von den verübergehenden Projektteilnehmern.
 Treffen wurden geplant und üblicherweise auf den Dienstag Nachmittag gelegt.
 Bei diesen Treffen wurde dann über neue Fortschritte geredet,
 damit alle auf dem gleichen Wissensstand sind.
-Ich habe mich dann mit den Anderen über Ideen ausgetauscht
-und die nächsten Arbeitsschritte geplant.
-Nach dem Austauschen haben ich dann am Projekt weitergearbeitet und Zuarbeit erhalten.
+Ziel war der Austausch über inhaltliche Fortschritte und Fragen, die Zielsetzung und
+gelegentlich Hilfe.
 Doch reichten zwei bis drei Stunden in der Woche nicht aus um das Projekt zu bearbeiten.
-Viele Arbeitsstunden mussten von zu hause erledigt werden.\\
-Im Winter des Jahres 2013 absolvierten ich zusammen mit Swenja Wanger ein Schülerpraktikum am
-Leibnitz Institut für Atmoshpärenphysik.
-Dort nutzten ich die Möglichkeit um mit anderen dort arbeitenden
+Die Bearbeitung des Projektes selbst geschah meist Zuhause.\\
+Im Winter des Jahres 2013 wurde ein Schülerpraktikum am
+Leibnitz Institut für Atmoshpärenphysik absolviert.
+Dort gab die Möglichkeit mit anderen dort arbeitenden
 Wissenschaftlern über dieses Projekt zu reden.
 Hier entstand die erste lauffähige Version des Programmes.
-Außerdem entwarf ich mehrere Poster für den \jf Wettbewerb 2014.
+Außerdem wurden mehrere Poster für den \jf Wettbewerb 2014 entworfen.
 
 \subsubsection{Programmierung}
-Die umfangreichste Aufgabe die ich in der Projektarbeit bewältigte
+Die umfangreichste Aufgabe die in der Projektarbeit bewältigt wurde
 war die Programmierung der Software ,,\vs ''.
-Da ich mich in Punkt \ref{sec:ent} schon entschieden habe in einer Linux Umgebung zu arbeiten,
-mussten ich auch die Programmiersprachen und sowie IDE's so wählen,
+Da in Punkt \ref{sec:ent} schon die Entscheidung getroffen wurde in einer Linux Umgebung zu arbeiten,
+mussten auch die Programmiersprachen und sowie IDE's\footnote{Integrated Developement Environment}
+so ausgewählt werden,
 dass sie auch auf Ubuntu oder ähnlichen Distributionen ohne Komplikationen funktionierten.\\
-Das Hauptprogramm, genannt ,,\vs '', zuerst in
+Das Hauptprogramm, genannt ,,\vs '' für Visualisierungs-System, zuerst in
 Python (Version 2.7) \cite{python27} geschrieben, hatte einen Vorgänger in Form von einer
-Ansammlung von Befehlen in einer BASH Datei welche die selbe Aufgabe erfüllte.
+Ansammlung von Befehlen in einer BASH Datei welche die selbe Aufgabe erfüllten.
 Diese Datei war sehr undynamisch und konnte auch schlecht auf verschiedene
 Umgebungen reagieren.
-Diese Programmiersprache ist in den für die Projektarbeit genutzten Distributionen
+Python hingegen ist in den für die Projektarbeit genutzten Distributionen
 sogar vorinstalliert und ein allgemeiner Industriestandard.\\
-Nur mit Python kam ich allerdings auf lange Zeit nicht aus.
-Andere Sprachen finden trotzdem eine Anwendung um die Entwicklung zu beschleunigen,
+Nur mit Python konnte man das Problem allerdings nicht optimal bewältigen.
+Andere Sprachen finden somit eine Anwendung um die Entwicklung zu beschleunigen,
 auch wenn Python die restlichen Aufgaben auch hätten erfüllen können
 erleichterte die Kombination folgender Programmiersprachen die Arbeit:
 \begin{figure}[H]
@@ -333,7 +333,16 @@ Die Liste kann um beliebig viele andere Orte erweitert werden.
 \lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte (locals.json)}]{\pyvidir locals.json}
 In der Liste steht der erste String für den Ortsnamen. Der zweite Wert ist ein Double für den Breitengrad gefolgt vom Längengrad.
 Da von den Orten auch ein Konturplot erzeugt werden soll wird mit dem 4. Wert abgespeichert wie groß die Übersichtskarte sein soll (In Grad um den Ort).
-Der letzte Wert zur Definition eines Ortspunktes ist die Zeitdifferenz zur GMT Zeit.
+Der letzte Wert zur Definition eines Ortspunktes ist die Zeitdifferenz zur GMT Zeit.\\
+Diese Datei ist der ursprüngliche Grund für den Umstieg auf Python.
+Python kann ,,out-of-the-box'' mit JSON Dateien umgehen. An der Definition kann man schon ablesen,
+dass ein Hinzufügen des Ortes sehr leicht geschehen kann. Dafür muss dem Ort nur trivialerweise ein Name
+gegeben werden, und dann ein Breiten- und Längengrad zugewiesen werden. Diese Informationen reichen
+schon um die meisten Grafiken zu erzeugen, der Flächenparameter ist nur ein optischer Parameter und kann
+ausgelassen\footnote{Der ,,Area''-Parameter muss auf 0 initialisiert werden,
+weil um Speicherplatz zu sparen die Orte in einer
+Python-list und nicht in einem Python-dict gespeichert werden} werden. Auch die Zeitzoneninformation kann
+ausgelassen werden.
 
 \subsubsection*{GrADS Scripte}
 \lstinputlisting[language=grads,
@@ -342,9 +351,9 @@ caption={GrADS Routine zum erstellen allgemeiner Funktionsgraphen (line.gs)}]{\p
 caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)},
 label= code:plotgengs,
 firstline=104, lastline=115, firstnumber=104]{\pyvidir grads/plot.gs}
-In Listing \ref{code:plotgengs} greife ich auf verschiedene eigene
+In Listing \ref{code:plotgengs} greift das Programm auf verschiedene eigene
 Funktionen zurück um die Konturplotgrafiken zu füllen.
-Um den Ablauf des Skriptes zu verstehen werde ich die wichtigsten Stellen hier nun mit erläutern.
+Um den Ablauf des Programmes zu verstehen sind die wichtigsten Stellen hier aufgelistet und erläutert.
 \lstinputlisting[language=grads,caption={Zeichnen der Achseneinteilung und Legende unter GrADS für Plots (plot.gs)}, firstline=117, lastline=136, firstnumber=117]{\pyvidir grads/plot.gs}
 Die Variable $color$ spielt in diesem Teil des Skriptes eine große Rolle.
 Diese Variable ist in diesem Kontext ein Pointer auf ein anderes GrADS Skript,
@@ -364,9 +373,10 @@ Die Farbwerte sind in einem Intervall von $0$ gar nicht vorhanden bis $255$ voll
 Um diese Farbwerte dann zu nutzen müssen diese noch den Wetterdaten zugewiesen werden.
 Dieses geschieht unabhängig von den Einheiten im selben Script.
 Auch hier kann der Text leicht von einem Computer generiert werden.
-\footnote{Wenn ich davon spreche, dass Daten vom Computer generiert werden ist gemeint,
-dass ein Nutzer der Website oder App seine Vorlieben mithilfe einer HTML-Form auswählt
-und aus diesen Werten im Hintergrund eine Datei erzeugt.}
+\footnote{Wenn in dieser Arbeit davon gesprochen wird, dass Eingabedaten vom Computer
+generiert werden ist gemeint,
+dass ein Nutzer der Website oder App seine Anfrage mithilfe einer HTML-Form abgibt
+und aus diesen Werten im Hintergrund eine Datei erzeugt oder geändert wird.}
 
 
 \subsubsection*{Webseite}
@@ -375,7 +385,7 @@ Das Front-End der Software ist eine Website
 zur Veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple}.
 Die Website ist programmiert in HTML (Hyper Text Markup Language),
 PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript.
-Als Webserver benutze ich Apache2 \cite{php} \cite{apache} \\
+Als Webserver wird Apache2 eingesetzt \cite{php} \cite{apache} \\
 
 \subsubsection{Versionen}
 Im Laufe der Arbeit entstanden mehrere lauffähige Versionen.
@@ -392,32 +402,32 @@ Um allerdings schnellere Ergebnisse zu erzielen wurde
 das komplette Programm von Bash in Python übersetzt.
 Durch die modulare Struktur von Python können meine
 Funktionen in andere Projekte als Bibliotek eingebunden werden.\\
-Über Python kann ich effektiver die Daten analysieren,
+Über Python kann man effektiver die Daten analysieren,
 kann leichter komplexe Bedingungen kontrollieren und
 auch die Interaktion mit dem Nutzer ist erleichtert
 (z.B. durch das Nutzen von JSON Dateien).
-Durch Python und JSON konnte ich das Projekt dann vollständig automatisieren.
+Durch Python und JSON konnte man das Projekt dann vollständig automatisieren.
 Zum Zeitpunkt der Arbeit wird GrADS noch immer Aufgerufen. Allerdings
 wird durch die ständige Weiterentwicklung an einem neuen Projekt gearbeitet.
 Dieses Projekt, ,,PilDap'' getauft soll von der GitHub Gemeinde mitentwickelt
 werden und nativ in Python die selbe Aufgabe erfüllen wie GrADS \cite{pildap}.
 
 \subsubsection*{Git}
-Ab Anfang 2015 benutzte ich eine neue Umgebung um an meinen
+Ab Anfang 2015 findet eine neue Umgebung anwendung um an
 Programmen und der Setzung zu arbeiten.
 Die Umgebung Git \cite{gitrepo}
 ermöglicht im eigentlichen Sinne Programmierern gleichzeitig an
 einem Projekt kooperativ zu arbeiten.
-Ich konnte diese Software zuerst auf dem eigenen Server und später zusätzlich
-auf der Website \link{GitHub.com} \cite{github} nutzen.
+Die Umgebung konnte zuerst auf dem eigenen Server und später zusätzlich
+auf der Website \link{GitHub.com} \cite{github} genutzt werden.
 Der Git ,,Workflow'' ist auch ohne Internetverbindung komplett funktionstüchtig.
 Ich mache Änderungen, verpacke sie und sende sie zum Server.
 Dieses Änderungspacket erhält eine einzigartige Identifikation, eine SHA1 Hash \cite{gitsha1}.
-Durch diese Identifikation kann ich im Nachhinein auf jede einzelne Version
-meiner Software und Setzung zugreifen. Wenn ich einen Fehler bemerke kann ich z.B. so
+Durch diese Identifikation kann man im Nachhinein auf jede einzelne Version
+meiner Software und Setzung zugreifen. Wenn man also einen Fehler bemerkt kann man so
 durch den Befehl $\text{git bisect}$ den Commit, d.h. die Änderung finden, die den Fehler
 mit sich brachte.
-Zusätzlicher erreiche ich so eine hohe Datensicherheit \cite{linussaves} und schnelle parallele Entwicklung mit gegenseitiger Kontrolle\footnote{Ziel ist es den Inhalt zu kontrollieren, nicht den Kollegen}.
+Zusätzlicher erreicht man so eine hohe Datensicherheit \cite{linussaves} und schnelle parallele Entwicklung mit gegenseitiger Kontrolle\footnote{Ziel ist es den Inhalt zu kontrollieren, nicht die Kollegen}.
 
 \subsubsection{genutzte Mittel} % AuVi Entwicklung
 % Website, Server, ...
@@ -425,25 +435,40 @@ Zusätzlicher erreiche ich so eine hohe Datensicherheit \cite{linussaves} und sc
 % Software: 	Linux -> Ubuntu, Debian, Raspbian
 % 				Apache2, Git, Python2:3, PHP, SSH
 % 				Editor SublimeText, Eclipse, Atom
-
-\subsubsection{Servertechnik} % AuVi Entwicklung
-% TODO Beschreibung Architektur, Ordnerstruktur
-% NOTE z.B. /etc/apache2/sites-enabled/*
-% NOTE Links, Domains, Websapce, ...
-% Betreuung, Einarbeitung, ...
-
-\subsection{Schnittstelle mit dem Nutzer} % AuVi
-% TODO Defintion GUI, Zweck einer IO
-
-\subsubsection{Webseite} % AuVi Schnittstelle
-% Domain: viwetter.de
-% Kosten: 7 EUR im Jahr, Server ist AuVi-Server
-% TODO Übertrage Gerüst auf viwetter.de (Markus)
-% Auf Server: /home/pi/viwetter.de/.
+AuVi wurde auf zwei Servern entwickelt. Einer als Entwicklungs- der andere als Integrationsserver.
+Das hat zum Vorteil, dass jede Version mehrfach getested werden konnte.
+Einer dieser Server ist ein Raspberry Pi mit den Betriebssystem Raspbian.
+Der zweite Server wurde mehrfach verlegt und ist endlich auf der Platform travis-ci.org realisiert.
+Bearbeitet wurde das Programm von offenen Betriebssystemen aus. Dazu zählen das schon genannte
+Raspbian, eine Version von Debian, und auf unseren Laptops und PCs wurde hauptsächlich Ubuntu genutzt.
+Zu den Programmen, welche die Projektarbeit ermöglichten zählen: Apache2 als Server
+Software, Git als SCM\footnote{Source Code Manager oder Software Configuration Management},
+Python2, Python3 und PHP als Programmiersprache, nautilus als Dateimanager für FTP und SFTP, sowie
+SSH als Netzwerk-Shell.\\
+Als Editor wurde zuerst SublimeText genutzt um die Bash- und später Pythondateien zu bearbeiten.
+SublimeText wurde zwischenzeitlich durch Eclipse ersetzt um eine vollwertige IDE für PHP und Java zu
+genießen. Die \LaTeX Dateien wurden anfangs aus dem selben Grund mit TexMaker bearbeitet.
+Nachdem im Projekt weitere automatisierte Integrationsfortschritte gemacht wurden konnte auf
+diese IDEs verzichtet werden, und es wurde nur noch auf den offenen Texteditor Atom zurückgegriffen.
+Alle Linker- und Compileraufgaben der IDE wurden über Makefiles realisiert um die Spiegeln der
+Entwicklungsumgebung auf ein Minimum von zwei Zeilen zu bringen. Ein Entwickler kann mit den
+Befehlen $\text{git clone https://github.com/tibyte/auvi-hub}$ und $\text{make}$ seine Entwicklungsumgebung
+so vorbereiten, dass er direkt den Stand der Software sieht und sie zugleich sofort einsetzbar ist.
+Durch diese Optimierung kann ein Projektteilnehmer durch genau diese zwei Befehle seine Entwicklungsumgebung
+in Sekunden einrichten.
+% ...
+Nachdem der beschriebene Aufbau lauffähig war griff das ,,Never touch a running System'' Prinzip.
+Das AuVi-System wird als Black-Box behandelt, von dem erwartet werden kann, dass es auf anfragen
+richtig reagiert und Änderungen dieses Verhalten nicht abändern.\\
+Dieses Verhalten wird in der Branche als Feature-Freeze\footnote{Keine neuen Funktionen}
+eines API-Levels\footnote{Version eines Programmes, welche sich untereinander um Patches unterscheiden,
+aber kompatibel sind} \cite{semver} bezeichnet.\\
+Für den Entwickler steht somit fest, dass die Software ihre Aufgabe erfüllt, aber noch optimiert
+werden muss.
 
 \subsubsection{Datenformate} % AuVi Schnittstelle
-Da ich meine erzeugten Grafiken auf einer Website und App darstellen will
-musste ich sehr darauf achten,
+Da die erzeugten Grafiken auf einer Website und App dargestellt werden sollen
+musste sehr darauf geachtet werden,
 dass die Dateiformate zum einen komprimiert genug sind
 um heruntergeladen werden zu können und zum anderen
 noch einen gewissen Qualitätsstandard erfüllen.\\
@@ -454,30 +479,30 @@ Als die sichersten und besten für diesen Zweck Dateiformate habe
 ich PNG und JPG für Bilder
 und GIF für Animationen auserkoren.
 ich habe lange versucht die Animationen als Video zu kodieren.
-Allerdings bemerkte ich nur geringe Einsparungen in der
-Dateigröße und stellte gleichzeitig Anzeigeprobleme auf
+Allerdings bemerkt man nur geringe Einsparungen in der
+Dateigröße und stellt gleichzeitig Anzeigeprobleme auf
 älteren Geräten fest.
-Resultat dieser Entscheidung bedeutet nun, dass ich etwas mehr
+Resultat dieser Entscheidung bedeutet nun, dass man etwas mehr
 Daten übertragen muss, weil die Datei als z.B. GIF codiert ist,
-dafür aber definitiv angezeigt werden kann.\\
-In einer Zeit in der die Internetverbindung als Grundbedürfnis
-angesehen wird, fiel mir diese Entscheidung leichter als gedacht.
+dafür aber definitiv angezeigt werden kann.
 
 \subsubsection{Schulhompage} % AuVi Schnittstelle
 Da Jugend Forscht unter der Leitung von Herr Doktor Eixmann
 ein Projekt des Schulzentrum Kühlungsborns ist
-(\link{http://www.schulzentrum-kborn.de}) bin ich auf der Schulhompage
-unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt eingetragen \cite{szkb}.
+(\link{http://www.schulzentrum-kborn.de}) dieses Projekt auf der Schulhompage
+unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt vertreten \cite{szkb}.
 Dort ist mein Projekt unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden.
 Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte,
-richtete ich eine eigene Seite auf meinem Server ein.
+wurde eine eigene Seite auf meinem Server eingerichtet.
 Diese ist unter \link{http://team.viwetter.de}
 für die Öffentlichkeit zu erreichen.
 Diese Seite soll nicht die Ergebnisse des AuVi Programms
 widerspiegeln sondern dient als Webpräsenz des Projektes.
 
 \subsection{Szenario} % AuVi
-Ich werde nun Beispiele angeben, wie mein Programm genutzt werden kann.
+Da meine Visualisierungssoftware als Open Source Projekt angeboten wird kann der Nutzer
+sie beliebig bearbeiten, in diesem Abschnitt werden einige Szenarien aufgezeigt wie das System
+so wie es ausgeliefert wird genutzt werden kann.
 Es gibt darüber hinaus sehr viele Möglichkeiten aus dem Programm individuellen Nutzen zu ziehen.
 Python Entwickler können so meine Software als Bibliothek einbinden oder direkt den Quelltext
 weiterentwickeln.
@@ -488,18 +513,18 @@ wetterbedingte Gefahrensituationen frühzeitig zu erkennen.
 Anhand der globalen Datenquellen und dem Hintergrund des
 Systems ist es einem Nutzer möglich für seinen Ort selbst die
 Parameter zu wählen die für Ihn zum Beispiel eine Gefährdung darstellen.\\
-Es ist mir wichtig, dass meine Visualisierungen keine Laien abschreckten,
-deshalb habe ich mich entschieden die Frühwarnung in Form eines
-Ampelsystems an den Nutzer zu bringen.
+Es ist wichtig, dass die Visualisierungen keine Laien abschreckten,
+deshalb kann die Frühwarnung in Form eines
+Ampelsystems an den Nutzer gebrach werden.
 Dieser kann bei Interesse an der Frühwarnfunktionalität eine Spanne angeben,
 in der der entsprechende Parameter sicher ist (grün),
 gefährlich wird (gelb) oder gefährlich ist (rot).
 Diese sehr visuelle Form soll dabei auf einem Blick ermöglichen die Wetterlage abzuschätzen.\\
-Für detaillierte Auswertungen kann ich andere Anzeigeformate anbieten.
+Für detaillierte Auswertungen kann man andere Anzeigeformate wählen.
 
 \subsubsection{Exotische Orte} % AuVi Szenario
-Ob mitten im Ozean oder in der Wüste, mein Programm liefert Prognosen für jeden Ort.
-Die einzige Information die ich zum Ort brauche ist die Koordinatendarstellung des
+Ob mitten im Ozean oder in der Wüste, das Programm liefert Prognosen für jeden Ort.
+Die wichtigste Information die das Programm zum Ort brauche ist die Koordinatendarstellung des
 Ortes auf dem Gradnetz der Erde.
 Diese Darstellung besteht aus Längen- und Breitengrad (engl. Longitude, Latitude).
 Das heißt jeder Ort kann durch das Intervall der Längengrade $[-180:180]$ und
@@ -512,7 +537,10 @@ der Entfernung zur physikalischen Messstation abhängig.
 Je weiter das Wetterereignis oder die Wetterprognose in der Zukunft liegt,
 desto geringer ist dessen Genauigkeit.
 Die Genauigkeit steigt, wenn sich eine Messstation im näheren Umfeld befindet und
-nur eine kürzere Prognose verlangt wird.
+nur eine kürzere Prognose verlangt wird.\\
+Der Nutzer selbst hat viele Möglichkeiten die Koordinaten für den Ort seines Interesses herauszufinden.
+Wenn er sich dort befindet kann jedes mobile Gerät oder Handy die Koordinaten ausgeben, außerdem kann
+über ein Interface zu Google Maps ein Ort direkt ausgewählt werden.
 
 \subsubsection{Wissenschaft} % AuVi Szenario
 Wissenschaftler können von der Datenquelle bereitgestellte Parameter kombinieren
@@ -537,6 +565,7 @@ seine eigene Skala der ,,Eignung zum Segeln'' erstellen.
 
 \subsection{Öffentlichkeitsarbeit} % AuVi
 % Messen, Vorträge, Dokumentation, Poster
+% TODO Remove ,,Ich''s
 Um diese Arbeit zu präsentieren, entstanden im Laufe des Projekts mehrere Poster.
 Anfangs wurden diese in PowerPoint entwickelt, später wurde ein Umstieg
 auf Gimp umgestiegen notwendig,
