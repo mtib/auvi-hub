@@ -11,8 +11,7 @@ Die Domain über die die Rechner den WMS-Server erreichen ist \link{http://wms.v
 Auch wenn dieser von überall aus erreichbar ist,
 muss man sich authentifizieren um Daten zu bearbeiten oder anzuzeigen.\\
 Im letzten Jahr der Projektarbeit stellte sich das Weather Monitoring System als
-interessante Baustelle heraus. Ich nahm mich dieser Aufgabe voll an, entwickelte
-es von Grund auf und kümmerte mich um dessen Einbindung in verschieden Situationen.
+interessante Baustelle heraus. Dieses wurde von Grund auf neu entwickelt und integriert.
 % Was ist WMS ENDE
 
 \subsection{Konzept} % WMS
@@ -23,9 +22,10 @@ bestimmen können wer für welchen Ordner Grafiken hochladen und einbetten kann 
 Es können von jedem Administrator nach Bedarf neue Konten erstellt werden. \\
 Auch zum anschauen der Grafiken muss man ein Konto besitzen,
 allerdings soll der Anzeigecomputer auch von alleine in der Lage sein sich einzuloggen und die Grafiken eines voreingestellten Ordners anzeigen.
-Zum Anzeigen muss eine Authentifizierung stattfinden, da Schüler zum einen manchmal unwissend Grafiken mit Copyright hochladen,
-und ich mich als Serveradmin und Webadmin schützen und auch den
-Schülern etwas entgegenkommen will. \\
+Zum Anzeigen muss eine Authentifizierung stattfinden,
+da Schüler zum einen manchmal unwissend Grafiken mit Copyright hochladen,
+und sich die Serveradmins und Webadmins schützen und auch den
+Schülern etwas entgegenkommen wollen. \\
 Auch bei diesem Interface greift natürlich die Regel,
 dass auch ein Affe die Datenbank bedienen können soll
 und auch die obligatorische Katze auf der Tastatur soll das
@@ -44,14 +44,16 @@ Der Client des Weather Monitoring Systems, muss funktionell nur Grafiken auf ein
 Diese Aufgabe ist nicht alzu aufwendig,
 daher ist bei der Auswahl der Clienthardware robustheit ein wichtigerer Faktor.
 Außerdem sollte die Hardware, noch eher als beim Server, möglichst kostgünstig sein,
-da ich früh plante, bei einem funktionierenden System mehrere Anzeigen einzusetzen.
+da früh eingeplant werden mussten,
+bei einem funktionierenden System mehrere Anzeigen einzusetzen.
 Die Lösung für Server und Client fand sich mit dem Raspberry Pi.
 Dieser kleine Rechner wurde für diese Arbeit schon mehrmals als Lösung herangezogen,
 und durch die Verfügbarkeit,
 Erfahrung mit der Hardware sowie der Möglichkeit direkt Prototypen
 zu testen bot es sich an einen Raspberry Pi als Server und Client zu benutzen.\\
-Für beide Anwendungsfälle komponierte ich eine abgewandelte
-Version des Raspbian Betriebssystems um die verlangte Aufgabe bestmöglichst zu erfüllen.
+Für beide Anwendungsfälle wurde eine abgewandelte
+Version des Raspbian Betriebssystems zusammengestellt
+um die verlangte Aufgabe bestmöglichst zu erfüllen.
 
 
 \subsection{Interface} % WMS
@@ -67,7 +69,8 @@ Da auch die Bearbeitung der Daten von einem Raspberry Pi möglich sein soll ist 
 sondern beruht auf grundlegenden Elementen und enthält auch kaum Animationen. \\
 % TODO mehr über Sicherheit
 JavaScript wird nur benutzt um Eingabeformulare auf offensichtliche Fehler zu überprüfen.
-Außerdem schränkte ich den Nutzer bewusst ein, sodass die Wahrscheinlichkeit,
+Außerdem schränkt das Interface den Nutzer bewusst ein,
+sodass die Wahrscheinlichkeit,
 dass er etwas veranlasst, wovon er nicht wusste was es bewirkt, verringert wird.
 Außerdem kann er selbst mutwillig nicht das gesamte System zum Absturz bringen.
 Dies beinhaltet das Freigeben des Links um die Anzeige einzuschalten,
@@ -101,7 +104,8 @@ Ein Application Programming Interface, kurz API, ist eine Schnittstelle zu einem
 über eine Programmiersprache, welche nicht der des ursprünglichen Programmes entsprechen muss.
 Über diese Schnittstelle soll dann die Ausführung von Aufgaben veranlasst werden.
 Eine API ermöglicht also dann Entwicklern auf ihr Programm von außen zuzugreifen und es zu erweitern.
-In meinem Fall von WMS war eine API notwendig um von Programmen aus, also nicht von \link{wms.viwetter.de}, Grafiken hochzuladen und zu verwalten.
+In dem Fall von WMS war eine API notwendig um von Programmen aus,
+also nicht von \link{wms.viwetter.de}, Grafiken hochzuladen und zu verwalten.
 Im Detail wird die API genutzt um die erzeugtet Geburtstagsgrafiken von einem Python Programm auf den Server zu laden und die Geburtstagsgrafikenschleife zu verwalten.
 Die API auf Seiten des Servers ist in PHP geschrieben.
 Auf diese API kann nun von außen jede Programmiersprache über GET und POST Requests des Hyper Text Transfer Protokolls zugreifen.
@@ -122,8 +126,8 @@ die von autorisierten Personen ausgewählt worden.
 Außerdem soll der Service nicht ohne die Erlaubnis eines Administrators aufrufbar sein,
 deshalb wurde ein Kontensystem implementiert.
 Da die Client Computer automatisiert starten und gleich die richtigen Daten anzeigen sollen,
-musste ich ein Protokoll entwickeln, welches sicher ist,
-aber einem Rechner ermöglicht sich selbst einzuloggen.
+musste ein Protokoll entwickelt werden, welches sicher ist,
+aber einem entferntem Rechner ermöglicht sich selbst anzumelden.
 Um dafür zu sorgen, dass nur vollständig geladene Grafiken angezeigt werden muss
 der Client beim Anzeigen selbst überprüfen ob die Grafik vorhanden ist.
 Um sicherzustellen, dass die Anzeige auch im Rahmen der Projektarbeit aufgestellt
@@ -134,7 +138,8 @@ Selbst wenn der gesamte Datenbankinhalt veröffentlicht wird, kann weder ein Pas
 entschlüsselt werden\footnote{zumindest in einer Zeitspanne die
 geringer als die Lebensdauer des Universums ist}, noch können Nutzer die das selbe Passwort haben
 gruppiert werden.\\
-Dieses Verhalten erreiche ich indem ich das Passwort zusammen mit einem ,,Salt''-Wert hashe. Dieser ,,Salt'' wird bei jedem Benutzer individuell erzeugt und ist eine lange zufällige Zeichenkette.
+Dieses Verhalten wurde erreicht indem das Passwort zusammen mit einem ,,Salt''-Wert gehash wird.
+Dieser ,,Salt'' wird bei jedem Benutzer individuell erzeugt und ist eine 64 Bit lange zufällige hexdezimale Zeichenkette.
 
 \subsection{Anzeige}
 Die Anzeige erfolgt über den Browser, da ein Internetbrowser meist vorinstalliert ist
