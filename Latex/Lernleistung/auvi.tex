@@ -27,11 +27,11 @@ Das ist für die Prognose essentiell wichtig.
 Der Grundgedanke einer solchen Prognose besteht darin,
 aus einem bereits vergangenen und dem aktuellen Zustand
 der Atmosphäre einen Zustand in der Zukunft abzuleiten.
-Dazu werden die bekannten physikalischen Regeln angewendet.
+Dazu werden die bekannten physikalischen Regeln angewandt.
 In mathematischer Hinsicht werden diese physikalischen Regeln von
 nichtlinearen Gleichungen beschrieben.
 Das bedeutet, dass bereits die kleinste Änderung im Ausgangszustand
-das Ergebnis der Rechnung relativ groß verändern kann. % TODO: Citation needed
+das Ergebnis der Rechnung vergleichsweise groß verändern kann \cite{nonlinear}.
 
 
 \subsubsection{Prognosen per Hand} % AuVi Meteorologie
@@ -46,7 +46,7 @@ Wolkenart, Höhe der Wolkenuntergrenze, Bedeckungsgrad,
 Sichtweite, Niederschlagsmenge und Niederschlagsart.
 Es wird zwischen Bodenbeobachtungsstationen, die Daten in der Nähe
 der Bodenoberfläche sammeln und aerologischen Beobachtungsstationen,
-die Daten aus bis zu 30km Höhe liefern unterschieden.
+die Daten aus bis zu 30 km Höhe liefern unterschieden.
 Es werden auch Daten von mobilen Messstationen, wie Bojen und Flugzeugen verwendet.
 Wettersatelliten und Fernerkundungssystem
 (wie Wetterradar, Blitzortungssysteme, LIDAR, SODAR) können auch als Datenquelle dienen.
@@ -58,7 +58,10 @@ Zusätzlich dazu werden die gesammelten Daten von numerischen
 Vorhersagemodellen als Ausgangszustand verwendet. \cite{noaa}
 \\
 Numerische Wettervorhersagen sind rechnergestützt, können aber trotzdem nicht
-immer 100\% zutreffend sein.
+immer 100\% akkurate Werte messen.
+Man muss die Messfehler und Messungenauigkeiten berücksichtigen, sowie die
+Ungenauigkeit die durch das Abspeichern auf einem digitalen Speichermedium
+eingeführt wird. \cite{floatungenau}
 Der Zustand der Atmosphäre zu einem späteren Zeitpunkt wird aus dem Zustand
 der Atmosphäre zu einem gegebenen Anfangszeitpunkt berechnet.
 Dabei werden relevante Gleichungen numerisch gelöst
@@ -69,7 +72,8 @@ Niederschläge, Bildung von Hoch- und Tiefdruckgebieten und Wind beschrieben.
 Diese Vorgänge können je nach Luftdruck, Temperatur, Windgeschwindigkeit
 und Luftfeuchtigkeit auftreten.
 Da diese Gleichungen jedoch nicht eindeutig lösbar sind oder es
-durch Approximationsvorgänge zu Abweichungen kommt, kann es nur zu Näherungswerten kommen.
+durch Approximationsvorgänge zu Abweichungen kommt, werden weitere Fehler eingeführt,
+die Ergenisse dürfen nur als Näherungswerte angesehen werden.
 Trotzdem, oder gerade deshalb sind diese numerischen Prognosen in diesen Rechenzentren berechenbar.
 Diese mathematischen Näherungen benötigen jedoch sehr viel Rechenleistung,
 weswegen auf die Leistungsfähigkeit von Supercomputern zurückgegriffen wird.
@@ -102,11 +106,9 @@ oder ob man die Prognose für die nächste Woche haben möchte.
 Letzters ist deutlich schwieriger und somit auch weniger zuverlässig.
 
 \subsection{Datenquellen} % AuVi
-
-\subsubsection{Quellenvergleich} % AuVi Datenquellen
 Da es im Rahmen des Projektes nicht möglich war
 eigene den Globus umspannende Daten aufzunehmen und Prognosen zu berechnen,
-muss eine Auswahl zwuschen den Quellen mit den benötigten Daten getroffen werden.
+muss eine Auswahl zwischen den Quellen mit den benötigten Daten getroffen werden.
 Im Internet gibt es eine vielzahl von Anbietern von Wetterdaten.
 Die technisch beste Methode an diese Daten zu gelangen ist über einen OpenDap Server.
 Dieser garantiert dem Programmierer und somit dem Nutzer
@@ -114,6 +116,8 @@ die Erreichbarkeit und Aktualität der Daten.
 Für \vs\ wurden verschiedene Quellen gesammelt und miteinander verglichen.
 Bei diesem Vergleich
 gewann die NOAA GFS Quelle \cite{noaa} , auf Hinweis von Projektleiter Dr. Ronald Eixmann.
+
+\subsubsection{Quellenvergleich} % AuVi Datenquellen
 Das GFS \cite{gfs} Modell welches von NOAA angeboten wird zeichnet
 sich durch eine Vielfalt von Parametern (50+) und einen großen Prognosezeitraum (10 Tage) aus.
 Diese Parameter beinhalten in der hauptsätlich genutzten Quelle \cite{bspgfs} z.B.
@@ -181,16 +185,36 @@ So wird in einem Abstand von 13,5km je ein Wert ermittelt.
 Diese Daten werden als große Datensätze kostenfrei auf
 der Webseite \link{http://mag.ncep.noaa.gov/} \cite{ncep} zur Verfügung gestellt.\\
 Die Daten liegen in verschiedenen zeitlichen und räumlichen Auflösungen vor.
-% TODO Tabelle mit Daten: http://www.ftp.ncep.noaa.gov/data/nccf/com/gfs/prod/
-% TODO Auflösungen heraussuchen http://www.nco.ncep.noaa.gov/pmb/products/gfs/
-% Richtige Quelle
-% http://opendap.nccs.nasa.gov:80/dods/GEOS-5/fp/0.25_deg/fcast/tavg1_2d_slv_Nx.latest
-% TODO Quellenvergleich http://opendap.nccs.nasa.gov/dods/
-% TODO Dokumentation Formate, GRIB2 (http)
-% TODO Diagramm der Genauigkeit
+\newpage
+\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	Datensatz & Aktualisierung & Netz & Prognose & Vertikal\\
+	\hline
+	GFS 0.25 & 6 Stunden & 0,25$^{\circ}$ & 240 Stunden & 46 Ebenen\\
+	\hline
+	GFS 0.50 & 6 Stunden & 0,5$^{\circ}$ & 240 Stunden & 46 Ebenen\\
+	\hline
+	GFS 1.00 & 6 Stunden & 1,0$^{\circ}$ & 240 Stunden & 46 Ebenen\\
+	\hline
+	GFS Ensemble & 6 Stunden & 0.5$^{\circ}$ & 192 Stunden & \\
+	\hline
+\end{tabular}
+\\
+\\
+Der das GFS Ensemble Modell wird genauer bearbeitet, und ist Bias-Korrigiert.
+Dieses Verfahren soll Modell Fehler minimieren \cite{gfshdens}. \\
+Die Daten werden über das GRIB2 Format angeboten. GRIB2 steht für die zweite Inkarnation
+des Gridded Binary Formates. Dieses Format wurde
+von der amerikanischen Einrichtung ,,National Centers For Environmental Prediction''
+kurz NCEP entworfen. Sie bieten die Dokumentation dieses Formates frei im Internet
+an, was es Programmierern ermöglicht Software zu schreiben die dieses Format lesen und
+schreiben kann. Eine GRIB Datei ist immer in sich geschlossen, kann aber nachdem der
+Header gelesen wurde in Teilen geladen werden.\\
+Das GFS Modell kann so aufgeteilt werden, wenn das Programm nur einen Teil des GFS
+Modells braucht, wird nur dieser Teil geladen. Diese Aufgabe den Header auszuwerten
+wird in \vs von GrADS übernommen.
 
 \subsubsection{Datenverfügbarkeit} % AuVi Datenquellen
-% TODO Wann sind welche Daten Verfügbar?
 Während der Deutsche Wetter Dienst für normale, zahlende, Nutzer nur Daten
 für die nächsten 48 Stunden zur Verfügung stellt, ist NOAA für alle Nutzer,
 egal wo sie sich auf der Welt befinden, rund um die Uhr offen und bietet Daten
@@ -232,7 +256,6 @@ Seite können dann u.a. Zeilen kommentiert und Änderungen vorgeschlagen werden.
 Die Textbearbeitung fand zuerst im Editor Sublime Text \cite{sublime} statt, da dieser
 aber kostenlos nur mit störenden Nachrichten zu nutzen war, wechselte man später
 zum Open Souce Atom Editor \cite{atomio}. Dieser wird von der GitHub Gemeinde entwickelt.
-% TODO Beschreibung der Umgebung & Warum
 
 \subsubsection{Methodik} % AuVi Entwicklung
 Die Arbeit an diesem Projekt verlangte große Kooperation
@@ -360,7 +383,6 @@ Die Variable $color$ spielt in diesem Teil des Skriptes eine große Rolle.
 Diese Variable ist in diesem Kontext ein Pointer auf ein anderes GrADS Skript,
 welches die Farbdefinitionen enthält.
 Dieses Farbscript lässt sich leicht vom Computer nach den Eingaben eines Nutzers erzeugen.
-% TODO Farbscript ersetzt durch Datenbank
 \lstinputlisting[language=grads,firstline=8, lastline=28,caption={Beispiel Farbdefinition für Temperaturkonturplots (t2m.gs)},label=code:t2mcols]{\pyvidir grads/t2m.gs}
 In Listing \ref{code:t2mcols} wird die Funktion gezeigt die bestimmten Zahlen eine Farbe zuweist.
 Diese Farben sind im RGB Format codiert.
@@ -383,10 +405,22 @@ und aus diesen Werten im Hintergrund eine Datei erzeugt oder geändert wird.}
 \subsubsection*{Webseite}
 Das Front-End der Software ist eine Website
 \footnote{Diese Website kann auch in eine App gepackt werden,
-zur Veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple}.
+zur Veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple},
+diese kann aber auch über eine Shell umgangen werden, indem man \vs direkt Befehle
+übergibt und die Bilder serviert bekommt.\\
 Die Website ist programmiert in HTML (Hyper Text Markup Language),
 PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript.
 Als Webserver wird Apache2 eingesetzt \cite{php} \cite{apache} \\
+Der Server der diese Website ,,served'' ist nicht über eine Domain aus dem Internet
+erreichbar, da sobalt Grafiken benötigt wurden später das gesammte Projekt auf
+einen Rechner heruntergeladen wurde und von dort lokal ausgeführt wurde.
+Die Website liest genauso wie \vs die JSON Dateien aus und kann aus den
+Routinen schlussfolgern unter welchem Dateipfad die Grafiken nach der Generation
+liegen müssen. Dann muss die Website nur noch auf die Grafiken verlinken.
+Für die Projektarbeit wurde die Website hauptsächlich genutzt um das Arbeiten mit
+dem Dateimanager zu minimieren, da dieser bei jedem Ordnerwechsel die Grafiken lud,
+der Webbrowser allerdings erst auf Befehl die Grafiken lädt.
+
 
 \subsubsection{Versionen}
 Im Laufe der Arbeit entstanden mehrere lauffähige Versionen.
@@ -456,8 +490,7 @@ Entwicklungsumgebung auf ein Minimum von zwei Zeilen zu bringen. Ein Entwickler 
 Befehlen $\text{git clone https://github.com/tibyte/auvi-hub}$ und $\text{make}$ seine Entwicklungsumgebung
 so vorbereiten, dass er direkt den Stand der Software sieht und sie zugleich sofort einsetzbar ist.
 Durch diese Optimierung kann ein Projektteilnehmer durch genau diese zwei Befehle seine Entwicklungsumgebung
-in Sekunden einrichten.
-% ...
+in Sekunden einrichten.\\
 Nachdem der beschriebene Aufbau lauffähig war griff das ,,Never touch a running System'' Prinzip.
 Das AuVi-System wird als Black-Box behandelt, von dem erwartet werden kann, dass es auf anfragen
 richtig reagiert und Änderungen dieses Verhalten nicht abändern.\\
@@ -475,17 +508,13 @@ um heruntergeladen werden zu können und zum anderen
 noch einen gewissen Qualitätsstandard erfüllen.\\
 Außerdem sind Mobiltelefone nicht in der Lage alle
 Dateiformate anzuzeigen,
-die ein Webbrowser auf einem Computer ohne Probleme handhabt.
-Als die sichersten und besten für diesen Zweck Dateiformate habe
-ich PNG und JPG für Bilder
-und GIF für Animationen auserkoren.
-ich habe lange versucht die Animationen als Video zu kodieren.
-Allerdings bemerkt man nur geringe Einsparungen in der
-Dateigröße und stellt gleichzeitig Anzeigeprobleme auf
-älteren Geräten fest.
-Resultat dieser Entscheidung bedeutet nun, dass man etwas mehr
-Daten übertragen muss, weil die Datei als z.B. GIF codiert ist,
-dafür aber definitiv angezeigt werden kann.
+die ein Webbrowser auf einem Computer ohne Probleme handhabt.\\
+Die Grafiken selbst werden im JPG oder PNG Format erzeugt, welches
+Format genutzt wird entscheided GrADS autonom. Diese Grafiken werden
+über ImageMagick zu GIF Dateien konvertiert. GIFs sind zwar nicht stark
+komprimiert, können aber auf jedem Gerät abgespielt werden.
+Falls man Speicherplatz sparen will oder die Animation wie ein Video nutzen will
+werden die GIFs sofern ffmpeg installiert ist auch noch zu MP4 Dateien konvertiert.
 
 \subsubsection{Schulhompage} % AuVi Schnittstelle
 Da Jugend Forscht unter der Leitung von Herr Doktor Eixmann
@@ -498,7 +527,7 @@ wurde eine eigene Seite auf einem privaten Server eingerichtet.
 Diese ist unter \link{http://team.viwetter.de}
 für die Öffentlichkeit zu erreichen.
 Diese Seite soll nicht die Ergebnisse des AuVi Programms
-widerspiegeln sondern dient als Webpräsenz des Projektes.
+widerspiegeln sondern dient als Webpräsenz der Projektarbeit.
 
 \subsection{Szenario} % AuVi
 Da diese Visualisierungssoftware als Open Source Projekt angeboten wird kann der Nutzer
@@ -550,7 +579,9 @@ auch für sie besonders interessante meteorologische Ereignisse grafisch darstel
 Wenn jemand zum Beispiel Zusammenhänge zwischen der Ozonschicht und der Temperatur erforscht,
 kann er sich eine Grafik ausgeben lassen, die ihm diese beiden Parameter darstellt.
 % Dr. Eixmann fragen, was man sich wissenschaftlich visualisieren könnte
-% TODO Plot einbinden
+\begin{center}
+	\includegraphics[width=\linewidth]{imgs/gl/to3_0013.jpg}
+\end{center}
 
 \subsubsection{Anpassung} % AuVi Szenario
 Wie zuvor genannt kann der Nutzer eigene Muster einstellen und so das Programm erweitern.
