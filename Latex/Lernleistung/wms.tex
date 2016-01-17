@@ -67,7 +67,6 @@ Das Interface selbst ist hauptsächlich in PHP und CSS geschrieben.
 Natürlich ist ein gewisser Grad von JavaScript und HTML unumgänglich. \\
 Da auch die Bearbeitung der Daten von einem Raspberry Pi möglich sein soll ist der HTML Code nicht an der vordersten Front der HTML Syntax (zum Zeitpunkt der Setzung HTML5),
 sondern beruht auf grundlegenden Elementen und enthält auch kaum Animationen. \\
-% TODO mehr über Sicherheit
 JavaScript wird nur benutzt um Eingabeformulare auf offensichtliche Fehler zu überprüfen.
 Außerdem schränkt das Interface den Nutzer bewusst ein,
 sodass die Wahrscheinlichkeit,
@@ -81,8 +80,12 @@ oder eine Offlinedatei zu Verlinken.
 Wenn der Nutzer auswählt eine Grafik hochzuladen,
 hat er nicht die Möglichkeit eine Verlinkung einzufügen, und vice versa.
 \begin{center}
-\includegraphics[width=\linewidth]{imgs/wms/wms_interface.png}
+    \includegraphics[width=\linewidth]{imgs/wms/wms_interface.png}
 \end{center}
+Diese Grafik zeigt das Erscheinungsbild des WMS-Interfaces. Es ist sichtbar
+minimalistisch gehalten um robust zu sein, und auch die Wartung zu erleichtern.
+Trotzdem ist es dynamisch, denn es erlaubt die Erstellung neuer Ordner und Nutzer,
+und in allen Testszenarien konnte die Seite nicht zum Absturz gebracht werden.
 
 \subsection{Generierte Grafiken}
 \label{sub:Generierte Grafiken}
@@ -140,7 +143,32 @@ geringer als die Lebensdauer des Universums ist}, noch können Nutzer die das se
 gruppiert werden.\\
 Dieses Verhalten wurde erreicht indem das Passwort zusammen mit einem ,,Salt''-Wert gehash wird.
 Dieser ,,Salt'' wird bei jedem Benutzer individuell
-erzeugt und ist eine 256 Bit lange zufällige hexdezimale Zeichenkette.
+erzeugt und ist eine 256 Bit lange zufällige hexdezimale Zeichenkette.\\
+Nicht nur der Server muss vor angriffen geschützt werden, sondern auch der
+Nutzer am anderen Ende der Leitung.
+Teile des Interfaces nutzen JavaScript.
+Diese Programmiersprache kann genutzt werden um Angriffe durchzuführen, und
+auf jeder Seite die dynamische Inhalte anbietet gibt es die Gefahr das ein
+Cross-Site-Scripting Angriff möglich ist.
+Auf dem WMS-Interface wurden alle Vorbereitungen getroffen, dass dies nicht der
+Fall ist. Jede Anfrage die dem Server geschickt wird, wird bevor sie in die Datenbank
+geschrieben wird escaped. Escaping ist der Vorgang in dem Zeichen, die für den
+Computer in einer Programmiersprache eine besondere Bedeutung haben so zu kennzeichnen,
+dass sie nur als ,,Text'' gelesen und verstanden werden.
+Um dann SQL-Injektionen zu verhindern werden alle Interaktionen mit der Datenbank
+nicht über ,,normale'' SQL-Queries gehandhabt, sondern über Prepared-Statements
+dürchgeführt.
+\lstinputlisting[language=PHP]{example/prepared.php}
+Ein Prepared Statement ist in SQL eine Befehlstruktur, in der Befehl und Inhalt
+über zwei komplett getrennte Verbindungen transferiert werden.
+Eine SQl-Injektion in der Form:
+\lstinputlisting[language=PHP]{example/sqlinject.php}
+kann nicht nur für Datenverlust, sondern auch für die Veröffentlichung
+von Passwörtern und privaten Daten sorgen. Durch die Trennung von Befehl und Inhalt,
+kann also mit geringfügig mehr Aufwand die Datensicherheit erheblich verbessert werden.
+Aus diesem Grund werden serverseitig nur\footnote{Über Prepared Statements
+können einige Daten nicht übertragen werden, an wenigen Stellen wird auf altmodische
+Queries zurückgegriffen} Prepared Statements eingesetzt.
 
 \subsection{Anzeige}
 Die Anzeige erfolgt über den Browser, da ein Internetbrowser meist vorinstalliert ist
@@ -149,4 +177,12 @@ benötigt. \\
 Nur einen Browser zu starten reicht allerdings nicht um das von mir verlangte Verhalten
 zu erreichen. Der Browserstart soll direkt nach dem Bootvorgang erfolgen, der Rechner soll
 dann auch so robust eingerichtet sein, dass sein Dateisystem bei dem wildesten Stromnetz
-noch funktionsfähig bleibt.
+noch funktionsfähig bleibt.\\
+Für diesen Zweck wurde eine abgewandelte Version des Open Source Raspbian Betriebssystems
+entwickelt, das diesen Schritt automatisiert ausführt. Bei der Installation des
+Rechners muss nur das Ziel eingegeben werden und die restliche Konfiguration
+übernimmt das System. Um einem Rechner dieses Betriebssystem zu überspielen wird
+wieder ein Raspberry Pi genutzt für den das Betriebssystem auf eine SD-Karte über
+den Linux dd Befehl überspielt wird. Von dieser SD-Karte kann der Raspberry Pi
+ohne Konfiguratin booten und die Einstellung des Ziels der Anzeige kann über eine
+Tastatur an dem Pi selbst oder über eine SSH Verbindung erledigt werden.

@@ -351,33 +351,46 @@ will vorausgesetzt.
 
 \subsubsection*{JSON Definitionen}
 Im folgenden Listing wird die Definition von Ortspunkten
-\footnote{Ortspunkte stehen im Kontrast zur Gebietsdefinition. Gebiete werden durch minimale Breiten- und Höhengrade definiert und besitzen eine Breite und Höhe. Anwendungsbeispiel: Europa, Welt, Asien, ...} gezeigt.
+\footnote{Ortspunkte stehen im Kontrast zur Gebietsdefinition.
+Gebiete werden durch minimale Breiten- und Höhengrade definiert
+und besitzen eine Breite und Höhe. Anwendungsbeispiel: Europa, Welt, Asien, ...}
+gezeigt.
 Diese werden im JSON Format gespeichert.
 Die Liste kann um beliebig viele andere Orte erweitert werden.
-\lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte (locals.json)}]{\pyvidir locals.json}
-In der Liste steht der erste String für den Ortsnamen. Der zweite Wert ist ein Double für den Breitengrad gefolgt vom Längengrad.
-Da von den Orten auch ein Konturplot erzeugt werden soll wird mit dem 4. Wert abgespeichert wie groß die Übersichtskarte sein soll (In Grad um den Ort).
+\lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte
+ (locals.json)}]{\pyvidir locals.json}
+In der Liste steht der erste String für den Ortsnamen.
+Der zweite Wert ist ein Double für den Breitengrad gefolgt vom Längengrad.
+Da von den Orten auch ein Konturplot erzeugt werden soll
+wird mit dem 4. Wert abgespeichert wie groß die Übersichtskarte sein soll (In Grad um den Ort).
 Der letzte Wert zur Definition eines Ortspunktes ist die Zeitdifferenz zur GMT Zeit.\\
 Diese Datei ist der ursprüngliche Grund für den Umstieg auf Python.
-Python kann ,,out-of-the-box'' mit JSON Dateien umgehen. An der Definition kann man schon ablesen,
-dass ein Hinzufügen des Ortes sehr leicht geschehen kann. Dafür muss dem Ort nur trivialerweise ein Name
-gegeben werden, und dann ein Breiten- und Längengrad zugewiesen werden. Diese Informationen reichen
-schon um die meisten Grafiken zu erzeugen, der Flächenparameter ist nur ein optischer Parameter und kann
+Python kann ,,out-of-the-box'' mit JSON Dateien umgehen.
+An der Definition kann man schon ablesen,
+dass ein Hinzufügen des Ortes sehr leicht geschehen kann.
+Dafür muss dem Ort nur trivialerweise ein Name
+gegeben werden, und dann ein Breiten- und Längengrad zugewiesen werden.
+Diese Informationen reichen
+schon um die meisten Grafiken zu erzeugen,
+der Flächenparameter ist nur ein optischer Parameter und kann
 ausgelassen\footnote{Der ,,Area''-Parameter muss auf 0 initialisiert werden,
 weil um Speicherplatz zu sparen die Orte in einer
-Python-list und nicht in einem Python-dict gespeichert werden} werden. Auch die Zeitzoneninformation kann
+Python-list und nicht in einem Python-dict gespeichert werden} werden.
+Auch die Zeitzoneninformation kann
 ausgelassen werden.
 
 \subsubsection*{GrADS Scripte}
 \lstinputlisting[language=grads,
-caption={GrADS Routine zum erstellen allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
+caption={GrADS Routine zum erstellen
+allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
 \lstinputlisting[language=grads,
 caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)},
 label= code:plotgengs,
 firstline=104, lastline=115, firstnumber=104]{\pyvidir grads/plot.gs}
 In Listing \ref{code:plotgengs} greift das Programm auf verschiedene eigene
 Funktionen zurück um die Konturplotgrafiken zu füllen.
-Um den Ablauf des Programmes zu verstehen sind die wichtigsten Stellen hier aufgelistet und erläutert.
+Um den Ablauf des Programmes zu verstehen sind
+die wichtigsten Stellen hier aufgelistet und erläutert.
 \lstinputlisting[language=grads,caption={Zeichnen der Achseneinteilung und Legende unter GrADS für Plots (plot.gs)}, firstline=117, lastline=136, firstnumber=117]{\pyvidir grads/plot.gs}
 Die Variable $color$ spielt in diesem Teil des Skriptes eine große Rolle.
 Diese Variable ist in diesem Kontext ein Pointer auf ein anderes GrADS Skript,
@@ -470,21 +483,29 @@ Zusätzlicher erreicht man so eine hohe Datensicherheit \cite{linussaves} und sc
 % Software: 	Linux -> Ubuntu, Debian, Raspbian
 % 				Apache2, Git, Python2:3, PHP, SSH
 % 				Editor SublimeText, Eclipse, Atom
-AuVi wurde auf zwei Servern entwickelt. Einer als Entwicklungs- der andere als Integrationsserver.
+AuVi wurde auf zwei Servern entwickelt.
+Einer als Entwicklungs- der andere als Integrationsserver.
 Das hat zum Vorteil, dass jede Version mehrfach getested werden konnte.
 Einer dieser Server ist ein Raspberry Pi mit den Betriebssystem Raspbian.
-Der zweite Server wurde mehrfach verlegt und ist endlich auf der Platform travis-ci.org realisiert.
-Bearbeitet wurde das Programm von offenen Betriebssystemen aus. Dazu zählen das schon genannte
-Raspbian, eine Version von Debian, und auf unseren Laptops und PCs wurde hauptsächlich Ubuntu genutzt.
+Der zweite Server wurde mehrfach verlegt und
+ist endlich auf der Platform travis-ci.org realisiert.
+Bearbeitet wurde das Programm von offenen Betriebssystemen aus.
+Dazu zählen das schon genannte
+Raspbian, eine Version von Debian,
+und auf unseren Laptops und PCs wurde hauptsächlich Ubuntu genutzt.
 Zu den Programmen, welche die Projektarbeit ermöglichten zählen: Apache2 als Server
 Software, Git als SCM\footnote{Source Code Manager oder Software Configuration Management},
-Python2, Python3 und PHP als Programmiersprache, nautilus als Dateimanager für FTP und SFTP, sowie
+Python2, Python3 und PHP als Programmiersprache,
+nautilus als Dateimanager für FTP und SFTP, sowie
 SSH als Netzwerk-Shell.\\
-Als Editor wurde zuerst SublimeText genutzt um die Bash- und später Pythondateien zu bearbeiten.
-SublimeText wurde zwischenzeitlich durch Eclipse ersetzt um eine vollwertige IDE für PHP und Java zu
+Als Editor wurde zuerst SublimeText genutzt
+um die Bash- und später Pythondateien zu bearbeiten.
+SublimeText wurde zwischenzeitlich durch Eclipse
+ersetzt um eine vollwertige IDE für PHP und Java zu
 genießen. Die \LaTeX Dateien wurden anfangs aus dem selben Grund mit TexMaker bearbeitet.
 Nachdem im Projekt weitere automatisierte Integrationsfortschritte gemacht wurden konnte auf
-diese IDEs verzichtet werden, und es wurde nur noch auf den offenen Texteditor Atom zurückgegriffen.
+diese IDEs verzichtet werden,
+und es wurde nur noch auf den offenen Texteditor Atom zurückgegriffen.
 Alle Linker- und Compileraufgaben der IDE wurden über Makefiles realisiert um die Spiegeln der
 Entwicklungsumgebung auf ein Minimum von zwei Zeilen zu bringen. Ein Entwickler kann mit den
 Befehlen $\text{git clone https://github.com/tibyte/auvi-hub}$ und $\text{make}$ seine Entwicklungsumgebung
@@ -554,11 +575,16 @@ Für detaillierte Auswertungen kann man andere Anzeigeformate wählen.
 
 \subsubsection{Exotische Orte} % AuVi Szenario
 Ob mitten im Ozean oder in der Wüste, das Programm liefert Prognosen für jeden Ort.
+Dieser Satz ist häufig der Einleitungssatz um zu erklären, was dieses Programm
+von anderen Wettervisualisierungsdiensten abhebt.
 Die wichtigste Information die das Programm zum Ort brauche ist die Koordinatendarstellung des
 Ortes auf dem Gradnetz der Erde.
 Diese Darstellung besteht aus Längen- und Breitengrad (engl. Longitude, Latitude).
 Das heißt jeder Ort kann durch das Intervall der Längengrade $[-180:180]$ und
 der Breitengrade $[-90:90]$ dargestellt werden.
+Diese Daten anzugeben oder herauszufinden ist für jeden Ort der Erde möglich.
+Zusätzlich sind die Parameter für verschiedene Höhen verfügbar.
+Welche vertikalen Höhenstufen es gibt ist aber Quellenabhängig.
 Es gibt aber, da das Gradnetz die Erde als mathematisches Objekt abstrahiert,
 durch die reine Komplexität der Erdoberfläche und Form bei der Bestimmung der
 Koordinaten Abweichungen \cite{tomgeo}.
@@ -568,9 +594,16 @@ Je weiter das Wetterereignis oder die Wetterprognose in der Zukunft liegt,
 desto geringer ist dessen Genauigkeit.
 Die Genauigkeit steigt, wenn sich eine Messstation im näheren Umfeld befindet und
 nur eine kürzere Prognose verlangt wird.\\
-Der Nutzer selbst hat viele Möglichkeiten die Koordinaten für den Ort seines Interesses herauszufinden.
-Wenn er sich dort befindet kann jedes mobile Gerät oder Handy die Koordinaten ausgeben, außerdem kann
+Der Nutzer selbst hat viele Möglichkeiten die Koordinaten
+für den Ort seines Interesses herauszufinden.
+Wenn er sich dort befindet kann jedes mobile Gerät oder
+Handy die Koordinaten ausgeben, außerdem kann
 über ein Interface zu Google Maps ein Ort direkt ausgewählt werden.
+Die Google Maps Variante ist momentan nicht mehr in Benutzung,
+da wie zuvor beschrieben
+die Website lokal auf dem Rechner laufen musste, um sie auf Messen einzusetzen
+und somit eine ständige Verbindung zu Google-Servern auf die Dauer eine zu
+große Belastung der WLAN Verbindung über das Handy bedeutete.
 
 \subsubsection{Wissenschaft} % AuVi Szenario
 Wissenschaftler können von der Datenquelle bereitgestellte Parameter kombinieren
@@ -579,6 +612,7 @@ auch für sie besonders interessante meteorologische Ereignisse grafisch darstel
 Wenn jemand zum Beispiel Zusammenhänge zwischen der Ozonschicht und der Temperatur erforscht,
 kann er sich eine Grafik ausgeben lassen, die ihm diese beiden Parameter darstellt.
 % Dr. Eixmann fragen, was man sich wissenschaftlich visualisieren könnte
+% TODO: Dr. Eixmann nach Idee fragen
 \begin{center}
 	\includegraphics[width=\linewidth]{imgs/gl/to3_0013.jpg}
 \end{center}
@@ -593,11 +627,9 @@ Der Segler würde sich diese Parameter dann für das Gebiet seiner
 Interesse plotten lassen und kann dann noch Farben wählen.
 Ähnlich wie das Frühwarnsystem kann er sich nun aber
 seine eigene Skala der ,,Eignung zum Segeln'' erstellen.
-% TODO Verschiede Visualisierungen (der selben Daten)
 
 \subsection{Öffentlichkeitsarbeit} % AuVi
 % Messen, Vorträge, Dokumentation, Poster
-% TODO Remove ,,Ich''s
 Um diese Arbeit zu präsentieren, entstanden im Laufe des Projekts mehrere Poster.
 Anfangs wurden diese in PowerPoint entwickelt, später wurde ein Umstieg
 auf Gimp umgestiegen notwendig,
@@ -630,7 +662,11 @@ die Qualifizierung für den Bundeswettbewerb.\\
 Veranstaltungen bei denen das Projekt vorgestellt wurde war zum Beispiel der IHK-Schulpreis.
 Im Jahr 2014 bewarb sich das Schulzentrum Kühlungsborn mit dem Projekt CampusPro.
 Mit Vertretern aus anderen Projekten der Schule wurde das Schulzentrum hier vertreten.
-Im Jahr darauf trat das Projekt ,,Auvi'' alleine an.\\
+Im Jahr darauf trat das Projekt ,,Auvi'' alleine an. Auch wenn kein Podiumsplatz
+erreicht wurde, wurde das Schulzentrum repräsentiert.
+\begin{center}
+	\includegraphics[width=\linewidth]{imgs/oea/ihks.jpg}
+\end{center}
 Am Schulzentrum Kühlungsborn wird die Möglichkeit geboten durch
 umfassende Projektarbeit ein IHK-Zertifikat zu erlangen.
 Um dieses zu erlangen werden Vorträge gehalten, in denen das jeweilige Projekt präsentiert wird.
