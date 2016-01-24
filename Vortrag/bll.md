@@ -11,7 +11,7 @@
 1. WeatherMonitoringSystem
     1. Anzeigen
     1. Interface
-    1. Sichereit
+    1. Sicherheit
     1. Linux
 1. Projektarbeit
     1. Teilnehmer
