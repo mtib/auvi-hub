@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AuVi.TiByte.net</title>
+		<link rel="stylesheet" href="style.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="author" content="AuVi">
+		<link rel="icon" type="image/png" href="favicon.png" />
+	</head>
+	<body>
+		<div class="wb">
+			<div class="twrap" align="center" onmouseenter="" onmouseleave="">
+			<p class="title">AuVi.TiByte.net</p>
+			<p class="lb">
+				<a href="#" onclick="video();">Videos</a> 
+				<a href="#" onclick="image();">Bilder</a> 
+				<a href="#" onclick="visys();">Technik</a> 
+				<a href="#" onclick="about();">Über uns</a> 
+			</p>
+			</div>
+		</div>
+		<div id="video" style="display:block;">
+			<div class="wb">
+				<h1 class="post">Videos</h1>
+				<p class="post">Die hier gezeigten Videos sind sehr simple Gif-Animation. Vereinfacht kann man sich diese als ein stapel Bilder vorstellen, von denen in bestimmten Zeitabständen das oberste Bild weggenommen wird. Inhaltlich zeigen alle Grafen bzw. Konturplots den zeitlichen Verlauf eines Parameters in 33 oder 131 Zeiteinheiten, je nach Datenquelle. Diese Konturplots können wir auf jeden beliebigen Ort auf der Erde zentrieren, um diese Prsentationswebsite übersichtlich zu halten haben wir aber einige Orte, bzw. Regionen ausgewählt die diese Funktionalität besonders gut veranschaulichen.</p>
+			</div>
+			<div class="bb">
+				<h1 class="post">Demonstration</h1>
+					<p class="post" id="dv">
+					Wählen sie einen der folgenden Links um sich ein Video anzeigen zu lassen.</p>
+					<div align="center" class="post">
+					<form class="post" action="">
+						<select name="vs" id="vs" style="width:49%;padding:0 0 0 0;margin:0 0 0 0;">
+							<option value="Europa">Europa</option>
+							<option value="World">Welt</option>
+							<option value="Berlin">Berlin</option>
+							<option value="Brasilia">Brasilia</option>
+							<option value="Kopenhagen">Kopenhagen</option>
+							<option value="Kuehlungsborn">Kühlungsborn</option>
+							<option value="London">London</option>
+							<option value="Mexiko-Stadt">Mexiko-Stadt</option>
+							<option value="NewYork">New York</option>
+							<option value="Oslo">Oslo</option>
+							<option value="Paris">Paris</option>
+							<option value="Peking">Peking</option>
+							<option value="Rostock">Rostock</option>
+						</select>
+						<select name="vps" id="vps" style="width:49%;padding:0 0 0 0;margin:0 0 0 0;">
+							<option value="t2m">Temperatur</option>
+							<option value="ps">Luftdruck</option>
+							<option value="tql">Wassersäule</option>
+							<option value="to3">Ozonsäule</option>
+							<option value="all">Übersicht</option>
+						</select><br>
+						<button type="button" style="width:99%" onclick="javascript:updatev();">Auswählen</button>
+					</form>
+					</div>
+				<br>
+			</div>
+			<div class="wb">
+				<h1 class="post">Parameter</h1>
+				<p class="post">In diesem Abschnitt wollen wir die Parameter in Kurzform erklären. Wir verwenden hier zur veranschaulichung die bekanntesten Parameter Luftdruck (ps) in hPa, Temperatur (t2m) in Grad Celsius, Ozonsäule (to3) in DU und Wassersäule (tql) als relatives Volumen. Unsere Quelle für die meteorologischen Daten, welche wir analysiert und visualisert haben ist <a href="http://opendap.nccs.nasa.gov:80/dods/GEOS-5/fp/0.25_deg/fcast/tavg1_2d_slv_Nx.latest">OpenDAP.nccs.<b>NASA.gov</b></a>.</p>
+			</div>
+
+			<div class="wb">
+				<h1 class="post">Back-End Bezeichner</h1>
+				<p class="post">Alle Parameter und Orte haben im Hintergrund einen Computer-Konformen Namen, diese zu wissen ist nützlich um statische Links zu generieren.
+				<table border="1" class="wbt">
+				<tr><th>Front-End Ort</th><th>Back-End Bezeichner</th></tr>
+				<tr><td>Berlin</td><td>Berlin</td></tr>
+				<tr><td>Brasilia</td><td>Brasilia</td></tr>
+				<tr><td>Kopenhagen</td><td>Kopenhagen</td></tr>
+				<tr><td>Kühlungsborn</td><td>Kuehlungsborn</td></tr>
+				<tr><td>London</td><td>London</td></tr>
+				<tr><td>Mexiko-Stadt</td><td>Mexiko-Stadt</td></tr>
+				<tr><td>New York</td><td>NewYork</td></tr>
+				<tr><td>Oslo</td><td>Oslo</td></tr>
+				<tr><td>Paris</td><td>Paris</td></tr>
+				<tr><td>Peking</td><td>Peking</td></tr>
+				<tr><td>Rostock</td><td>Rostock</td></tr>
+				<tr><td><i>Europa</i></td><td>Europa</td></tr>
+				<tr><td><i>Welt</i></td><td>World</td></tr>
+				<tr><th>Front-End Parameter</th><th>Back-End Bezeichner</th></tr>
+				<tr><td>Temperatur</td><td>t2m</td></tr>
+				<tr><td>Luftdruck</td><td>ps</td></tr>
+				<tr><td>Luftdruck NN</td><td>slp</td></tr>
+				<tr><td>Ozonsäule</td><td>to3</td></tr>
+				<tr><td>Wassersäule</td><td>tql</td></tr>
+				</table>
+				<br>
+			</div>
+
+			<div class="bb">
+				<h1 class="post">Statischer Link</h1>
+					<p class="post" id="dv">
+					In der folgenden Form kann man Anhand des Back-End Namens eines Ortes und der Back-End Bezeichnung von dem Parameter einen Link generieren, der relativ zum local.auvi Verzeichnis immer die aktuellste Version der Grafik enthält.<br><br>
+					<table style="text-align:left; width:auto;">
+					<tr><td>Ort:</td><td><input type="text" id="vls"></input></td></tr>
+					<tr><td>Parameter:</td><td><input type="text" id="pls"></input></td></tr>
+					<tr><td>Link:</td><td><a id="olsv">./visys.auvi/output/web/ORT/Plot/gifs/ORT_PARAMETER.gif</a></td></tr>
+					</table>
+					</p>
+			</div>
+			<script type="text/javascript">
+				var vls = document.getElementById("vls");
+				var pls = document.getElementById("pls");
+				var olsv = document.getElementById("olsv");
+
+				var ort = "ORT";
+				var parameter = "PARAMETER";
+
+				vls.onkeyup=function(){
+					ort = this.value;
+					updatevls();
+				}
+				pls.onkeyup=function(){
+					parameter = this.value;
+					updatevls();
+				}
+
+				function updatevls(){
+					olsv.innerHTML="./visys.auvi/output/web/"+ort+"/Plot/gifs/"+ort+"_"+parameter+".gif";
+					olsv.href=olsv.innerHTML;
+				}
+				updatevls();
+			</script>
+		</div>
+
+		<div id="image" style="display:none;">
+			<div class="wb">
+				<h1 class="post">Bilder</h1>
+				<p class="post">Die Bilder hier projezieren den Verlauf eines Parameters auf eine Zeitachse. Die Funktionsgrafen können wir von jedem beliebigen Punkt in der Erdatmosphäre erzeugen, hier haben wir nun aber aus Speichergründen beispielsweise einige Orte und Parameter ausgewählt. In Zukunft planen wir auch Windvektoren auf eine Windstärkenkarte plotten, diese Funktionalität ist aber momentan noch in der Testphase.</p>
+			</div>
+			<div class="bb">
+				<h1 class="post">Demonstration</h1>
+				<p class="post" id="di">
+					Wählen sie einen der folgenden Links um sich ein Video anzeigen zu lassen.</p>
+					<div align="center" class="post">
+					<form class="post" action="">
+						<select name="is" id="is" style="width:49%;padding:0 0 0 0;margin:0 0 0 0;">
+							<option value="Berlin">Berlin</option>
+							<option value="Brasilia">Brasilia</option>
+							<option value="Kopenhagen">Kopenhagen</option>
+							<option value="Kuehlungsborn">Kühlungsborn</option>
+							<option value="London">London</option>
+							<option value="Mexiko-Stadt">Mexiko-Stadt</option>
+							<option value="NewYork">New York</option>
+							<option value="Oslo">Oslo</option>
+							<option value="Paris">Paris</option>
+							<option value="Peking">Peking</option>
+							<option value="Rostock">Rostock</option>
+						</select>
+						<select name="ips" id="ips" style="width:49%;padding:0 0 0 0;margin:0 0 0 0;">
+							<option value="all_48">Alle (48)</option>
+							<option value="pressure_48">Druck (48)</option>
+							<option value="ps_48">Druckunterschied (48)</option>
+							<option value="rainfall_48">Regenwahrscheinlichkeit (48)</option>
+							<option value="all_last">Alle (Max)</option>
+							<option value="pressure_last">Druck (Max)</option>
+							<option value="ps_last">Druckunterschied (Max)</option>
+							<option value="rainfall_last">Regenwahrscheinlichkeit (Max)</option>
+						</select><br>
+						<button type="button" style="width:99%" onclick="javascript:updatei();">Auswählen</button>
+					</form>
+					</div>
+				<br>
+			</div>
+
+			<div class="wb">
+				<h1 class="post">Funktionsgrafen</h1>
+				<p class="post">Bei den hier gezeigten Grafiken handelt es sich um Funktionsgrafen. Diese "plotten", d.h. zeichen den Verlauf einer oder mehrerer Variablen über die Zeit als eine Linie. Jeder Punkt auf dieser Linie steht nun für einen Wert der auf der Skala links vermerkt ist. Wir arbeiten momentan noch am "Color coding", zu deutsch versuchen wir mit Farben zu veranschaulichen welche Skala zu welchem Parameter gehört.</p>
+			</div>
+
+			<div class="wb">
+				<h1 class="post">Back-End Bezeichner</h1>
+				<p class="post">Alle Parameter und Orte haben im Hintergrund einen Computer-Konformen Namen, diese zu wissen ist nützlich um statische Links zu generieren.
+				<table border="1" class="wbt">
+					<tr><th>Front-End Ort</th><th>Back-End Bezeichner</th></tr>
+					<tr><td>Berlin</td><td>Berlin</td></tr>
+					<tr><td>Brasilia</td><td>Brasilia</td></tr>
+					<tr><td>Kopenhagen</td><td>Kopenhagen</td></tr>
+					<tr><td>Kühlungsborn</td><td>Kuehlungsborn</td></tr>
+					<tr><td>London</td><td>London</td></tr>
+					<tr><td>Mexiko-Stadt</td><td>Mexiko-Stadt</td></tr>
+					<tr><td>New York</td><td>NewYork</td></tr>
+					<tr><td>Oslo</td><td>Oslo</td></tr>
+					<tr><td>Paris</td><td>Paris</td></tr>
+					<tr><td>Peking</td><td>Peking</td></tr>
+					<tr><td>Rostock</td><td>Rostock</td></tr>
+					<tr><th>Front-End Typen</th><th>Back-End Bezeichner</th></tr>
+					<tr><td>Alle</td><td>all</td></tr>
+					<tr><td>Druck</td><td>pressure</td></tr>
+					<tr><td>Druckunterschied</td><td>ps</td></tr>
+					<tr><td>Regenwahrscheinlichkeit</td><td>rainfall</td></tr>
+				</table></p>
+			</div>
+
+
+			<div class="bb">
+				<h1 class="post">Statischer Link</h1>
+					<p class="post">
+					In der folgenden Form kann man Anhand des Back-End Namens eines Ortes und dem Back-End Typen des Grafen einen Link generieren, der relativ zum local.auvi Verzeichnis immer die aktuellste Version des Funktionsgrafen enthält.<br><br>
+					<table style="text-align:left; width:auto;">
+					<tr><td>Ort:</td><td><input type="text" id="ils"></input></td></tr>
+					<tr><td>Typ:</td><td><input type="text" id="tls"></input></td></tr>
+					<tr><td>Zeit:</td><td><input type="radio" name="time" value="last" onclick="setTimeI('last')"> Max
+    					<input type="radio" name="time" value="48" onclick="setTimeI('48')"> 48<br></td></tr>
+					<tr><td>Link:</td><td><a id="olsi">./visys.auvi/output/web/ORT/Line/ORT_TYP_ZEIT.jpg</a></td></tr>
+					</table>
+					</p>
+			</div>
+			
+			<script type="text/javascript">
+				var ils = document.getElementById("ils");
+				var tls = document.getElementById("tls");
+				var olsi = document.getElementById("olsi");
+
+				var orti = "ORT";
+				var typi = "TYP";
+				var time = "TIME";
+
+				ils.onkeyup=function(){
+					orti = this.value;
+					updateils();
+				}
+				tls.onkeyup=function(){
+					typi = this.value;
+					updateils();
+				}
+				function setTimeI(t){
+					time = t;
+					updateils();
+				}
+
+				function updateils(){
+					olsi.innerHTML="./visys.auvi/output/web/"+orti+"/Line/"+orti+"_"+typi+"_"+time+".jpg";
+					olsi.href=olsi.innerHTML;
+				}
+				updateils();
+			</script>
+		</div>
+
+		<div id="visys" style="display:none;">
+			<div class="wb">
+				<h1 class="post">Visys</h1>
+				<p class="post">Visys ist die <i>Exekutive</i> von AuVi. Es ist das Programm welches wir ausführen um unsere Bilder zu erzeugen. Wir können es mit beliebigen Koordinaten und gewünschten Parametern "Füttern" und es liefert uns nach einer von uns programmierten Routine die Bilder in einem für uns nützlichen Format.</p>
+			</div>
+			<div class="wb">
+				<h1 class="post">Diese "Website"</h1>
+				<p class="post">Diese Website befindet sich momentan lokal auf diesem Rechner/Laptop. Dies sorgt dafür, dass Bilder schnell geladen werden und diese Seite auch ohne eine Internetverbindung funktioniert. Die Installation besteht aus dieser HTML Datei, einem CSS Dokument, welches die Formateinstellungen inne hat, die öffentliche Schriftart "Comfortaa.ttf" und dem Favicon (kleines Bild). <br>Der wichtigste und größte Teil der Installation ist jedoch das visys.auvi Verzeichnis im Root/Hauptverzeichnis. In diesem befindet sich Visys, unser Programm, welches wir jederzeit starten und das Erzeugen neuer Grafiken anordnen können.</p>
+			</div>
+			<div class="wb">
+				<h1 class="post">Aktualität</h1>
+				<p class="post">Wie im letzten Absatz erläutert ist diese Website lokal auf dem Rechner. Teil dieser Seite ist unser Visys Programm. Wenn wir hier von einem Linuxrechner sprechen und dieser mit dem Internet verbunden ist, ist er in der Lage das Visys-Programm als Teil dieser Website im Hintergrund auszuführen. Die neuen Grafiken werden dann automatisiert eingebunden und der Nutzer hat sofort Zugriff auf die neusten Bilder. Unser Ziel ist es nun diesen Ablauf des Aktualisierens auf einem Server, der sich im Internet befindet, durchzuführen und so tatsächlich unsere Plots auf einer öffentlichen Seite zu präsentieren. Diese Aktualisierung würde dann ca. alle zwei Stunden stattfinden, ja da vollständiger durchlauf für 14 Orte, mit je 5 Parametern bis zu 40 Minuten in Anspruch nimmt und der Datenserver eine Aktualisierungsrate von 1.5h hat. Parallel dazu erarbeiten wir uns auch ständig neues meteorologisches Wissen und wenden dieses in neuen Visualisierungen an und wählen z.B. verschiedene Parameter und stellen diese in Funktionen und Formeln in Beziehungen und plotten diese, um unser Verständniss zu verbessern.</p>
+			</div>
+			<div class="wb">
+				<h1 class="post">Speicheranforderungen</h1>
+				<p class="post">Zum Stand dieser Website am 07. März 2015 nimmt der Ordner dieser Seite auf der Festplatte circa 980 MB ein. Mit also rund einem Gigabyte, was für einen modernen Rechner nicht viel ist, ist es uns möglich für 14 beliebig ausgewählte Orte auf diesem Rechner zu jeder Zeit neue Prognosen berechnen zu lassen und davon GIF-Animationen zu erstellen. Die einzelnen Frames (Standbilder) der Animation werden auch noch separat gespeichert, falls wir jemals ein einzelnes Bild aus einer Übersicht anzeigen wollen. Diesen Speicher (ca. 40%) könnte man also sparen. Nach einer vollständigen Speicheroptimierung, d.h. nach dem Entfernen aller Daten die nicht notwendig für die Anzeige auf der Website sind konnte ich das Verzeichnis auf 330 MB minimieren.</p>
+			</div>
+		</div>
+
+		<div id="about" style="display:none;">
+			<div class="wb">
+				<h1 class="post">Über uns</h1>
+				<p class="post">Wir sind das Jugend Forscht Team aus Kühlungsborn. Bestehend aus Swenja Wagner, Markus Becker und Tobias Gerding sind Aufgabenteilung, Kommunikation und Kooperation die Schwerpunkte unserer Projektarbeit. Inhaltlich beschäftigen wir uns hauptsächlich mit meteorologischen, mathematischen und informatischen Themenbereichen, tauchen aber auch in Bereiche wie Design, Marketing und digitale Setzung ein.</p>
+			</div>
+			<div class="bb">
+				<h1 class="post">Arbeitsfotos</h1>
+				<p class="post">
+					Diese Seite ist noch in Entwicklung!
+					<br>Wenn wir alle damit einverstanden wären wäre hier ein Gruppenfoto toll! Mit schwarzem Rand und so.
+			</p>
+			</div>
+			<div class="wb">
+				<h1 class="post">Aufgabenbereiche</h1>
+				<p class="post">
+					<table class="wbt" border="1">
+						<tr><td><b>Teilnehmer</b></td><td><b>Aufgabenbereich</b></td></tr>
+						<tr><td>Markus Becker</td><td>Programmierung, Serverbetreuung, "Techniker"</td></tr>
+						<tr><td>Swenja Wagner</td><td>Setzung, Qualitätskontrolle, Schriftliche Inhalte</td></tr>
+						<tr><td>Tobias Gerding</td><td>Poster</td></tr>
+					</table>
+				</p>
+			</div>
+		</div>
+
+
+
+	</body>
+
+	<script type="text/javascript">
+		var dv = document.getElementById("dv");
+		var di = document.getElementById("di");
+		var vs = document.getElementById("vs");
+		var vps = document.getElementById("vps");
+		var is = document.getElementById("is");
+		var ips = document.getElementById("ips");
+		var selectedv = "";
+		var selectedp = "";
+
+		vs.onchange=function(){
+			selectedv = this.options[this.selectedIndex].value;
+		}
+		vps.onchange=function(){
+			selectedp = this.options[this.selectedIndex].value;
+		}
+		is.onchange=function(){
+			selectedv = this.options[this.selectedIndex].value;
+		}
+		ips.onchange=function(){
+			selectedp = this.options[this.selectedIndex].value;
+		}
+
+		// Returns the location of a gif, for a parameter and a location.
+		var gif = function (ort, para) { return "visys.auvi/output/web/".concat(ort).concat("/Plot/gifs/").concat(ort).concat("_").concat(para).concat(".gif"); }
+
+		var line = function (loc, type) {
+			b = "visys.auvi/output/web/";
+			b2 = "/Line/";
+			return b + loc + b2 + loc + "_" + type + ".jpg";
+		}
+
+		var currentLine = function () {
+			is.onchange();
+			ips.onchange();
+			return line(selectedv,selectedp);
+		}
+
+		// Show all Gifs in dv.
+		var mkov = function (ort) {	dv.innerHTML=""; dv.innerHTML="<img src='".concat(gif(ort,"ps")).concat("' alt='Ihr Browser unterstützt keine GIF Dateien.' width='50%'></img><img src='").concat(gif(ort,"t2m")).concat("' alt='Ihr Browser unterstützt keine GIF Dateien.' width='50%'></img><img src='").concat(gif(ort,"to3")).concat("' alt='Ihr Browser unterstützt keine GIF Dateien.' width='50%'></img><img src='").concat(gif(ort,"tql")).concat("' alt='Ihr Browser unterstützt keine GIF Dateien.' width='50%'></img>"); }
+
+		// Resets Page Layout
+		function reset() {
+			document.getElementById("video").style.display="none";
+			document.getElementById("image").style.display="none";
+			document.getElementById("visys").style.display="none";
+			document.getElementById("about").style.display="none";
+		}
+
+		// The next few Functions switch view.
+		function video() {
+			reset();
+			document.getElementById("video").style.display="block";
+		}
+		function image() {
+			reset();
+			document.getElementById("image").style.display="block";
+		}
+		function visys() {
+			reset();
+			document.getElementById("visys").style.display="block";
+		}
+		function about() {
+			reset();
+			document.getElementById("about").style.display="block";
+		}
+
+		// Selects a gif on the Video page
+		function selectv (ort,para){
+			dv.innerHTML=""; 
+			dv.innerHTML="<img src='".concat(gif(ort,para)).concat("' alt='Ihr Browser unterstützt keine GIF Dateien.' width='100%'></img>");
+		}
+
+		// Updates the Video Page (Called from inside the form)
+		function updatev(){
+			vs.onchange();
+			vps.onchange();
+			dv.innerHTML=""; 
+			if(selectedp=="all"){
+				mkov(selectedv);
+				return
+			}
+			dv.innerHTML="<img src='".concat(gif(selectedv,selectedp)).concat("' alt='Ihr Browser unterstützt keine GIF Dateien.' width='100%'></img>");
+		}
+
+		// Updates the Image Page (Called from inside the form)
+		function updatei(){
+			di.innerHTML=""; 
+			di.innerHTML="<img src='" + currentLine() + "' alt='Ihr Browser unterstützt keine JPEG Dateien.' width='100%'></img>";
+		}
+		
+	</script>
+
+</html>
