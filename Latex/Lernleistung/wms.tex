@@ -18,32 +18,32 @@ interessante Baustelle heraus. Dieses wurde von Grund auf neu entwickelt und int
 Schüler sollen in der Lage sein die von ihnen in der Projektarbeit erzeugten Grafiken über ein möglichst einfaches Interface auf einen Server zu laden.
 Sie sollen anschließend die Bilder ersetzen bzw. löschen können.
 Damit die Serveradministrator, in diesem Fall \mb und \re ,
-bestimmen können wer für welchen Ordner Grafiken hochladen und einbetten kann ist der Zugriff auf die Dateimanagementfunktion nur über ein Benutzerkonto möglich.
+bestimmen können wer für welchen Ordner Grafiken hoch laden und einbetten kann ist der Zugriff auf die Dateimanagementfunktion nur über ein Benutzerkonto möglich.
 Es können von jedem Administrator nach Bedarf neue Konten erstellt werden. \\
 Auch zum anschauen der Grafiken muss man ein Konto besitzen,
 allerdings soll der Anzeigecomputer auch von alleine in der Lage sein sich einzuloggen und die Grafiken eines voreingestellten Ordners anzeigen.
 Zum Anzeigen muss eine Authentifizierung stattfinden,
-da Schüler zum einen manchmal unwissend Grafiken mit Copyright hochladen,
+da Schüler zum einen manchmal unwissend Grafiken mit Copyright hoch laden,
 und sich die Serveradmins und Webadmins schützen und auch den
 Schülern etwas entgegenkommen wollen. \\
 Auch bei diesem Interface greift natürlich die Regel,
 dass auch ein Affe die Datenbank bedienen können soll
 und auch die obligatorische Katze auf der Tastatur soll das
 System nicht zum Absturz bringen. \footnote{diese Regel gibt dem System
-dessen Namen ,,apewms'' auf Github.com}
+dessen Namen ,,apewms'' auf GitHub.com}
 
 \subsection{Hardware}
-Zum Weather Monitoring System gehören zwei Bereiche die mit Hardware etwas zutun haben.
+Zum Weather Monitoring System gehören zwei Bereiche die mit Hardware etwas zu tun haben.
 Einerseits muss es einen Server geben, welcher die Daten bereitstellt,
-und gleichzeit auch möglichst interaktiv das Bearbeiten und Hochladen von neuen Daten ermöglicht.
+und gleichzeitig auch möglichst interaktiv das Bearbeiten und Hochladen von neuen Daten ermöglicht.
 Diesem Server sollte genügen Speicherplatz bereitstehen,
 um alle Grafiken zu speichern.
 Aus der Spezifikation, dem Konzept, kann man schon ablesen, dass auch eine Datenbank auf dem
 Server angelegt werden muss.\\
 Der Client des Weather Monitoring Systems, muss funktionell nur Grafiken auf einem Bildschirm anzeigen.
-Diese Aufgabe ist nicht alzu aufwendig,
-daher ist bei der Auswahl der Clienthardware robustheit ein wichtigerer Faktor.
-Außerdem sollte die Hardware, noch eher als beim Server, möglichst kostgünstig sein,
+Diese Aufgabe ist nicht allzu aufwendig,
+daher ist bei der Auswahl der Clienthardware Robustheit ein wichtigerer Faktor.
+Außerdem sollte die Hardware, noch eher als beim Server, möglichst kostengünstig sein,
 da früh eingeplant werden mussten,
 bei einem funktionierenden System mehrere Anzeigen einzusetzen.
 Die Lösung für Server und Client fand sich mit dem Raspberry Pi.
@@ -53,12 +53,12 @@ Erfahrung mit der Hardware sowie der Möglichkeit direkt Prototypen
 zu testen bot es sich an einen Raspberry Pi als Server und Client zu benutzen.\\
 Für beide Anwendungsfälle wurde eine abgewandelte
 Version des Raspbian Betriebssystems zusammengestellt
-um die verlangte Aufgabe bestmöglichst zu erfüllen.
+um die verlangte Aufgabe bestmöglich zu erfüllen.
 
 
 \subsection{Interface} % WMS
 Nachdem ein Nutzer die Anmelderoutine durchgeführt hat wird ihm die Struktur der Daten nach Anzeigeindex geordnet angezeigt.
-Der Nutzer, in diesem Fall der Schüler oder der Endnutzer am Bildschirm,
+Der Nutzer, in diesem Fall der Schüler oder der Endbenutzer am Bildschirm,
 selbst hat nur einen geringen Einblick in die Datenbank, und kann nicht direkt auf den Ordner auf dem Server zugreifen.\\
 Das bereitgestellte Interface ermöglicht dem Nutzer aber neue Ordner
 zu erstellen und Grafiken hochzuladen und zu löschen.
@@ -103,7 +103,7 @@ Daten aus einer Tabelle zu lesen und in eine Maske einzutragen nicht notwendiger
 \subsection{Application Programming Interface}
 \label{sub:wmsapi}
 Ein Application Programming Interface, kurz API, ist eine Schnittstelle zu einem größeren Programm
-über eine Programmiersprache, welche nicht der des ursprünglichen Programmes entsprechen muss.
+über eine Programmiersprache, welche nicht der des ursprünglichen Programms entsprechen muss.
 Über diese Schnittstelle soll dann die Ausführung von Aufgaben veranlasst werden.
 Eine API ermöglicht also dann Entwicklern auf ihr Programm von außen zuzugreifen und es zu erweitern.
 In dem Fall von WMS war eine API notwendig um von Programmen aus,
@@ -112,7 +112,7 @@ Im Detail wird die API genutzt um die erzeugtet Geburtstagsgrafiken von einem Py
 Die API auf Seiten des Servers ist in PHP geschrieben.
 Auf diese API kann nun von außen jede Programmiersprache über GET und POST Requests des Hyper Text Transfer Protokolls zugreifen.
 Eine dieser Programmiersprachenschnittstellen wurde für Python geschrieben.\\
-Dieses System emuliert Großteils das REST-Ful Paradigmus.
+Dieses System emuliert Großteils das REST-Ful Paradigma.
 
 \subsection{Erreichbarkeit} % WMS
 Auch wenn der Server nicht globales Interesse erweckt soll er natürlich nicht nur im Hafen erreichbar sein.
@@ -156,11 +156,11 @@ Computer in einer Programmiersprache eine besondere Bedeutung haben so zu kennze
 dass sie nur als ,,Text'' gelesen und verstanden werden.
 Um dann SQL-Injektionen zu verhindern werden alle Interaktionen mit der Datenbank
 nicht über ,,normale'' SQL-Queries gehandhabt, sondern über Prepared-Statements
-dürchgeführt.
+durchgeführt.
 \lstinputlisting[language=PHP]{example/prepared.php}
-Ein Prepared Statement ist in SQL eine Befehlstruktur, in der Befehl und Inhalt
+Ein Prepared Statement ist in SQL eine Befehlsstruktur, in der Befehl und Inhalt
 über zwei komplett getrennte Verbindungen transferiert werden.
-Eine SQl-Injektion in der Form:
+Eine SQL-Injektion in der Form:
 \lstinputlisting[language=PHP]{example/sqlinject.php}
 kann nicht nur für Datenverlust, sondern auch für die Veröffentlichung
 von Passwörtern und privaten Daten sorgen. Durch die Trennung von Befehl und Inhalt,
@@ -171,7 +171,7 @@ Queries zurückgegriffen} Prepared Statements eingesetzt.
 
 \subsection{Anzeige}
 Die Anzeige erfolgt über den Browser, da ein Internetbrowser meist vorinstalliert ist
-und die meisten Medien nativ anzeigen kann, ohne das ein zusätzliches Software packet
+und die meisten Medien nativ anzeigen kann, ohne das ein zusätzliches Software Paket
 benötigt. \\
 Nur einen Browser zu starten reicht allerdings nicht um das von mir verlangte Verhalten
 zu erreichen. Der Browserstart soll direkt nach dem Bootvorgang erfolgen, der Rechner soll
@@ -183,5 +183,5 @@ Rechners muss nur das Ziel eingegeben werden und die restliche Konfiguration
 übernimmt das System. Um einem Rechner dieses Betriebssystem zu überspielen wird
 wieder ein Raspberry Pi genutzt für den das Betriebssystem auf eine SD-Karte über
 den Linux dd Befehl überspielt wird. Von dieser SD-Karte kann der Raspberry Pi
-ohne Konfiguratin booten und die Einstellung des Ziels der Anzeige kann über eine
+ohne Konfiguration booten und die Einstellung des Ziels der Anzeige kann über eine
 Tastatur an dem Pi selbst oder über eine SSH Verbindung erledigt werden.

@@ -1,4 +1,4 @@
-\section{Auvi}
+\section{AuVi}
 
 \subsection{Programm} % AuVi
 Um Verwechslungen zu verhindern wird das Programm,
@@ -73,7 +73,7 @@ Diese Vorgänge können je nach Luftdruck, Temperatur, Windgeschwindigkeit
 und Luftfeuchtigkeit auftreten.
 Da diese Gleichungen jedoch nicht eindeutig lösbar sind oder es
 durch Approximationsvorgänge zu Abweichungen kommt, werden weitere Fehler eingeführt,
-die Ergenisse dürfen nur als Näherungswerte angesehen werden.
+die Ergebnisse dürfen nur als Näherungswerte angesehen werden.
 Trotzdem, oder gerade deshalb sind diese numerischen Prognosen in diesen Rechenzentren berechenbar.
 Diese mathematischen Näherungen benötigen jedoch sehr viel Rechenleistung,
 weswegen auf die Leistungsfähigkeit von Supercomputern zurückgegriffen wird.
@@ -84,7 +84,7 @@ Luftdruck, Dichte, Windrichtung und Windgeschwindigkeit.
 Es wird zwischen Global- und Lokal- oder Ausschnittsmodellen unterschieden.
 
 \subsubsection{Voraussetzung für Wetterprognosen} % AuVi Meteorologie
-Um Wetterprgnosen erstellen zu können, braucht man gewisse Ausgangswerte.
+Um Wetterprognosen erstellen zu können, braucht man gewisse Ausgangswerte.
 Die Ausgangsdaten bestehen aus Werten,
 die an dem Punkt zu einem früheren Zeitpunkt gemessen wurden.
 Die Entwicklung der verschiedenen Wettergrößen wird durch Formeln errechnet.
@@ -103,13 +103,13 @@ Die Länge der Prognose spielt auch eine Rolle.
 Es macht einen Unterschied,
 ob man nur die Prognose für den nächsten Tag,
 oder ob man die Prognose für die nächste Woche haben möchte.
-Letzters ist deutlich schwieriger und somit auch weniger zuverlässig.
+Letzteres ist deutlich schwieriger und somit auch weniger zuverlässig.
 
 \subsection{Datenquellen} % AuVi
 Da es im Rahmen des Projektes nicht möglich war
 eigene den Globus umspannende Daten aufzunehmen und Prognosen zu berechnen,
 muss eine Auswahl zwischen den Quellen mit den benötigten Daten getroffen werden.
-Im Internet gibt es eine vielzahl von Anbietern von Wetterdaten.
+Im Internet gibt es eine Vielzahl von Anbietern von Wetterdaten.
 Die technisch beste Methode an diese Daten zu gelangen ist über einen OpenDap Server.
 Dieser garantiert dem Programmierer und somit dem Nutzer
 die Erreichbarkeit und Aktualität der Daten.
@@ -120,16 +120,16 @@ gewann die NOAA GFS Quelle \cite{noaa} , auf Hinweis von Projektleiter Dr. Ronal
 \subsubsection{Quellenvergleich} % AuVi Datenquellen
 Das GFS \cite{gfs} Modell welches von NOAA angeboten wird zeichnet
 sich durch eine Vielfalt von Parametern (50+) und einen großen Prognosezeitraum (10 Tage) aus.
-Diese Parameter beinhalten in der hauptsätlich genutzten Quelle \cite{bspgfs} z.B.
-die Windstärke als Vektor aufgesplittet in Nord- und Ostanteil für 2m, 10m und 50m,
+Diese Parameter beinhalten in der hauptsächlich genutzten Quelle \cite{bspgfs} z.B.
+die Windstärke als Vektor auf-gesplittet in Nord- und Ostanteil für 2m, 10m und 50m,
 den Luftdruck am Boden, in Bodennähe sowie in der Tropopause und auf Wolkenhöhe,
-die Luftfeuchtigkeit, die Lufttemperatur in verschiedenen Höhen, die Ozonmenge, die Wassersäule
+die Luftfeuchtigkeit, die Lufttemperatur in verschiedenen Höhen, die Ozon-menge, die Wassersäule
 und viele weitere meteorologisch bedeutende Parameter.
 In \vs\ kann der Nutzer selbst zwischen den verschiedenen Datenquellen wählen und eigene hinzufügen.
 Da die Software unter der MIT-Lizenz \cite{mitl} im Internet veröffentlicht wurde,
 und diese Lizenz die ,,As is - Klausel''
 \footnote{Die Software wird vom Entwickler frei angeboten, darf verändert werden,
-aber der Entwickler ist rechlich nicht für Fehler oder Abstürze verantwortlich} enthält verschreibt
+aber der Entwickler ist rechtlich nicht für Fehler oder Abstürze verantwortlich} enthält verschreibt
 der Programmierer sich keiner Garantieleistung \cite{mitl}. Quellen können somit
 aufgelistet werden, die in Zukunft evtl. nicht mehr erreichbar sind.
 In Zukunft soll man über eine GUI\footnote{\textit{Graphical User Interface} engl. IT.
@@ -210,7 +210,7 @@ Header gelesen wurde in Teilen geladen werden.\\
 Das GFS Modell kann so aufgeteilt werden, wenn das Programm nur einen Teil des GFS
 Modells braucht, wird nur dieser Teil geladen. Diese Aufgabe den Header auszuwerten
 wird in \vs von GrADS übernommen. \\
-Das OpenDAP Server-Client Modell ist allerdings veraltet. In neueren Versionen der Software
+Das OpenDap Server-Client Modell ist allerdings veraltet. In neueren Versionen der Software
 wird auf REST-Ful Server Varianten zugegriffen. Bei diesen Anfragen enthält die Anfrage
 nicht die Aufforderung einen bestimmten Block des Datensatzes zu liefern, sondern alle
 Parameter die vom Programm benötigt werden, werden ,,live'' nachgefragt. Der Server
@@ -246,26 +246,26 @@ kostenlos und enthält Daten entweder für die nächsten 33 Stunden,
 
 \subsubsection{Wahl der Umgebung}\label{sec:ent} % AuVi Entwicklung
 Bei der Entwicklung von AuVi wechselte mehrmals die Entwicklungsumgebung und die
-genutzten Werkzeuge um Neugelerntes anzuwenden, oder die Arbeitsweise zu optimieren.
+genutzten Werkzeuge um Neu gelerntes anzuwenden, oder die Arbeitsweise zu optimieren.
 Außerdem wurden verschiedene Teile der Software in verschiedenen Programmiersprachen
 geschrieben. Diese verlangten dann ein Anpassen der Umgebung.\\
-In heutiger Zeit unausweichlich ist der Wechsel der Hardware in einem Project,
+In heutiger Zeit unausweichlich ist der Wechsel der Hardware in einem Projekt,
 welches über 3 Jahr läuft und sich zum Teil auf privaten Mitteln stützt. Dies
 bedeutet im Fall dieses Projektes der Wechsel von Laptops,
 Computern und Betriebssystemen.\\
-Der entscheidenste Wandel war die Migration aller Dateien in ein Git-Repository \cite{gitrepo}.
+Der entscheidendste Wandel war die Migration aller Dateien in ein Git-Repository \cite{gitrepo}.
 Dieser Wandel ermöglichte die potentielle Zusammenarbeit mit Projektteilnehmern, oder
-dem Projektleiter ohne das vorrausgesetzt wird, dass dieser oder diese die selben Möglichkeiten
+dem Projektleiter ohne das vorausgesetzt wird, dass dieser oder diese die selben Möglichkeiten
 auf seinem oder ihrem Rechner hat. Durch die Integration in GitHub kann der Quelltext auch auf
 \link{github.com/mtib/auvi-hub} aufgerufen werden. Mit einem Account auf dieser
 Seite können dann u.a. Zeilen kommentiert und Änderungen vorgeschlagen werden. \\
-Die Textbearbeitung fand zuerst im Editor Sublime Text \cite{sublime} statt, da dieser
+Die Textverarbeitung fand zuerst im Editor Sublime Text \cite{sublime} statt, da dieser
 aber kostenlos nur mit störenden Nachrichten zu nutzen war, wechselte man später
-zum Open Souce Atom Editor \cite{atomio}. Dieser wird von der GitHub Gemeinde entwickelt.
+zum Open Source Atom Editor \cite{atomio}. Dieser wird von der GitHub Gemeinde entwickelt.
 
 \subsubsection{Methodik} % AuVi Entwicklung
 Die Arbeit an diesem Projekt verlangte große Kooperation
-von den verübergehenden Projektteilnehmern.
+von den vorübergehenden Projektteilnehmern.
 Treffen wurden geplant und üblicherweise auf den Dienstag Nachmittag gelegt.
 Bei diesen Treffen wurde dann über neue Fortschritte geredet,
 damit alle auf dem gleichen Wissensstand sind.
@@ -273,11 +273,11 @@ Ziel war der Austausch über inhaltliche Fortschritte und Fragen, die Zielsetzun
 gelegentlich Hilfe.
 Doch reichten zwei bis drei Stunden in der Woche nicht aus um das Projekt zu bearbeiten.
 Die Bearbeitung des Projektes selbst geschah meist Zuhause.\\
-Im Winter des Jahres 2013 wurde ein Schülerpraktikum am
-Leibnitz Institut für Atmoshpärenphysik absolviert.
+Im Winter des Jahres 2013 wurde ein Schülerpraktika am
+Leibniz Institut für Atmoshpärenphysik absolviert.
 Dort gab die Möglichkeit mit anderen dort arbeitenden
 Wissenschaftlern über dieses Projekt zu reden.
-Hier entstand die erste lauffähige Version des Programmes.
+Hier entstand die erste lauffähige Version des Programms.
 Außerdem wurden mehrere Poster für den \jf Wettbewerb 2014 entworfen.
 
 \subsubsection{Programmierung}
@@ -307,30 +307,30 @@ erleichterte die Kombination folgender Programmiersprachen die Arbeit:
 \subsubsection*{Hauptprogramm}
 Das Hauptprogramm, gleichbedeutend mit der Main-Methode anderer Programmiersprachen
 ist in Python das Modul, welches vom Interpreter aufgerufen wird. Dieses kann über
-Importaufrufe weitere Module einbinden. So kann der Programmablauf übersichtlich doch
+Import-aufrufe weitere Module einbinden. So kann der Programmablauf übersichtlich doch
 komplex sein.\\
 Dieses Mainmodul ist die Datei auvi.py,
 \lstinputlisting[language=Python,firstline=15, lastline=45,firstnumber=15,caption={,,Mainfunktion'' von \vs\ (auvi.py)}]{\pyvidir auvi.py}
 diese Zeilen stellen die Definition der ,,Mainmethode'' dar. In ihnen wird auf größere
 Methoden außerhalb der Datei zugegriffen. Durch diesen Aufbau ist es möglich die
-Funktionalität der für diesen Zweck geschrieben Software zu erweiten oder für andere
+Funktionalität der für diesen Zweck geschrieben Software zu erweitern oder für andere
 Projekte zu benutzen.\\
 Das Programm handelt grundsätzlich so, dass es erst die Dateistruktur um sich herum
 aufbaut. Dafür greift es auf Funktionen aus dem Modul filemanager, in der Datei
-filemanager.py zu. Dieses Verhalten bestand seit der ersten Version des Programmes wurde
-aber durch die Übersetzung in Python von Bash wesentlich robuster und allgemeiner.\\
+filemanager.py zu. Dieses Verhalten bestand seit der ersten Version des Programms wurde
+aber durch die Übersetzung in Python von BASH wesentlich robuster und allgemeiner.\\
 Nachdem einige Konstanten festgelegt werden, werden aus Dateien über andere Module
 die vom Nutzer abgefragten Parameter, Orte und Gebiete ausgelesen. Diese Definitionen liegen
 in JSON Form vor und können leicht von anderen Programmen geschrieben und gelesen werden.\\
-Die richtige Arbeit des Programmes wird dann in verschachtelten for-Schleifen erledigt, in
-denen über die verschienden Parameter und Orte iteriert wird.\\
+Die richtige Arbeit des Programms wird dann in verschachtelten for-Schleifen erledigt, in
+denen über die verschieden Parameter und Orte iteriert wird.\\
 \lstinputlisting[language=Python,caption={Hinzufügen von neuen Orten, Gebieten und Parametern (local.py)},firstline=15,lastline=34,firstnumber=15]{\pyvidir local.py}
 Diese Methoden bieten ein Interface um von Außen neue Orte sowie Parameter
 der Routine hinzuzufügen.
 Sie geben zusätzlich dem Nutzer immer Feedback was gerade geschehen ist.
 \lstinputlisting[language=Python,caption={Routine zum schreiben von JSON Dateien (local.py)},firstline=36,lastline=48,firstnumber=36]{\pyvidir local.py}
-Diese Funtionen werden aufgerufen um die Pythonstrukturen in JSON Objekte umzuwandeln
-und schließlich in eine Datei zu schreiben. Großgeschrieben Variablen aus
+Diese Funktionen werden aufgerufen um die Pythonstrukturen in JSON Objekte umzuwandeln
+und schließlich in eine Datei zu schreiben. Groß geschrieben Variablen aus
 dem Quelltext stehen für vordefinierte,
 konstante, Strings für Ordner- oder Dateibezeichnungen.\\
 Über die folgenden Methoden können die geschrieben JSON Dateien dann ausgelesen werden.
@@ -341,7 +341,7 @@ Eine wichtige Entscheidung musste getroffen werden wie die Daten gespeichert wer
 damit gleichzeitig immer möglichst neue Daten angezeigt werden können, niemals Dateien nicht
 vorhanden sind und trotzdem die Datenkapazität minimal gehalten werden soll.
 Dieses Problem wurde so gelöst, dass die Grafiken in einen temporären Ordner geschrieben
-werden und von dort aus sobalt sie alle fertig generiert wurden die alten Grafiken in
+werden und von dort aus sobald sie alle fertig generiert wurden die alten Grafiken in
 ihrem festen Speicherort überschreiben. Dies bedeutet für den Datenträger, dass maximal
 zwei Sätze der Grafiken gespeichert werden müssen und es keine ,,Downtime'' auf dem
 Server gibt, welche bedeuten würde das zeitweise Grafiken bestimmter Art nicht aufgerufen
@@ -354,9 +354,9 @@ in der Anwendung als Web-Server öffentlich wäre und zuverlässig an gleichblei
 die aktuellen Grafiken anbietet.
 \lstinputlisting[language=Python,caption={Bewegen der Dateien (filemanager.py)},firstline=69,lastline=101,firstnumber=69]{\pyvidir filemanager.py}
 Die einzelnen Schnappschüsse der Konturplots werden über die Methode convertToGifs zu
-Gifdateien umgewandelt. Gifs sind animierte Grafiken, die wie Videos gut die zeitliche
+Gifdateien umgewandelt. GIFs sind animierte Grafiken, die wie Videos gut die zeitliche
 Entwicklung der Konturplots darstellen.\\
-Für Präsentationen oder Geräte welche Gifs nicht gut darstellen können kann über die
+Für Präsentationen oder Geräte welche GIFs nicht gut darstellen können kann über die
 Funktion convertGifToMp4 die Gifdatei zu einer MP4 Datei umgewandelt werden.
 Dafür wird aber die Bibliothek ffmpeg auf dem Rechner, welcher die MP4 Datei erstellen
 will vorausgesetzt.\\
@@ -371,7 +371,7 @@ und besitzen eine Breite und Höhe. Anwendungsbeispiel: Europa, Welt, Asien, ...
 gezeigt.
 Diese werden im JSON Format gespeichert.
 Die Liste kann um beliebig viele andere Orte erweitert werden.
-Die Abstrahierung in Position, Zoom und Zeitzone ist Industriestandart. Die Position wird in
+Die Abstrahierung in Position, Zoom und Zeitzone ist Industriestandard. Die Position wird in
 Breitengrad (engl. Latitude) und Längengrad (engl. Longitude) gespeichert.
 \lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte
  (locals.json)}]{\pyvidir locals.json}
@@ -391,7 +391,7 @@ schon um die meisten Grafiken zu erzeugen,
 der Flächenparameter ist nur ein optischer Parameter und kann
 ausgelassen\footnote{Der ,,Area''-Parameter muss auf 0 initialisiert werden,
 weil um Speicherplatz zu sparen die Orte in einer
-Python-list und nicht in einem Python-dict gespeichert werden} werden.
+Python-List und nicht in einem Python-Dict gespeichert werden} werden.
 Auch die Zeitzoneninformation kann
 ausgelassen werden.\\
 Das programmatische Hinzufügen von neuen Orten kann durch einen Dateiseekvorgang zum
@@ -403,7 +403,7 @@ ViSys-intern muss die Datei komplett gelesen werden, somit kann parallel überpr
 ein Fehler in der Datei vorliegt und beim schreiben eines neuen Ortes wird die Datei komplett neu
 geschrieben. Es ist also kein extra Seekvorgang notwendig.
 
-\subsubsection*{GrADS Scripte}
+\subsubsection*{GrADS Skripten}
 \lstinputlisting[language=grads,
 caption={GrADS Routine zum erstellen
 allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
@@ -413,7 +413,7 @@ label= code:plotgengs,
 firstline=104, lastline=115, firstnumber=104]{\pyvidir grads/plot.gs}
 In Listing \ref{code:plotgengs} greift das Programm auf verschiedene eigene
 Funktionen zurück um die Konturplotgrafiken zu füllen.
-Um den Ablauf des Programmes zu verstehen sind
+Um den Ablauf des Programms zu verstehen sind
 die wichtigsten Stellen hier aufgelistet und erläutert.
 \lstinputlisting[language=grads,caption={Zeichnen der Achseneinteilung und Legende unter GrADS für Plots (plot.gs)}, firstline=117, lastline=136, firstnumber=117]{\pyvidir grads/plot.gs}
 Die Variable $color$ spielt in diesem Teil des Skriptes eine große Rolle.
@@ -431,7 +431,7 @@ Die Definition ist so zu lesen:
 
 Die Farbwerte sind in einem Intervall von $0$ gar nicht vorhanden bis $255$ voller Kanal.
 Um diese Farbwerte dann zu nutzen müssen diese noch den Wetterdaten zugewiesen werden.
-Dieses geschieht unabhängig von den Einheiten im selben Script.
+Dieses geschieht unabhängig von den Einheiten im selben Skript.
 Auch hier kann der Text leicht von einem Computer generiert werden.
 \footnote{Wenn in dieser Arbeit davon gesprochen wird, dass Eingabedaten vom Computer
 generiert werden ist gemeint,
@@ -449,7 +449,7 @@ Die Website ist programmiert in HTML (Hyper Text Markup Language),
 PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript.
 Als Webserver wird Apache2 eingesetzt \cite{php} \cite{apache}. \\
 Der Server der diese Website ,,served'' ist nicht über eine Domain aus dem Internet
-erreichbar, da sobalt Grafiken benötigt wurden später das gesammte Projekt auf
+erreichbar, da sobald Grafiken benötigt wurden später das gesamte Projekt auf
 einen Rechner heruntergeladen wurde und von dort lokal ausgeführt wurde.
 Die Website liest genauso wie \vs\ die JSON Dateien aus und kann aus den
 Routinen schlussfolgern unter welchem Dateipfad die Grafiken nach der Generation
@@ -460,31 +460,31 @@ der Webbrowser allerdings erst auf Befehl die Grafiken lädt.\\
 Die Informationen über die URI der Grafiken wird durch PHP aus der JSON Datei gelesen
 und hergeleitet. In der hier beschriebenen Version der Website, mit der Unterteilung
 in HTML, PHP und JavaScript, also der starken Trennung von Algorithmus und grafischer
-Oberfläche, ist die Herleitung der Grafikuris so realisiert, dass durch das PHP
+Oberfläche, ist die Herleitung der Grafik-URIs so realisiert, dass durch das PHP
 Interface durch die Ordnerstruktur gegangen werden kann, und die JSON Datei ausgelesen
 wird um zu überprüfen ob die Dateien existieren.\\
 Dieses Verhalten stellt einen Bruch im systematischen Trennen von Oberfläche und Algorithmus
-dar, weil die PHP Oberfläche etwas über den Hintergrund des Algorithmuses wissen muss.
+dar, weil die PHP Oberfläche etwas über den Hintergrund des Algorithmus wissen muss.
 Idealerweise kann man allerdings von PHP aus die Pythonroutine starten und mit einfachen
 Queries die Orte der Dateien auslesen. Der Overhead der zusätzlichen Threads wäre allerdings
-bei solch einer einfachen Aufgabe ein starter Performanceeinbruch.\\
+bei solch einer einfachen Aufgabe ein starker Performanceeinbruch.\\
 
 
 \subsubsection{Versionen}
 Im Laufe der Arbeit entstanden mehrere lauffähige Versionen.
-Diese beginnen mit puren GrADS-Scripten um überhaupt Grafiken
+Diese beginnen mit puren GrADS-Skripten um überhaupt Grafiken
 zu erzeugen zu Beginn der Projektarbeit in 2013.
 Um dieses Erzeugen zu automatisieren wurden alle nötigen Befehle in eine BASH Datei verpackt.
-Diese Bash Datei musste die Ordnerstruktur herstellen und kontrollieren.
+Diese BASH Datei musste die Ordnerstruktur herstellen und kontrollieren.
 Sie war außerdem in der Lage neue Versionen der Software auf einem Server zu erkennen
 und auf Befehl vom Server zu laden und sich selbst zu ersetzen.
 Auf diese Version baute das Projekt weiterhin auf,
 nachdem sie bei dem Jugend Forscht Wettbewerb 2014
 präsentiert wurde und den zweiten Platz erzielte.\\
 Um allerdings schnellere Ergebnisse zu erzielen wurde
-das komplette Programm von Bash in Python übersetzt.
+das komplette Programm von BASH in Python übersetzt.
 Durch die modulare Struktur von Python können meine
-Funktionen in andere Projekte als Bibliotek eingebunden werden.\\
+Funktionen in andere Projekte als Bibliothek eingebunden werden.\\
 Über Python kann man effektiver die Daten analysieren,
 kann leichter komplexe Bedingungen kontrollieren und
 auch die Interaktion mit dem Nutzer ist erleichtert
@@ -500,7 +500,7 @@ unter einem Dach mit schneller Datenverarbeitung und ebenso schneller
 Benutzeroberfläche im Web zu vereinen.
 
 \subsubsection*{Git}
-Ab Anfang 2015 findet eine neue Umgebung anwendung um an
+Ab Anfang 2015 findet eine neue Umgebung Anwendung um an
 Programmen und der Setzung zu arbeiten.
 Die Umgebung Git \cite{gitrepo}
 ermöglicht im eigentlichen Sinne Programmierern gleichzeitig an
@@ -509,7 +509,7 @@ Die Umgebung konnte zuerst auf dem eigenen Server und später zusätzlich
 auf der Website \link{GitHub.com} \cite{github} genutzt werden.
 Der Git ,,Workflow'' ist auch ohne Internetverbindung komplett funktionstüchtig.
 Ich mache Änderungen, verpacke sie und sende sie zum Server.
-Dieses Änderungspacket erhält eine einzigartige Identifikation, eine SHA1 Hash \cite{gitsha1}.
+Dieses Änderungspaket erhält eine einzigartige Identifikation, eine SHA1 Hash \cite{gitsha1}.
 Durch diese Identifikation kann man im Nachhinein auf jede einzelne Version
 meiner Software und Setzung zugreifen. Wenn man also einen Fehler bemerkt kann man so
 durch den Befehl $\text{git bisect}$ den Commit, d.h. die Änderung finden, die den Fehler
@@ -524,10 +524,10 @@ Zusätzlicher erreicht man so eine hohe Datensicherheit \cite{linussaves} und sc
 % 				Editor SublimeText, Eclipse, Atom
 AuVi wurde auf zwei Servern entwickelt.
 Einer als Entwicklungs- der andere als Integrationsserver.
-Das hat zum Vorteil, dass jede Version mehrfach getested werden konnte.
+Das hat zum Vorteil, dass jede Version mehrfach getestet werden konnte.
 Einer dieser Server ist ein Raspberry Pi mit den Betriebssystem Raspbian.
 Der zweite Server wurde mehrfach verlegt und
-ist endlich auf der Platform travis-ci.org realisiert.
+ist endlich auf der Plattform travis-ci.org realisiert.
 Bearbeitet wurde das Programm von offenen Betriebssystemen aus.
 Dazu zählen das schon genannte
 Raspbian, eine Version von Debian,
@@ -537,9 +537,9 @@ Software, Git als SCM\footnote{Source Code Manager oder Software Configuration M
 Python2, Python3 und PHP als Programmiersprache,
 nautilus als Dateimanager für FTP und SFTP, sowie
 SSH als Netzwerk-Shell.\\
-Als Editor wurde zuerst SublimeText genutzt
-um die Bash- und später Pythondateien zu bearbeiten.
-SublimeText wurde zwischenzeitlich durch Eclipse
+Als Editor wurde zuerst Sublime Text genutzt
+um die BASH- und später Pythondateien zu bearbeiten.
+Sublime Text wurde zwischenzeitlich durch Eclipse
 ersetzt um eine vollwertige IDE für PHP und Java zu
 genießen. Die \LaTeX Dateien wurden anfangs aus dem selben Grund mit TexMaker bearbeitet.
 Nachdem im Projekt weitere automatisierte Integrationsfortschritte gemacht wurden konnte auf
@@ -555,7 +555,7 @@ Nachdem der beschriebene Aufbau lauffähig war griff das ,,Never touch a running
 Das AuVi-System wird als Black-Box behandelt, von dem erwartet werden kann, dass es auf anfragen
 richtig reagiert und Änderungen dieses Verhalten nicht abändern.\\
 Dieses Verhalten wird in der Branche als Feature-Freeze\footnote{Keine neuen Funktionen}
-eines API-Levels\footnote{Version eines Programmes, welche sich untereinander um Patches unterscheiden,
+eines API-Levels\footnote{Version eines Programms, welche sich untereinander um Patches unterscheiden,
 aber kompatibel sind} \cite{semver} bezeichnet.\\
 Für den Entwickler steht somit fest, dass die Software ihre Aufgabe erfüllt, aber noch optimiert
 werden muss.
@@ -570,13 +570,13 @@ Außerdem sind Mobiltelefone nicht in der Lage alle
 Dateiformate anzuzeigen,
 die ein Webbrowser auf einem Computer ohne Probleme handhabt.\\
 Die Grafiken selbst werden im JPG oder PNG Format erzeugt, welches
-Format genutzt wird entscheided GrADS autonom. Diese Grafiken werden
+Format genutzt wird entscheidet GrADS autonom. Diese Grafiken werden
 über ImageMagick zu GIF Dateien konvertiert. GIFs sind zwar nicht stark
 komprimiert, können aber auf jedem Gerät abgespielt werden.
 Falls man Speicherplatz sparen will oder die Animation wie ein Video nutzen will
 werden die GIFs sofern ffmpeg installiert ist auch noch zu MP4 Dateien konvertiert.
 
-\subsubsection{Schulhompage} % AuVi Schnittstelle
+\subsubsection{Schulhomepage} % AuVi Schnittstelle
 Da Jugend Forscht unter der Leitung von Herr Doktor Eixmann
 ein Projekt des Schulzentrum Kühlungsborns ist
 (\link{http://www.schulzentrum-kborn.de}) dieses Projekt auf der Schulhompage
@@ -605,7 +605,7 @@ Systems ist es einem Nutzer möglich für seinen Ort selbst die
 Parameter zu wählen die für Ihn zum Beispiel eine Gefährdung darstellen.\\
 Es ist wichtig, dass die Visualisierungen keine Laien abschreckten,
 deshalb kann die Frühwarnung in Form eines
-Ampelsystems an den Nutzer gebrach werden.
+Ampelsystems an den Nutzer gebracht werden.
 Dieser kann bei Interesse an der Frühwarnfunktionalität eine Spanne angeben,
 in der der entsprechende Parameter sicher ist (grün),
 gefährlich wird (gelb) oder gefährlich ist (rot).
@@ -682,7 +682,7 @@ Diese Dokumentation des Projekts wurde in \LaTeX gesetzt.
 Auch in diesen Dokumentationen wurden Übersichten und Grafiken als Anschauungsmaterial
 beigefügt und nötigenfalls näher erläutert. Für die visuelle Aufbereitung von
 dem gezeigten Quelltext in der GrADS-Skriptsprache musste eine neue Sprache für das
-Listing Paket von \LaTeX geschrieben werden, da die GrADS Syntax keiner üblich genutzen
+Listing Paket von \LaTeX geschrieben werden, da die GrADS Syntax keiner üblich genutzten
 Syntax entspricht.\\
 Solche Dokumentationen und Poster kamen zum Beispiel bei
 den Landeswettbewerben \jf in Rostock (Mecklenburg Vorpommern) zur Anwendung.
@@ -691,9 +691,9 @@ Bundesland Projekte aus verschiedenen Fachgebieten präsentiert.
 Es wird unterteilt in Arbeitswelt, Biologie, Chemie,
 Mathematik/Informatik, Geo- und Raumwissenschaften und Technik.
 Die jeweils Erstplatzierten in jedem Bereich
-qualifizieren sich für den darauffolgenden Bundeswettbewerb.
-Die Teilnahme am Jugend Forscht Wettbewerb begann erstmalig 2013.
-,,Auvi - Automatisierte Visualisierung von Wetterstations- und Wetterprognosedaten''
+qualifizieren sich für den darauf folgenden Bundeswettbewerb.
+Die Teilnahme am Jugend Forscht Wettbewerb begann erstmals 2013.
+,,AuVi - Automatisierte Visualisierung von Wetterstations- und Wetterprognosedaten''
 erreichte den zweiten Platz in der Kategorie Geo- und Raumwissenschaften des Wettbewerbes
 Jugend Forscht 2014.
 Im Jahr 2015 erreichte das weiterentwickelte
@@ -702,7 +702,7 @@ die Qualifizierung für den Bundeswettbewerb.\\
 Veranstaltungen bei denen das Projekt vorgestellt wurde war zum Beispiel der IHK-Schulpreis.
 Im Jahr 2014 bewarb sich das Schulzentrum Kühlungsborn mit dem Projekt CampusPro.
 Mit Vertretern aus anderen Projekten der Schule wurde das Schulzentrum hier vertreten.
-Im Jahr darauf trat das Projekt ,,Auvi'' alleine an. Auch wenn kein Podiumsplatz
+Im Jahr darauf trat das Projekt ,,AuVi'' alleine an. Auch wenn kein Podiums-platz
 erreicht wurde, wurde das Schulzentrum repräsentiert.
 \begin{center}
 	\includegraphics[width=\linewidth]{imgs/oea/ihks.jpg}
@@ -710,5 +710,5 @@ erreicht wurde, wurde das Schulzentrum repräsentiert.
 Am Schulzentrum Kühlungsborn wird die Möglichkeit geboten durch
 umfassende Projektarbeit ein IHK-Zertifikat zu erlangen.
 Um dieses zu erlangen werden Vorträge gehalten, in denen das jeweilige Projekt präsentiert wird.
-Im Jahr 2014 wurde solch eine Vortragsveranstaltung durch einen Vortrag zum Thema ,,Auvi'' eröffnet.
+Im Jahr 2014 wurde solch eine Vortragsveranstaltung durch einen Vortrag zum Thema ,,AuVi'' eröffnet.
 Dies war eine kurze Vorstellung des Projektes.

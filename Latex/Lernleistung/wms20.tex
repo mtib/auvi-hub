@@ -7,11 +7,11 @@ Optimisierungsansätzen und neuen Funktionen durch eine Verknüpfung bestehender
 Das entstandene System ist in der Lage alle Aufgaben von ViSys zu erfüllen, allerdings durch
 eine native Ausgabe in HTML ist das ,,stylen'' der Ausgabe um ein vielfachen einfacher und
 anschaulicher. Alle Zwischenergebnisse und Daten aus den verschiedenen Quellen können durch
-die Unterstützung von Coherenz (Parallelismus) von Golang analysiert, verglichen, aktualisiert
-un abgespeichert werden.\\
+die Unterstützung von Kohärenz (Parallelismus) von Golang analysiert, verglichen, aktualisiert
+und abgespeichert werden.\\
 Das Resultat ist ein platformunabhängiger Webserver, welcher nicht mehr von Apache oder PHP
 abhängig ist, und direkt Quellenabgleich und Ausgabe vereint. Dieser implementiert das REST-Ful
-Paradigmus, funktioniert also auf minimalen Speicher und CPU Anspruch. \\
+Paradigma, funktioniert also auf minimalen Speicher und CPU Anspruch. \\
 
 \subsection{HTTP-Handler} % WMS
 Es musste ein dedizierter HTTP-Handler in Golang geschrieben werden. Bei der Implementation
@@ -32,7 +32,7 @@ werden. Das Ergebnis konnte direkt eingesetzt werden.\\
 \lstinputlisting[language=bash]{example/aktuell.txt}
 Sofern kein Fehler festgestellt wird, wird als Quelle OpenWeatherMap.org benutzt. Ansonsten kann auf
 YahooWetter zurückgefallen werden.\\
-Die TSK möchte desweiteren auch auf eine ASCII Wetterprognose zugreifen. Diese wird ähnlich wie die
+Die TSK möchte des weiteren auch auf eine ASCII Wetterprognose zugreifen. Diese wird ähnlich wie die
 ,,Messdaten'' Datei erzeugt. Die Erstellung ist allerdings noch experimentell.
 \lstinputlisting[language=bash]{example/prognose.txt}
 Diese Daten werden über die neue Weboberfläche angeboten. Die Beta Versionen
@@ -46,7 +46,7 @@ Hier ist die Designseite zu sehen, diese ist gefüllt mit Lorem Ipsum Text.
 \end{center}
 Ohne Benutzerkonto ist auf der Seite allerdings zum aktuellen Zeitpunkt noch
 nicht viel offen ersichtlich, auch der Quelltext ist zum Teil Closed-Source.
-Die hier gezeigten Teile sind allerdings auf Github gespiegelt unter
+Die hier gezeigten Teile sind allerdings auf GitHub gespiegelt unter
 \link{https://github.com/eixmb/aktuelltxt}.
 
 
@@ -58,18 +58,18 @@ Zur Auswahl für die anzuzeigenden Daten stehen dem privaten Nutzer dann Wetterd
 in Form von Tabellen, Funktionsgraphen und Säulen- bzw. Balkendiagrammen. Diese
 können durch die Einbindung als HTML sogar durch JavaScript animiert werden. \\
 Weitere Formate sind die ,,Wussten sie schon'' Slides die auch in den Schul-WMS Anzeigen
-eingestellt werden, automatisiert erzeugte Bodenwetterkarten mit ausgewerterter Prognose,
-sowie die vom Nutzer hochgeladenen Grafiken.
-Firmennutzer können dann noch eigenene Werbeanzeigen zwischen den Grafiken schalten.
+eingestellt werden, automatisiert erzeugte Bodenwetterkarten mit ausgewerteter Prognose,
+sowie die vom Nutzer hoch geladenen Grafiken.
+Firmennutzer können dann noch eigene Werbeanzeigen zwischen den Grafiken schalten.
 
 \subsection{Entwicklung} % WMS
 Die Sprache Golang lässt eine Organisierung von Quelltext in Paketen zu. Diese können dann in
 anderen Paketen importiert werden. Es gibt auch das Äquivalent zu public und private, wobei in
 Golang der Fokus auf dem schreiben von Software, welche in mehreren Prozessen gleichzeitig ausgeführt liegt.
-Dieses Paragdigmus wird hauptsächlich durch die Benutzung von sog. Channels erreicht. Channels sind FIFO
-Buffer mit festgelegter Größe. Sie sind Programmfluss blockierent, wenn sie voll sind, bzw. nicht als Buffer
+Dieses Paradigma wird hauptsächlich durch die Benutzung von sog. Channels erreicht. Channels sind FIFO
+Buffer mit festgelegter Größe. Sie sind Programmfluss blockierend, wenn sie voll sind, bzw. nicht als Buffer
 initialisiert wurden. Durch Channels ist es möglich in dem Programm die Daten an die einzelnen Nutzer asynchron
-weiterzugeben, indem jede Anfage nach einer Ausgabe (egal welcher Form), als Funktion in einem Channel an
+weiterzugeben, indem jede Anfrage nach einer Ausgabe (egal welcher Form), als Funktion in einem Channel an
 einen sog. Worker weitergegeben wird.\\
 Die Worker überprüfen dann nebeneinander die Aktualität der Daten und führen auch durch einen Mutex geschützt
 Aktualisierungen durch. So kann sicher gegangen werden, dass Daten nicht korrupiert werden und nicht mehrmals die
