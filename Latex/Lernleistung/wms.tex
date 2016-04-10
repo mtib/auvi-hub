@@ -99,7 +99,6 @@ Die Erzeugung dieser Grafiken erfolgte historisch im Hafen im Rahmen des Wahlpfl
 Die Arbeit ist zeitaufwändig, und ein Schüler muss angelernt werden wie CoralDraw bedient wird.
 Auch wenn die Fähigkeit dieses Programm benutzen zu können nicht unwichtig ist, ist die Arbeit die
 Daten aus einer Tabelle zu lesen und in eine Maske einzutragen nicht notwendigerweise von einem Menschen abhängig.\\
-% TODO: explain autowkid
 
 \subsection{Application Programming Interface}
 \label{sub:wmsapi}
@@ -112,8 +111,8 @@ also nicht von \link{wms.viwetter.de}, Grafiken hochzuladen und zu verwalten.
 Im Detail wird die API genutzt um die erzeugtet Geburtstagsgrafiken von einem Python Programm auf den Server zu laden und die Geburtstagsgrafikenschleife zu verwalten.
 Die API auf Seiten des Servers ist in PHP geschrieben.
 Auf diese API kann nun von außen jede Programmiersprache über GET und POST Requests des Hyper Text Transfer Protokolls zugreifen.
-Eine dieser Programmiersprachenschnittstellen wurde von mir für Python geschrieben.
-% TODO: Link/Explain/Show wmsapi.py --> wmsa.py ?
+Eine dieser Programmiersprachenschnittstellen wurde für Python geschrieben.\\
+Dieses System emuliert Großteils das REST-Ful Paradigmus.
 
 \subsection{Erreichbarkeit} % WMS
 Auch wenn der Server nicht globales Interesse erweckt soll er natürlich nicht nur im Hafen erreichbar sein.
@@ -144,7 +143,7 @@ gruppiert werden.\\
 Dieses Verhalten wurde erreicht indem das Passwort zusammen mit einem ,,Salt''-Wert gehash wird.
 Dieser ,,Salt'' wird bei jedem Benutzer individuell
 erzeugt und ist eine 256 Bit lange zufällige hexdezimale Zeichenkette.\\
-Nicht nur der Server muss vor angriffen geschützt werden, sondern auch der
+Nicht nur der Server muss vor Angriffen geschützt werden, sondern auch der
 Nutzer am anderen Ende der Leitung.
 Teile des Interfaces nutzen JavaScript.
 Diese Programmiersprache kann genutzt werden um Angriffe durchzuführen, und

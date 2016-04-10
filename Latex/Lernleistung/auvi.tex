@@ -1,8 +1,8 @@
 \section{Auvi}
 
 \subsection{Programm} % AuVi
-Um Verwechslungen zu verhindern ist das Programm,
-welches unter AuVi entwickelt wurde ,,\vs ''.
+Um Verwechslungen zu verhindern wird das Programm,
+welches unter AuVi entwickelt wurde ,,\vs '' genannt.
 Der Kürzel steht für Visualisierung System und ist in verschiedenen Versionen lauffähig.
 Die Aufgabe von \vs\ ist es auf eine Datenquelle zuzugreifen
 und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln.
@@ -134,14 +134,11 @@ der Programmierer sich keiner Garantieleistung \cite{mitl}. Quellen können somi
 aufgelistet werden, die in Zukunft evtl. nicht mehr erreichbar sind.
 In Zukunft soll man über eine GUI\footnote{\textit{Graphical User Interface} engl. IT.
 für grafische Benutzeroberfläche} dem Nutzer eine Auswahl
-zwischen verschiedenen Datenquellen anbieten können.
-% TODO: Grafik: Übersicht über Quellen (Alle die direkt über das Programm angeboten werden)
-% NOTE Viel mehr Parameter, Daten bei NOAA oc DWD
-% Siehe andere Quellen
-
+zwischen verschiedenen Datenquellen anbieten können.\\
+Die aktuellsten Varianten von ViSys, welche im Zusammenspiel mit dem Weather Monitoring System
+eingesetzt werden, greifen überwiegend auf Daten des OpenWeatherMap.org und YahooWetter zu.
 
 \subsubsection*{Wetterdienst} % AuVi Datenquellen
-% TODO Grafik: Diagramm der Genauigkeit (Dafür Tabelle, Swenja)
 Der Deutsche Wetter Dienst, kurz: DWD, arbeitet im Auftrag des
 Bundesministeriums für Verkehr und digitale Infrastruktur. \cite{bmvi}
 Der DWD bietet ebenfalls Wetterdaten an, die allerdings kostenpflichtig sind.
@@ -212,7 +209,16 @@ schreiben kann. Eine GRIB Datei ist immer in sich geschlossen, kann aber nachdem
 Header gelesen wurde in Teilen geladen werden.\\
 Das GFS Modell kann so aufgeteilt werden, wenn das Programm nur einen Teil des GFS
 Modells braucht, wird nur dieser Teil geladen. Diese Aufgabe den Header auszuwerten
-wird in \vs von GrADS übernommen.
+wird in \vs von GrADS übernommen. \\
+Das OpenDAP Server-Client Modell ist allerdings veraltet. In neueren Versionen der Software
+wird auf REST-Ful Server Varianten zugegriffen. Bei diesen Anfragen enthält die Anfrage
+nicht die Aufforderung einen bestimmten Block des Datensatzes zu liefern, sondern alle
+Parameter die vom Programm benötigt werden, werden ,,live'' nachgefragt. Der Server
+liefert dann genau diese Daten in der Regel als JavaScript Object Notation.
+Die Umstellung auf ein REST-Ful System erlaubt ViSys erst bei Bedarf neue Daten abzufragen
+und diese dann auf einzelne Parameter beschränkt zu aktualisieren.
+So kann lokal eine minimale Spiegelung der benutzten Daten stattfinden, welche bei einem
+Serverausfall oder einem Verbindungsverlust nicht den kompletten Datenverlust zufolge hat.
 
 \subsubsection{Datenverfügbarkeit} % AuVi Datenquellen
 Während der Deutsche Wetter Dienst für normale, zahlende, Nutzer nur Daten
@@ -251,7 +257,7 @@ Der entscheidenste Wandel war die Migration aller Dateien in ein Git-Repository 
 Dieser Wandel ermöglichte die potentielle Zusammenarbeit mit Projektteilnehmern, oder
 dem Projektleiter ohne das vorrausgesetzt wird, dass dieser oder diese die selben Möglichkeiten
 auf seinem oder ihrem Rechner hat. Durch die Integration in GitHub kann der Quelltext auch auf
-\link{github.com/tibyte/auvi-hub} aufgerufen werden. Mit einem Account auf dieser
+\link{github.com/mtib/auvi-hub} aufgerufen werden. Mit einem Account auf dieser
 Seite können dann u.a. Zeilen kommentiert und Änderungen vorgeschlagen werden. \\
 Die Textbearbeitung fand zuerst im Editor Sublime Text \cite{sublime} statt, da dieser
 aber kostenlos nur mit störenden Nachrichten zu nutzen war, wechselte man später
@@ -304,7 +310,7 @@ ist in Python das Modul, welches vom Interpreter aufgerufen wird. Dieses kann ü
 Importaufrufe weitere Module einbinden. So kann der Programmablauf übersichtlich doch
 komplex sein.\\
 Dieses Mainmodul ist die Datei auvi.py,
-\lstinputlisting[language=Python,firstline=12, lastline=41,firstnumber=12,caption={,,Mainfunktion'' von \vs\ (auvi.py)}]{\pyvidir auvi.py}
+\lstinputlisting[language=Python,firstline=15, lastline=45,firstnumber=15,caption={,,Mainfunktion'' von \vs\ (auvi.py)}]{\pyvidir auvi.py}
 diese Zeilen stellen die Definition der ,,Mainmethode'' dar. In ihnen wird auf größere
 Methoden außerhalb der Datei zugegriffen. Durch diesen Aufbau ist es möglich die
 Funktionalität der für diesen Zweck geschrieben Software zu erweiten oder für andere
@@ -318,17 +324,17 @@ die vom Nutzer abgefragten Parameter, Orte und Gebiete ausgelesen. Diese Definit
 in JSON Form vor und können leicht von anderen Programmen geschrieben und gelesen werden.\\
 Die richtige Arbeit des Programmes wird dann in verschachtelten for-Schleifen erledigt, in
 denen über die verschienden Parameter und Orte iteriert wird.\\
-\lstinputlisting[language=Python,caption={Hinzufügen von neuen Orten, Gebieten und Parametern (local.py)},firstline=11,lastline=28,firstnumber=11]{\pyvidir local.py}
+\lstinputlisting[language=Python,caption={Hinzufügen von neuen Orten, Gebieten und Parametern (local.py)},firstline=15,lastline=34,firstnumber=15]{\pyvidir local.py}
 Diese Methoden bieten ein Interface um von Außen neue Orte sowie Parameter
 der Routine hinzuzufügen.
 Sie geben zusätzlich dem Nutzer immer Feedback was gerade geschehen ist.
-\lstinputlisting[language=Python,caption={Routine zum schreiben von JSON Dateien (local.py)},firstline=30,lastline=41,firstnumber=30]{\pyvidir local.py}
+\lstinputlisting[language=Python,caption={Routine zum schreiben von JSON Dateien (local.py)},firstline=36,lastline=48,firstnumber=36]{\pyvidir local.py}
 Diese Funtionen werden aufgerufen um die Pythonstrukturen in JSON Objekte umzuwandeln
 und schließlich in eine Datei zu schreiben. Großgeschrieben Variablen aus
 dem Quelltext stehen für vordefinierte,
 konstante, Strings für Ordner- oder Dateibezeichnungen.\\
 Über die folgenden Methoden können die geschrieben JSON Dateien dann ausgelesen werden.
-\lstinputlisting[language=Python,caption={Datei In- und Output (filemanager.py)},firstline=39,lastline=66,firstnumber=39]{\pyvidir filemanager.py}
+\lstinputlisting[language=Python,caption={Datei In- und Output (filemanager.py)},firstline=41,lastline=68,firstnumber=41]{\pyvidir filemanager.py}
 Die Methode createOutputDirs ist die Definition die aus der Mainmethode aufgerufen wird
 um die Ordnerstruktur vorzubereiten. Die Grafiken werden in diese Ordnerstruktur geschrieben.
 Eine wichtige Entscheidung musste getroffen werden wie die Daten gespeichert werden sollen,
@@ -339,24 +345,34 @@ werden und von dort aus sobalt sie alle fertig generiert wurden die alten Grafik
 ihrem festen Speicherort überschreiben. Dies bedeutet für den Datenträger, dass maximal
 zwei Sätze der Grafiken gespeichert werden müssen und es keine ,,Downtime'' auf dem
 Server gibt, welche bedeuten würde das zeitweise Grafiken bestimmter Art nicht aufgerufen
-werden können.
-\lstinputlisting[language=Python,caption={Bewegen der Dateien (filemanager.py)},firstline=68,lastline=100,firstnumber=68]{\pyvidir filemanager.py}
+werden können.\\
+Nachdem mit der Ordnererstellung alle Vorbereitungen abgeschlossen sind, kann Python die
+Grid Analysis and Displaying System Routine starten. Diese erstellt dann nach den in den
+JSON Dateien angegebenen Spezifizierungen die Grafiken in den entsprechenden Ordnern.
+Nachdem die Grafiken erstellt wurden, werden sie in den ,,live'' Ordner bewegt, welcher
+in der Anwendung als Web-Server öffentlich wäre und zuverlässig an gleichbleibender URL
+die aktuellen Grafiken anbietet.
+\lstinputlisting[language=Python,caption={Bewegen der Dateien (filemanager.py)},firstline=69,lastline=101,firstnumber=69]{\pyvidir filemanager.py}
 Die einzelnen Schnappschüsse der Konturplots werden über die Methode convertToGifs zu
 Gifdateien umgewandelt. Gifs sind animierte Grafiken, die wie Videos gut die zeitliche
 Entwicklung der Konturplots darstellen.\\
 Für Präsentationen oder Geräte welche Gifs nicht gut darstellen können kann über die
 Funktion convertGifToMp4 die Gifdatei zu einer MP4 Datei umgewandelt werden.
 Dafür wird aber die Bibliothek ffmpeg auf dem Rechner, welcher die MP4 Datei erstellen
-will vorausgesetzt.
+will vorausgesetzt.\\
+Die Binärdatei von ffmpeg kann in den meisten Linux Distributionen aus den Universe-Paketquellen
+installiert werden.
 
 \subsubsection*{JSON Definitionen}
-Im folgenden Listing wird die Definition von Ortspunkten
+Im folgenden Quelltextlisting wird die Definition von Ortspunkten
 \footnote{Ortspunkte stehen im Kontrast zur Gebietsdefinition.
 Gebiete werden durch minimale Breiten- und Höhengrade definiert
 und besitzen eine Breite und Höhe. Anwendungsbeispiel: Europa, Welt, Asien, ...}
 gezeigt.
 Diese werden im JSON Format gespeichert.
 Die Liste kann um beliebig viele andere Orte erweitert werden.
+Die Abstrahierung in Position, Zoom und Zeitzone ist Industriestandart. Die Position wird in
+Breitengrad (engl. Latitude) und Längengrad (engl. Longitude) gespeichert.
 \lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte
  (locals.json)}]{\pyvidir locals.json}
 In der Liste steht der erste String für den Ortsnamen.
@@ -377,7 +393,15 @@ ausgelassen\footnote{Der ,,Area''-Parameter muss auf 0 initialisiert werden,
 weil um Speicherplatz zu sparen die Orte in einer
 Python-list und nicht in einem Python-dict gespeichert werden} werden.
 Auch die Zeitzoneninformation kann
-ausgelassen werden.
+ausgelassen werden.\\
+Das programmatische Hinzufügen von neuen Orten kann durch einen Dateiseekvorgang zum
+vorletzten Byte der Datei und dem Schreiben der neuen Daten, plus dem Überschriebenen ,,]''
+realisiert werden. Sicherheitshalber müsste ein externes Programm überprüfen, dass an vorletzter
+Stelle das Byte 0x10 für den New Line Charakter steht, denn um eine valide JSON Datei zu erhalten,
+ohne sie neu zu Marshaln muss genau ein Komma zwischen den Arrays eingefügt werden. \\
+ViSys-intern muss die Datei komplett gelesen werden, somit kann parallel überprüft werden ob
+ein Fehler in der Datei vorliegt und beim schreiben eines neuen Ortes wird die Datei komplett neu
+geschrieben. Es ist also kein extra Seekvorgang notwendig.
 
 \subsubsection*{GrADS Scripte}
 \lstinputlisting[language=grads,
@@ -423,16 +447,27 @@ diese kann aber auch über eine Shell umgangen werden, indem man \vs direkt Befe
 übergibt und die Bilder serviert bekommt.\\
 Die Website ist programmiert in HTML (Hyper Text Markup Language),
 PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript.
-Als Webserver wird Apache2 eingesetzt \cite{php} \cite{apache} \\
+Als Webserver wird Apache2 eingesetzt \cite{php} \cite{apache}. \\
 Der Server der diese Website ,,served'' ist nicht über eine Domain aus dem Internet
 erreichbar, da sobalt Grafiken benötigt wurden später das gesammte Projekt auf
 einen Rechner heruntergeladen wurde und von dort lokal ausgeführt wurde.
-Die Website liest genauso wie \vs die JSON Dateien aus und kann aus den
+Die Website liest genauso wie \vs\ die JSON Dateien aus und kann aus den
 Routinen schlussfolgern unter welchem Dateipfad die Grafiken nach der Generation
 liegen müssen. Dann muss die Website nur noch auf die Grafiken verlinken.
 Für die Projektarbeit wurde die Website hauptsächlich genutzt um das Arbeiten mit
 dem Dateimanager zu minimieren, da dieser bei jedem Ordnerwechsel die Grafiken lud,
-der Webbrowser allerdings erst auf Befehl die Grafiken lädt.
+der Webbrowser allerdings erst auf Befehl die Grafiken lädt.\\
+Die Informationen über die URI der Grafiken wird durch PHP aus der JSON Datei gelesen
+und hergeleitet. In der hier beschriebenen Version der Website, mit der Unterteilung
+in HTML, PHP und JavaScript, also der starken Trennung von Algorithmus und grafischer
+Oberfläche, ist die Herleitung der Grafikuris so realisiert, dass durch das PHP
+Interface durch die Ordnerstruktur gegangen werden kann, und die JSON Datei ausgelesen
+wird um zu überprüfen ob die Dateien existieren.\\
+Dieses Verhalten stellt einen Bruch im systematischen Trennen von Oberfläche und Algorithmus
+dar, weil die PHP Oberfläche etwas über den Hintergrund des Algorithmuses wissen muss.
+Idealerweise kann man allerdings von PHP aus die Pythonroutine starten und mit einfachen
+Queries die Orte der Dateien auslesen. Der Overhead der zusätzlichen Threads wäre allerdings
+bei solch einer einfachen Aufgabe ein starter Performanceeinbruch.\\
 
 
 \subsubsection{Versionen}
@@ -458,7 +493,11 @@ Durch Python und JSON konnte man das Projekt dann vollständig automatisieren.
 Zum Zeitpunkt der Arbeit wird GrADS noch immer Aufgerufen. Allerdings
 wird durch die ständige Weiterentwicklung an einem neuen Projekt gearbeitet.
 Dieses Projekt, ,,PilDap'' getauft soll von der GitHub Gemeinde mitentwickelt
-werden und nativ in Python die selbe Aufgabe erfüllen wie GrADS \cite{pildap}.
+werden und nativ in Python die selbe Aufgabe erfüllen wie GrADS \cite{pildap}.\\
+Ende des Jahres 2015 wurde das komplette System neu geschrieben um das später
+beschriebene Weather Monitoring System, ViSys und weitere Funktionalitäten
+unter einem Dach mit schneller Datenverarbeitung und ebenso schneller
+Benutzeroberfläche im Web zu vereinen.
 
 \subsubsection*{Git}
 Ab Anfang 2015 findet eine neue Umgebung anwendung um an
@@ -508,7 +547,7 @@ diese IDEs verzichtet werden,
 und es wurde nur noch auf den offenen Texteditor Atom zurückgegriffen.
 Alle Linker- und Compileraufgaben der IDE wurden über Makefiles realisiert um die Spiegeln der
 Entwicklungsumgebung auf ein Minimum von zwei Zeilen zu bringen. Ein Entwickler kann mit den
-Befehlen $\text{git clone https://github.com/tibyte/auvi-hub}$ und $\text{make}$ seine Entwicklungsumgebung
+Befehlen $\text{git clone https://github.com/mtib/auvi-hub}$ und $\text{make}$ seine Entwicklungsumgebung
 so vorbereiten, dass er direkt den Stand der Software sieht und sie zugleich sofort einsetzbar ist.
 Durch diese Optimierung kann ein Projektteilnehmer durch genau diese zwei Befehle seine Entwicklungsumgebung
 in Sekunden einrichten.\\
@@ -611,8 +650,6 @@ und sich so neben allgemein komplexeren meteorologischen Daten
 auch für sie besonders interessante meteorologische Ereignisse grafisch darstellen lassen.
 Wenn jemand zum Beispiel Zusammenhänge zwischen der Ozonschicht und der Temperatur erforscht,
 kann er sich eine Grafik ausgeben lassen, die ihm diese beiden Parameter darstellt.
-% Dr. Eixmann fragen, was man sich wissenschaftlich visualisieren könnte
-% TODO: Dr. Eixmann nach Idee fragen
 \begin{center}
 	\includegraphics[width=\linewidth]{imgs/gl/to3_0013.jpg}
 \end{center}
@@ -643,7 +680,10 @@ Häufig wurde auch eine schriftliche Erläuterung des Projekts gefordert,
 in der alles ausführlich erklärt wird.
 Diese Dokumentation des Projekts wurde in \LaTeX gesetzt.
 Auch in diesen Dokumentationen wurden Übersichten und Grafiken als Anschauungsmaterial
-beigefügt und nötigenfalls näher erläutert.\\
+beigefügt und nötigenfalls näher erläutert. Für die visuelle Aufbereitung von
+dem gezeigten Quelltext in der GrADS-Skriptsprache musste eine neue Sprache für das
+Listing Paket von \LaTeX geschrieben werden, da die GrADS Syntax keiner üblich genutzen
+Syntax entspricht.\\
 Solche Dokumentationen und Poster kamen zum Beispiel bei
 den Landeswettbewerben \jf in Rostock (Mecklenburg Vorpommern) zur Anwendung.
 Bei diesem Wettbewerb werden aus dem gesamten

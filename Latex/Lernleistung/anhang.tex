@@ -1,5 +1,31 @@
 % NOTE Großteil des Quellcodes muss in den Anhang
+\newcommand{\ghl}[1]{\link{http://github.com/mtib/#1}}	% Format Links
+\newcommand{\ghx}[1]{\link{http://github.com/eixmb/#1}}	% Format Links
+\newcommand{\img}[2]{\begin{center}#2\\\includegraphics[width=\linewidth]{imgs/#1}\end{center}}
 \newpage
 \section{Anhang}
-Der komplette aktualisierte Quelltext ist für AuVi / \vs\, unter \link{github.com/tibyte/auvi-hub} und für das Weather-Monitoring-System unter \link{github.com/tibyte/apewms} hochgeladen und frei verfügbar. Der grafische Teil des Weather-Monitoring-Systems und die Python API ist unter \link{github.com/tibyte/autowkid} veröffentlicht.\\
-Stellen, auf die im Laufe dieser Arbeit häufiger verwiesen werden und sie deshalb größere Wichtigkeit genießen sind im Folgenden Anhang zu finden. Zudem befinden sich nach den Quelltexten eine Reihe von Grafiken, welche von \vs\, beziehungsweise WMS erzeugt wurden.
+Der komplette aktualisierte Quelltext ist für AuVi / \vs\, unter \link{github.com/mtib/auvi-hub} und für das Weather-Monitoring-System unter \link{github.com/mtib/apewms} hochgeladen und frei verfügbar. Der grafische Teil des Weather-Monitoring-Systems und die Python API ist unter \link{github.com/mtib/autowkid} veröffentlicht.\\
+Die Open-Source Teile des in Golang geschriebenen Systemes sind unter \\\ghx{aktuelltxt} und \ghl{simplehttp} zu finden.\\
+\img{jf.png}{
+Projektstruktur:}
+\newpage
+\img{pi.png}{
+Raspberry Pi 2, Hardware auf der alle Software getestet wird.}
+\img{gl/ps_0001.jpg}{
+Globaler Luftdruck:}
+\newpage
+\img{gl/tql_0021.jpg}{
+Globale Wassersäule:}
+\img{ro/t2m_tql_last.jpg}{
+Funktionsgraph Temperatur und Regenwahrscheinlichkeit:}
+\newpage
+\img{eu/ps_0033.jpg}{
+Luftdruck um Europa:}
+\img{eu/t2m_0023.jpg}{
+Temperatur um Europa:}
+\newpage
+
+
+
+\img{makanyaFrontEnd.png}{
+Makanya Frontend für Hompage und soziales Netzwerk}
