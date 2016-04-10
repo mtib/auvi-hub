@@ -1,4 +1,11 @@
 \section{Makanya}
+Makanya ist eine kleine Gemeindschaft im Nord-Osten Tansanias.
+Diese soll durch eine Partnerschaft mit der Kirchengemeinde Kühlungsborns
+soweit unterstützt werden, dass sie sich zu einem Vorzeigebeispiel für die
+Bildung und Fortschritt in Tansania entwickt.
+\begin{center}
+    \includegraphics[width=\linewidth]{imgs/gomaps.png}
+\end{center}
 
 \subsection{Hintergrund} % Makanya
 Der Hintergrund des Makanya.com Projektes ist eine Partnerschaft
@@ -7,8 +14,7 @@ sowie der Partnerschaft zwischen der Kirchengemeinde und dem Schulzentrum Kühlu
 Der Pastor Kühlungsborns, Matthias Borchert,
 suchte den Kontakt zum \jf Team über das Schulzentrum.
 Nach einer kurzen Bekanntmachung durch Frau Schmidt war die Zusammenarbeit besiegelt.\\
-Eine Domain (\link{makanya.com}) von strato.de war bereits vorhanden% TODO Quelle + Preise
-% Server: strato.de
+Eine Domain (\link{makanya.com}) von strato.de war bereits vorhanden
 und ein WordPress Blog \link{kulungsi.com}.
 Die Website musste technisch aufbereitet werden, und eine englische Übersetzung war notwendig.
 Diese Website sollte dann als Anlaufpunkt für alle Projektteilnehmer, Interessenten und Schüler sein.
@@ -22,14 +28,12 @@ Damit die Seite auch in Tansania erreichbar ist müssen die Datenformate optimie
 % Mehr Programmierung...?
 % Beiprogramm: Schulzentrum -> Spendenlauf, Besuch der Tansanianer, Meetings, Auswertung
 Somit stellt diese Arbeit ein Teil eines größeren Projektes dar.
-Dieses Projekt beinhaltet die Partnerschaft von der Kirchengemeinde mit dem Schulzentrum und Makanya in Tansania.
 Andere Aspekte beinhalten den Schüleraustausch und Besuch der Tansanianer,
 sowie ein von der Schule organisierter Spendenlauf der die Finanzierung des Fluges ermöglichte.
 
 \subsection{Methodik} % Makanya
 % Aufteilung:
 % Markus: Programmierung, Öffentlichkeitsarbeit, Infos
-
 % Umgebung: Sublime Text, PHPmyAdmin,
 % Hilfe: php.net (erstes PHP Projekt)
 % Sicherheit: sha256 Schlüssel, TODO Vortrag herauskramen!
@@ -42,22 +46,38 @@ Die Website war funktionsfähig sobald sie die Informationen auf Kulungsi.com wi
 Da dieses Ziel schnell erreicht war, sollte nun weiterführend eine Art soziales Netzwerk zwecks Austausch im Hintergrund errichtet werden.
 Dieser Teil der Website ist zum Zeitpunkt der Setzung noch nicht fertiggestellt, die grundlegenden
 Funktionen: Chats, Accounts, Gruppen und weitere Kleinigkeiten sind allerdings schon funktionstüchtig.\\
-Die Entwicklung wurde durch den Texteditor Sublime Text erleichtert. Als Testserver diente ein von mir sonst privat genutzter Raspberry Pi,
-wobei ich allerdings von vornherein auf der von Strato.de zur Verfügung gestellten Datenbank arbeitete.
-Außerdem hervorstechend ist das erste größere Treffen des Tansaniakreises Kühlungsborns, dem ich beiwohnte.
-Meine Aufgabe war es dem Kern der Gemeinde meine Fortschritte zu präsentieren.
+Die Entwicklung wurde durch den Texteditor Sublime Text erleichtert.
+Als Testserver diente ein sonst privat genutzter Raspberry Pi,
+wobei allerdings von vornherein auf der von Strato.de zur Verfügung gestellten Datenbank gearbeitet wurde.
+Außerdem hervorstechend ist das erste größere Treffen des Tansaniakreises Kühlungsborns,
+dem die technische Seite des Projekts beiwohnte.
+Meine Aufgabe war es dem Kern der Gemeinde die Fortschritte mit der Website und Datenbank zu präsentieren.
 Eine Präsentation mit für diesen Anlass erzeugten Grafiken diente um die Entwicklung einer Website
 sowie die damit verbundenen Schwierigkeiten, Limitationen und Abläufe visuell zu erläutern.
 
+\subsection{Datenbankdesign}
+Die Website, die auf \link{http://makanya.com} ausgeliefert wird ist statisch, allerdings das soziale Netzwerk unter
+\link{http://netzwerk.makanya.com} ist auf einem komplexen Datenbanksystem aufgebaut.\\
+Die Datenbank ist gut gesichert und besitzt sechs verschiedene Nutzerstufen, jeder Nutzer hat seine eigene Timeline
+samt Control Panel und Profil. Admins haben die Möglichkeit über ein Webinterface neue Nutzer hinzuzufügen, die Aktivität
+von bestehenden Nutzern zu überprüfen und das Passwort von Nutzern zurückzusetzen.
+\begin{center}
+\includegraphics[width=\linewidth]{imgs/wmsnetz.png}
+\includegraphics[width=\linewidth]{imgs/adminnety.png}
+\end{center}
 
 \subsection{Ergebnis} % Makanya
-Das Ergebnis dieses Projektes ins die Webseite, die statische Informationen über Makanya bereitstellt.
-Dazu gibt es im Hintergrund eine minimale Version eines sozialen Netzwerkes mit einem offenen und geschlossenen Chat.
+Das Ergebnis dieses Projektes ins die Webseite,
+die statische Informationen über Makanja bereitstellt.
+Dazu gibt es im Hintergrund eine minimale Version
+eines sozialen Netzwerkes mit einem offenen und geschlossenen Chat.
 Außerdem wurden alle von dem Projekt erwarteten Sicherheitsbedingungen eingehalten.
 Auf der Sicherheit liegt bis heute noch der Fokus:
-solange die Website erreichbar ist und die richtigen Informationen anzeigt ist ihre Aufgabe erfüllt.
-Die Autoritätspersonen und Lehrer bekamen außerdem die Möglichkeit die ihnen untergestellten Schüler zu verwalten.
-Somit konnte auch die Idee des Konten- und Rechtssystems umgesetzt werden.\\
+solange die Website erreichbar ist und
+die richtigen Informationen anzeigt ist ihre Aufgabe erfüllt.
+Die Autoritätspersonen und Lehrer bekamen außerdem
+die Möglichkeit die ihnen untergestellten Schüler zu verwalten.
+Somit konnte auch die Idee des Konten- und Rechtesystems umgesetzt werden.\\
 Da dieses Teilgebiet der Arbeit nicht viel Beaufsichtigung und stetige Entwicklung verlangt ist
 es im Verlauf der Arbeit auf der Prioritäten-liste langsam abgestiegen.
 \begin{center}

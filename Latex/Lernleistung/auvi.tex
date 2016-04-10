@@ -1,8 +1,8 @@
 \section{Auvi}
 
 \subsection{Programm} % AuVi
-Um Verwechslungen zu verhindern ist das Programm,
-welches unter AuVi entwickelt wurde ,,\vs ''.
+Um Verwechslungen zu verhindern wird das Programm,
+welches unter AuVi entwickelt wurde ,,\vs '' genannt.
 Der Kürzel steht für Visualisierung System und ist in verschiedenen Versionen lauffähig.
 Die Aufgabe von \vs\ ist es auf eine Datenquelle zuzugreifen
 und nach abgespeicherten Parametern die Rohdaten in Grafiken umzuwandeln.
@@ -27,11 +27,11 @@ Das ist für die Prognose essentiell wichtig.
 Der Grundgedanke einer solchen Prognose besteht darin,
 aus einem bereits vergangenen und dem aktuellen Zustand
 der Atmosphäre einen Zustand in der Zukunft abzuleiten.
-Dazu werden die bekannten physikalischen Regeln angewendet.
+Dazu werden die bekannten physikalischen Regeln angewandt.
 In mathematischer Hinsicht werden diese physikalischen Regeln von
 nichtlinearen Gleichungen beschrieben.
 Das bedeutet, dass bereits die kleinste Änderung im Ausgangszustand
-das Ergebnis der Rechnung relativ groß verändern kann. % TODO: Citation needed
+das Ergebnis der Rechnung vergleichsweise groß verändern kann \cite{nonlinear}.
 
 
 \subsubsection{Prognosen per Hand} % AuVi Meteorologie
@@ -46,7 +46,7 @@ Wolkenart, Höhe der Wolkenuntergrenze, Bedeckungsgrad,
 Sichtweite, Niederschlagsmenge und Niederschlagsart.
 Es wird zwischen Bodenbeobachtungsstationen, die Daten in der Nähe
 der Bodenoberfläche sammeln und aerologischen Beobachtungsstationen,
-die Daten aus bis zu 30km Höhe liefern unterschieden.
+die Daten aus bis zu 30 km Höhe liefern unterschieden.
 Es werden auch Daten von mobilen Messstationen, wie Bojen und Flugzeugen verwendet.
 Wettersatelliten und Fernerkundungssystem
 (wie Wetterradar, Blitzortungssysteme, LIDAR, SODAR) können auch als Datenquelle dienen.
@@ -58,7 +58,10 @@ Zusätzlich dazu werden die gesammelten Daten von numerischen
 Vorhersagemodellen als Ausgangszustand verwendet. \cite{noaa}
 \\
 Numerische Wettervorhersagen sind rechnergestützt, können aber trotzdem nicht
-immer 100\% zutreffend sein.
+immer 100\% akkurate Werte messen.
+Man muss die Messfehler und Messungenauigkeiten berücksichtigen, sowie die
+Ungenauigkeit die durch das Abspeichern auf einem digitalen Speichermedium
+eingeführt wird. \cite{floatungenau}
 Der Zustand der Atmosphäre zu einem späteren Zeitpunkt wird aus dem Zustand
 der Atmosphäre zu einem gegebenen Anfangszeitpunkt berechnet.
 Dabei werden relevante Gleichungen numerisch gelöst
@@ -69,7 +72,8 @@ Niederschläge, Bildung von Hoch- und Tiefdruckgebieten und Wind beschrieben.
 Diese Vorgänge können je nach Luftdruck, Temperatur, Windgeschwindigkeit
 und Luftfeuchtigkeit auftreten.
 Da diese Gleichungen jedoch nicht eindeutig lösbar sind oder es
-durch Approximationsvorgänge zu Abweichungen kommt, kann es nur zu Näherungswerten kommen.
+durch Approximationsvorgänge zu Abweichungen kommt, werden weitere Fehler eingeführt,
+die Ergenisse dürfen nur als Näherungswerte angesehen werden.
 Trotzdem, oder gerade deshalb sind diese numerischen Prognosen in diesen Rechenzentren berechenbar.
 Diese mathematischen Näherungen benötigen jedoch sehr viel Rechenleistung,
 weswegen auf die Leistungsfähigkeit von Supercomputern zurückgegriffen wird.
@@ -102,11 +106,9 @@ oder ob man die Prognose für die nächste Woche haben möchte.
 Letzters ist deutlich schwieriger und somit auch weniger zuverlässig.
 
 \subsection{Datenquellen} % AuVi
-
-\subsubsection{Quellenvergleich} % AuVi Datenquellen
 Da es im Rahmen des Projektes nicht möglich war
 eigene den Globus umspannende Daten aufzunehmen und Prognosen zu berechnen,
-muss eine Auswahl zwuschen den Quellen mit den benötigten Daten getroffen werden.
+muss eine Auswahl zwischen den Quellen mit den benötigten Daten getroffen werden.
 Im Internet gibt es eine vielzahl von Anbietern von Wetterdaten.
 Die technisch beste Methode an diese Daten zu gelangen ist über einen OpenDap Server.
 Dieser garantiert dem Programmierer und somit dem Nutzer
@@ -114,6 +116,8 @@ die Erreichbarkeit und Aktualität der Daten.
 Für \vs\ wurden verschiedene Quellen gesammelt und miteinander verglichen.
 Bei diesem Vergleich
 gewann die NOAA GFS Quelle \cite{noaa} , auf Hinweis von Projektleiter Dr. Ronald Eixmann.
+
+\subsubsection{Quellenvergleich} % AuVi Datenquellen
 Das GFS \cite{gfs} Modell welches von NOAA angeboten wird zeichnet
 sich durch eine Vielfalt von Parametern (50+) und einen großen Prognosezeitraum (10 Tage) aus.
 Diese Parameter beinhalten in der hauptsätlich genutzten Quelle \cite{bspgfs} z.B.
@@ -130,14 +134,11 @@ der Programmierer sich keiner Garantieleistung \cite{mitl}. Quellen können somi
 aufgelistet werden, die in Zukunft evtl. nicht mehr erreichbar sind.
 In Zukunft soll man über eine GUI\footnote{\textit{Graphical User Interface} engl. IT.
 für grafische Benutzeroberfläche} dem Nutzer eine Auswahl
-zwischen verschiedenen Datenquellen anbieten können.
-% TODO: Grafik: Übersicht über Quellen (Alle die direkt über das Programm angeboten werden)
-% NOTE Viel mehr Parameter, Daten bei NOAA oc DWD
-% Siehe andere Quellen
-
+zwischen verschiedenen Datenquellen anbieten können.\\
+Die aktuellsten Varianten von ViSys, welche im Zusammenspiel mit dem Weather Monitoring System
+eingesetzt werden, greifen überwiegend auf Daten des OpenWeatherMap.org und YahooWetter zu.
 
 \subsubsection*{Wetterdienst} % AuVi Datenquellen
-% TODO Grafik: Diagramm der Genauigkeit (Dafür Tabelle, Swenja)
 Der Deutsche Wetter Dienst, kurz: DWD, arbeitet im Auftrag des
 Bundesministeriums für Verkehr und digitale Infrastruktur. \cite{bmvi}
 Der DWD bietet ebenfalls Wetterdaten an, die allerdings kostenpflichtig sind.
@@ -181,16 +182,45 @@ So wird in einem Abstand von 13,5km je ein Wert ermittelt.
 Diese Daten werden als große Datensätze kostenfrei auf
 der Webseite \link{http://mag.ncep.noaa.gov/} \cite{ncep} zur Verfügung gestellt.\\
 Die Daten liegen in verschiedenen zeitlichen und räumlichen Auflösungen vor.
-% TODO Tabelle mit Daten: http://www.ftp.ncep.noaa.gov/data/nccf/com/gfs/prod/
-% TODO Auflösungen heraussuchen http://www.nco.ncep.noaa.gov/pmb/products/gfs/
-% Richtige Quelle
-% http://opendap.nccs.nasa.gov:80/dods/GEOS-5/fp/0.25_deg/fcast/tavg1_2d_slv_Nx.latest
-% TODO Quellenvergleich http://opendap.nccs.nasa.gov/dods/
-% TODO Dokumentation Formate, GRIB2 (http)
-% TODO Diagramm der Genauigkeit
+\newpage
+\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	Datensatz & Aktualisierung & Netz & Prognose & Vertikal\\
+	\hline
+	GFS 0.25 & 6 Stunden & 0,25$^{\circ}$ & 240 Stunden & 46 Ebenen\\
+	\hline
+	GFS 0.50 & 6 Stunden & 0,5$^{\circ}$ & 240 Stunden & 46 Ebenen\\
+	\hline
+	GFS 1.00 & 6 Stunden & 1,0$^{\circ}$ & 240 Stunden & 46 Ebenen\\
+	\hline
+	GFS Ensemble & 6 Stunden & 0.5$^{\circ}$ & 192 Stunden & \\
+	\hline
+\end{tabular}
+\\
+\\
+Der das GFS Ensemble Modell wird genauer bearbeitet, und ist Bias-Korrigiert.
+Dieses Verfahren soll Modell Fehler minimieren \cite{gfshdens}. \\
+Die Daten werden über das GRIB2 Format angeboten. GRIB2 steht für die zweite Inkarnation
+des Gridded Binary Formates. Dieses Format wurde
+von der amerikanischen Einrichtung ,,National Centers For Environmental Prediction''
+kurz NCEP entworfen. Sie bieten die Dokumentation dieses Formates frei im Internet
+an, was es Programmierern ermöglicht Software zu schreiben die dieses Format lesen und
+schreiben kann. Eine GRIB Datei ist immer in sich geschlossen, kann aber nachdem der
+Header gelesen wurde in Teilen geladen werden.\\
+Das GFS Modell kann so aufgeteilt werden, wenn das Programm nur einen Teil des GFS
+Modells braucht, wird nur dieser Teil geladen. Diese Aufgabe den Header auszuwerten
+wird in \vs von GrADS übernommen. \\
+Das OpenDAP Server-Client Modell ist allerdings veraltet. In neueren Versionen der Software
+wird auf REST-Ful Server Varianten zugegriffen. Bei diesen Anfragen enthält die Anfrage
+nicht die Aufforderung einen bestimmten Block des Datensatzes zu liefern, sondern alle
+Parameter die vom Programm benötigt werden, werden ,,live'' nachgefragt. Der Server
+liefert dann genau diese Daten in der Regel als JavaScript Object Notation.
+Die Umstellung auf ein REST-Ful System erlaubt ViSys erst bei Bedarf neue Daten abzufragen
+und diese dann auf einzelne Parameter beschränkt zu aktualisieren.
+So kann lokal eine minimale Spiegelung der benutzten Daten stattfinden, welche bei einem
+Serverausfall oder einem Verbindungsverlust nicht den kompletten Datenverlust zufolge hat.
 
 \subsubsection{Datenverfügbarkeit} % AuVi Datenquellen
-% TODO Wann sind welche Daten Verfügbar?
 Während der Deutsche Wetter Dienst für normale, zahlende, Nutzer nur Daten
 für die nächsten 48 Stunden zur Verfügung stellt, ist NOAA für alle Nutzer,
 egal wo sie sich auf der Welt befinden, rund um die Uhr offen und bietet Daten
@@ -206,8 +236,9 @@ dort verfügbar sind, wo sie sein sollen,
 und die Daten enthalten die nach der
 Spezifikation enthalten sein sollen.\\
 Diese Spezifikation der NOAA Daten steckt sich bei verschiedenen Modellen
-verschiedene Ziele ab. Das von meinem Programm am meisten genutzte Modell,
-das GFS Modell ist 24-7 erreichbar,
+verschiedene Ziele ab.
+Das von diesem Programm am meisten genutzte Modell,
+das GFS Modell ist immer erreichbar,
 kostenlos und enthält Daten entweder für die nächsten 33 Stunden,
 133 Stunden oder 240 Stunden.
 
@@ -226,12 +257,11 @@ Der entscheidenste Wandel war die Migration aller Dateien in ein Git-Repository 
 Dieser Wandel ermöglichte die potentielle Zusammenarbeit mit Projektteilnehmern, oder
 dem Projektleiter ohne das vorrausgesetzt wird, dass dieser oder diese die selben Möglichkeiten
 auf seinem oder ihrem Rechner hat. Durch die Integration in GitHub kann der Quelltext auch auf
-\link{github.com/tibyte/auvi-hub} aufgerufen werden. Mit einem Account auf dieser
+\link{github.com/mtib/auvi-hub} aufgerufen werden. Mit einem Account auf dieser
 Seite können dann u.a. Zeilen kommentiert und Änderungen vorgeschlagen werden. \\
 Die Textbearbeitung fand zuerst im Editor Sublime Text \cite{sublime} statt, da dieser
 aber kostenlos nur mit störenden Nachrichten zu nutzen war, wechselte man später
 zum Open Souce Atom Editor \cite{atomio}. Dieser wird von der GitHub Gemeinde entwickelt.
-% TODO Beschreibung der Umgebung & Warum
 
 \subsubsection{Methodik} % AuVi Entwicklung
 Die Arbeit an diesem Projekt verlangte große Kooperation
@@ -280,7 +310,7 @@ ist in Python das Modul, welches vom Interpreter aufgerufen wird. Dieses kann ü
 Importaufrufe weitere Module einbinden. So kann der Programmablauf übersichtlich doch
 komplex sein.\\
 Dieses Mainmodul ist die Datei auvi.py,
-\lstinputlisting[language=Python,firstline=12, lastline=41,firstnumber=12,caption={,,Mainfunktion'' von \vs\ (auvi.py)}]{\pyvidir auvi.py}
+\lstinputlisting[language=Python,firstline=15, lastline=45,firstnumber=15,caption={,,Mainfunktion'' von \vs\ (auvi.py)}]{\pyvidir auvi.py}
 diese Zeilen stellen die Definition der ,,Mainmethode'' dar. In ihnen wird auf größere
 Methoden außerhalb der Datei zugegriffen. Durch diesen Aufbau ist es möglich die
 Funktionalität der für diesen Zweck geschrieben Software zu erweiten oder für andere
@@ -294,17 +324,17 @@ die vom Nutzer abgefragten Parameter, Orte und Gebiete ausgelesen. Diese Definit
 in JSON Form vor und können leicht von anderen Programmen geschrieben und gelesen werden.\\
 Die richtige Arbeit des Programmes wird dann in verschachtelten for-Schleifen erledigt, in
 denen über die verschienden Parameter und Orte iteriert wird.\\
-\lstinputlisting[language=Python,caption={Hinzufügen von neuen Orten, Gebieten und Parametern (local.py)},firstline=11,lastline=28,firstnumber=11]{\pyvidir local.py}
+\lstinputlisting[language=Python,caption={Hinzufügen von neuen Orten, Gebieten und Parametern (local.py)},firstline=15,lastline=34,firstnumber=15]{\pyvidir local.py}
 Diese Methoden bieten ein Interface um von Außen neue Orte sowie Parameter
 der Routine hinzuzufügen.
 Sie geben zusätzlich dem Nutzer immer Feedback was gerade geschehen ist.
-\lstinputlisting[language=Python,caption={Routine zum schreiben von JSON Dateien (local.py)},firstline=30,lastline=41,firstnumber=30]{\pyvidir local.py}
+\lstinputlisting[language=Python,caption={Routine zum schreiben von JSON Dateien (local.py)},firstline=36,lastline=48,firstnumber=36]{\pyvidir local.py}
 Diese Funtionen werden aufgerufen um die Pythonstrukturen in JSON Objekte umzuwandeln
 und schließlich in eine Datei zu schreiben. Großgeschrieben Variablen aus
 dem Quelltext stehen für vordefinierte,
 konstante, Strings für Ordner- oder Dateibezeichnungen.\\
 Über die folgenden Methoden können die geschrieben JSON Dateien dann ausgelesen werden.
-\lstinputlisting[language=Python,caption={Datei In- und Output (filemanager.py)},firstline=39,lastline=66,firstnumber=39]{\pyvidir filemanager.py}
+\lstinputlisting[language=Python,caption={Datei In- und Output (filemanager.py)},firstline=41,lastline=68,firstnumber=41]{\pyvidir filemanager.py}
 Die Methode createOutputDirs ist die Definition die aus der Mainmethode aufgerufen wird
 um die Ordnerstruktur vorzubereiten. Die Grafiken werden in diese Ordnerstruktur geschrieben.
 Eine wichtige Entscheidung musste getroffen werden wie die Daten gespeichert werden sollen,
@@ -315,51 +345,81 @@ werden und von dort aus sobalt sie alle fertig generiert wurden die alten Grafik
 ihrem festen Speicherort überschreiben. Dies bedeutet für den Datenträger, dass maximal
 zwei Sätze der Grafiken gespeichert werden müssen und es keine ,,Downtime'' auf dem
 Server gibt, welche bedeuten würde das zeitweise Grafiken bestimmter Art nicht aufgerufen
-werden können.
-\lstinputlisting[language=Python,caption={Bewegen der Dateien (filemanager.py)},firstline=68,lastline=100,firstnumber=68]{\pyvidir filemanager.py}
+werden können.\\
+Nachdem mit der Ordnererstellung alle Vorbereitungen abgeschlossen sind, kann Python die
+Grid Analysis and Displaying System Routine starten. Diese erstellt dann nach den in den
+JSON Dateien angegebenen Spezifizierungen die Grafiken in den entsprechenden Ordnern.
+Nachdem die Grafiken erstellt wurden, werden sie in den ,,live'' Ordner bewegt, welcher
+in der Anwendung als Web-Server öffentlich wäre und zuverlässig an gleichbleibender URL
+die aktuellen Grafiken anbietet.
+\lstinputlisting[language=Python,caption={Bewegen der Dateien (filemanager.py)},firstline=69,lastline=101,firstnumber=69]{\pyvidir filemanager.py}
 Die einzelnen Schnappschüsse der Konturplots werden über die Methode convertToGifs zu
 Gifdateien umgewandelt. Gifs sind animierte Grafiken, die wie Videos gut die zeitliche
 Entwicklung der Konturplots darstellen.\\
 Für Präsentationen oder Geräte welche Gifs nicht gut darstellen können kann über die
 Funktion convertGifToMp4 die Gifdatei zu einer MP4 Datei umgewandelt werden.
 Dafür wird aber die Bibliothek ffmpeg auf dem Rechner, welcher die MP4 Datei erstellen
-will vorausgesetzt.
+will vorausgesetzt.\\
+Die Binärdatei von ffmpeg kann in den meisten Linux Distributionen aus den Universe-Paketquellen
+installiert werden.
 
 \subsubsection*{JSON Definitionen}
-Im folgenden Listing wird die Definition von Ortspunkten
-\footnote{Ortspunkte stehen im Kontrast zur Gebietsdefinition. Gebiete werden durch minimale Breiten- und Höhengrade definiert und besitzen eine Breite und Höhe. Anwendungsbeispiel: Europa, Welt, Asien, ...} gezeigt.
+Im folgenden Quelltextlisting wird die Definition von Ortspunkten
+\footnote{Ortspunkte stehen im Kontrast zur Gebietsdefinition.
+Gebiete werden durch minimale Breiten- und Höhengrade definiert
+und besitzen eine Breite und Höhe. Anwendungsbeispiel: Europa, Welt, Asien, ...}
+gezeigt.
 Diese werden im JSON Format gespeichert.
 Die Liste kann um beliebig viele andere Orte erweitert werden.
-\lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte (locals.json)}]{\pyvidir locals.json}
-In der Liste steht der erste String für den Ortsnamen. Der zweite Wert ist ein Double für den Breitengrad gefolgt vom Längengrad.
-Da von den Orten auch ein Konturplot erzeugt werden soll wird mit dem 4. Wert abgespeichert wie groß die Übersichtskarte sein soll (In Grad um den Ort).
+Die Abstrahierung in Position, Zoom und Zeitzone ist Industriestandart. Die Position wird in
+Breitengrad (engl. Latitude) und Längengrad (engl. Longitude) gespeichert.
+\lstinputlisting[language=json, caption={Beispielobjekte für Ortspunkte
+ (locals.json)}]{\pyvidir locals.json}
+In der Liste steht der erste String für den Ortsnamen.
+Der zweite Wert ist ein Double für den Breitengrad gefolgt vom Längengrad.
+Da von den Orten auch ein Konturplot erzeugt werden soll
+wird mit dem 4. Wert abgespeichert wie groß die Übersichtskarte sein soll (In Grad um den Ort).
 Der letzte Wert zur Definition eines Ortspunktes ist die Zeitdifferenz zur GMT Zeit.\\
 Diese Datei ist der ursprüngliche Grund für den Umstieg auf Python.
-Python kann ,,out-of-the-box'' mit JSON Dateien umgehen. An der Definition kann man schon ablesen,
-dass ein Hinzufügen des Ortes sehr leicht geschehen kann. Dafür muss dem Ort nur trivialerweise ein Name
-gegeben werden, und dann ein Breiten- und Längengrad zugewiesen werden. Diese Informationen reichen
-schon um die meisten Grafiken zu erzeugen, der Flächenparameter ist nur ein optischer Parameter und kann
+Python kann ,,out-of-the-box'' mit JSON Dateien umgehen.
+An der Definition kann man schon ablesen,
+dass ein Hinzufügen des Ortes sehr leicht geschehen kann.
+Dafür muss dem Ort nur trivialerweise ein Name
+gegeben werden, und dann ein Breiten- und Längengrad zugewiesen werden.
+Diese Informationen reichen
+schon um die meisten Grafiken zu erzeugen,
+der Flächenparameter ist nur ein optischer Parameter und kann
 ausgelassen\footnote{Der ,,Area''-Parameter muss auf 0 initialisiert werden,
 weil um Speicherplatz zu sparen die Orte in einer
-Python-list und nicht in einem Python-dict gespeichert werden} werden. Auch die Zeitzoneninformation kann
-ausgelassen werden.
+Python-list und nicht in einem Python-dict gespeichert werden} werden.
+Auch die Zeitzoneninformation kann
+ausgelassen werden.\\
+Das programmatische Hinzufügen von neuen Orten kann durch einen Dateiseekvorgang zum
+vorletzten Byte der Datei und dem Schreiben der neuen Daten, plus dem Überschriebenen ,,]''
+realisiert werden. Sicherheitshalber müsste ein externes Programm überprüfen, dass an vorletzter
+Stelle das Byte 0x10 für den New Line Charakter steht, denn um eine valide JSON Datei zu erhalten,
+ohne sie neu zu Marshaln muss genau ein Komma zwischen den Arrays eingefügt werden. \\
+ViSys-intern muss die Datei komplett gelesen werden, somit kann parallel überprüft werden ob
+ein Fehler in der Datei vorliegt und beim schreiben eines neuen Ortes wird die Datei komplett neu
+geschrieben. Es ist also kein extra Seekvorgang notwendig.
 
 \subsubsection*{GrADS Scripte}
 \lstinputlisting[language=grads,
-caption={GrADS Routine zum erstellen allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
+caption={GrADS Routine zum erstellen
+allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
 \lstinputlisting[language=grads,
 caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)},
 label= code:plotgengs,
 firstline=104, lastline=115, firstnumber=104]{\pyvidir grads/plot.gs}
 In Listing \ref{code:plotgengs} greift das Programm auf verschiedene eigene
 Funktionen zurück um die Konturplotgrafiken zu füllen.
-Um den Ablauf des Programmes zu verstehen sind die wichtigsten Stellen hier aufgelistet und erläutert.
+Um den Ablauf des Programmes zu verstehen sind
+die wichtigsten Stellen hier aufgelistet und erläutert.
 \lstinputlisting[language=grads,caption={Zeichnen der Achseneinteilung und Legende unter GrADS für Plots (plot.gs)}, firstline=117, lastline=136, firstnumber=117]{\pyvidir grads/plot.gs}
 Die Variable $color$ spielt in diesem Teil des Skriptes eine große Rolle.
 Diese Variable ist in diesem Kontext ein Pointer auf ein anderes GrADS Skript,
 welches die Farbdefinitionen enthält.
 Dieses Farbscript lässt sich leicht vom Computer nach den Eingaben eines Nutzers erzeugen.
-% TODO Farbscript ersetzt durch Datenbank
 \lstinputlisting[language=grads,firstline=8, lastline=28,caption={Beispiel Farbdefinition für Temperaturkonturplots (t2m.gs)},label=code:t2mcols]{\pyvidir grads/t2m.gs}
 In Listing \ref{code:t2mcols} wird die Funktion gezeigt die bestimmten Zahlen eine Farbe zuweist.
 Diese Farben sind im RGB Format codiert.
@@ -382,10 +442,33 @@ und aus diesen Werten im Hintergrund eine Datei erzeugt oder geändert wird.}
 \subsubsection*{Webseite}
 Das Front-End der Software ist eine Website
 \footnote{Diese Website kann auch in eine App gepackt werden,
-zur Veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple}.
+zur Veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple},
+diese kann aber auch über eine Shell umgangen werden, indem man \vs direkt Befehle
+übergibt und die Bilder serviert bekommt.\\
 Die Website ist programmiert in HTML (Hyper Text Markup Language),
 PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript.
-Als Webserver wird Apache2 eingesetzt \cite{php} \cite{apache} \\
+Als Webserver wird Apache2 eingesetzt \cite{php} \cite{apache}. \\
+Der Server der diese Website ,,served'' ist nicht über eine Domain aus dem Internet
+erreichbar, da sobalt Grafiken benötigt wurden später das gesammte Projekt auf
+einen Rechner heruntergeladen wurde und von dort lokal ausgeführt wurde.
+Die Website liest genauso wie \vs\ die JSON Dateien aus und kann aus den
+Routinen schlussfolgern unter welchem Dateipfad die Grafiken nach der Generation
+liegen müssen. Dann muss die Website nur noch auf die Grafiken verlinken.
+Für die Projektarbeit wurde die Website hauptsächlich genutzt um das Arbeiten mit
+dem Dateimanager zu minimieren, da dieser bei jedem Ordnerwechsel die Grafiken lud,
+der Webbrowser allerdings erst auf Befehl die Grafiken lädt.\\
+Die Informationen über die URI der Grafiken wird durch PHP aus der JSON Datei gelesen
+und hergeleitet. In der hier beschriebenen Version der Website, mit der Unterteilung
+in HTML, PHP und JavaScript, also der starken Trennung von Algorithmus und grafischer
+Oberfläche, ist die Herleitung der Grafikuris so realisiert, dass durch das PHP
+Interface durch die Ordnerstruktur gegangen werden kann, und die JSON Datei ausgelesen
+wird um zu überprüfen ob die Dateien existieren.\\
+Dieses Verhalten stellt einen Bruch im systematischen Trennen von Oberfläche und Algorithmus
+dar, weil die PHP Oberfläche etwas über den Hintergrund des Algorithmuses wissen muss.
+Idealerweise kann man allerdings von PHP aus die Pythonroutine starten und mit einfachen
+Queries die Orte der Dateien auslesen. Der Overhead der zusätzlichen Threads wäre allerdings
+bei solch einer einfachen Aufgabe ein starter Performanceeinbruch.\\
+
 
 \subsubsection{Versionen}
 Im Laufe der Arbeit entstanden mehrere lauffähige Versionen.
@@ -410,7 +493,11 @@ Durch Python und JSON konnte man das Projekt dann vollständig automatisieren.
 Zum Zeitpunkt der Arbeit wird GrADS noch immer Aufgerufen. Allerdings
 wird durch die ständige Weiterentwicklung an einem neuen Projekt gearbeitet.
 Dieses Projekt, ,,PilDap'' getauft soll von der GitHub Gemeinde mitentwickelt
-werden und nativ in Python die selbe Aufgabe erfüllen wie GrADS \cite{pildap}.
+werden und nativ in Python die selbe Aufgabe erfüllen wie GrADS \cite{pildap}.\\
+Ende des Jahres 2015 wurde das komplette System neu geschrieben um das später
+beschriebene Weather Monitoring System, ViSys und weitere Funktionalitäten
+unter einem Dach mit schneller Datenverarbeitung und ebenso schneller
+Benutzeroberfläche im Web zu vereinen.
 
 \subsubsection*{Git}
 Ab Anfang 2015 findet eine neue Umgebung anwendung um an
@@ -435,28 +522,35 @@ Zusätzlicher erreicht man so eine hohe Datensicherheit \cite{linussaves} und sc
 % Software: 	Linux -> Ubuntu, Debian, Raspbian
 % 				Apache2, Git, Python2:3, PHP, SSH
 % 				Editor SublimeText, Eclipse, Atom
-AuVi wurde auf zwei Servern entwickelt. Einer als Entwicklungs- der andere als Integrationsserver.
+AuVi wurde auf zwei Servern entwickelt.
+Einer als Entwicklungs- der andere als Integrationsserver.
 Das hat zum Vorteil, dass jede Version mehrfach getested werden konnte.
 Einer dieser Server ist ein Raspberry Pi mit den Betriebssystem Raspbian.
-Der zweite Server wurde mehrfach verlegt und ist endlich auf der Platform travis-ci.org realisiert.
-Bearbeitet wurde das Programm von offenen Betriebssystemen aus. Dazu zählen das schon genannte
-Raspbian, eine Version von Debian, und auf unseren Laptops und PCs wurde hauptsächlich Ubuntu genutzt.
+Der zweite Server wurde mehrfach verlegt und
+ist endlich auf der Platform travis-ci.org realisiert.
+Bearbeitet wurde das Programm von offenen Betriebssystemen aus.
+Dazu zählen das schon genannte
+Raspbian, eine Version von Debian,
+und auf unseren Laptops und PCs wurde hauptsächlich Ubuntu genutzt.
 Zu den Programmen, welche die Projektarbeit ermöglichten zählen: Apache2 als Server
 Software, Git als SCM\footnote{Source Code Manager oder Software Configuration Management},
-Python2, Python3 und PHP als Programmiersprache, nautilus als Dateimanager für FTP und SFTP, sowie
+Python2, Python3 und PHP als Programmiersprache,
+nautilus als Dateimanager für FTP und SFTP, sowie
 SSH als Netzwerk-Shell.\\
-Als Editor wurde zuerst SublimeText genutzt um die Bash- und später Pythondateien zu bearbeiten.
-SublimeText wurde zwischenzeitlich durch Eclipse ersetzt um eine vollwertige IDE für PHP und Java zu
+Als Editor wurde zuerst SublimeText genutzt
+um die Bash- und später Pythondateien zu bearbeiten.
+SublimeText wurde zwischenzeitlich durch Eclipse
+ersetzt um eine vollwertige IDE für PHP und Java zu
 genießen. Die \LaTeX Dateien wurden anfangs aus dem selben Grund mit TexMaker bearbeitet.
 Nachdem im Projekt weitere automatisierte Integrationsfortschritte gemacht wurden konnte auf
-diese IDEs verzichtet werden, und es wurde nur noch auf den offenen Texteditor Atom zurückgegriffen.
+diese IDEs verzichtet werden,
+und es wurde nur noch auf den offenen Texteditor Atom zurückgegriffen.
 Alle Linker- und Compileraufgaben der IDE wurden über Makefiles realisiert um die Spiegeln der
 Entwicklungsumgebung auf ein Minimum von zwei Zeilen zu bringen. Ein Entwickler kann mit den
-Befehlen $\text{git clone https://github.com/tibyte/auvi-hub}$ und $\text{make}$ seine Entwicklungsumgebung
+Befehlen $\text{git clone https://github.com/mtib/auvi-hub}$ und $\text{make}$ seine Entwicklungsumgebung
 so vorbereiten, dass er direkt den Stand der Software sieht und sie zugleich sofort einsetzbar ist.
 Durch diese Optimierung kann ein Projektteilnehmer durch genau diese zwei Befehle seine Entwicklungsumgebung
-in Sekunden einrichten.
-% ...
+in Sekunden einrichten.\\
 Nachdem der beschriebene Aufbau lauffähig war griff das ,,Never touch a running System'' Prinzip.
 Das AuVi-System wird als Black-Box behandelt, von dem erwartet werden kann, dass es auf anfragen
 richtig reagiert und Änderungen dieses Verhalten nicht abändern.\\
@@ -474,37 +568,33 @@ um heruntergeladen werden zu können und zum anderen
 noch einen gewissen Qualitätsstandard erfüllen.\\
 Außerdem sind Mobiltelefone nicht in der Lage alle
 Dateiformate anzuzeigen,
-die ein Webbrowser auf einem Computer ohne Probleme handhabt.
-Als die sichersten und besten für diesen Zweck Dateiformate habe
-ich PNG und JPG für Bilder
-und GIF für Animationen auserkoren.
-ich habe lange versucht die Animationen als Video zu kodieren.
-Allerdings bemerkt man nur geringe Einsparungen in der
-Dateigröße und stellt gleichzeitig Anzeigeprobleme auf
-älteren Geräten fest.
-Resultat dieser Entscheidung bedeutet nun, dass man etwas mehr
-Daten übertragen muss, weil die Datei als z.B. GIF codiert ist,
-dafür aber definitiv angezeigt werden kann.
+die ein Webbrowser auf einem Computer ohne Probleme handhabt.\\
+Die Grafiken selbst werden im JPG oder PNG Format erzeugt, welches
+Format genutzt wird entscheided GrADS autonom. Diese Grafiken werden
+über ImageMagick zu GIF Dateien konvertiert. GIFs sind zwar nicht stark
+komprimiert, können aber auf jedem Gerät abgespielt werden.
+Falls man Speicherplatz sparen will oder die Animation wie ein Video nutzen will
+werden die GIFs sofern ffmpeg installiert ist auch noch zu MP4 Dateien konvertiert.
 
 \subsubsection{Schulhompage} % AuVi Schnittstelle
 Da Jugend Forscht unter der Leitung von Herr Doktor Eixmann
 ein Projekt des Schulzentrum Kühlungsborns ist
 (\link{http://www.schulzentrum-kborn.de}) dieses Projekt auf der Schulhompage
 unter ,,Lernen über Fächergrenzen'' als Campus Pro Projekt vertreten \cite{szkb}.
-Dort ist mein Projekt unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden.
+Dort ist dieses Projekt unter dem Titel ,,CaP \jf : Junge Atmosphären-forscher JAF'' aufzufinden.
 Da die Bearbeitung der offiziellen Schulzentrum Kühlungsborn Seite sich als Umständlich aufzeigte,
-wurde eine eigene Seite auf meinem Server eingerichtet.
+wurde eine eigene Seite auf einem privaten Server eingerichtet.
 Diese ist unter \link{http://team.viwetter.de}
 für die Öffentlichkeit zu erreichen.
 Diese Seite soll nicht die Ergebnisse des AuVi Programms
-widerspiegeln sondern dient als Webpräsenz des Projektes.
+widerspiegeln sondern dient als Webpräsenz der Projektarbeit.
 
 \subsection{Szenario} % AuVi
-Da meine Visualisierungssoftware als Open Source Projekt angeboten wird kann der Nutzer
+Da diese Visualisierungssoftware als Open Source Projekt angeboten wird kann der Nutzer
 sie beliebig bearbeiten, in diesem Abschnitt werden einige Szenarien aufgezeigt wie das System
 so wie es ausgeliefert wird genutzt werden kann.
 Es gibt darüber hinaus sehr viele Möglichkeiten aus dem Programm individuellen Nutzen zu ziehen.
-Python Entwickler können so meine Software als Bibliothek einbinden oder direkt den Quelltext
+Python Entwickler können so diese Software als Bibliothek im Quelltext einbinden oder direkt den Quelltext
 weiterentwickeln.
 
 \subsubsection{Frühwarnung} % AuVi Szenario
@@ -524,11 +614,16 @@ Für detaillierte Auswertungen kann man andere Anzeigeformate wählen.
 
 \subsubsection{Exotische Orte} % AuVi Szenario
 Ob mitten im Ozean oder in der Wüste, das Programm liefert Prognosen für jeden Ort.
+Dieser Satz ist häufig der Einleitungssatz um zu erklären, was dieses Programm
+von anderen Wettervisualisierungsdiensten abhebt.
 Die wichtigste Information die das Programm zum Ort brauche ist die Koordinatendarstellung des
 Ortes auf dem Gradnetz der Erde.
 Diese Darstellung besteht aus Längen- und Breitengrad (engl. Longitude, Latitude).
 Das heißt jeder Ort kann durch das Intervall der Längengrade $[-180:180]$ und
 der Breitengrade $[-90:90]$ dargestellt werden.
+Diese Daten anzugeben oder herauszufinden ist für jeden Ort der Erde möglich.
+Zusätzlich sind die Parameter für verschiedene Höhen verfügbar.
+Welche vertikalen Höhenstufen es gibt ist aber Quellenabhängig.
 Es gibt aber, da das Gradnetz die Erde als mathematisches Objekt abstrahiert,
 durch die reine Komplexität der Erdoberfläche und Form bei der Bestimmung der
 Koordinaten Abweichungen \cite{tomgeo}.
@@ -538,9 +633,16 @@ Je weiter das Wetterereignis oder die Wetterprognose in der Zukunft liegt,
 desto geringer ist dessen Genauigkeit.
 Die Genauigkeit steigt, wenn sich eine Messstation im näheren Umfeld befindet und
 nur eine kürzere Prognose verlangt wird.\\
-Der Nutzer selbst hat viele Möglichkeiten die Koordinaten für den Ort seines Interesses herauszufinden.
-Wenn er sich dort befindet kann jedes mobile Gerät oder Handy die Koordinaten ausgeben, außerdem kann
+Der Nutzer selbst hat viele Möglichkeiten die Koordinaten
+für den Ort seines Interesses herauszufinden.
+Wenn er sich dort befindet kann jedes mobile Gerät oder
+Handy die Koordinaten ausgeben, außerdem kann
 über ein Interface zu Google Maps ein Ort direkt ausgewählt werden.
+Die Google Maps Variante ist momentan nicht mehr in Benutzung,
+da wie zuvor beschrieben
+die Website lokal auf dem Rechner laufen musste, um sie auf Messen einzusetzen
+und somit eine ständige Verbindung zu Google-Servern auf die Dauer eine zu
+große Belastung der WLAN Verbindung über das Handy bedeutete.
 
 \subsubsection{Wissenschaft} % AuVi Szenario
 Wissenschaftler können von der Datenquelle bereitgestellte Parameter kombinieren
@@ -548,24 +650,23 @@ und sich so neben allgemein komplexeren meteorologischen Daten
 auch für sie besonders interessante meteorologische Ereignisse grafisch darstellen lassen.
 Wenn jemand zum Beispiel Zusammenhänge zwischen der Ozonschicht und der Temperatur erforscht,
 kann er sich eine Grafik ausgeben lassen, die ihm diese beiden Parameter darstellt.
-% Dr. Eixmann fragen, was man sich wissenschaftlich visualisieren könnte
-% TODO Plot einbinden
+\begin{center}
+	\includegraphics[width=\linewidth]{imgs/gl/to3_0013.jpg}
+\end{center}
 
 \subsubsection{Anpassung} % AuVi Szenario
 Wie zuvor genannt kann der Nutzer eigene Muster einstellen und so das Programm erweitern.
 Diese Möglichkeit erlaubt dem Nutzer diesen Service,
-den ich anbiete, um eigene Funktionen zu erweitern.
+der angeboten wird, um eigene Funktionen zu erweitern.
 Ein Beispiel ist der Segler, der in einem Bestimmten
 Intervall von Windstärke und Windrichtung am besten seinen Sport ausüben kann.\\
 Der Segler würde sich diese Parameter dann für das Gebiet seiner
 Interesse plotten lassen und kann dann noch Farben wählen.
 Ähnlich wie das Frühwarnsystem kann er sich nun aber
 seine eigene Skala der ,,Eignung zum Segeln'' erstellen.
-% TODO Verschiede Visualisierungen (der selben Daten)
 
 \subsection{Öffentlichkeitsarbeit} % AuVi
 % Messen, Vorträge, Dokumentation, Poster
-% TODO Remove ,,Ich''s
 Um diese Arbeit zu präsentieren, entstanden im Laufe des Projekts mehrere Poster.
 Anfangs wurden diese in PowerPoint entwickelt, später wurde ein Umstieg
 auf Gimp umgestiegen notwendig,
@@ -573,13 +674,16 @@ da sich Gimp für die Arbeit vorteilhafter gestaltete.
 Auf den Postern war meist zuerst eine kleine Einführung in das Projekt.
 Danach schloss sich eine nähere Erläuterungen desselben an.
 Um das Poster für den Betrachter attraktiver und anschaulicher zu machen,
-stellte ich einige Themen in grafischer Form dar und
-veranschaulichte meine Ergebnisse mit Beispielgrafiken. \\
+wurden einige Themen in grafischer Form dargestellt und
+veranschaulichten so die Ergebnisse mit Beispielgrafiken. \\
 Häufig wurde auch eine schriftliche Erläuterung des Projekts gefordert,
 in der alles ausführlich erklärt wird.
-Diese Dokumentation des Projekts schrieb ich in \LaTeX .
+Diese Dokumentation des Projekts wurde in \LaTeX gesetzt.
 Auch in diesen Dokumentationen wurden Übersichten und Grafiken als Anschauungsmaterial
-beigefügt und nötigenfalls näher erläutert.\\
+beigefügt und nötigenfalls näher erläutert. Für die visuelle Aufbereitung von
+dem gezeigten Quelltext in der GrADS-Skriptsprache musste eine neue Sprache für das
+Listing Paket von \LaTeX geschrieben werden, da die GrADS Syntax keiner üblich genutzen
+Syntax entspricht.\\
 Solche Dokumentationen und Poster kamen zum Beispiel bei
 den Landeswettbewerben \jf in Rostock (Mecklenburg Vorpommern) zur Anwendung.
 Bei diesem Wettbewerb werden aus dem gesamten
@@ -598,7 +702,11 @@ die Qualifizierung für den Bundeswettbewerb.\\
 Veranstaltungen bei denen das Projekt vorgestellt wurde war zum Beispiel der IHK-Schulpreis.
 Im Jahr 2014 bewarb sich das Schulzentrum Kühlungsborn mit dem Projekt CampusPro.
 Mit Vertretern aus anderen Projekten der Schule wurde das Schulzentrum hier vertreten.
-Im Jahr darauf trat das Projekt ,,Auvi'' alleine an.\\
+Im Jahr darauf trat das Projekt ,,Auvi'' alleine an. Auch wenn kein Podiumsplatz
+erreicht wurde, wurde das Schulzentrum repräsentiert.
+\begin{center}
+	\includegraphics[width=\linewidth]{imgs/oea/ihks.jpg}
+\end{center}
 Am Schulzentrum Kühlungsborn wird die Möglichkeit geboten durch
 umfassende Projektarbeit ein IHK-Zertifikat zu erlangen.
 Um dieses zu erlangen werden Vorträge gehalten, in denen das jeweilige Projekt präsentiert wird.
