@@ -12,14 +12,24 @@ und abgespeichert werden.\\
 Das Resultat ist ein platformunabhängiger Webserver, welcher nicht mehr von Apache oder PHP
 abhängig ist, und direkt Quellenabgleich und Ausgabe vereint. Dieser implementiert das REST-Ful
 Paradigma, funktioniert also auf minimalen Speicher und CPU Anspruch. \\
+Eine Datenbankstruktur, ähnlich der die in WMS 1.0 für die Admin Konten benutzt wird,
+wird simuliert und gibt Nutzern personalisierte Funktionen.
+Das Erstellen eigener WMS-Slideshows, wie sie im Foyer der Schule Anwendung finden
+ist somit möglich. Als Quelle der Grafiken können die Wetterdaten, verknüpft mit einem
+Stylesheet, ausgewählt werden, aber der Nutzer kann auch selbst Grafiken für seine eigene
+Slideshow hochladen. Er erhält schließlich einen Link für seine eigene Fullscreen Slideshow
+mit immer aktuellen Daten, nach seiner Auswahl.\\
+Auch die Ausgabe der puren Daten ist in Form von Tabellen oder ASCII Text möglich und
+erlaubt die Weiterverwendung in anderer Software.
 
 \subsection{HTTP-Handler} % WMS
 Es musste ein dedizierter HTTP-Handler in Golang geschrieben werden. Bei der Implementation
 wird die Cache benutzt und Abfragen für Wetterdaten werden zwischengespeichert. Das heißt bei der
-Nachfrage von Daten durch einen Nutzer müssen nicht immer die Quellen befragt werden. Der Server
-managed selbst die vorhandenen Daten, vergleicht diese auf Lücken im Datensatz und benutzt die
-vorhandenen Daten. Sollten die Daten allerdings nicht vorhanden sein, oder sind Daten einer Quelle
-älter als 15 Minuten, werden die Quellen asynchron kontaktiert.\\
+Nachfrage von Daten durch einen Nutzer müssen nicht immer die Quellen über das Netzwerk befragt werden. 
+Der Server speichert selbst die aktuellen vorhandenen Daten, 
+vergleicht diese auf Lücken im Datensatz. 
+Sollten Daten nicht vorhanden sein, oder sind Daten einer Quelle
+älter als 15 Minuten, werden die Daten von den Quellen asynchron im Hintergrund nachgeladen.\\
 
 \subsection{Ausgabeformate}
 Die neuen Ausgabeformate sind die Anforderungen, die dazu geführt haben, dass ein neues Programm

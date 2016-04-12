@@ -121,7 +121,7 @@ gewann die NOAA GFS Quelle \cite{noaa} , auf Hinweis von Projektleiter Dr. Ronal
 Das GFS \cite{gfs} Modell welches von NOAA angeboten wird zeichnet
 sich durch eine Vielfalt von Parametern (50+) und einen großen Prognosezeitraum (10 Tage) aus.
 Diese Parameter beinhalten in der hauptsächlich genutzten Quelle \cite{bspgfs} z.B.
-die Windstärke als Vektor auf-gesplittet in Nord- und Ostanteil für 2m, 10m und 50m,
+die Windstärke als Vektor mit Geschwindigkeit in Ost-West und Nord-Süd Richtung für 2m, 10m und 50m Höhe, 
 den Luftdruck am Boden, in Bodennähe sowie in der Tropopause und auf Wolkenhöhe,
 die Luftfeuchtigkeit, die Lufttemperatur in verschiedenen Höhen, die Ozon-menge, die Wassersäule
 und viele weitere meteorologisch bedeutende Parameter.
@@ -397,7 +397,7 @@ ausgelassen werden.\\
 Das programmatische Hinzufügen von neuen Orten kann durch einen Dateiseekvorgang zum
 vorletzten Byte der Datei und dem Schreiben der neuen Daten, plus dem Überschriebenen ,,]''
 realisiert werden. Sicherheitshalber müsste ein externes Programm überprüfen, dass an vorletzter
-Stelle das Byte 0x10 für den New Line Charakter steht, denn um eine valide JSON Datei zu erhalten,
+Stelle das Byte 0x0A für den New Line Charakter steht, denn um eine valide JSON Datei zu erhalten,
 ohne sie neu zu Marshaln muss genau ein Komma zwischen den Arrays eingefügt werden. \\
 ViSys-intern muss die Datei komplett gelesen werden, somit kann parallel überprüft werden ob
 ein Fehler in der Datei vorliegt und beim schreiben eines neuen Ortes wird die Datei komplett neu
