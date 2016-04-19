@@ -121,7 +121,7 @@ gewann die NOAA GFS Quelle \cite{noaa} , auf Hinweis von Projektleiter Dr. Ronal
 Das GFS \cite{gfs} Modell welches von NOAA angeboten wird zeichnet
 sich durch eine Vielfalt von Parametern (50+) und einen großen Prognosezeitraum (10 Tage) aus.
 Diese Parameter beinhalten in der hauptsächlich genutzten Quelle \cite{bspgfs} z.B.
-die Windstärke als Vektor mit Geschwindigkeit in Ost-West und Nord-Süd Richtung für 2m, 10m und 50m Höhe, 
+die Windstärke als Vektor mit Geschwindigkeit in Ost-West und Nord-Süd Richtung für 2m, 10m und 50m Höhe,
 den Luftdruck am Boden, in Bodennähe sowie in der Tropopause und auf Wolkenhöhe,
 die Luftfeuchtigkeit, die Lufttemperatur in verschiedenen Höhen, die Ozon-menge, die Wassersäule
 und viele weitere meteorologisch bedeutende Parameter.
@@ -209,7 +209,7 @@ schreiben kann. Eine GRIB Datei ist immer in sich geschlossen, kann aber nachdem
 Header gelesen wurde in Teilen geladen werden.\\
 Das GFS Modell kann so aufgeteilt werden, wenn das Programm nur einen Teil des GFS
 Modells braucht, wird nur dieser Teil geladen. Diese Aufgabe den Header auszuwerten
-wird in \vs von GrADS übernommen. \\
+wird in \vs\ von GrADS übernommen. \\
 Das OpenDap Server-Client Modell ist allerdings veraltet. In neueren Versionen der Software
 wird auf REST-Ful Server Varianten zugegriffen. Bei diesen Anfragen enthält die Anfrage
 nicht die Aufforderung einen bestimmten Block des Datensatzes zu liefern, sondern alle
@@ -405,9 +405,6 @@ geschrieben. Es ist also kein extra Seekvorgang notwendig.
 
 \subsubsection*{GrADS Skripten}
 \lstinputlisting[language=grads,
-caption={GrADS Routine zum erstellen
-allgemeiner Funktionsgraphen (line.gs)}]{\pyvidir grads/line.gs}
-\lstinputlisting[language=grads,
 caption={GrADS Routine zum erstellen allgemeiner Konturplots (plot.gs)},
 label= code:plotgengs,
 firstline=104, lastline=115, firstnumber=104]{\pyvidir grads/plot.gs}
@@ -437,6 +434,8 @@ Auch hier kann der Text leicht von einem Computer generiert werden.
 generiert werden ist gemeint,
 dass ein Nutzer der Website oder App seine Anfrage mithilfe einer HTML-Form abgibt
 und aus diesen Werten im Hintergrund eine Datei erzeugt oder geändert wird.}
+Die Zuordnung von Parametern aus der Quelle zu den in GrADS genutzten Kürzeln geschieht
+über eine weitere JSON Datei.
 
 
 \subsubsection*{Webseite}
@@ -445,13 +444,16 @@ Das Front-End der Software ist eine Website
 zur Veröffentlichung braucht man allerdings ein Entwicklerkonto bei Google oder Apple},
 diese kann aber auch über eine Shell umgangen werden, indem man \vs direkt Befehle
 übergibt und die Bilder serviert bekommt.\\
+\begin{center}
+	\includegraphics[width=\linewidth]{imgs/webview.png}
+\end{center}
 Die Website ist programmiert in HTML (Hyper Text Markup Language),
 PHP (PHP\footnote{Rekursives Akronym}: Hypertext Preprocessor) und JavaScript.
 Als Webserver wird Apache2 eingesetzt \cite{php} \cite{apache}. \\
 Der Server der diese Website ,,served'' ist nicht über eine Domain aus dem Internet
 erreichbar, da sobald Grafiken benötigt wurden später das gesamte Projekt auf
 einen Rechner heruntergeladen wurde und von dort lokal ausgeführt wurde.
-Die Website liest genauso wie \vs\ die JSON Dateien aus und kann aus den
+Die Website liest genauso wie \vs\ \ die JSON Dateien aus und kann aus den
 Routinen schlussfolgern unter welchem Dateipfad die Grafiken nach der Generation
 liegen müssen. Dann muss die Website nur noch auf die Grafiken verlinken.
 Für die Projektarbeit wurde die Website hauptsächlich genutzt um das Arbeiten mit
@@ -669,7 +671,7 @@ seine eigene Skala der ,,Eignung zum Segeln'' erstellen.
 % Messen, Vorträge, Dokumentation, Poster
 Um diese Arbeit zu präsentieren, entstanden im Laufe des Projekts mehrere Poster.
 Anfangs wurden diese in PowerPoint entwickelt, später wurde ein Umstieg
-auf Gimp umgestiegen notwendig,
+auf Gimp notwendig,
 da sich Gimp für die Arbeit vorteilhafter gestaltete.
 Auf den Postern war meist zuerst eine kleine Einführung in das Projekt.
 Danach schloss sich eine nähere Erläuterungen desselben an.
@@ -685,7 +687,7 @@ dem gezeigten Quelltext in der GrADS-Skriptsprache musste eine neue Sprache für
 Listing Paket von \LaTeX\ geschrieben werden, da die GrADS Syntax keiner üblich genutzten
 Syntax entspricht.\\
 Solche Dokumentationen und Poster kamen zum Beispiel bei
-den Landeswettbewerben \jf in Rostock (Mecklenburg Vorpommern) zur Anwendung.
+den Landeswettbewerben \jf\ in Rostock (Mecklenburg Vorpommern) zur Anwendung.
 Bei diesem Wettbewerb werden aus dem gesamten
 Bundesland Projekte aus verschiedenen Fachgebieten präsentiert.
 Es wird unterteilt in Arbeitswelt, Biologie, Chemie,
